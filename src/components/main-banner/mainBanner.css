@@ -1,0 +1,11 @@
+.stepper {
+    position: 'relative';
+    bottom: -25px;
+    z-Index: 1000;
+    background: 'transparent';
+    height: 0px;
+    padding: 0;
+    display: 'flex';
+    justify-content: 'center';
+    flex-direction: 'row';
+}
