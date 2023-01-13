@@ -1,7 +1,7 @@
 .stepper {
     position: 'relative';
     bottom: -25px;
-    z-Index: 1000;
+    z-index: 1000;
     background: 'transparent';
     height: 0px;
     padding: 0;
