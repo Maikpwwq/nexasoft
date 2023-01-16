@@ -16,6 +16,11 @@
   --qwik-light-blue: #18b6f6;
   --qwik-light-purple: #ac7ff4;
   --qwik-dark-purple: #713fc2;
+  /* --qwik-dark-blue: #713fc2;
+  --qwik-light-blue: #13DCFF;
+  --qwik-light-purple: #ff94ee;
+  --qwik-dark-purple: #ff13dc; */
+  --qwik-a: #bd0717;
 }
 
 body {

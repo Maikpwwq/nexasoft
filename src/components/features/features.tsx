@@ -1,15 +1,19 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { qwikify$ } from "@builder.io/qwik-react";
 import styles from "./features.css?inline";
+import Typography from "@mui/material/Typography";
+export const MUITypography = qwikify$(Typography);
 
 export default component$(() => {
   useStylesScoped$(styles);
 
   return (
-    <features id="features-section">
-      <p>
+    <features id="features-section" className="pt-6 pb-6">
+      <MUITypography variant="h6" component="div">
         ¿Estás cansado de lidiar con plataformas antiguas y poco eficientes?{" "}
-        <br />
-        <br />
+      </MUITypography>
+      <MUITypography className="mt-6 mb-6" variant="body1">
+      <br />
         <strong>NexaSoft</strong> ofrece soluciones empresariales de software
         que te ayudarán a mejorar tu negocio. Con nuestros servicios de{" "}
         <strong>modernización de plataformas, </strong>
@@ -42,7 +46,8 @@ export default component$(() => {
         <br />
         No esperes más, contáctanos para saber más sobre cómo nuestras
         soluciones de software pueden mejorar tu negocio.
-      </p>
+        <br />
+      </MUITypography>
     </features>
   );
 });

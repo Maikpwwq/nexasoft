@@ -21,7 +21,7 @@ specifiers:
   autoprefixer: 10.4.11
   eslint: 8.31.0
   eslint-plugin-qwik: 0.16.2
-  netlify-cli: ^12.0.11
+  netlify-cli: ^12.7.2
   node-fetch: 3.3.0
   postcss: ^8.4.21
   prettier: 2.8.1
@@ -628,7 +628,7 @@ packages:
       '@fastify/send': 1.0.0
       content-disposition: 0.5.4
       fastify-plugin: 4.5.0
-      glob: 8.0.3
+      glob: 8.1.0
       p-limit: 3.1.0
       readable-stream: 4.3.0
     transitivePeerDependencies:
@@ -965,8 +965,8 @@ packages:
     resolution: {integrity: sha512-4wMPu9iN3/HL97QblBsBay3E1etIciR84izI3U+4iALY+JHCrI+a2jO0qbAZ/nxKoegypYEaiiqWXylm+/zfrw==}
     dev: true
 
-  /@netlify/build/29.4.5_@types+node@18.11.18:
-    resolution: {integrity: sha512-nPMVSBsJ62tO91TvD8UjsKyp8dPLxEH3mAI2I5FHztYBT8d43ISAtAc2FYaSVpm0ZMoUyRDGx+kQmOHfZAWOPQ==}
+  /@netlify/build/29.5.0_@types+node@18.11.18:
+    resolution: {integrity: sha512-F+6i/GcozObvNjm3brUTnYIc5VudAhXsKuuLbDYeYOxXs90zU9LXU3h2WsCV4dnWTQ2wYmhnD3fj1FSEHwZHlg==}
     engines: {node: ^14.16.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -978,7 +978,7 @@ packages:
       '@netlify/git-utils': 5.1.0
       '@netlify/plugins-list': 6.62.0
       '@netlify/run-utils': 5.1.0
-      '@netlify/zip-it-and-ship-it': 8.4.0_supports-color@9.3.1
+      '@netlify/zip-it-and-ship-it': 8.4.1_supports-color@9.3.1
       '@sindresorhus/slugify': 2.1.1
       ansi-escapes: 5.0.0
       chalk: 5.2.0
@@ -1312,8 +1312,8 @@ packages:
       '@netlify/esbuild-windows-arm64': 0.14.39
     dev: true
 
-  /@netlify/framework-info/9.6.0:
-    resolution: {integrity: sha512-iFVy7VeAXGjRIgZkHqjyhy7bV0Ti/dZBUnWFB3d6FeMzNFZUCxf4b36RLG+Y4TkOdT1GDDpU7iVkKcTLz0IAgg==}
+  /@netlify/framework-info/9.7.0:
+    resolution: {integrity: sha512-LXH878SAK17RPWMI4iZx8nGDaH4QmMdmMWotCW77lGm+0WEqVcAa/ujgNWvsMTACFhWEXJyDLGMK0krYi6ea2Q==}
     engines: {node: ^14.14.0 || >=16.0.0}
     dependencies:
       ajv: 8.12.0
@@ -1334,7 +1334,7 @@ packages:
     resolution: {integrity: sha512-iRg0wXWB/SUhirW20FZ0COP6WkoXfCcPKZb2AUKzkeduUE4WF1zUeX7gw/SYXFU9OkMHehD9NN5y7csp2oNUNg==}
     engines: {node: ^14.16.0 || >=16.0.0}
     dependencies:
-      '@netlify/zip-it-and-ship-it': 8.4.0_supports-color@9.3.1
+      '@netlify/zip-it-and-ship-it': 8.4.1_supports-color@9.3.1
       cpy: 8.1.2_supports-color@9.3.1
       path-exists: 5.0.0
     transitivePeerDependencies:
@@ -1494,8 +1494,8 @@ packages:
       execa: 6.1.0
     dev: true
 
-  /@netlify/zip-it-and-ship-it/8.4.0:
-    resolution: {integrity: sha512-5ctiK9p7+VgE89ZeYD9cMCU53IQNv+Bj0K9O9gkQBD40HIuJgFIU0Pb8LOh+eGbefICUC/wD73l7WgjN1Eu2RQ==}
+  /@netlify/zip-it-and-ship-it/8.4.1:
+    resolution: {integrity: sha512-+ksCICof4arGt+KAXf9qR0jrjd3vfbxiN8P9lT2130gsOBmZxLxJ9o+Xv1uJnM16/Vt/kv3wO70yYY7Dz6LAsA==}
     engines: {node: ^14.16.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -1512,13 +1512,13 @@ packages:
       execa: 6.1.0
       filter-obj: 5.1.0
       find-up: 6.3.0
-      glob: 8.0.3
+      glob: 8.1.0
       is-builtin-module: 3.2.0
       is-path-inside: 4.0.0
       junk: 4.0.0
       locate-path: 7.1.1
       merge-options: 3.0.4
-      minimatch: 5.1.2
+      minimatch: 6.0.4
       normalize-path: 3.0.0
       p-map: 5.5.0
       path-exists: 5.0.0
@@ -1535,8 +1535,8 @@ packages:
       - supports-color
     dev: true
 
-  /@netlify/zip-it-and-ship-it/8.4.0_supports-color@9.3.1:
-    resolution: {integrity: sha512-5ctiK9p7+VgE89ZeYD9cMCU53IQNv+Bj0K9O9gkQBD40HIuJgFIU0Pb8LOh+eGbefICUC/wD73l7WgjN1Eu2RQ==}
+  /@netlify/zip-it-and-ship-it/8.4.1_supports-color@9.3.1:
+    resolution: {integrity: sha512-+ksCICof4arGt+KAXf9qR0jrjd3vfbxiN8P9lT2130gsOBmZxLxJ9o+Xv1uJnM16/Vt/kv3wO70yYY7Dz6LAsA==}
     engines: {node: ^14.16.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -1553,13 +1553,13 @@ packages:
       execa: 6.1.0
       filter-obj: 5.1.0
       find-up: 6.3.0
-      glob: 8.0.3
+      glob: 8.1.0
       is-builtin-module: 3.2.0
       is-path-inside: 4.0.0
       junk: 4.0.0
       locate-path: 7.1.1
       merge-options: 3.0.4
-      minimatch: 5.1.2
+      minimatch: 6.0.4
       normalize-path: 3.0.0
       p-map: 5.5.0
       path-exists: 5.0.0
@@ -2155,25 +2155,9 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@typescript-eslint/typescript-estree/5.48.0_5e3hwdzh7amjvied4y7czab76m:
-    resolution: {integrity: sha512-7pjd94vvIjI1zTz6aq/5wwE/YrfIyEPLtGJmRfyNR9NYIW+rOvzzUv3Cmq2hRKpvt6e9vpvPUQ7puzX7VSmsEw==}
+  /@typescript-eslint/types/5.48.2:
+    resolution: {integrity: sha512-hE7dA77xxu7ByBc6KCzikgfRyBCTst6dZQpwaTy25iMYOnbNljDT4hjhrGEJJ0QoMjrfqrx+j1l1B9/LtKeuqA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@typescript-eslint/types': 5.48.0
-      '@typescript-eslint/visitor-keys': 5.48.0
-      debug: 4.3.4_supports-color@9.3.1
-      globby: 11.1.0
-      is-glob: 4.0.3
-      semver: 7.3.8
-      tsutils: 3.21.0_typescript@4.9.4
-      typescript: 4.9.4
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@typescript-eslint/typescript-estree/5.48.0_typescript@4.9.4:
@@ -2187,6 +2171,48 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.48.0
       '@typescript-eslint/visitor-keys': 5.48.0
+      debug: 4.3.4
+      globby: 11.1.0
+      is-glob: 4.0.3
+      semver: 7.3.8
+      tsutils: 3.21.0_typescript@4.9.4
+      typescript: 4.9.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@typescript-eslint/typescript-estree/5.48.2_5e3hwdzh7amjvied4y7czab76m:
+    resolution: {integrity: sha512-bibvD3z6ilnoVxUBFEgkO0k0aFvUc4Cttt0dAreEr+nrAHhWzkO83PEVVuieK3DqcgL6VAK5dkzK8XUVja5Zcg==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/types': 5.48.2
+      '@typescript-eslint/visitor-keys': 5.48.2
+      debug: 4.3.4_supports-color@9.3.1
+      globby: 11.1.0
+      is-glob: 4.0.3
+      semver: 7.3.8
+      tsutils: 3.21.0_typescript@4.9.4
+      typescript: 4.9.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@typescript-eslint/typescript-estree/5.48.2_typescript@4.9.4:
+    resolution: {integrity: sha512-bibvD3z6ilnoVxUBFEgkO0k0aFvUc4Cttt0dAreEr+nrAHhWzkO83PEVVuieK3DqcgL6VAK5dkzK8XUVja5Zcg==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@typescript-eslint/types': 5.48.2
+      '@typescript-eslint/visitor-keys': 5.48.2
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
@@ -2222,6 +2248,14 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       '@typescript-eslint/types': 5.48.0
+      eslint-visitor-keys: 3.3.0
+    dev: true
+
+  /@typescript-eslint/visitor-keys/5.48.2:
+    resolution: {integrity: sha512-z9njZLSkwmjFWUelGEwEbdf4NwKvfHxvGC0OcGN1Hp/XNDIcJ7D5DpPNPv6x6/mFvc1tQHsaWmpD/a4gOvvCJQ==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dependencies:
+      '@typescript-eslint/types': 5.48.2
       eslint-visitor-keys: 3.3.0
     dev: true
 
@@ -2688,7 +2722,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001444
+      caniuse-lite: 1.0.30001445
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -2910,7 +2944,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001444
+      caniuse-lite: 1.0.30001445
       electron-to-chromium: 1.4.284
       node-releases: 2.0.8
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -3108,8 +3142,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /caniuse-lite/1.0.30001444:
-    resolution: {integrity: sha512-ecER9xgJQVMqcrxThKptsW0pPxSae8R2RB87LNa+ivW9ppNWRHEplXcDzkCOP4LYWGj8hunXLqaiC41iBATNyg==}
+  /caniuse-lite/1.0.30001445:
+    resolution: {integrity: sha512-8sdQIdMztYmzfTMO6KfLny878Ln9c2M0fc7EH60IjlP4Dc4PiCy7K2Vl3ITmWgOyPgVQKa5x+UP/KqFsxj4mBg==}
     dev: true
 
   /ccount/2.0.1:
@@ -4006,7 +4040,7 @@ packages:
     resolution: {integrity: sha512-lR78AugfUSBojwlSRZBeEqQ1l8LI7rbxOl1qTUnGLcjZQDjZmrZCb7R46rK8U8B5WzFvJrxa7fEBA8FoD/n5fA==}
     engines: {node: ^12.20.0 || ^14.14.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/typescript-estree': 5.48.0_typescript@4.9.4
+      '@typescript-eslint/typescript-estree': 5.48.2_typescript@4.9.4
       ast-module-types: 3.0.0
       node-source-walk: 5.0.0
       typescript: 4.9.4
@@ -4018,7 +4052,7 @@ packages:
     resolution: {integrity: sha512-lR78AugfUSBojwlSRZBeEqQ1l8LI7rbxOl1qTUnGLcjZQDjZmrZCb7R46rK8U8B5WzFvJrxa7fEBA8FoD/n5fA==}
     engines: {node: ^12.20.0 || ^14.14.0 || >=16.0.0}
     dependencies:
-      '@typescript-eslint/typescript-estree': 5.48.0_5e3hwdzh7amjvied4y7czab76m
+      '@typescript-eslint/typescript-estree': 5.48.2_5e3hwdzh7amjvied4y7czab76m
       ast-module-types: 3.0.0
       node-source-walk: 5.0.0
       typescript: 4.9.4
@@ -5297,14 +5331,14 @@ packages:
       path-is-absolute: 1.0.1
     dev: true
 
-  /glob/8.0.3:
-    resolution: {integrity: sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==}
+  /glob/8.1.0:
+    resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 5.1.2
+      minimatch: 5.1.4
       once: 1.4.0
     dev: true
 
@@ -6347,7 +6381,7 @@ packages:
     dependencies:
       jws: 3.2.2
       lodash: 4.17.21
-      ms: 2.1.2
+      ms: 2.1.3
       semver: 7.3.8
     dev: true
 
@@ -7318,8 +7352,15 @@ packages:
       brace-expansion: 1.1.11
     dev: true
 
-  /minimatch/5.1.2:
-    resolution: {integrity: sha512-bNH9mmM9qsJ2X4r2Nat1B//1dJVcn3+iBLa3IgqJ7EbGaDNepL9QSHOxN4ng33s52VMMhhIfgCYDk3C4ZmlDAg==}
+  /minimatch/5.1.4:
+    resolution: {integrity: sha512-U0iNYXt9wALljzfnGkhFSy5sAC6/SCR3JrHrlsdJz4kF8MvhTRQNiC59iUi1iqsitV7abrNAJWElVL9pdnoUgw==}
+    engines: {node: '>=10'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: true
+
+  /minimatch/6.0.4:
+    resolution: {integrity: sha512-9SQupyyavjdAc1VFjJS/5kdtFtlLAhKSWt7HocG0h/npy626jYrGegSslcM7Xxet5z0U9GOx9YbcpyIjBzn7tA==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
@@ -7506,12 +7547,12 @@ packages:
     requiresBuild: true
     dependencies:
       '@fastify/static': 6.6.1
-      '@netlify/build': 29.4.5_@types+node@18.11.18
+      '@netlify/build': 29.5.0_@types+node@18.11.18
       '@netlify/config': 20.3.0
       '@netlify/edge-bundler': 8.1.2
-      '@netlify/framework-info': 9.6.0
+      '@netlify/framework-info': 9.7.0
       '@netlify/local-functions-proxy': 1.1.1
-      '@netlify/zip-it-and-ship-it': 8.4.0
+      '@netlify/zip-it-and-ship-it': 8.4.1
       '@octokit/rest': 19.0.5
       ansi-escapes: 5.0.0
       ansi-styles: 5.2.0
@@ -7989,7 +8030,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       macos-release: 3.1.0
-      windows-release: 5.0.1
+      windows-release: 5.1.0
     dev: true
 
   /os-tmpdir/1.0.2:
@@ -8915,7 +8956,7 @@ packages:
   /readdir-glob/1.1.2:
     resolution: {integrity: sha512-6RLVvwJtVwEDfPdn6X6Ille4/lxGl0ATOY4FN/B9nxQcgOazvvI0nodiD19ScKq0PvA/29VpaOQML36o5IzZWA==}
     dependencies:
-      minimatch: 5.1.2
+      minimatch: 5.1.4
     dev: true
 
   /readdirp/2.2.1:
@@ -10665,8 +10706,8 @@ packages:
       string-width: 5.1.2
     dev: true
 
-  /windows-release/5.0.1:
-    resolution: {integrity: sha512-y1xFdFvdMiDXI3xiOhMbJwt1Y7dUxidha0CWPs1NgjZIjZANTcX7+7bMqNjuezhzb8s5JGEiBAbQjQQYYy7ulw==}
+  /windows-release/5.1.0:
+    resolution: {integrity: sha512-CddHecz5dt0ngTjGPP1uYr9Tjl4qq5rEKNk8UGb8XCdngNXI+GRYvqelD055FdiUgqODZz3R/5oZWYldPtXQpA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       execa: 5.1.1

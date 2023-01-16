@@ -1,12 +1,19 @@
 import {
   component$,
   useStylesScoped$,
-  // useStore,
+  useStore,
+  useClientEffect$,
   // useTask$,
 } from "@builder.io/qwik";
 // import { isServer, isBrowser } from "@builder.io/qwik/build";
 import { qwikify$ } from "@builder.io/qwik-react";
 import styles from "./mainBanner.css?inline";
+
+import SolucionesSoftware from "../../assets/img/Soluciones empresariales de software.png";
+import Negociosdigitales from "../../assets/img/Crecimiento y eficiencia de negocios digitales.png";
+import ModernizarPlataformas from "../../assets/img/Modernizar y optimizar tus plataformas.png";
+import SoftwarePersonalizado from "../../assets/img/Soluciones de software personalizadas.png";
+
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 // import MobileStepper from "@mui/material/MobileStepper";
@@ -14,6 +21,15 @@ import Box from "@mui/material/Box";
 // import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 // import SwipeableViews from "react-swipeable-views";
 // import { bindKeyboard } from "react-swipeable-views-utils";
+// import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
+// import ChargingStationIcon from '@mui/icons-material/ChargingStation';
+// import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
+// import BoltIcon from '@mui/icons-material/Bolt';
+// import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
+// import TabIcon from '@mui/icons-material/Tab';
+
+// import RollerSkatingIcon from '@mui/icons-material/RollerSkating';
+// import AddBoxIcon from '@mui/icons-material/AddBox';
 
 // export const CustomSwipeableViews = component$(() => {
 //   const BindKeyboardSwipeableViews = bindKeyboard(SwipeableViews);
@@ -22,10 +38,10 @@ import Box from "@mui/material/Box";
 
 // export const MUICustomSwipeableViews = qwikify$(CustomSwipeableViews);
 
-
 // export const MUISwipeableViews = qwikify$(SwipeableViews);
-export const MUIButton = qwikify$(Button);
 export const MUIBox = qwikify$(Box);
+export const MUIButton = qwikify$(Button);
+
 // export const MUIMobileStepper = qwikify$(MobileStepper);
 // export const MUIKeyboardArrowLeft = qwikify$(KeyboardArrowLeft);
 // export const MUIKeyboardArrowRight = qwikify$(KeyboardArrowRight);
@@ -33,16 +49,53 @@ export const MUIBox = qwikify$(Box);
 export default component$(() => {
   useStylesScoped$(styles);
   // const theme = { direction: "rtl" };
-  // const maxSteps = 5; // imagenes.length
-  // const activeStep = useStore({ count: 0 });
+  const maxSteps = 3; // imagenes.length
+  const store = useStore({ count: 0 });
 
+  const bannerImg = [
+    {
+      img: SolucionesSoftware,
+      description: "Soluciones empresariales de software.",
+    },
+    {
+      img: Negociosdigitales,
+      description: "Crecimiento y eficiencia de negocios digitales.",
+    },
+    {
+      img: ModernizarPlataformas,
+      description: "Modernizar y optimizar tus plataformas.",
+    },
+    {
+      img: SoftwarePersonalizado,
+      description: "Soluciones de software personalizadas.",
+    },
+  ];
+
+  useClientEffect$(() => {
+    // Only runs in the client
+    const timer = setInterval(() => {
+      maxSteps>store.count? store.count++ : store.count = 0;
+    }, 3000);
+    return () => {
+      clearInterval(timer);
+    };
+  });
+
+  //, left: `-${store.count}00vw` 
   return (
     <mainbanner>
-      <div>
-        Banner principal: Una imagen o video llamativo que presente los
-        servicios y ventajas de la empresa.
-      </div>
       <MUIBox sx={{ width: "100%", flexGrow: 1 }}>
+        <MUIBox className="flex flex-row" sx={{ width: "100%", flexGrow: 1, position: "relative"}}>
+          {!!bannerImg &&
+            bannerImg.map(({ img, description }) => {
+              return (
+                <>
+                  <img className="slider" src={img} alt={description} />
+                  {store.count}
+                </>
+              );
+            })}
+        </MUIBox>
         {/* <MUISwipeableViews
           // axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}
@@ -52,32 +105,8 @@ export default component$(() => {
           enableMouseEvents
           // slideRenderer={slideRenderer}
         > */}
-          {/* TODO: CREAR PIEZAS VISUALES PARA EL BANNER */}
-          <div>
-            1 Servicios: El banner podría mostrar imágenes o iconos que
-            representen los servicios que ofrece NexaSoft, como el mantenimiento
-            y modernización de plataformas digitales.
-          </div>
-          <div>
-            2 Ventajas: El banner podría destacar las ventajas de trabajar con
-            NexaSoft, como la mejora del rendimiento de las plataformas, la
-            reducción de costos y el aumento de la eficiencia.
-          </div>
-          <div>
-            3 Innovación: El banner podría mostrar imágenes o iconos que
-            representen la tecnología y la innovación, para reflejar el enfoque
-            de NexaSoft en soluciones de software de vanguardia.
-          </div>
-          <div>
-            4 Futuro: El banner podría mostrar un mensaje o una imagen que
-            sugiera el futuro, para reflejar la idea de que NexaSoft ayuda a las
-            empresas a prepararse para el futuro con sus soluciones de software.
-          </div>
-          <div>
-            5 Mensaje atractivo: El banner podría incluir un mensaje atractivo y
-            conciso que invite a los visitantes a conocer más sobre los
-            servicios de NexaSoft.
-          </div>
+        {/* TODO: CREAR PIEZAS VISUALES PARA EL BANNER */}
+
         {/* </MUISwipeableViews> */}
         {/* <MUIMobileStepper
           // variant=
