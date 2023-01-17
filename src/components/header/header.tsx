@@ -11,7 +11,7 @@ export default component$(() => {
       <div class="logo">
         <a href="/" title="qwik">
           {/* <NexaSoftLogo /> */}
-          {NexaSoftLogo}
+          {NexaSoftLogo} <span class="lightning">⚡️</span>
         </a>
       </div>
       <ul>

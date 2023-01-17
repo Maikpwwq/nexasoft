@@ -8,31 +8,13 @@ import Footer from "../components/footer/footer";
 import Testimonials from "../components/testimonials/testimonials";
 import Features from "../components/features/features";
 import MainBanner from "../components/main-banner/mainBanner";
-import DevicesIcon from "@mui/icons-material/Devices";
-import LaptopIcon from "@mui/icons-material/Laptop";
-import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import WebIcon from "@mui/icons-material/Web";
-export const MUIDevicesIcon = qwikify$(DevicesIcon);
-export const MUILaptopIcon = qwikify$(LaptopIcon);
-export const MUIPhoneAndroidIcon = qwikify$(PhoneAndroidIcon);
-export const MUIPhoneIphoneIcon = qwikify$(PhoneIphoneIcon);
-export const MUIWebIcon = qwikify$(WebIcon);
 
 export default component$(() => {
   return (
     <div>
-      <h1>
-        Bienvenido a NexaSoft <MUIDevicesIcon />
-        <MUILaptopIcon />
-        <MUIPhoneAndroidIcon />
-        <MUIPhoneIphoneIcon />
-        <MUIWebIcon />
-        <span class="lightning">⚡️</span>
-      </h1>
-      <Link class="mindblow" href="/flower/">
+      {/* <Link class="mindblow" href="/flower/">
         Blow my mind 🤯
-      </Link>
+      </Link> */}
       <MainBanner />
       <Features />
       <Testimonials />

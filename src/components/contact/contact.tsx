@@ -36,11 +36,15 @@ export default component$(() => {
   // };
 
   return (
-    <contact id="contact-section">
-      <MUICard className="m-6" sx={{ minWidth: 275, borderRadius: 6 }} elevation={16}>
-        <MUICardContent>
+    <contact id="contact-section" class="flex w-full justify-center">
+      <MUICard
+        className="m-6 flex"
+        sx={{ maxWidth: 369, borderRadius: 6 }}
+        elevation={16}
+      >
+        <MUICardContent className="flex flex-col items-center">
           <MUITypography variant="h6">Formulario de contacto</MUITypography>
-          <MUITypography variant="body1">
+          <MUITypography variant="body1" className="pt-2" align="center">
             Solicita información adicional o una presentación de nuestros
             servicios.
           </MUITypography>
@@ -53,6 +57,7 @@ export default component$(() => {
             spacing={2}
             noValidate
             autoComplete="off"
+            className="mt-6 items-center"
           >
             <MUIFormControl variant="standard">
               <MUIInputLabel htmlFor="form-name">Nombre: </MUIInputLabel>
