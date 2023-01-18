@@ -9,10 +9,10 @@ import {
 import { qwikify$ } from "@builder.io/qwik-react";
 import styles from "./mainBanner.css?inline";
 
-import SolucionesSoftware from "../../assets/img/Soluciones empresariales de software.png";
-import Negociosdigitales from "../../assets/img/Crecimiento y eficiencia de negocios digitales.png";
-import ModernizarPlataformas from "../../assets/img/Modernizar y optimizar tus plataformas.png";
-import SoftwarePersonalizado from "../../assets/img/Soluciones de software personalizadas.png";
+import SolucionesSoftware from "../../assets/img/banners/Soluciones empresariales de software.png";
+import Negociosdigitales from "../../assets/img/banners/Crecimiento y eficiencia de negocios digitales.png";
+import ModernizarPlataformas from "../../assets/img/banners/Modernizar y optimizar tus plataformas.png";
+import SoftwarePersonalizado from "../../assets/img/banners/Soluciones de software personalizadas.png";
 
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -50,22 +50,27 @@ export default component$(() => {
   useStylesScoped$(styles);
   // const theme = { direction: "rtl" };
   const maxSteps = 3; // imagenes.length
+  const changeTime = 10000;
   const store = useStore({ count: 0 });
 
   const bannerImg = [
     {
+      id: 0,
       img: SolucionesSoftware,
       description: "Soluciones empresariales de software.",
     },
     {
+      id: 1,
       img: Negociosdigitales,
       description: "Crecimiento y eficiencia de negocios digitales.",
     },
     {
+      id: 2,
       img: ModernizarPlataformas,
       description: "Modernizar y optimizar tus plataformas.",
     },
     {
+      id: 3,
       img: SoftwarePersonalizado,
       description: "Soluciones de software personalizadas.",
     },
@@ -74,24 +79,29 @@ export default component$(() => {
   useClientEffect$(() => {
     // Only runs in the client
     const timer = setInterval(() => {
-      maxSteps>store.count? store.count++ : store.count = 0;
-    }, 3000);
+      maxSteps > store.count ? store.count++ : (store.count = 0);
+    }, changeTime);
     return () => {
       clearInterval(timer);
     };
   });
 
-  //, left: `-${store.count}00vw` 
+  //, left: `-${store.count}00vw`
   return (
     <mainbanner>
       <MUIBox sx={{ width: "100%", flexGrow: 1 }}>
-        <MUIBox className="flex flex-row" sx={{ width: "100%", flexGrow: 1, position: "relative"}}>
+        <MUIBox
+          className="flex flex-row"
+          sx={{ width: "100%", flexGrow: 1, position: "relative" }}
+        >
           {!!bannerImg &&
-            bannerImg.map(({ img, description }) => {
+            bannerImg.map((element) => {
+              const { img, description, id } = element;
               return (
                 <>
-                  <img className="slider" src={img} alt={description} />
-                  {store.count}
+                  {img && id == store.count && (
+                    <img class="slider" src={img} alt={description} key={id} />
+                  )}
                 </>
               );
             })}
@@ -115,13 +125,13 @@ export default component$(() => {
           }}
           // steps={maxSteps}
           // position="static"
-          activeStep={activeStep}
+          activeStep={store.count}
           nextButton={
             <MUIButton
-              size="lg"
-              onClick$={() => activeStep.count++}
-              class="arrow-next"
-              disabled={activeStep.count === maxSteps - 1}
+              size="large"
+              // onClick$={() => store.count++}
+              className="arrow-next"
+              disabled={store.count === maxSteps - 1}
             >
               {theme.direction === "rtl" ? (
                 <MUIKeyboardArrowLeft fontSize="large" />
@@ -132,10 +142,10 @@ export default component$(() => {
           }
           backButton={
             <MUIButton
-              size="lg"
-              onClick$={() => activeStep.count--}
-              class="arrow-back"
-              disabled={activeStep.count === 0}
+              size="large"
+              // onClick$={() => store.count--}
+              className="arrow-back"
+              disabled={store.count === 0}
             >
               {theme.direction === "rtl" ? (
                 <MUIKeyboardArrowRight fontSize="large" />

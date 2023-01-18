@@ -1,6 +1,28 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import { qwikify$ } from "@builder.io/qwik-react";
 import styles from "./features.css?inline";
+
+import AplicacionesMoviles from "../../assets/img/lista imagenes/Aplicaciones móviles.jpg";
+import Aplications from "../../assets/img/lista imagenes/aplications.jpg";
+import Automatizacion from "../../assets/img/lista imagenes/Automatización.jpg";
+import DesarrolloWeb from "../../assets/img/lista imagenes/Desarrollo web.jpg";
+import Desktop from "../../assets/img/lista imagenes/desktop.jpg";
+import Development from "../../assets/img/lista imagenes/development.jpg";
+import Devices from "../../assets/img/lista imagenes/devices.jpg";
+import Ecommerce from "../../assets/img/lista imagenes/ecommerce.jpg";
+import ExploreInternet from "../../assets/img/lista imagenes/explore internet.jpg";
+import GrowthIdeas from "../../assets/img/lista imagenes/growth ideas.jpg";
+import Innovation from "../../assets/img/lista imagenes/Innovación.jpg";
+import SystemIntegration from "../../assets/img/lista imagenes/Integración de sistemas.jpg";
+import MantenimientoPlataformas from "../../assets/img/lista imagenes/Mantenimiento de plataformas.jpg";
+import ModernizacionPlataformas from "../../assets/img/lista imagenes/Modernización de plataformas.jpg";
+import Movile from "../../assets/img/lista imagenes/móvile.jpg";
+import RemoteOffice from "../../assets/img/lista imagenes/remote office.jpg";
+import SeguridadInformatica from "../../assets/img/lista imagenes/Seguridad informática.jpg";
+import Tecnologia from "../../assets/img/lista imagenes/Tecnología.jpg";
+
+import Box from "@mui/material/Box";
+
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import Typography from "@mui/material/Typography";
@@ -16,67 +38,99 @@ export const MUIPhoneAndroidIcon = qwikify$(PhoneAndroidIcon);
 export const MUIPhoneIphoneIcon = qwikify$(PhoneIphoneIcon);
 export const MUIWebIcon = qwikify$(WebIcon);
 
+export const MUIBox = qwikify$(Box);
+
 export const MUITypography = qwikify$(Typography);
 export const MUIImageList = qwikify$(ImageList);
 export const MUIImageListItem = qwikify$(ImageListItem);
 
 export const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
-    title: "Breakfast",
+    img: AplicacionesMoviles,
+    title: "AplicacionesMoviles",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
-    title: "Burger",
+    img: Aplications,
+    title: "Aplications",
   },
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
+    img: Automatizacion,
+    title: "Automatizacion",
   },
   {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Coffee",
+    img: DesarrolloWeb,
+    title: "DesarrolloWeb",
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
+    img: Desktop,
+    title: "Desktop",
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
-    author: "@arwinneil",
+    img: Development,
+    title: "Development",
+    author: "@nkiqi",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
+    img: Devices,
+    title: "Devices",
   },
   {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Fern",
+    img: Ecommerce,
+    title: "Ecommerce",
   },
   {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Mushrooms",
+    img: ExploreInternet,
+    title: "ExploreInternet",
     rows: 2,
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Tomato basil",
+    img: GrowthIdeas,
+    title: GrowthIdeas,
   },
   {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Sea star",
+    img: Innovation,
+    title: "Innovation",
   },
   {
-    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-    title: "Bike",
+    img: SystemIntegration,
+    title: "SystemIntegration",
+    cols: 2,
+  },
+  {
+    img: MantenimientoPlataformas,
+    title: "MantenimientoPlataformas",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: ModernizacionPlataformas,
+    title: "ModernizacionPlataformas",
+  },
+  {
+    img: Movile,
+    title: "Movile",
+  },
+  {
+    img: RemoteOffice,
+    title: "RemoteOffice",
+    cols: 2,
+  },
+  {
+    img: SeguridadInformatica,
+    title: "SeguridadInformatica",
+    cols: 2,
+  },
+  {
+    img: Tecnologia,
+    title: "Tecnologia",
+    rows: 2,
     cols: 2,
   },
 ];
@@ -151,26 +205,28 @@ export default component$(() => {
         soluciones de software pueden mejorar tu negocio.
         <br />
       </MUITypography>
-      <MUIImageList
-        sx={{ width: 500, height: 450 }}
-        variant="quilted"
-        cols={4}
-        rowHeight={121}
-      >
-        {itemData.map((item) => (
-          <MUIImageListItem
-            key={item.img}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
-          >
-            <img
-              {...srcset(item.img, 121, item.rows, item.cols)}
-              alt={item.title}
-              loading="lazy"
-            />
-          </MUIImageListItem>
-        ))}
-      </MUIImageList>
+      <MUIBox className="w-100 flex justify-center">
+        <MUIImageList
+          sx={{ width: 500, height: 450 }}
+          variant="quilted"
+          cols={4}
+          rowHeight={121}
+        >
+          {itemData.map((item) => (
+            <MUIImageListItem
+              key={item.img}
+              cols={item.cols || 1}
+              rows={item.rows || 1}
+            >
+              <img
+                {...srcset(item.img, 121, item.rows, item.cols)}
+                alt={item.title}
+                loading="lazy"
+              />
+            </MUIImageListItem>
+          ))}
+        </MUIImageList>
+      </MUIBox>
     </features>
   );
 });

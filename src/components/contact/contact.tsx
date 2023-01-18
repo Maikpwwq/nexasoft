@@ -97,6 +97,8 @@ export default component$(() => {
               <MUIInputLabel htmlFor="form-message">Mensaje: </MUIInputLabel>
               <MUIInput
                 id="form-message"
+                multiline={true}
+                rows={3}
                 value={store.message}
                 onChange$={() => {}}
               />
