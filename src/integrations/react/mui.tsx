@@ -1,50 +1,60 @@
 /** @jsxImportSource react */
 import { qwikify$ } from "@builder.io/qwik-react";
-import { Box, Button, Slider, Typography, Paper } from "@mui/material";
+import {
+  Box,
+  Button,
+  Slider,
+  Typography,
+  Paper,
+  ImageList,
+  ImageListItem,
+  Card,
+  CardContent,
+  CardMedia,
+  Stack,
+  FormControl,
+  Input,
+  InputLabel,
+} from "@mui/material";
+import {
+  Devices,
+  Laptop,
+  PhoneAndroid,
+  PhoneIphone,
+  Web,
+  Place,
+  ContactPage,
+  MailOutline,
+  InsertDriveFile,
+  WhatsApp,
+  Instagram,
+  Facebook,
+}
+from "@mui/icons-material";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Stack from "@mui/material/Stack";
-import FormControl from "@mui/material/FormControl";
-import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
-import DevicesIcon from "@mui/icons-material/Devices";
-import LaptopIcon from "@mui/icons-material/Laptop";
-import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import WebIcon from "@mui/icons-material/Web";
+
 // import PushPinIcon from '@mui/icons-material/PushPin';
-import PlaceIcon from "@mui/icons-material/Place";
 // import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 // import MyLocationIcon from '@mui/icons-material/MyLocation';
 // import PermMediaIcon from '@mui/icons-material/PermMedia';
-import ContactPageIcon from "@mui/icons-material/ContactPage";
 // import LocationOnIcon from '@mui/icons-material/LocationOn';
 // import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
 // import AttachFileIcon from '@mui/icons-material/AttachFile';
 // import EmojiTransportationIcon from '@mui/icons-material/EmojiTransportation';
-import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
 
-export const MUIDevicesIcon = qwikify$(DevicesIcon);
-export const MUILaptopIcon = qwikify$(LaptopIcon);
-export const MUIPhoneAndroidIcon = qwikify$(PhoneAndroidIcon);
-export const MUIPhoneIphoneIcon = qwikify$(PhoneIphoneIcon);
-export const MUIWebIcon = qwikify$(WebIcon);
-export const MUIPlaceIcon = qwikify$(PlaceIcon);
-export const MUIContactPageIcon = qwikify$(ContactPageIcon);
-// export const MUIAlternateEmailIcon = qwikify$(AlternateEmailIcon);
-export const MUIMailOutlineIcon = qwikify$(MailOutlineIcon);
-export const MUIInsertDriveFileIcon = qwikify$(InsertDriveFileIcon);
-export const MUIWhatsAppIcon = qwikify$(WhatsAppIcon);
-export const MUIInstagramIcon = qwikify$(InstagramIcon);
-export const MUIFacebookIcon = qwikify$(FacebookIcon);
+export const MUIDevicesIcon = qwikify$(Devices);
+export const MUILaptopIcon = qwikify$(Laptop);
+export const MUIPhoneAndroidIcon = qwikify$(PhoneAndroid);
+export const MUIPhoneIphoneIcon = qwikify$(PhoneIphone);
+export const MUIWebIcon = qwikify$(Web);
+export const MUIPlaceIcon = qwikify$(Place);
+export const MUIContactPageIcon = qwikify$(ContactPage);
+// export const MUIAlternateEmailIcon = qwikify$(AlternateEmail);
+export const MUIMailOutlineIcon = qwikify$(MailOutline);
+export const MUIInsertDriveFileIcon = qwikify$(InsertDriveFile);
+export const MUIWhatsAppIcon = qwikify$(WhatsApp);
+export const MUIInstagramIcon = qwikify$(Instagram);
+export const MUIFacebookIcon = qwikify$(Facebook);
 
 // import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
 // import ChargingStationIcon from '@mui/icons-material/ChargingStation';
