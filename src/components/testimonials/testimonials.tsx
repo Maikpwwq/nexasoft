@@ -1,22 +1,18 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { qwikify$ } from "@builder.io/qwik-react";
+
 import styles from "./testimonials.css?inline";
 
 import ComunidadDezzpoLogo from "../../assets/img/logos/Comunidad-Dezzpo.jpg";
 import WaviPixelLogo from "../../assets/img/logos/WaviPixelLogo.png";
 import NagaLogo from "../../assets/img/logos/WaviPixelLogo.png";
 
-import CardMedia from "@mui/material/CardMedia";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-
-export const MUIBox = qwikify$(Box);
-export const MUICard = qwikify$(Card);
-export const MUICardMedia = qwikify$(CardMedia);
-export const MUICardContent = qwikify$(CardContent);
-export const MUITypography = qwikify$(Typography);
+import {
+  MUITypography,
+  MUIBox,
+  MUICard,
+  MUICardContent,
+  MUICardMedia,
+} from "~/integrations/react/mui";
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -61,7 +57,7 @@ export default component$(() => {
                 elevation={16}
               >
                 <MUICardMedia>
-                  <img src={logo} alt={name} height="194"/>
+                  <img src={logo} alt={name} height="194" />
                 </MUICardMedia>
                 <MUICardContent>
                   <MUITypography

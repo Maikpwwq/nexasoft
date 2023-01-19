@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-// import { qwikify$ } from "@builder.io/qwik-react";
 import type { DocumentHead } from "@builder.io/qwik-city";
 // import { Link } from "@builder.io/qwik-city";
 

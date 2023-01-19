@@ -1,24 +1,15 @@
 import { component$, useStylesScoped$, useStore } from "@builder.io/qwik";
-import { qwikify$ } from "@builder.io/qwik-react";
 import styles from "./contact.css?inline";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Stack from "@mui/material/Stack";
-import FormControl from "@mui/material/FormControl";
-import Input from "@mui/material/Input";
-import InputLabel from "@mui/material/InputLabel";
-import Typography from "@mui/material/Typography";
-export const MUIButton = qwikify$(Button);
-export const MUIBox = qwikify$(Box);
-export const MUICard = qwikify$(Card);
-export const MUICardContent = qwikify$(CardContent);
-export const MUIStack = qwikify$(Stack);
-export const MUIFormControl = qwikify$(FormControl);
-export const MUIInput = qwikify$(Input);
-export const MUIInputLabel = qwikify$(InputLabel);
-export const MUITypography = qwikify$(Typography);
+import {
+  MUITypography,
+  MUIButton, 
+  MUICard ,
+  MUICardContent ,
+  MUIStack ,
+  MUIFormControl ,
+  MUIInput ,
+  MUIInputLabel ,
+} from "~/integrations/react/mui";
 
 export default component$(() => {
   useStylesScoped$(styles);

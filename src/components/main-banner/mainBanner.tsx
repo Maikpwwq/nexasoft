@@ -6,7 +6,6 @@ import {
   // useTask$,
 } from "@builder.io/qwik";
 // import { isServer, isBrowser } from "@builder.io/qwik/build";
-import { qwikify$ } from "@builder.io/qwik-react";
 import styles from "./mainBanner.css?inline";
 
 import SolucionesSoftware from "../../assets/img/banners/Soluciones empresariales de software.png";
@@ -14,22 +13,16 @@ import Negociosdigitales from "../../assets/img/banners/Crecimiento y eficiencia
 import ModernizarPlataformas from "../../assets/img/banners/Modernizar y optimizar tus plataformas.png";
 import SoftwarePersonalizado from "../../assets/img/banners/Soluciones de software personalizadas.png";
 
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+import {
+  MUIBox,
+  //MUIButton
+} from "~/integrations/react/mui";
+
 // import MobileStepper from "@mui/material/MobileStepper";
 // import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 // import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 // import SwipeableViews from "react-swipeable-views";
 // import { bindKeyboard } from "react-swipeable-views-utils";
-// import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
-// import ChargingStationIcon from '@mui/icons-material/ChargingStation';
-// import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
-// import BoltIcon from '@mui/icons-material/Bolt';
-// import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
-// import TabIcon from '@mui/icons-material/Tab';
-
-// import RollerSkatingIcon from '@mui/icons-material/RollerSkating';
-// import AddBoxIcon from '@mui/icons-material/AddBox';
 
 // export const CustomSwipeableViews = component$(() => {
 //   const BindKeyboardSwipeableViews = bindKeyboard(SwipeableViews);
@@ -37,11 +30,7 @@ import Box from "@mui/material/Box";
 // });
 
 // export const MUICustomSwipeableViews = qwikify$(CustomSwipeableViews);
-
 // export const MUISwipeableViews = qwikify$(SwipeableViews);
-export const MUIBox = qwikify$(Box);
-export const MUIButton = qwikify$(Button);
-
 // export const MUIMobileStepper = qwikify$(MobileStepper);
 // export const MUIKeyboardArrowLeft = qwikify$(KeyboardArrowLeft);
 // export const MUIKeyboardArrowRight = qwikify$(KeyboardArrowRight);

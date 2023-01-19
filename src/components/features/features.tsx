@@ -1,5 +1,4 @@
 import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import { qwikify$ } from "@builder.io/qwik-react";
 import styles from "./features.css?inline";
 
 import AplicacionesMoviles from "../../assets/img/lista imagenes/Aplicaciones móviles.jpg";
@@ -21,28 +20,17 @@ import RemoteOffice from "../../assets/img/lista imagenes/remote office.jpg";
 import SeguridadInformatica from "../../assets/img/lista imagenes/Seguridad informática.jpg";
 import Tecnologia from "../../assets/img/lista imagenes/Tecnología.jpg";
 
-import Box from "@mui/material/Box";
-
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import Typography from "@mui/material/Typography";
-
-import DevicesIcon from "@mui/icons-material/Devices";
-import LaptopIcon from "@mui/icons-material/Laptop";
-import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import WebIcon from "@mui/icons-material/Web";
-export const MUIDevicesIcon = qwikify$(DevicesIcon);
-export const MUILaptopIcon = qwikify$(LaptopIcon);
-export const MUIPhoneAndroidIcon = qwikify$(PhoneAndroidIcon);
-export const MUIPhoneIphoneIcon = qwikify$(PhoneIphoneIcon);
-export const MUIWebIcon = qwikify$(WebIcon);
-
-export const MUIBox = qwikify$(Box);
-
-export const MUITypography = qwikify$(Typography);
-export const MUIImageList = qwikify$(ImageList);
-export const MUIImageListItem = qwikify$(ImageListItem);
+import {
+  MUIBox,
+  MUITypography,
+  MUIImageList,
+  MUIImageListItem,
+  MUIDevicesIcon,
+  MUILaptopIcon,
+  MUIPhoneAndroidIcon,
+  MUIPhoneIphoneIcon,
+  MUIWebIcon,
+} from "~/integrations/react/mui";
 
 export const itemData = [
   {
@@ -212,7 +200,7 @@ export default component$(() => {
           cols={4}
           rowHeight={121}
         >
-          {itemData.map((item) => (
+          {!!itemData && itemData.map((item) => (
             <MUIImageListItem
               key={item.img}
               cols={item.cols || 1}
