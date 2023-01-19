@@ -8,10 +8,10 @@ import {
 // import { isServer, isBrowser } from "@builder.io/qwik/build";
 import styles from "./mainBanner.css?inline";
 
-import SolucionesSoftware from "../../assets/img/banners/Soluciones empresariales de software.png";
+import SoftwarePersonalizado from "../../assets/img/banners/Soluciones de software personalizadas.png";
 import Negociosdigitales from "../../assets/img/banners/Crecimiento y eficiencia de negocios digitales.png";
 import ModernizarPlataformas from "../../assets/img/banners/Modernizar y optimizar tus plataformas.png";
-import SoftwarePersonalizado from "../../assets/img/banners/Soluciones de software personalizadas.png";
+import SolucionesSoftware from "../../assets/img/banners/Soluciones empresariales de software.png";
 
 import {
   MUIBox,
@@ -45,8 +45,8 @@ export default component$(() => {
   const bannerImg = [
     {
       id: 0,
-      img: SolucionesSoftware,
-      description: "Soluciones empresariales de software.",
+      img: SoftwarePersonalizado,
+      description: "Soluciones de software personalizadas.",
     },
     {
       id: 1,
@@ -60,8 +60,8 @@ export default component$(() => {
     },
     {
       id: 3,
-      img: SoftwarePersonalizado,
-      description: "Soluciones de software personalizadas.",
+      img: SolucionesSoftware,
+      description: "Soluciones empresariales de software.",
     },
   ];
 
