@@ -30,7 +30,7 @@ body {
 }
 
 main {
-  max-width: 760px;
+  max-width: 999px;
   margin: 0 auto;
   background-color: white;
   border-radius: 5px;

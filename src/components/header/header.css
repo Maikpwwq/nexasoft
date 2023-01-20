@@ -4,6 +4,11 @@ header {
   border-bottom: 10px solid var(--qwik-dark-purple);
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 header .logo a {
   display: inline-block;
   padding: 10px 10px 7px 20px;

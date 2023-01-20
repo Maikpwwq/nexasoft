@@ -34,7 +34,7 @@ export default component$(() => {
         elevation={16}
       >
         <MUICardContent className="flex flex-col items-center">
-          <MUITypography variant="h6">Formulario de contacto</MUITypography>
+          <MUITypography variant="h6" color={"var(--qwik-dark-blue)"}>Formulario de contacto</MUITypography>
           <MUITypography variant="body1" className="pt-2" align="center">
             Solicita información adicional o una presentación de nuestros
             servicios.

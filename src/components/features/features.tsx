@@ -142,10 +142,11 @@ export default component$(() => {
         component="div"
         align="center"
         className="pt-6"
+        color={"var(--qwik-dark-blue)"}
       >
         ¿Estás cansado de lidiar con plataformas antiguas y poco eficientes?{" "}
       </MUITypography>
-      <MUITypography className="mt-6 mb-6" variant="body1">
+      <MUITypography className="mt-6 mb-6 pb-6" variant="body1">
         <br />
         <strong>NexaSoft</strong> ofrece soluciones empresariales de software
         que te ayudarán a mejorar tu negocio. Con nuestros servicios de{" "}
@@ -195,24 +196,25 @@ export default component$(() => {
       </MUITypography>
       <MUIBox className="w-100 flex justify-center">
         <MUIImageList
-          sx={{ width: 500, height: 450 }}
+          sx={{ width: { md: 500 }, height: { md: 600 } }}
           variant="quilted"
           cols={4}
           rowHeight={121}
         >
-          {!!itemData && itemData.map((item) => (
-            <MUIImageListItem
-              key={item.img}
-              cols={item.cols || 1}
-              rows={item.rows || 1}
-            >
-              <img
-                {...srcset(item.img, 121, item.rows, item.cols)}
-                alt={item.title}
-                loading="lazy"
-              />
-            </MUIImageListItem>
-          ))}
+          {!!itemData &&
+            itemData.map((item) => (
+              <MUIImageListItem
+                key={item.img}
+                cols={item.cols || 1}
+                rows={item.rows || 1}
+              >
+                <img
+                  {...srcset(item.img, 121, item.rows, item.cols)}
+                  alt={item.title}
+                  loading="lazy"
+                />
+              </MUIImageListItem>
+            ))}
         </MUIImageList>
       </MUIBox>
     </features>

@@ -41,12 +41,12 @@ export default component$(() => {
   return (
     <testimonials id="testimonials-section">
       <div>
-        <MUITypography variant="h6" align="center">
+        <MUITypography variant="h6" align="center" color={"var(--qwik-dark-blue)"}>
           Testimonios y comentarios de clientes satisfechos.
         </MUITypography>
         <MUIBox
-          className="flex"
-          sx={{ flexDirection: { md: "row", xs: "column" } }}
+          className="flex items-center"
+          sx={{ flexDirection: { md: "row", sm: "row", xs: "column" } }}
         >
           {testimonials.map(({ message, name, logo }) => {
             return (

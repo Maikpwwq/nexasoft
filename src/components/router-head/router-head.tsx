@@ -6,7 +6,7 @@ import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
  */
 export const RouterHead = component$(() => {
   const head = useDocumentHead();
-  head.title = "nexasoft";
+  head.title = "NexaSoft";
   const loc = useLocation();
 
   return (

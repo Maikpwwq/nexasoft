@@ -15,12 +15,12 @@ import SolucionesSoftware from "../../assets/img/banners/Soluciones empresariale
 
 import {
   MUIBox,
-  //MUIButton
+  // MUIMobileStepper,
+  // MUIKeyboardArrowLeft,
+  // MUIKeyboardArrowRight,
+  // MUIButton
 } from "~/integrations/react/mui";
 
-// import MobileStepper from "@mui/material/MobileStepper";
-// import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-// import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 // import SwipeableViews from "react-swipeable-views";
 // import { bindKeyboard } from "react-swipeable-views-utils";
 
@@ -31,13 +31,10 @@ import {
 
 // export const MUICustomSwipeableViews = qwikify$(CustomSwipeableViews);
 // export const MUISwipeableViews = qwikify$(SwipeableViews);
-// export const MUIMobileStepper = qwikify$(MobileStepper);
-// export const MUIKeyboardArrowLeft = qwikify$(KeyboardArrowLeft);
-// export const MUIKeyboardArrowRight = qwikify$(KeyboardArrowRight);
 
 export default component$(() => {
   useStylesScoped$(styles);
-  // const theme = { direction: "rtl" };
+  //const theme = { direction: "rtl" };
   const maxSteps = 3; // imagenes.length
   const changeTime = 10000;
   const store = useStore({ count: 0 });
@@ -143,8 +140,8 @@ export default component$(() => {
               )}
             </MUIButton>
           }
-        /> */}
-      </MUIBox>
+        />*/}
+      </MUIBox> 
     </mainbanner>
   );
 });
