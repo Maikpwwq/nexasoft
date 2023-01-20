@@ -68,6 +68,7 @@ export default component$(() => {
                     {/* sx={{ fontSize: 14 }} color="text.secondary" gutterBottom */}
                     {message}
                   </MUITypography>
+                  <MUITypography variant="body1" fontWeight={"bold"}>{name}</MUITypography>
                 </MUICardContent>
               </MUICard>
             );
