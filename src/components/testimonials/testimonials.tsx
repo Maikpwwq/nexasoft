@@ -23,32 +23,39 @@ export default component$(() => {
         "Trabajar con NexaSoft fue una experiencia increíble. Al modernizar la plataforma, hemos podido atender mejor a nuestros clientes y aumentar nuestras ventas.",
       name: "WaviAeronautics",
       logo: WaviPixelLogo,
+      webSite: "https://wavi-aeronautics-drones.web.app/",
     },
     {
       message:
         "NexaSoft nos ayudó a mejorar la productividad de nuestros sistemas existentes, ahora confiamos en ellos el mantenimiento de nuestros sistemas, conociendo que estarán disponibles en todo momento y podremos cumplir con los plazos de entrega.",
       name: "Naga Regeneración de Aguas",
       logo: NagaLogo,
+      webSite: "https://maikpwwq.github.io/",
     },
     {
       message:
         "NexaSoft ha superado nuestras expectativas con sus servicios de desarrollo de aplicaciones móviles. Hemos reducido costos operativos de manera significativa. Además, la aplicación es fácil de usar y ha sido muy bien recibida por nuestros usuarios finales.",
       name: "Comunidad Dezzpo",
       logo: ComunidadDezzpoLogo,
+      webSite: "https://maikpwwq.github.io/",
     },
   ];
 
   return (
     <testimonials id="testimonials-section">
       <div>
-        <MUITypography variant="h6" align="center" color={"var(--qwik-dark-blue)"}>
+        <MUITypography
+          variant="h6"
+          align="center"
+          color={"var(--qwik-dark-blue)"}
+        >
           Testimonios y comentarios de clientes satisfechos.
         </MUITypography>
         <MUIBox
           className="flex items-center"
           sx={{ flexDirection: { md: "row", sm: "row", xs: "column" } }}
         >
-          {testimonials.map(({ message, name, logo }) => {
+          {testimonials.map(({ message, name, logo, webSite }) => {
             return (
               <MUICard
                 key={name}
@@ -68,7 +75,9 @@ export default component$(() => {
                     {/* sx={{ fontSize: 14 }} color="text.secondary" gutterBottom */}
                     {message}
                   </MUITypography>
-                  <MUITypography variant="body1" fontWeight={"bold"}>{name}</MUITypography>
+                  <MUITypography variant="body1" fontWeight={"bold"}>
+                    <a href={webSite}>{name}</a>{" "}
+                  </MUITypography>
                 </MUICardContent>
               </MUICard>
             );

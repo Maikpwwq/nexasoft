@@ -44,7 +44,7 @@ export default component$(() => {
             <MUIBox className="flex flex-row justify-center">
               <MUIMailOutlineIcon />
               <a
-                href="mailto:mariasf@correo.udistrital.edu.co"
+                href="mailto:nexasoftprofessionalsolutions@gmail.com"
                 target="_blank"
                 title="mail"
               >

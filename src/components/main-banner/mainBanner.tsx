@@ -78,17 +78,17 @@ export default component$(() => {
       <MUIBox sx={{ width: "100%", flexGrow: 1 }}>
         <MUIBox
           className="flex flex-row"
-          sx={{ width: "100%", flexGrow: 1, position: "relative" }}
+          sx={{ width: "100%", flexGrow: 1, position: "relative", minHeight: "16rem" }}
         >
           {!!bannerImg &&
             bannerImg.map((element) => {
               const { img, description, id } = element;
               return (
-                <>
-                  {img && id == store.count && (
-                    <img class="slider" src={img} alt={description} key={id} />
-                  )}
-                </>
+                <MUIBox key={id} className="">
+                  {id === store.count && (
+                    <img class="slider" src={img} alt={description}  />
+                  ) }
+                </MUIBox>
               );
             })}
         </MUIBox>
@@ -141,7 +141,7 @@ export default component$(() => {
             </MUIButton>
           }
         />*/}
-      </MUIBox> 
+      </MUIBox>
     </mainbanner>
   );
 });
