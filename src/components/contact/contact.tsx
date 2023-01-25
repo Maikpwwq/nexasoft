@@ -1,18 +1,51 @@
-import { component$, useStylesScoped$, useStore } from "@builder.io/qwik";
+import {
+  component$,
+  useStylesScoped$,
+  useStore,
+  useClientEffect$,
+  useResource$,
+} from "@builder.io/qwik";
 import styles from "./contact.css?inline";
+// import connectDB from "../../mongodb/db";
+import { getContacts } from "../../mongodb/queries";
+
 import {
   MUITypography,
-  MUIButton, 
-  MUICard ,
-  MUICardContent ,
-  MUIStack ,
-  MUIFormControl ,
-  MUIInput ,
-  MUIInputLabel ,
+  MUIButton,
+  MUICard,
+  MUICardContent,
+  MUIStack,
+  MUIFormControl,
+  MUIInput,
+  MUIInputLabel,
 } from "~/integrations/react/mui";
+
+export const mongo = async () => {
+  const data = await getContacts(); // connectDB();
+  try {
+    console.log("data", data);
+    // data
+    //   .then((response) => {
+    //     console.log("response", response);
+    //     // const {s} = response;
+    //     // console.log("response2", s.db);
+    //   })
+    //   .catch((err) => {
+    //     console.error("Mongodb connect error", err);
+    //   });
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 export default component$(() => {
   useStylesScoped$(styles);
+
+  const response = useResource$(mongo);
+
+  useClientEffect$(() => {
+    console.log("finalData", response.loading); //.value
+  });
 
   const store = useStore({
     name: "",
@@ -34,7 +67,9 @@ export default component$(() => {
         elevation={16}
       >
         <MUICardContent className="flex flex-col items-center">
-          <MUITypography variant="h6" color={"var(--qwik-dark-blue)"}>Formulario de contacto</MUITypography>
+          <MUITypography variant="h6" color={"var(--qwik-dark-blue)"}>
+            Formulario de contacto
+          </MUITypography>
           <MUITypography variant="body1" className="pt-2" align="center">
             Solicita información adicional o una presentación de nuestros
             servicios.
