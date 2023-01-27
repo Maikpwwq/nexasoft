@@ -18,9 +18,13 @@ import {
   MUIInputLabel,
 } from "~/integrations/react/mui";
 
+// use the correct URL to connect 
+// dev  http://localhost:5173/api/allnames/
+// prod  https://nexasoft.netlify.app/api/allnames/
+
 export const mongo = async () => {
   // let results =
-  fetch("http://localhost:5173/api/allnames/") //  http://localhost:5173/api/allnames/  /.netlify/functions/get_contacts
+  fetch("https://nexasoft.netlify.app/api/allnames/") //  http://localhost:5173/api/allnames/  /.netlify/functions/get_contacts
     .then((res) => {
       console.log("MongoRes", res);
       // res.json();

@@ -1,9 +1,5 @@
 [build]
 publish = "dist"
-command = "npm run build"
+command = "pnpm build"
 targetPort = "5173"
 
-[[redirects]]
-from="/api/allnames"
-to="/.netlify/functions/get_contacts"
-status=200
