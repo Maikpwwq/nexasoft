@@ -6,8 +6,6 @@ import {
   useResource$,
 } from "@builder.io/qwik";
 import styles from "./contact.css?inline";
-// import connectDB from "../../mongodb/db";
-import { getContacts } from "../../mongodb/queries";
 
 import {
   MUITypography,
@@ -21,21 +19,30 @@ import {
 } from "~/integrations/react/mui";
 
 export const mongo = async () => {
-  const data = await getContacts(); // connectDB();
-  try {
-    console.log("data", data);
-    // data
-    //   .then((response) => {
-    //     console.log("response", response);
-    //     // const {s} = response;
-    //     // console.log("response2", s.db);
-    //   })
-    //   .catch((err) => {
-    //     console.error("Mongodb connect error", err);
-    //   });
-  } catch (err) {
-    console.log(err);
-  }
+  // let results =
+  fetch("http://localhost:5173/api/allnames/") //  http://localhost:5173/api/allnames/  /.netlify/functions/get_contacts
+    .then((res) => {
+      console.log("MongoRes", res);
+      // res.json();
+    })
+    .then((docs) => {
+      console.log("docs", docs);
+    });
+  // const data = await getContacts(); // connectDB();
+  // try {
+  //   console.log("data", data);
+  // data
+  //   .then((response) => {
+  //     console.log("response", response);
+  //     // const {s} = response;
+  //     // console.log("response2", s.db);
+  //   })
+  //   .catch((err) => {
+  //     console.error("Mongodb connect error", err);
+  //   });
+  // } catch (err) {
+  //   console.log(err);
+  // }
 };
 
 export default component$(() => {
@@ -44,7 +51,7 @@ export default component$(() => {
   const response = useResource$(mongo);
 
   useClientEffect$(() => {
-    console.log("finalData", response.loading); //.value
+    console.log("finalData", response.loading, response.value); //.value
   });
 
   const store = useStore({
