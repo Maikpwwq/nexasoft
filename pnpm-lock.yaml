@@ -1394,7 +1394,7 @@ packages:
       ajv: 6.12.6
       debug: 4.3.4
       espree: 9.4.1
-      globals: 13.19.0
+      globals: 13.20.0
       ignore: 5.2.4
       import-fresh: 3.3.0
       js-yaml: 4.1.0
@@ -5337,7 +5337,7 @@ packages:
       file-entry-cache: 6.0.1
       find-up: 5.0.0
       glob-parent: 6.0.2
-      globals: 13.19.0
+      globals: 13.20.0
       grapheme-splitter: 1.0.4
       ignore: 5.2.4
       import-fresh: 3.3.0
@@ -6315,8 +6315,8 @@ packages:
       ini: 2.0.0
     dev: true
 
-  /globals/13.19.0:
-    resolution: {integrity: sha512-dkQ957uSRWHw7CFXLUtUHQI3g3aWApYhfNR2O6jn/907riyTYKVBmxYVROkBcY614FSSeSJh7Xm7SrUWCxvJMQ==}
+  /globals/13.20.0:
+    resolution: {integrity: sha512-Qg5QtVkCy/kv3FUSlu4ukeZDVf9ee0iXLAUYX13gbR17bnejFTzr4iS9bY7kwCf1NztRNm1t91fjOiyx4CSwPQ==}
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.20.2
@@ -10262,8 +10262,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup/3.11.0:
-    resolution: {integrity: sha512-+uWPPkpWQ2H3Qi7sNBcRfhhHJyUNgBYhG4wKe5wuGRj2m55kpo+0p5jubKNBjQODyPe6tSBE3tNpdDwEisQvAQ==}
+  /rollup/3.12.0:
+    resolution: {integrity: sha512-4MZ8kA2HNYahIjz63rzrMMRvDqQDeS9LoriJvMuV0V6zIGysP36e9t4yObUfwdT9h/szXoHQideICftcdZklWg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -11725,7 +11725,7 @@ packages:
       esbuild: 0.16.17
       postcss: 8.4.21
       resolve: 1.22.1
-      rollup: 3.11.0
+      rollup: 3.12.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

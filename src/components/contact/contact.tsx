@@ -21,6 +21,7 @@ import {
 // use the correct URL to connect 
 // dev  http://localhost:5173/api/allnames/
 // prod  https://nexasoft.netlify.app/api/allnames/
+// serverless functions /.netlify/functions/get_contacts
 
 export const mongo = async () => {
   // let results =
