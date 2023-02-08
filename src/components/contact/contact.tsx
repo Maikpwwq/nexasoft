@@ -19,35 +19,20 @@ import {
 } from "~/integrations/react/mui";
 
 // use the correct URL to connect 
-// dev  http://localhost:5173/api/allnames/
+// dev  http://localhost:5173/api/get_contacts/
 // prod  https://nexasoft.netlify.app/api/allnames/
 // serverless functions /.netlify/functions/get_contacts
 
 export const mongo = async () => {
   // let results =
-  fetch("https://nexasoft.netlify.app/api/allnames/") //  http://localhost:5173/api/allnames/  /.netlify/functions/get_contacts
-    .then((res) => {
-      console.log("MongoRes", res);
-      // res.json();
-    })
-    .then((docs) => {
-      console.log("docs", docs);
-    });
-  // const data = await getContacts(); // connectDB();
-  // try {
-  //   console.log("data", data);
-  // data
-  //   .then((response) => {
-  //     console.log("response", response);
-  //     // const {s} = response;
-  //     // console.log("response2", s.db);
+  // fetch("http://localhost:8888/api/get_contacts/")
+  //   .then((res) => {
+  //     console.log("MongoRes", res);
+  //     // res.json();
   //   })
-  //   .catch((err) => {
-  //     console.error("Mongodb connect error", err);
+  //   .then((docs) => {
+  //     console.log("docs", docs);
   //   });
-  // } catch (err) {
-  //   console.log(err);
-  // }
 };
 
 export default component$(() => {

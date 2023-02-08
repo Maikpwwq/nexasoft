@@ -1,8 +1,12 @@
-// import { Handler } from '@netlify/functions'
-import { MongoClient } from "mongodb"; // , ServerApiVersion
-import * as dotenv from "dotenv";
+/* eslint-disable @typescript-eslint/no-var-requires */
+// import type { Handler } from "@netlify/functions"; // , HandlerEvent, HandlerContext
+// import { MongoClient } from "mongodb"; // , ServerApiVersion
+// import * as dotenv from "dotenv";
+// const { Handler } = require("@netlify/functions");
+const { MongoClient } = require("mongodb");
+require("dotenv").config();
 
-dotenv.config();
+// dotenv.config();
 
 // Variables de entorno
 const DB_USER = process.env.VITE_DB_USER;
@@ -28,8 +32,8 @@ const clientPromise = mongoClient.connect();
 
 // let connection = null;
 
-// export const handler: Handler = async (event, context) => {
-export const handler = async () => {
+// export const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
+const handler = async () => {
   // const { name = 'stranger' } = event.queryStringParameters
 
   // return {
@@ -59,4 +63,5 @@ export const handler = async () => {
   //   }
 };
 
-handler().catch(console.dir);
+export { handler };
+// handler().catch(console.dir);
