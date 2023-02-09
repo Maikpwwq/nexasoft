@@ -23,15 +23,16 @@ import {
 // prod  https://nexasoft.netlify.app/.netlify/functions/get_contacts/
 
 export const mongo = async () => {
-  // let results = ""; 8888
-  await fetch("https://nexasoft.netlify.app/.netlify/functions/get_contacts/")
-    .then((res) => {
-      console.log("MongoRes", res);
-      // res.json();
-    })
-    .then((docs) => {
-      console.log("My-docs", docs);
-    });
+  // let results = ""; 
+  // await fetch("http://localhost:8888/.netlify/functions/get_contacts/")
+  // await fetch("https://nexasoft.netlify.app/.netlify/functions/get_contacts/")
+  //   .then((res) => {
+  //     console.log("MongoRes", res);
+  //     // res.json();
+  //   })
+  //   .then((docs) => {
+  //     console.log("My-docs", docs);
+  //   });
 };
 
 export default component$(() => {
