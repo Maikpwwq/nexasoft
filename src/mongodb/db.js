@@ -13,7 +13,7 @@ const MONGO_HOST = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}?retryWrit
 
 console.log("MONGO_HOST", MONGO_HOST); // Funciona
 
-export const mongoClient = new MongoClient(MONGO_HOST, {
+const mongoClient = new MongoClient(MONGO_HOST, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverApi: ServerApiVersion.v1,
@@ -45,6 +45,4 @@ const connectDB = async () => {
   //   }
 };
 
-export default connectDB;
-
-
+export { mongoClient, connectDB };

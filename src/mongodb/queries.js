@@ -1,6 +1,6 @@
 "use strict";
 
-import connectDB, { client } from "./db"; //
+import { connectDB, client } from "./db"; //
 // import { ObjectID } from "mongodb";
 
 const DB_NAME = import.meta.env.VITE_DB_NAME;

@@ -1,14 +1,22 @@
 [build]
 publish = "dist"
-command = "npm run build"
+command = "pnpm build"
 functions = "netlify/functions"
 
+[dev]
+targetPort = 5173
+command = "pnpm start"
+publish = "dist"
+framework = "qwik"
+
 [functions]
+node_bundler = "esbuild"
 directory = "netlify/functions"
 
 [[redirects]]
 from = "/api/get_contacts/*"
 to = "/.netlify/functions/get_contacts"
 status = "200"
+
 
  

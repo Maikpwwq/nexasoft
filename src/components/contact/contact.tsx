@@ -18,21 +18,20 @@ import {
   MUIInputLabel,
 } from "~/integrations/react/mui";
 
-// use the correct URL to connect 
-// dev  http://localhost:5173/api/get_contacts/
-// prod  https://nexasoft.netlify.app/api/allnames/
-// serverless functions /.netlify/functions/get_contacts
+// use the correct URL to connect serverless functions
+// dev  http://localhost:8888/.netlify/functions/get_contacts/
+// prod  https://nexasoft.netlify.app/.netlify/functions/get_contacts/
 
 export const mongo = async () => {
-  // let results =
-  // fetch("http://localhost:8888/api/get_contacts/")
-  //   .then((res) => {
-  //     console.log("MongoRes", res);
-  //     // res.json();
-  //   })
-  //   .then((docs) => {
-  //     console.log("docs", docs);
-  //   });
+  // let results = ""; 8888
+  await fetch("https://nexasoft.netlify.app/.netlify/functions/get_contacts/")
+    .then((res) => {
+      console.log("MongoRes", res);
+      // res.json();
+    })
+    .then((docs) => {
+      console.log("My-docs", docs);
+    });
 };
 
 export default component$(() => {

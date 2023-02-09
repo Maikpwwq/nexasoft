@@ -16,7 +16,7 @@ import { join } from "node:path";
 import compression from "compression";
 
 // import { getContacts } from "./mongodb/queries";
-import connectDB from "./mongodb/db";
+import { connectDB } from "./mongodb/db";
 
 // Directories where the static assets are located
 const distDir = join(fileURLToPath(import.meta.url), "..", "..", "dist");

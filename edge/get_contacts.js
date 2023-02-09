@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // import type { Handler } from "@netlify/functions"; // , HandlerEvent, HandlerContext
-// import { MongoClient } from "mongodb"; // , ServerApiVersion
-// import * as dotenv from "dotenv";
+import { MongoClient } from "mongodb"; // , ServerApiVersion
+import * as dotenv from "dotenv";
+// import { config } from "dotenv";
 // const { Handler } = require("@netlify/functions");
-const { MongoClient } = require("mongodb");
-require("dotenv").config();
+//const { MongoClient } = require("mongodb");
+// require("dotenv").config();
 
-// dotenv.config();
+dotenv.config();
 
 // Variables de entorno
 const DB_USER = process.env.VITE_DB_USER;
@@ -21,7 +22,8 @@ const MONGO_HOST = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}?retryWrit
 
 console.log("MONGO_HOST", MONGO_HOST); // Funciona
 
-export const mongoClient = new MongoClient(MONGO_HOST);
+const mongoClient = new MongoClient(MONGO_HOST);
+// exports.mongoClient = new MongoClient(MONGO_HOST);
 // , {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
@@ -30,10 +32,13 @@ export const mongoClient = new MongoClient(MONGO_HOST);
 
 const clientPromise = mongoClient.connect();
 
+// const config = { path: "/api/get_contacts/" };
+
 // let connection = null;
 
 // export const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
-const handler = async () => {
+const handler = async (request, context) => {
+  // exports.handler = async () => {
   // const { name = 'stranger' } = event.queryStringParameters
 
   // return {
@@ -49,13 +54,12 @@ const handler = async () => {
     console.log("[db] Conectada con éxito", database);
     const collection = database.collection(MONGODB_COLLECTION);
     const results = await collection.find({}).toArray();
-    return {
-      statusCode: 200,
-      body: JSON.stringify(results),
-    };
-  } catch (err: any) {
+    return new Response(JSON.stringify(results), {
+      status: 200,
+    });
+  } catch (err) {
     console.error("[db] Error", MONGO_HOST, err);
-    return { statusCode: 500, body: err.toString() };
+    return new Response(err.toString(), { status: 500 }); //
   }
   //   finally {
   //     // Ensures that the client will close when you finish/error
@@ -63,5 +67,5 @@ const handler = async () => {
   //   }
 };
 
-export { handler };
+export { mongoClient, handler }; // , config
 // handler().catch(console.dir);
