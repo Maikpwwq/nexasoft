@@ -1,21 +1,8 @@
 [build]
 publish = "dist"
 command = "pnpm build"
-edge_functions = "netlify/edge-functions"
 
 [dev]
 command = "pnpm start"
 publish = "dist"
 
-[functions]
-node_bundler = "esbuild"
-
-[[redirects]]
-from = "/api/get_contacts/*"
-to = "/.netlify/edge-functions/get_contacts"
-status = "200"
-
-[[edge_functions]]
-path = "/api/get_contacts/"
-function = "get_contacts"
- 

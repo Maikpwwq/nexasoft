@@ -25,14 +25,14 @@ import {
 export const mongo = async () => {
   // let results = ""; 
   // await fetch("http://localhost:8888/api/get_contacts/")
-  await fetch("https://nexasoft.netlify.app/api/get_contacts/")
-    .then((res) => {
-      console.log("MongoRes", res);
-      // res.json();
-    })
-    .then((docs) => {
-      console.log("My-docs", docs);
-    });
+  // await fetch("https://nexasoft.netlify.app/api/get_contacts/")
+  //   .then((res) => {
+  //     console.log("MongoRes", res);
+  //     // res.json();
+  //   })
+  //   .then((docs) => {
+  //     console.log("My-docs", docs);
+  //   });
 };
 
 export default component$(() => {
