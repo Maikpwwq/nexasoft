@@ -1,1 +1,2 @@
 /api/get_contacts/* /.netlify/edge-functions/get_contacts
+/api/get_contacts/* /.netlify/functions/get_contacts
