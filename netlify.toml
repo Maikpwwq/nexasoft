@@ -1,22 +1,21 @@
 [build]
 publish = "dist"
 command = "pnpm build"
-functions = "netlify/functions"
+edge_functions = "netlify/edge-functions"
 
 [dev]
-targetPort = 5173
 command = "pnpm start"
 publish = "dist"
-framework = "qwik"
 
 [functions]
 node_bundler = "esbuild"
-directory = "netlify/functions"
 
 [[redirects]]
 from = "/api/get_contacts/*"
-to = "/.netlify/functions/get_contacts"
+to = "/.netlify/edge-functions/get_contacts"
 status = "200"
 
-
+[[edge_functions]]
+path = "/api/get_contacts/"
+function = "get_contacts"
  
