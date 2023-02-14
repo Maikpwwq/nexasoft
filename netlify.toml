@@ -16,7 +16,3 @@ node_bundler = "esbuild"
 from = "/api/get_contacts/"
 to = "/.netlify/functions/get_contacts"
 status = "200"
-
-[[edge_functions]]
-path = "/api/get_contacts/"
-function = "get_contacts"
