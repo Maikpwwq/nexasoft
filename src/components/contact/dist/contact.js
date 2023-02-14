@@ -45,24 +45,7 @@ var mui_1 = require("~/integrations/react/mui");
 // prod  https://nexasoft.netlify.app/.netlify/functions/get_contacts/
 exports.mongo = function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: 
-            // let results = ""; 
-            // await fetch("http://localhost:8888/api/get_contacts/")
-            return [4 /*yield*/, fetch("https://nexasoft.netlify.app/.netlify/functions/get_contacts")
-                    .then(function (res) {
-                    console.log("MongoRes", res);
-                    // res.json();
-                })
-                    .then(function (docs) {
-                    console.log("My-docs", docs);
-                })];
-            case 1:
-                // let results = ""; 
-                // await fetch("http://localhost:8888/api/get_contacts/")
-                _a.sent();
-                return [2 /*return*/];
-        }
+        return [2 /*return*/];
     });
 }); };
 exports["default"] = qwik_1.component$(function () {
