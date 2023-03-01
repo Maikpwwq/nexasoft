@@ -36,24 +36,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.mongo = void 0;
 var qwik_1 = require("@builder.io/qwik");
 var contact_css_inline_1 = require("./contact.css?inline");
 var mui_1 = require("~/integrations/react/mui");
+// import ContactBtn from "./contact_btn";
 // use the correct URL to connect serverless functions
 // dev  http://localhost:8888/.netlify/functions/get_contacts/
 // prod  https://nexasoft.netlify.app/.netlify/functions/get_contacts/
-exports.mongo = function () { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/];
-    });
-}); };
 exports["default"] = qwik_1.component$(function () {
     qwik_1.useStylesScoped$(contact_css_inline_1["default"]);
-    var response = qwik_1.useResource$(exports.mongo);
-    qwik_1.useClientEffect$(function () {
-        console.log("finalData", response.loading, response.value); //.value
-    });
     var store = qwik_1.useStore({
         name: "",
         email: "",
@@ -61,9 +52,29 @@ exports["default"] = qwik_1.component$(function () {
         issue: "",
         message: ""
     });
-    // const handleClick = () => {
-    //   console.log(store);
-    // };
+    var handleClick = function (store) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    console.log("handleClick", store);
+                    return [4 /*yield*/, fetch("https://nexasoft.netlify.app/.netlify/functions/customer_record", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(store)
+                        })
+                            .then(function (res) {
+                            console.log("MongoRes", res);
+                            res.json();
+                        })
+                            .then(function (docs) {
+                            console.log("My-docs", docs);
+                        })];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     return (React.createElement("contact", { id: "contact-section", "class": "flex w-full justify-center" },
         React.createElement(mui_1.MUICard, { className: "m-6 flex", sx: { maxWidth: 369, borderRadius: 6 }, elevation: 16 },
             React.createElement(mui_1.MUICardContent, { className: "flex flex-col items-center" },
@@ -75,20 +86,31 @@ exports["default"] = qwik_1.component$(function () {
                     }, spacing: 2, noValidate: true, autoComplete: "off", className: "mt-6 items-center" },
                     React.createElement(mui_1.MUIFormControl, { variant: "standard" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-name" }, "Nombre: "),
-                        React.createElement(mui_1.MUIInput, { id: "form-name", value: store.name, "onChange$": function () { } })),
+                        React.createElement(mui_1.MUIInput, { id: "form-name", value: store.name, "onChange$": function (val) {
+                                store.name = val;
+                                console.log(store);
+                            } })),
                     React.createElement(mui_1.MUIFormControl, { variant: "standard", size: "small" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-email" },
                             "Correo electr\u00F3nico:",
                             " "),
-                        React.createElement(mui_1.MUIInput, { id: "form-email", value: store.email, "onChange$": function () { } })),
+                        React.createElement(mui_1.MUIInput, { id: "form-email", value: store.email, "onChange$": function (val) {
+                                store.email = val;
+                            } })),
                     React.createElement(mui_1.MUIFormControl, { variant: "standard" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-phone" }, " Tel\u00E9fono: "),
-                        React.createElement(mui_1.MUIInput, { id: "form-phone", value: store.phone, "onChange$": function () { } })),
+                        React.createElement(mui_1.MUIInput, { id: "form-phone", value: store.phone, "onChange$": function (val) {
+                                store.phone = val;
+                            } })),
                     React.createElement(mui_1.MUIFormControl, { variant: "standard" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-issue" }, "Asunto: "),
-                        React.createElement(mui_1.MUIInput, { id: "form-issue", value: store.issue, "onChange$": function () { } })),
+                        React.createElement(mui_1.MUIInput, { id: "form-issue", value: store.issue, "onChange$": function (val) {
+                                store.issue = val;
+                            } })),
                     React.createElement(mui_1.MUIFormControl, { variant: "standard" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-message" }, "Mensaje: "),
-                        React.createElement(mui_1.MUIInput, { id: "form-message", multiline: true, rows: 3, value: store.message, "onChange$": function () { } })),
-                    React.createElement(mui_1.MUIButton, null, "Enviar"))))));
+                        React.createElement(mui_1.MUIInput, { id: "form-message", multiline: true, rows: 3, value: store.message, "onChange$": function (val) {
+                                store.message = val;
+                            } })),
+                    React.createElement(mui_1.MUIButton, { "onClick$": handleClick(store) }, "Enviar"))))));
 });

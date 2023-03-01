@@ -1,4 +1,4 @@
-import { expressAdaptor } from '@builder.io/qwik-city/adaptors/express/vite';
+import { expressAdaptor } from '@builder.io/qwik-city/adapters/express/vite';
 import { extendConfig } from '@builder.io/qwik-city/vite'; 
 import baseConfig from '../../vite.config'; 
 

@@ -40,7 +40,7 @@ const DB_HOST = `${VITE_DB_HOST}`;
 const DB_NAME = `${VITE_DB_NAME}`;
 const MONGODB_COLLECTION = `${VITE_MONGODB_COLLECTION}`;
 
-const MONGO_HOST = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}${DB_NAME}?authMechanism=SCRAM-SHA-1`;
+const MONGO_HOST = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?authMechanism=SCRAM-SHA-1`;
 
 console.log("MONGO_HOST", MONGO_HOST); // Funciona
 

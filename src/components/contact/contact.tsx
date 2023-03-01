@@ -1,15 +1,9 @@
-import {
-  component$,
-  useStylesScoped$,
-  useStore,
-  useClientEffect$,
-  useResource$,
-} from "@builder.io/qwik";
+import { component$, useStylesScoped$, useStore } from "@builder.io/qwik";
 import styles from "./contact.css?inline";
 
 import {
-  MUITypography,
   MUIButton,
+  MUITypography,
   MUICard,
   MUICardContent,
   MUIStack,
@@ -18,31 +12,14 @@ import {
   MUIInputLabel,
 } from "~/integrations/react/mui";
 
+// import ContactBtn from "./contact_btn";
+
 // use the correct URL to connect serverless functions
 // dev  http://localhost:8888/.netlify/functions/get_contacts/
 // prod  https://nexasoft.netlify.app/.netlify/functions/get_contacts/
 
-export const mongo = async () => {
-  // let results = ""; 
-  // await fetch("http://localhost:8888/api/get_contacts/")
-  // await fetch("https://nexasoft.netlify.app/.netlify/functions/get_contacts")
-  //   .then((res) => {
-  //     console.log("MongoRes", res);
-  //     res.json();
-  //   })
-  //   .then((docs) => {
-  //     console.log("My-docs", docs);
-  //   });
-};
-
 export default component$(() => {
   useStylesScoped$(styles);
-
-  const response = useResource$(mongo);
-
-  useClientEffect$(() => {
-    console.log("finalData", response.loading, response.value); //.value
-  });
 
   const store = useStore({
     name: "",
@@ -52,9 +29,24 @@ export default component$(() => {
     message: "",
   });
 
-  // const handleClick = () => {
-  //   console.log(store);
-  // };
+  const handleClick = async (store: Object ) => {
+    console.log("handleClick", store);
+    await fetch(
+      "https://nexasoft.netlify.app/.netlify/functions/customer_record",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(store),
+      }
+    )
+      .then((res) => {
+        console.log("MongoRes", res);
+        res.json();
+      })
+      .then((docs) => {
+        console.log("My-docs", docs);
+      });
+  };
 
   return (
     <contact id="contact-section" class="flex w-full justify-center">
@@ -87,7 +79,10 @@ export default component$(() => {
               <MUIInput
                 id="form-name"
                 value={store.name}
-                onChange$={() => {}}
+                onChange$={(val) => {
+                  store.name = val;
+                  console.log(store);
+                }}
               />
             </MUIFormControl>
             <MUIFormControl variant="standard" size="small">
@@ -97,7 +92,9 @@ export default component$(() => {
               <MUIInput
                 id="form-email"
                 value={store.email}
-                onChange$={() => {}}
+                onChange$={(val) => {
+                  store.email = val;
+                }}
               />
             </MUIFormControl>
             <MUIFormControl variant="standard">
@@ -105,7 +102,9 @@ export default component$(() => {
               <MUIInput
                 id="form-phone"
                 value={store.phone}
-                onChange$={() => {}}
+                onChange$={(val) => {
+                  store.phone = val;
+                }}
               />
             </MUIFormControl>
             <MUIFormControl variant="standard">
@@ -113,7 +112,9 @@ export default component$(() => {
               <MUIInput
                 id="form-issue"
                 value={store.issue}
-                onChange$={() => {}}
+                onChange$={(val) => {
+                  store.issue = val;
+                }}
               />
             </MUIFormControl>
             <MUIFormControl variant="standard">
@@ -123,11 +124,13 @@ export default component$(() => {
                 multiline={true}
                 rows={3}
                 value={store.message}
-                onChange$={() => {}}
+                onChange$={(val) => {
+                  store.message = val;
+                }}
               />
             </MUIFormControl>
-            <MUIButton>Enviar</MUIButton>
-            {/* onClick={() => handleClick} */}
+            <MUIButton onClick$={handleClick(store)}>Enviar</MUIButton>
+            {/* <ContactBtn store={store}/> */}
           </MUIStack>
         </MUICardContent>
       </MUICard>

@@ -38,6 +38,16 @@ export const RouterHead = component$(() => {
       {head.styles.map((s) => (
         <style {...s.props} dangerouslySetInnerHTML={s.style} />
       ))}
+
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-2PNKE0S3GJ"
+      ></script>
+      {/* <script>
+        window.dataLayer = window.dataLayer || []; function gtag()
+        {dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
+        'G-2PNKE0S3GJ');
+      </script> */}
     </>
   );
 });

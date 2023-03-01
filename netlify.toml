@@ -1,13 +1,6 @@
 [build]
 publish = "dist"
-command = "pnpm build"
-functions = "netlify/functions"
-edge_functions = "netlify/edge-functions"
-
-[dev]
-command = "pnpm start"
-publish = "dist"
-framework = "qwik"
+command = "npm run build"
 
 [functions]
 node_bundler = "esbuild"
