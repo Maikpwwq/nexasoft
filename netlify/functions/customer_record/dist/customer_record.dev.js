@@ -48,18 +48,20 @@ var clientPromise = _mongoose["default"].createConnection(MONGO_HOST, {
 
 var Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
 
-var handler = function handler(event, context) {
+var handler = function handler(event) {
   var body;
   return regeneratorRuntime.async(function handler$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          console.log("customer_record", event, context);
+          // console.log("customer_record", event, context);
           body = event.body;
           console.log("customer_record", body);
-          _context.prev = 3;
-          _context.next = 6;
-          return regeneratorRuntime.awrap(Contactos.create(body) // .exec()
+          _context.prev = 2;
+          _context.next = 5;
+          return regeneratorRuntime.awrap(Contactos.create({
+            body: body
+          }) // .exec()
           .then(function (res) {
             console.log("mongoRes", res);
             return {
@@ -68,25 +70,25 @@ var handler = function handler(event, context) {
             };
           }));
 
-        case 6:
-          _context.next = 12;
+        case 5:
+          _context.next = 11;
           break;
 
-        case 8:
-          _context.prev = 8;
-          _context.t0 = _context["catch"](3);
+        case 7:
+          _context.prev = 7;
+          _context.t0 = _context["catch"](2);
           console.error("[db] Error", MONGO_HOST, _context.t0);
           return _context.abrupt("return", {
             statusCode: 500,
             body: _context.t0.toString()
           });
 
-        case 12:
+        case 11:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[3, 8]]);
+  }, null, null, [[2, 7]]);
 };
 
 exports.handler = handler;
