@@ -1,9 +1,9 @@
 import {
   component$,
   useStylesScoped$,
-  useSignal,
+  // useSignal,
   useClientEffect$,
-  useResource$,
+  // useResource$,
 } from "@builder.io/qwik";
 import styles from "./contact.css?inline";
 

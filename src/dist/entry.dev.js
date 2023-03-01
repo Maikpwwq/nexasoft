@@ -1,3 +1,5 @@
+"use strict";
+exports.__esModule = true;
 /*
  * WHAT IS THIS FILE?
  *
@@ -9,9 +11,9 @@
  * - More code is transferred to the browser than in SSR mode.
  * - Optimizer/Serialization/Deserialization code is not exercised!
  */
-import { render, type RenderOptions } from "@builder.io/qwik";
-import Root from "./root";
-
-export default function (opts: RenderOptions) {
-  return render(document, <Root />, opts);
+var qwik_1 = require("@builder.io/qwik");
+var root_1 = require("./root");
+function default_1(opts) {
+    return qwik_1.render(document, React.createElement(root_1["default"], null), opts);
 }
+exports["default"] = default_1;

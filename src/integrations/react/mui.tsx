@@ -7,7 +7,6 @@ import {
   Typography,
   Paper,
   ImageList,
-  ImageListItem,
   Card,
   CardContent,
   CardMedia,
@@ -16,7 +15,6 @@ import {
   Input,
   InputLabel,
   MobileStepper,
-
 } from "@mui/material";
 import {
   Devices,
@@ -32,11 +30,16 @@ import {
   Instagram,
   Facebook,
   KeyboardArrowLeft,
-  KeyboardArrowRight
-}
-from "@mui/icons-material";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+  KeyboardArrowRight,
+} from "@mui/icons-material";
+import {
+  DataGrid,
+  type GridColDef,
+  type GridValueGetterParams,
+} from "@mui/x-data-grid";
 
+import ImageListItems from "./imageListItems";
+import FormContacto from "./FormContacto";
 
 // import PushPinIcon from '@mui/icons-material/PushPin';
 // import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
@@ -77,8 +80,8 @@ export const MUIMobileStepper = qwikify$(MobileStepper);
 export const MUIPaper = qwikify$(Paper);
 export const MUIBox = qwikify$(Box);
 export const MUITypography = qwikify$(Typography);
-export const MUIImageList = qwikify$(ImageList);
-export const MUIImageListItem = qwikify$(ImageListItem);
+// export const MUIImageList = qwikify$(ImageList);
+// export const MUIImageListItem = qwikify$(ImageListItem);
 export const MUIButton = qwikify$(Button);
 export const MUISlider = qwikify$(Slider, { eagerness: "hover" });
 export const MUICard = qwikify$(Card);
@@ -89,6 +92,29 @@ export const MUIStackForm = qwikify$(Stack);
 export const MUIFormControl = qwikify$(FormControl);
 export const MUIInput = qwikify$(Input);
 export const MUIInputLabel = qwikify$(InputLabel);
+
+export const ImagesList = qwikify$(() => {
+  return (
+    <>
+      <ImageList
+        sx={{ width: { md: 500 }, height: { md: 600 } }}
+        variant="quilted"
+        cols={4}
+        rowHeight={121}
+      >
+        <ImageListItems />
+      </ImageList>
+    </>
+  );
+});
+
+export const FormularioContacto = qwikify$(() => {
+  return (
+    <>
+      <FormContacto />
+    </>
+  );
+});
 
 export const TableApp = qwikify$(() => {
   const columns: GridColDef[] = [

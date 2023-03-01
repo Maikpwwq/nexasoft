@@ -70,7 +70,7 @@ export default component$(() => {
                   <MUITypography
                     variant="body2"
                     color="text.secondary"
-                    component="div"
+                    // component="div"
                   >
                     {/* sx={{ fontSize: 14 }} color="text.secondary" gutterBottom */}
                     {message}

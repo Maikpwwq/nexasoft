@@ -1,17 +1,6 @@
-import { component$, useStylesScoped$, useStore } from "@builder.io/qwik";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from "./contact.css?inline";
-
-import {
-  MUIButton,
-  MUITypography,
-  MUICard,
-  MUICardContent,
-  MUIStack,
-  MUIFormControl,
-  MUIInput,
-  MUIInputLabel,
-} from "~/integrations/react/mui";
-
+import { FormularioContacto } from "~/integrations/react/mui";
 // import ContactBtn from "./contact_btn";
 
 // use the correct URL to connect serverless functions
@@ -21,120 +10,17 @@ import {
 export default component$(() => {
   useStylesScoped$(styles);
 
-  const store = useStore({
-    name: "",
-    email: "",
-    phone: "",
-    issue: "",
-    message: "",
-  });
-
-  // : MouseEvent<HTMLButtonElement>
-  const handleClick: MouseEvent<HTMLButtonElement> = async (store: Object) => {
-    console.log("handleClick", store);
-    await fetch(
-      "https://nexasoft.netlify.app/.netlify/functions/customer_record",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(store),
-      }
-    )
-      .then((res) => {
-        console.log("MongoRes", res);
-        return res.json();
-      })
-      .then((docs) => {
-        console.log("My-docs", docs);
-      });
-  };
+  // const store = useStore({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   issue: "",
+  //   message: "",
+  // });
 
   return (
     <contact id="contact-section" class="flex w-full justify-center">
-      <MUICard
-        className="m-6 flex"
-        sx={{ maxWidth: 369, borderRadius: 6 }}
-        elevation={16}
-      >
-        <MUICardContent className="flex flex-col items-center">
-          <MUITypography variant="h6" color={"var(--qwik-dark-blue)"}>
-            Formulario de contacto
-          </MUITypography>
-          <MUITypography variant="body1" className="pt-2" align="center">
-            Solicita información adicional o una presentación de nuestros
-            servicios.
-          </MUITypography>
-          <MUIStack
-            // component="form"
-            sx={{
-              "& > :not(style)": { m: 1 },
-              width: "25ch",
-            }}
-            spacing={2}
-            // noValidate
-            // autoComplete="off"
-            className="mt-6 items-center"
-          >
-            <MUIFormControl variant="standard">
-              <MUIInputLabel htmlFor="form-name">Nombre: </MUIInputLabel>
-              <MUIInput
-                id="form-name"
-                value={store.name}
-                onChange$={(event: any) => {
-                  store.name = event;
-                  console.log(store);
-                }}
-              />
-            </MUIFormControl>
-            <MUIFormControl variant="standard" size="small">
-              <MUIInputLabel htmlFor="form-email">
-                Correo electrónico:{" "}
-              </MUIInputLabel>
-              <MUIInput
-                id="form-email"
-                value={store.email}
-                onChange$={(event: any) => {
-                  store.email = event;
-                }}
-              />
-            </MUIFormControl>
-            <MUIFormControl variant="standard">
-              <MUIInputLabel htmlFor="form-phone"> Teléfono: </MUIInputLabel>
-              <MUIInput
-                id="form-phone"
-                value={store.phone}
-                onChange$={(event: any) => {
-                  store.phone = event;
-                }}
-              />
-            </MUIFormControl>
-            <MUIFormControl variant="standard">
-              <MUIInputLabel htmlFor="form-issue">Asunto: </MUIInputLabel>
-              <MUIInput
-                id="form-issue"
-                value={store.issue}
-                onChange$={(event: any) => {
-                  store.issue = event;
-                }}
-              />
-            </MUIFormControl>
-            <MUIFormControl variant="standard">
-              <MUIInputLabel htmlFor="form-message">Mensaje: </MUIInputLabel>
-              <MUIInput
-                id="form-message"
-                multiline={true}
-                rows={3}
-                value={store.message}
-                onChange$={(event: any) => {
-                  store.message = event;
-                }}
-              />
-            </MUIFormControl>
-            <MUIButton onClick$={handleClick(store)}>Enviar</MUIButton>
-            {/* <ContactBtn store={store}/> */}
-          </MUIStack>
-        </MUICardContent>
-      </MUICard>
+      <FormularioContacto />
     </contact>
   );
 });
