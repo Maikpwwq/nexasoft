@@ -1,5 +1,5 @@
 /** @jsxImportSource react */
-'use client';
+"use client";
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -90,37 +90,48 @@ var FormContacto = function () {
                 React.createElement(material_1.Stack, { component: "form", sx: {
                         "& > :not(style)": { m: 1 },
                         width: "25ch"
-                    }, spacing: 2, noValidate: true, autoComplete: "off", className: "mt-6 items-center" },
-                    React.createElement(material_1.FormControl, { variant: "standard" },
-                        React.createElement(material_1.InputLabel, { htmlFor: "form-name" }, "Nombre: "),
+                    }, spacing: 2, noValidate: true, autoComplete: "off", className: "mt-2 items-center", onSubmit: handleClick },
+                    React.createElement(material_1.FormControl, { variant: "standard", className: "m-0 mt-4", size: "small" },
+                        React.createElement(material_1.InputLabel, { sx: { position: "relative" }, htmlFor: "form-name" },
+                            "Nombre:",
+                            " "),
                         React.createElement(material_1.Input, { id: "form-name", value: store.name, onChange: function (event) {
                                 setStore(__assign(__assign({}, store), { name: event }));
                                 console.log(store, event);
                             } })),
                     React.createElement(material_1.FormControl, { variant: "standard", size: "small" },
-                        React.createElement(material_1.InputLabel, { htmlFor: "form-email" }, "Correo electr\u00F3nico: "),
+                        React.createElement(material_1.InputLabel, { sx: { position: "relative" }, htmlFor: "form-email" },
+                            "Correo electr\u00F3nico:",
+                            " "),
                         React.createElement(material_1.Input, { id: "form-email", value: store.email, onChange: function (event) {
                                 setStore(__assign(__assign({}, store), { email: event }));
                                 console.log(store, event);
                             } })),
-                    React.createElement(material_1.FormControl, { variant: "standard" },
-                        React.createElement(material_1.InputLabel, { htmlFor: "form-phone" }, " Tel\u00E9fono: "),
+                    React.createElement(material_1.FormControl, { variant: "standard", size: "small" },
+                        React.createElement(material_1.InputLabel, { sx: { position: "relative" }, htmlFor: "form-phone" },
+                            "Tel\u00E9fono:",
+                            " "),
                         React.createElement(material_1.Input, { id: "form-phone", value: store.phone, onChange: function (event) {
                                 setStore(__assign(__assign({}, store), { phone: event }));
                                 console.log(store, event);
                             } })),
-                    React.createElement(material_1.FormControl, { variant: "standard" },
-                        React.createElement(material_1.InputLabel, { htmlFor: "form-issue" }, "Asunto: "),
+                    React.createElement(material_1.FormControl, { variant: "standard", size: "small" },
+                        React.createElement(material_1.InputLabel, { sx: { position: "relative" }, htmlFor: "form-issue" },
+                            "Asunto:",
+                            " "),
                         React.createElement(material_1.Input, { id: "form-issue", value: store.issue, onChange: function (event) {
                                 setStore(__assign(__assign({}, store), { issue: event }));
                                 console.log(store, event);
                             } })),
-                    React.createElement(material_1.FormControl, { variant: "standard" },
-                        React.createElement(material_1.InputLabel, { htmlFor: "form-message" }, "Mensaje: "),
-                        React.createElement(material_1.Input, { id: "form-message", multiline: true, rows: 3, value: store.message, onChange: function (event) {
+                    React.createElement(material_1.FormControl, { variant: "standard", size: "small" },
+                        React.createElement(material_1.InputLabel, { sx: { position: "relative" }, htmlFor: "form-message" },
+                            "Mensaje:",
+                            " "),
+                        React.createElement(material_1.Input, { id: "form-message", multiline: true, rows: "3", value: store.message, onChange: function (event) {
                                 setStore(__assign(__assign({}, store), { message: event }));
                                 console.log(store, event);
                             } })),
-                    React.createElement(material_1.Button, { onClick: function () { return handleClick(store); } }, "Enviar"))))));
+                    React.createElement(material_1.FormControl, { sx: { paddingTop: "16px" }, variant: "standard", size: "small" },
+                        React.createElement(material_1.Button, { type: "submit", onClick: function () { return handleClick(store); } }, "Enviar")))))));
 };
 exports["default"] = FormContacto;

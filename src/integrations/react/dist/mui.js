@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.TableApp = exports.FormularioContacto = exports.ImagesList = exports.MUIInputLabel = exports.MUIInput = exports.MUIFormControl = exports.MUIStackForm = exports.MUIStack = exports.MUICardMedia = exports.MUICardContent = exports.MUICard = exports.MUISlider = exports.MUIButton = exports.MUITypography = exports.MUIBox = exports.MUIPaper = exports.MUIMobileStepper = exports.MUIKeyboardArrowRight = exports.MUIKeyboardArrowLeft = exports.MUIFacebookIcon = exports.MUIInstagramIcon = exports.MUIWhatsAppIcon = exports.MUIInsertDriveFileIcon = exports.MUIMailOutlineIcon = exports.MUIContactPageIcon = exports.MUIPlaceIcon = exports.MUIWebIcon = exports.MUIPhoneIphoneIcon = exports.MUIPhoneAndroidIcon = exports.MUILaptopIcon = exports.MUIDevicesIcon = void 0;
+exports.TableApp = exports.FormularioContacto = exports.ImagesList = exports.MUIStack = exports.MUICardMedia = exports.MUICardContent = exports.MUICard = exports.MUISlider = exports.MUIButton = exports.MUITypography = exports.MUIBox = exports.MUIPaper = exports.MUIMobileStepper = exports.MUIKeyboardArrowRight = exports.MUIKeyboardArrowLeft = exports.MUIFacebookIcon = exports.MUIInstagramIcon = exports.MUIWhatsAppIcon = exports.MUIInsertDriveFileIcon = exports.MUIMailOutlineIcon = exports.MUIContactPageIcon = exports.MUIPlaceIcon = exports.MUIWebIcon = exports.MUIPhoneIphoneIcon = exports.MUIPhoneAndroidIcon = exports.MUILaptopIcon = exports.MUIDevicesIcon = void 0;
 /** @jsxImportSource react */
 var qwik_react_1 = require("@builder.io/qwik-react");
 var material_1 = require("@mui/material");
@@ -51,10 +51,9 @@ exports.MUICard = qwik_react_1.qwikify$(material_1.Card);
 exports.MUICardContent = qwik_react_1.qwikify$(material_1.CardContent);
 exports.MUICardMedia = qwik_react_1.qwikify$(material_1.CardMedia);
 exports.MUIStack = qwik_react_1.qwikify$(material_1.Stack);
-exports.MUIStackForm = qwik_react_1.qwikify$(material_1.Stack);
-exports.MUIFormControl = qwik_react_1.qwikify$(material_1.FormControl);
-exports.MUIInput = qwik_react_1.qwikify$(material_1.Input);
-exports.MUIInputLabel = qwik_react_1.qwikify$(material_1.InputLabel);
+// export const MUIFormControl = qwikify$(FormControl);
+// export const MUIInput = qwikify$(Input);
+// export const MUIInputLabel = qwikify$(InputLabel);
 exports.ImagesList = qwik_react_1.qwikify$(function () {
     return (React.createElement(React.Fragment, null,
         React.createElement(material_1.ImageList, { sx: { width: { md: 500 }, height: { md: 600 } }, variant: "quilted", cols: 4, rowHeight: 121 },

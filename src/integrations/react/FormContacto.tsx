@@ -1,5 +1,5 @@
 /** @jsxImportSource react */
-'use client'
+"use client";
 import {
   Button,
   Typography,
@@ -64,10 +64,13 @@ const FormContacto = () => {
             spacing={2}
             noValidate
             autoComplete="off"
-            className="mt-6 items-center"
+            className="mt-2 items-center"
+            onSubmit={handleClick}
           >
-            <FormControl variant="standard">
-              <InputLabel htmlFor="form-name">Nombre: </InputLabel>
+            <FormControl variant="standard" className="m-0 mt-4" size="small">
+              <InputLabel sx={{ position: "relative" }} htmlFor="form-name">
+                Nombre:{" "}
+              </InputLabel>
               <Input
                 id="form-name"
                 value={store.name}
@@ -78,7 +81,9 @@ const FormContacto = () => {
               />
             </FormControl>
             <FormControl variant="standard" size="small">
-              <InputLabel htmlFor="form-email">Correo electrónico: </InputLabel>
+              <InputLabel sx={{ position: "relative" }} htmlFor="form-email">
+                Correo electrónico:{" "}
+              </InputLabel>
               <Input
                 id="form-email"
                 value={store.email}
@@ -88,8 +93,10 @@ const FormContacto = () => {
                 }}
               />
             </FormControl>
-            <FormControl variant="standard">
-              <InputLabel htmlFor="form-phone"> Teléfono: </InputLabel>
+            <FormControl variant="standard" size="small">
+              <InputLabel sx={{ position: "relative" }} htmlFor="form-phone">
+                Teléfono:{" "}
+              </InputLabel>
               <Input
                 id="form-phone"
                 value={store.phone}
@@ -99,8 +106,10 @@ const FormContacto = () => {
                 }}
               />
             </FormControl>
-            <FormControl variant="standard">
-              <InputLabel htmlFor="form-issue">Asunto: </InputLabel>
+            <FormControl variant="standard" size="small">
+              <InputLabel sx={{ position: "relative" }} htmlFor="form-issue">
+                Asunto:{" "}
+              </InputLabel>
               <Input
                 id="form-issue"
                 value={store.issue}
@@ -110,12 +119,14 @@ const FormContacto = () => {
                 }}
               />
             </FormControl>
-            <FormControl variant="standard">
-              <InputLabel htmlFor="form-message">Mensaje: </InputLabel>
+            <FormControl variant="standard" size="small">
+              <InputLabel sx={{ position: "relative" }} htmlFor="form-message">
+                Mensaje:{" "}
+              </InputLabel>
               <Input
                 id="form-message"
-                multiline={true}
-                rows={3}
+                multiline
+                rows={"3"}
                 value={store.message}
                 onChange={(event: any) => {
                   setStore({ ...store, message: event });
@@ -123,7 +134,15 @@ const FormContacto = () => {
                 }}
               />
             </FormControl>
-            <Button onClick={() => handleClick(store)}>Enviar</Button>
+            <FormControl
+              sx={{ paddingTop: "16px" }}
+              variant="standard"
+              size="small"
+            >
+              <Button type="submit" onClick={() => handleClick(store)}>
+                Enviar
+              </Button>
+            </FormControl>
           </Stack>
         </CardContent>
       </Card>
