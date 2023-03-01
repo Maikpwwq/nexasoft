@@ -64,7 +64,7 @@ exports["default"] = qwik_1.component$(function () {
                         })
                             .then(function (res) {
                             console.log("MongoRes", res);
-                            res.json();
+                            return res.json();
                         })
                             .then(function (docs) {
                             console.log("My-docs", docs);

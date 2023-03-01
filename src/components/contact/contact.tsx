@@ -29,7 +29,7 @@ export default component$(() => {
     message: "",
   });
 
-  const handleClick = async (store: Object ) => {
+  const handleClick: MouseEvent<HTMLButtonElement> = async (store: Object ) => {
     console.log("handleClick", store);
     await fetch(
       "https://nexasoft.netlify.app/.netlify/functions/customer_record",
@@ -41,7 +41,7 @@ export default component$(() => {
     )
       .then((res) => {
         console.log("MongoRes", res);
-        res.json();
+        return res.json();
       })
       .then((docs) => {
         console.log("My-docs", docs);

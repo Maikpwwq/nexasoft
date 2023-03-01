@@ -59,7 +59,7 @@ var handler = function handler() {
           console.log("get_mongoose");
           _context.prev = 1;
           _context.next = 4;
-          return regeneratorRuntime.awrap(Contactos.find({}) // .exec()
+          return regeneratorRuntime.awrap(Contactos.find() // .exec()
           // Await its fulfillment inside another async function, or chain onto it using .then blocks.
           .then(function (docs) {
             console.log("mongoDocs", docs);
@@ -67,7 +67,7 @@ var handler = function handler() {
             if (docs.length > 0) {
               return {
                 statusCode: 200,
-                body: JSON.stringify(docs)
+                body: JSON.stringify(docs) || docs
               };
             }
           }));

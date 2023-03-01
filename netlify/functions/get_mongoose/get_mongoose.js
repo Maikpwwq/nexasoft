@@ -43,7 +43,7 @@ export const handler = async () => {
   // exports.handler = async () => {
   console.log("get_mongoose");
   try {
-    await Contactos.find({})
+    await Contactos.find()
       // .exec()
       // Await its fulfillment inside another async function, or chain onto it using .then blocks.
       .then((docs) => {
@@ -51,7 +51,7 @@ export const handler = async () => {
         if (docs.length > 0) {
           return {
             statusCode: 200,
-            body: JSON.stringify(docs),
+            body: JSON.stringify(docs) || docs,
           };
         }
       }); // .toArray(); .exec() .clone()
