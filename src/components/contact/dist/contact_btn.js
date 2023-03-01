@@ -76,7 +76,7 @@ exports["default"] = qwik_1.component$(function (props) {
     // const mongo_data = useSignal(mongo);
     // const response = useResource$(mongo);
     qwik_1.useClientEffect$(function () {
-        // console.log("finalData", response.loading, response.value, mongo_data); //.value
+        // console.log("finalData", response.promise, response.loading, response.value, mongo_data); //.value
         console.log("store", store);
     });
     // ValueOrPromise<void>

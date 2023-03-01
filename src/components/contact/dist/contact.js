@@ -52,6 +52,7 @@ exports["default"] = qwik_1.component$(function () {
         issue: "",
         message: ""
     });
+    // : MouseEvent<HTMLButtonElement>
     var handleClick = function (store) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -80,37 +81,44 @@ exports["default"] = qwik_1.component$(function () {
             React.createElement(mui_1.MUICardContent, { className: "flex flex-col items-center" },
                 React.createElement(mui_1.MUITypography, { variant: "h6", color: "var(--qwik-dark-blue)" }, "Formulario de contacto"),
                 React.createElement(mui_1.MUITypography, { variant: "body1", className: "pt-2", align: "center" }, "Solicita informaci\u00F3n adicional o una presentaci\u00F3n de nuestros servicios."),
-                React.createElement(mui_1.MUIStack, { component: "form", sx: {
+                React.createElement(mui_1.MUIStack
+                // component="form"
+                , { 
+                    // component="form"
+                    sx: {
                         "& > :not(style)": { m: 1 },
                         width: "25ch"
-                    }, spacing: 2, noValidate: true, autoComplete: "off", className: "mt-6 items-center" },
+                    }, spacing: 2, 
+                    // noValidate
+                    // autoComplete="off"
+                    className: "mt-6 items-center" },
                     React.createElement(mui_1.MUIFormControl, { variant: "standard" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-name" }, "Nombre: "),
-                        React.createElement(mui_1.MUIInput, { id: "form-name", value: store.name, "onChange$": function (val) {
-                                store.name = val;
+                        React.createElement(mui_1.MUIInput, { id: "form-name", value: store.name, "onChange$": function (event) {
+                                store.name = event;
                                 console.log(store);
                             } })),
                     React.createElement(mui_1.MUIFormControl, { variant: "standard", size: "small" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-email" },
                             "Correo electr\u00F3nico:",
                             " "),
-                        React.createElement(mui_1.MUIInput, { id: "form-email", value: store.email, "onChange$": function (val) {
-                                store.email = val;
+                        React.createElement(mui_1.MUIInput, { id: "form-email", value: store.email, "onChange$": function (event) {
+                                store.email = event;
                             } })),
                     React.createElement(mui_1.MUIFormControl, { variant: "standard" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-phone" }, " Tel\u00E9fono: "),
-                        React.createElement(mui_1.MUIInput, { id: "form-phone", value: store.phone, "onChange$": function (val) {
-                                store.phone = val;
+                        React.createElement(mui_1.MUIInput, { id: "form-phone", value: store.phone, "onChange$": function (event) {
+                                store.phone = event;
                             } })),
                     React.createElement(mui_1.MUIFormControl, { variant: "standard" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-issue" }, "Asunto: "),
-                        React.createElement(mui_1.MUIInput, { id: "form-issue", value: store.issue, "onChange$": function (val) {
-                                store.issue = val;
+                        React.createElement(mui_1.MUIInput, { id: "form-issue", value: store.issue, "onChange$": function (event) {
+                                store.issue = event;
                             } })),
                     React.createElement(mui_1.MUIFormControl, { variant: "standard" },
                         React.createElement(mui_1.MUIInputLabel, { htmlFor: "form-message" }, "Mensaje: "),
-                        React.createElement(mui_1.MUIInput, { id: "form-message", multiline: true, rows: 3, value: store.message, "onChange$": function (val) {
-                                store.message = val;
+                        React.createElement(mui_1.MUIInput, { id: "form-message", multiline: true, rows: 3, value: store.message, "onChange$": function (event) {
+                                store.message = event;
                             } })),
                     React.createElement(mui_1.MUIButton, { "onClick$": handleClick(store) }, "Enviar"))))));
 });

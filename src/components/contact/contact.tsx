@@ -29,7 +29,8 @@ export default component$(() => {
     message: "",
   });
 
-  const handleClick: MouseEvent<HTMLButtonElement> = async (store: Object ) => {
+  // : MouseEvent<HTMLButtonElement>
+  const handleClick: MouseEvent<HTMLButtonElement> = async (store: Object) => {
     console.log("handleClick", store);
     await fetch(
       "https://nexasoft.netlify.app/.netlify/functions/customer_record",
@@ -64,14 +65,14 @@ export default component$(() => {
             servicios.
           </MUITypography>
           <MUIStack
-            component="form"
+            // component="form"
             sx={{
               "& > :not(style)": { m: 1 },
               width: "25ch",
             }}
             spacing={2}
-            noValidate
-            autoComplete="off"
+            // noValidate
+            // autoComplete="off"
             className="mt-6 items-center"
           >
             <MUIFormControl variant="standard">
@@ -79,8 +80,8 @@ export default component$(() => {
               <MUIInput
                 id="form-name"
                 value={store.name}
-                onChange$={(val) => {
-                  store.name = val;
+                onChange$={(event: any) => {
+                  store.name = event;
                   console.log(store);
                 }}
               />
@@ -92,8 +93,8 @@ export default component$(() => {
               <MUIInput
                 id="form-email"
                 value={store.email}
-                onChange$={(val) => {
-                  store.email = val;
+                onChange$={(event: any) => {
+                  store.email = event;
                 }}
               />
             </MUIFormControl>
@@ -102,8 +103,8 @@ export default component$(() => {
               <MUIInput
                 id="form-phone"
                 value={store.phone}
-                onChange$={(val) => {
-                  store.phone = val;
+                onChange$={(event: any) => {
+                  store.phone = event;
                 }}
               />
             </MUIFormControl>
@@ -112,8 +113,8 @@ export default component$(() => {
               <MUIInput
                 id="form-issue"
                 value={store.issue}
-                onChange$={(val) => {
-                  store.issue = val;
+                onChange$={(event: any) => {
+                  store.issue = event;
                 }}
               />
             </MUIFormControl>
@@ -124,8 +125,8 @@ export default component$(() => {
                 multiline={true}
                 rows={3}
                 value={store.message}
-                onChange$={(val) => {
-                  store.message = val;
+                onChange$={(event: any) => {
+                  store.message = event;
                 }}
               />
             </MUIFormControl>

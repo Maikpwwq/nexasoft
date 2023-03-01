@@ -85,6 +85,7 @@ export const MUICard = qwikify$(Card);
 export const MUICardContent = qwikify$(CardContent);
 export const MUICardMedia = qwikify$(CardMedia);
 export const MUIStack = qwikify$(Stack);
+export const MUIStackForm = qwikify$(Stack);
 export const MUIFormControl = qwikify$(FormControl);
 export const MUIInput = qwikify$(Input);
 export const MUIInputLabel = qwikify$(InputLabel);

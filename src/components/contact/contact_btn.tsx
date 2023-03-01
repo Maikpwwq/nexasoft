@@ -33,7 +33,7 @@ export default component$((props: any) => {
   // const response = useResource$(mongo);
 
   useClientEffect$(() => {
-    // console.log("finalData", response.loading, response.value, mongo_data); //.value
+    // console.log("finalData", response.promise, response.loading, response.value, mongo_data); //.value
     console.log("store", store);
   });
 
