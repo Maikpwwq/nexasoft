@@ -38,7 +38,7 @@ const clientPromise = mongoose.createConnection(
 const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
 
 export const handler = async (event, context) => {
-  console.log("customer_record", event, context, body);
+  console.log("customer_record", event, context);
   const { body } = event;
   console.log("customer_record", body);
   try {

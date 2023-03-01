@@ -1,4 +1,5 @@
 /** @jsxImportSource react */
+'use client'
 import {
   Button,
   Typography,

@@ -54,7 +54,7 @@ var handler = function handler(event, context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          console.log("customer_record", event, context, body);
+          console.log("customer_record", event, context);
           body = event.body;
           console.log("customer_record", body);
           _context.prev = 3;
