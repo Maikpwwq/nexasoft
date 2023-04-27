@@ -11,10 +11,6 @@ import {
   CardContent,
   CardMedia,
   Stack,
-  // FormControl,
-  // Input,
-  // InputLabel,
-  MobileStepper,
 } from "@mui/material";
 import {
   Devices,
@@ -29,8 +25,6 @@ import {
   WhatsApp,
   Instagram,
   Facebook,
-  KeyboardArrowLeft,
-  KeyboardArrowRight,
 } from "@mui/icons-material";
 import {
   DataGrid,
@@ -40,6 +34,7 @@ import {
 
 import ImageListItems from "./imageListItems";
 import FormContacto from "./FormContacto";
+import BannerStepper from "./BannerStepper";
 
 // import PushPinIcon from '@mui/icons-material/PushPin';
 // import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
@@ -63,8 +58,6 @@ export const MUIInsertDriveFileIcon = qwikify$(InsertDriveFile);
 export const MUIWhatsAppIcon = qwikify$(WhatsApp);
 export const MUIInstagramIcon = qwikify$(Instagram);
 export const MUIFacebookIcon = qwikify$(Facebook);
-export const MUIKeyboardArrowLeft = qwikify$(KeyboardArrowLeft);
-export const MUIKeyboardArrowRight = qwikify$(KeyboardArrowRight);
 
 // import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
 // import ChargingStationIcon from '@mui/icons-material/ChargingStation';
@@ -76,7 +69,6 @@ export const MUIKeyboardArrowRight = qwikify$(KeyboardArrowRight);
 // import RollerSkatingIcon from '@mui/icons-material/RollerSkating';
 // import AddBoxIcon from '@mui/icons-material/AddBox';
 
-export const MUIMobileStepper = qwikify$(MobileStepper);
 export const MUIPaper = qwikify$(Paper);
 export const MUIBox = qwikify$(Box);
 export const MUITypography = qwikify$(Typography);
@@ -111,6 +103,14 @@ export const FormularioContacto = qwikify$(() => {
   return (
     <>
       <FormContacto />
+    </>
+  );
+});
+
+export const BannerImgStepper = qwikify$(() => {
+  return (
+    <>
+      <BannerStepper />
     </>
   );
 });

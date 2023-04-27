@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.TableApp = exports.FormularioContacto = exports.ImagesList = exports.MUIStack = exports.MUICardMedia = exports.MUICardContent = exports.MUICard = exports.MUISlider = exports.MUIButton = exports.MUITypography = exports.MUIBox = exports.MUIPaper = exports.MUIMobileStepper = exports.MUIKeyboardArrowRight = exports.MUIKeyboardArrowLeft = exports.MUIFacebookIcon = exports.MUIInstagramIcon = exports.MUIWhatsAppIcon = exports.MUIInsertDriveFileIcon = exports.MUIMailOutlineIcon = exports.MUIContactPageIcon = exports.MUIPlaceIcon = exports.MUIWebIcon = exports.MUIPhoneIphoneIcon = exports.MUIPhoneAndroidIcon = exports.MUILaptopIcon = exports.MUIDevicesIcon = void 0;
+exports.TableApp = exports.BannerImgStepper = exports.FormularioContacto = exports.ImagesList = exports.MUIStack = exports.MUICardMedia = exports.MUICardContent = exports.MUICard = exports.MUISlider = exports.MUIButton = exports.MUITypography = exports.MUIBox = exports.MUIPaper = exports.MUIFacebookIcon = exports.MUIInstagramIcon = exports.MUIWhatsAppIcon = exports.MUIInsertDriveFileIcon = exports.MUIMailOutlineIcon = exports.MUIContactPageIcon = exports.MUIPlaceIcon = exports.MUIWebIcon = exports.MUIPhoneIphoneIcon = exports.MUIPhoneAndroidIcon = exports.MUILaptopIcon = exports.MUIDevicesIcon = void 0;
 /** @jsxImportSource react */
 var qwik_react_1 = require("@builder.io/qwik-react");
 var material_1 = require("@mui/material");
@@ -8,6 +8,7 @@ var icons_material_1 = require("@mui/icons-material");
 var x_data_grid_1 = require("@mui/x-data-grid");
 var imageListItems_1 = require("./imageListItems");
 var FormContacto_1 = require("./FormContacto");
+var BannerStepper_1 = require("./BannerStepper");
 // import PushPinIcon from '@mui/icons-material/PushPin';
 // import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 // import MyLocationIcon from '@mui/icons-material/MyLocation';
@@ -29,8 +30,6 @@ exports.MUIInsertDriveFileIcon = qwik_react_1.qwikify$(icons_material_1.InsertDr
 exports.MUIWhatsAppIcon = qwik_react_1.qwikify$(icons_material_1.WhatsApp);
 exports.MUIInstagramIcon = qwik_react_1.qwikify$(icons_material_1.Instagram);
 exports.MUIFacebookIcon = qwik_react_1.qwikify$(icons_material_1.Facebook);
-exports.MUIKeyboardArrowLeft = qwik_react_1.qwikify$(icons_material_1.KeyboardArrowLeft);
-exports.MUIKeyboardArrowRight = qwik_react_1.qwikify$(icons_material_1.KeyboardArrowRight);
 // import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
 // import ChargingStationIcon from '@mui/icons-material/ChargingStation';
 // import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
@@ -39,7 +38,6 @@ exports.MUIKeyboardArrowRight = qwik_react_1.qwikify$(icons_material_1.KeyboardA
 // import TabIcon from '@mui/icons-material/Tab';
 // import RollerSkatingIcon from '@mui/icons-material/RollerSkating';
 // import AddBoxIcon from '@mui/icons-material/AddBox';
-exports.MUIMobileStepper = qwik_react_1.qwikify$(material_1.MobileStepper);
 exports.MUIPaper = qwik_react_1.qwikify$(material_1.Paper);
 exports.MUIBox = qwik_react_1.qwikify$(material_1.Box);
 exports.MUITypography = qwik_react_1.qwikify$(material_1.Typography);
@@ -62,6 +60,10 @@ exports.ImagesList = qwik_react_1.qwikify$(function () {
 exports.FormularioContacto = qwik_react_1.qwikify$(function () {
     return (React.createElement(React.Fragment, null,
         React.createElement(FormContacto_1["default"], null)));
+});
+exports.BannerImgStepper = qwik_react_1.qwikify$(function () {
+    return (React.createElement(React.Fragment, null,
+        React.createElement(BannerStepper_1["default"], null)));
 });
 exports.TableApp = qwik_react_1.qwikify$(function () {
     var columns = [

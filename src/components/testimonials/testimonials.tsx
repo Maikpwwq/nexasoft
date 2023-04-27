@@ -23,7 +23,7 @@ export default component$(() => {
         "Trabajar con NexaSoft fue una experiencia increíble. Al modernizar la plataforma, hemos podido atender mejor a nuestros clientes y aumentar nuestras ventas.",
       name: "WaviAeronautics",
       logo: WaviPixelLogo,
-      webSite: "https://wavi-aeronautics-drones.web.app/",
+      webSite: "https://wavi-aeronautics.vercel.app/",
     },
     {
       message:

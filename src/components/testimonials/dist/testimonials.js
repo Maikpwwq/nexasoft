@@ -13,7 +13,7 @@ exports["default"] = qwik_1.component$(function () {
             message: "Trabajar con NexaSoft fue una experiencia increíble. Al modernizar la plataforma, hemos podido atender mejor a nuestros clientes y aumentar nuestras ventas.",
             name: "WaviAeronautics",
             logo: WaviPixelLogo_png_1["default"],
-            webSite: "https://wavi-aeronautics-drones.web.app/"
+            webSite: "https://wavi-aeronautics.vercel.app/"
         },
         {
             message: "NexaSoft nos ayudó a mejorar la productividad de nuestros sistemas existentes, ahora confiamos en ellos el mantenimiento de nuestros sistemas, conociendo que estarán disponibles en todo momento y podremos cumplir con los plazos de entrega.",
