@@ -1,6 +1,9 @@
 /** @jsxImportSource react */
 import { createTheme } from '@mui/material/styles'
-import { green, grey, red } from '@mui/material/colors'
+import green from '@mui/material/colors/index'
+// import { green, grey, red } from '@mui/material/colors/index'
+import grey from '@mui/material/colors/index'
+import red from '@mui/material/colors/index'
 
 const rawTheme = createTheme({
   palette: {
