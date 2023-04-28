@@ -52,14 +52,14 @@ export default component$(() => {
           Testimonios y comentarios de clientes satisfechos.
         </MUITypography>
         <MUIBox
-          className="flex items-center"
+          class="flex items-center"
           sx={{ flexDirection: { md: "row", sm: "row", xs: "column" } }}
         >
           {testimonials.map(({ message, name, logo, webSite }) => {
             return (
               <MUICard
                 key={name}
-                className="m-6 rounded hover:rounded-lg"
+                class="m-6 rounded hover:rounded-lg"
                 sx={{ maxWidth: 275, borderRadius: 4 }}
                 elevation={16}
               >

@@ -29,9 +29,9 @@ exports.RouterHead = qwik_1.component$(function () {
         React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
         React.createElement("link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }),
         React.createElement("meta", { "http-equiv": "Content-Security-Policy", content: "default-src 'self';script-src 'unsafe-inline' 'unsafe-eval' http:; style-src 'unsafe-inline' http:; img-src http: data:; font-src http: data:;" }),
-        head.meta.map(function (m) { return (React.createElement("meta", __assign({}, m))); }),
-        head.links.map(function (l) { return (React.createElement("link", __assign({}, l))); }),
+        head.meta.map(function (m, k) { return (React.createElement("meta", __assign({ key: k }, m))); }),
+        head.links.map(function (l, k) { return (React.createElement("link", __assign({ key: k }, l))); }),
         React.createElement("link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" }),
-        head.styles.map(function (s) { return (React.createElement("style", __assign({}, s.props, { dangerouslySetInnerHTML: s.style }))); }),
+        head.styles.map(function (s, k) { return (React.createElement("style", __assign({ key: k }, s.props, { dangerouslySetInnerHTML: s.style }))); }),
         React.createElement("script", { async: true, src: "https://www.googletagmanager.com/gtag/js?id=G-2PNKE0S3GJ" })));
 });

@@ -23,12 +23,12 @@ export const RouterHead = component$(() => {
         content="default-src 'self';script-src 'unsafe-inline' 'unsafe-eval' http:; style-src 'unsafe-inline' http:; img-src http: data:; font-src http: data:;"
       />
 
-      {head.meta.map((m) => (
-        <meta {...m} />
+      {head.meta.map((m, k) => (
+        <meta key={k} {...m} />
       ))}
 
-      {head.links.map((l) => (
-        <link {...l} />
+      {head.links.map((l,k) => (
+        <link key={k} {...l} />
       ))}
 
       <link
@@ -36,8 +36,8 @@ export const RouterHead = component$(() => {
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       />
 
-      {head.styles.map((s) => (
-        <style {...s.props} dangerouslySetInnerHTML={s.style} />
+      {head.styles.map((s, k) => (
+        <style key={k} {...s.props} dangerouslySetInnerHTML={s.style} />
       ))}
 
       <script

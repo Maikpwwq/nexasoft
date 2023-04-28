@@ -8,10 +8,10 @@ exports["default"] = qwik_1.component$(function () {
     return (React.createElement("features", { id: "features-section", "class": "mt-6 mb-6" },
         React.createElement(mui_1.MUITypography, { variant: "h6", 
             // component="div"
-            align: "center", className: "pt-6", color: "var(--qwik-dark-blue)" },
+            align: "center", "class": "pt-6", color: "var(--qwik-dark-blue)" },
             "\u00BFEst\u00E1s cansado de lidiar con plataformas antiguas y poco eficientes?",
             " "),
-        React.createElement(mui_1.MUITypography, { className: "mt-6 mb-6 pb-6", variant: "body1" },
+        React.createElement(mui_1.MUITypography, { "class": "mt-6 mb-6 pb-6", variant: "body1" },
             React.createElement("br", null),
             React.createElement("strong", null, "NexaSoft"),
             " ofrece soluciones empresariales de software que te ayudar\u00E1n a mejorar tu negocio. Con nuestros servicios de",
@@ -65,6 +65,6 @@ exports["default"] = qwik_1.component$(function () {
             React.createElement("br", null),
             "No esperes m\u00E1s, cont\u00E1ctanos para saber m\u00E1s sobre c\u00F3mo nuestras soluciones de software pueden mejorar tu negocio.",
             React.createElement("br", null)),
-        React.createElement(mui_1.MUIBox, { className: "w-100 flex justify-center" },
+        React.createElement(mui_1.MUIBox, { "class": "w-100 flex justify-center" },
             React.createElement(mui_1.ImagesList, null))));
 });
