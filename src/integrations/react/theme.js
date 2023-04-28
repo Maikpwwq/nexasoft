@@ -1,9 +1,6 @@
 /** @jsxImportSource react */
 import { createTheme } from '@mui/material/styles'
-import green from '@mui/material/colors/index'
 // import { green, grey, red } from '@mui/material/colors/index'
-import grey from '@mui/material/colors/index'
-import red from '@mui/material/colors/index'
 
 const rawTheme = createTheme({
   palette: {
@@ -22,14 +19,14 @@ const rawTheme = createTheme({
       dark: '#ffb25e'
     },
     error: {
-      xLight: red[50],
-      main: red[500],
-      dark: red[700]
+      xLight: '#ffebee', // red[50],
+      main: '#f44336', // red[500],
+      dark: '#d32f2f' // red[700]
     },
     success: {
-      xLight: green[50],
-      main: green[500],
-      dark: green[700]
+      xLight: '#e8f5e9', //green[50],
+      main: '#4caf50', // green[500], 
+      dark: '#388e3c' // green[700] 
     }
   },
   typography: {
@@ -66,7 +63,7 @@ const theme = {
     background: {
       ...rawTheme.palette.background,
       default: rawTheme.palette.common.white,
-      placeholder: grey[200]
+      placeholder: '#eeeeee' // grey[200]
     }
   },
   typography: {
