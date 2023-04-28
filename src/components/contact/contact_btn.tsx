@@ -17,7 +17,7 @@ export const mongo = async () => {
   // method: "POST", headers: { "Content-Type": "application/json", }, body: JSON.stringify(data),
   // })
   await fetch("https://nexasoft.netlify.app/.netlify/functions/get_mongoose")
-    .then((res) => {
+    .then((res) => { 
       console.log("MongoRes", res);
       res.json();
     })
