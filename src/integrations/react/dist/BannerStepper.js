@@ -6,7 +6,8 @@ var react_swipeable_views_1 = require("react-swipeable-views");
 var react_swipeable_views_utils_1 = require("react-swipeable-views-utils");
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var styles_1 = require("@mui/material/styles");
+// import { useTheme } from "@mui/material/styles";
+var theme_1 = require("./theme");
 // import { component$ } from "@builder.io/qwik";
 // import { useStore, useBrowserVisibleTask$ } from "@builder.io/qwik";
 var Soluciones_de_software_personalizadas_png_1 = require("../../assets/img/banners/Soluciones de software personalizadas.png");
@@ -40,7 +41,7 @@ var BannerStepper = function () {
     // export default component$(() => {
     var maxSteps = 3; // imagenes.length
     var changeTime = 5000; // 10000
-    var theme = styles_1.useTheme();
+    // const theme = useTheme();
     var _a = react_1.useState({ count: 0 }), store = _a[0], setStore = _a[1];
     // const store = useStore({ count: 0 });
     react_1.useEffect(function () {
@@ -63,7 +64,7 @@ var BannerStepper = function () {
                 position: "relative",
                 minHeight: "16rem"
             } },
-            React.createElement(CustomSwipeableViews, { axis: theme.direction === "rtl" ? "x-reverse" : "x", index: store.count, onChangeIndex: function (step) {
+            React.createElement(CustomSwipeableViews, { axis: theme_1["default"].direction === "rtl" ? "x-reverse" : "x", index: store.count, onChangeIndex: function (step) {
                     console.log("step", step);
                     setStore({ count: step });
                     // store.count = step;
@@ -89,7 +90,7 @@ var BannerStepper = function () {
                 flexDirection: "row"
             }, className: "pb-4 mb-4", steps: maxSteps, 
             // position="static"
-            activeStep: store.count, nextButton: React.createElement(material_1.Button, { size: "large", onClick: function () { return setStore({ count: store.count++ }); }, className: "arrow-next", disabled: store.count === maxSteps - 1 }, theme.direction === "rtl" ? (React.createElement(icons_material_1.KeyboardArrowLeft, { fontSize: "large" })) : (React.createElement(icons_material_1.KeyboardArrowRight, { fontSize: "large" }))), backButton: React.createElement(material_1.Button, { size: "large", onClick: function () { return setStore({ count: store.count-- }); }, className: "arrow-back", disabled: store.count === 0 }, theme.direction === "rtl" ? (React.createElement(icons_material_1.KeyboardArrowRight, { fontSize: "large" })) : (React.createElement(icons_material_1.KeyboardArrowLeft, { fontSize: "large" }))) })));
+            activeStep: store.count, nextButton: React.createElement(material_1.Button, { size: "large", onClick: function () { return setStore({ count: store.count++ }); }, className: "arrow-next", disabled: store.count === maxSteps - 1 }, theme_1["default"].direction === "rtl" ? (React.createElement(icons_material_1.KeyboardArrowLeft, { fontSize: "large" })) : (React.createElement(icons_material_1.KeyboardArrowRight, { fontSize: "large" }))), backButton: React.createElement(material_1.Button, { size: "large", onClick: function () { return setStore({ count: store.count-- }); }, className: "arrow-back", disabled: store.count === 0 }, theme_1["default"].direction === "rtl" ? (React.createElement(icons_material_1.KeyboardArrowRight, { fontSize: "large" })) : (React.createElement(icons_material_1.KeyboardArrowLeft, { fontSize: "large" }))) })));
 };
 // );
 exports["default"] = BannerStepper;

@@ -4,7 +4,8 @@ import SwipeableViews from "react-swipeable-views";
 import { bindKeyboard } from "react-swipeable-views-utils";
 import { Box, Button, MobileStepper } from "@mui/material";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
-import { useTheme } from "@mui/material/styles";
+// import { useTheme } from "@mui/material/styles";
+import theme from "./theme";
 
 // import { component$ } from "@builder.io/qwik";
 // import { useStore, useBrowserVisibleTask$ } from "@builder.io/qwik";
@@ -43,7 +44,7 @@ const BannerStepper = () => {
   // export default component$(() => {
   const maxSteps = 3; // imagenes.length
   const changeTime = 5000; // 10000
-  const theme = useTheme();
+  // const theme = useTheme();
 
   const [store, setStore] = useState({ count: 0 });
 
