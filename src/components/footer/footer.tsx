@@ -21,7 +21,7 @@ export default component$(() => {
   return (
     <footer>
       <MUIBox
-        class="w-full justify-center"
+        className="w-full justify-center"
         sx={{
           display: "flex",
           flexWrap: "wrap",
@@ -32,7 +32,7 @@ export default component$(() => {
           },
         }}
       >
-        <MUIPaper elevation={3} class="p-4 w-full">
+        <MUIPaper elevation={3} className="p-4 w-full">
           <MUIStack>
             {" "}
             <MUIContactPageIcon fontSize="large" />
@@ -41,7 +41,7 @@ export default component$(() => {
             <MUITypography variant="body2">
               <MUIPlaceIcon /> Bogotá, Colombia.
             </MUITypography>
-            <MUIBox class="flex flex-row justify-center">
+            <MUIBox className="flex flex-row justify-center">
               <MUIMailOutlineIcon />
               <a
                 href="mailto:nexasoftprofessionalsolutions@gmail.com"
@@ -58,7 +58,7 @@ export default component$(() => {
             <MUITypography variant="body2">
               <MUIWhatsAppIcon fontSize="small" /> 3195137182
             </MUITypography>
-            <MUIBox class="flex flex-row justify-center">
+            <MUIBox className="flex flex-row justify-center">
               <a
                 href="https://www.instagram.com/nexa_soft/"
                 target="_blank"

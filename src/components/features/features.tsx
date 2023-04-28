@@ -23,12 +23,12 @@ export default component$(() => {
         variant="h6"
         // component="div"
         align="center"
-        class="pt-6"
+        className="pt-6"
         color={"var(--qwik-dark-blue)"}
       >
         ¿Estás cansado de lidiar con plataformas antiguas y poco eficientes?{" "}
       </MUITypography>
-      <MUITypography class="mt-6 mb-6 pb-6" variant="body1">
+      <MUITypography className="mt-6 mb-6 pb-6" variant="body1">
         <br />
         <strong>NexaSoft</strong> ofrece soluciones empresariales de software
         que te ayudarán a mejorar tu negocio. Con nuestros servicios de{" "}
@@ -76,7 +76,7 @@ export default component$(() => {
         soluciones de software pueden mejorar tu negocio.
         <br />
       </MUITypography>
-      <MUIBox class="w-100 flex justify-center">
+      <MUIBox className="w-100 flex justify-center">
         <ImagesList />
       </MUIBox>
     </features>

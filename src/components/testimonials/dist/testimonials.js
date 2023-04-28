@@ -31,9 +31,9 @@ exports["default"] = qwik_1.component$(function () {
     return (React.createElement("testimonials", { id: "testimonials-section" },
         React.createElement("div", null,
             React.createElement(mui_1.MUITypography, { variant: "h6", align: "center", color: "var(--qwik-dark-blue)" }, "Testimonios y comentarios de clientes satisfechos."),
-            React.createElement(mui_1.MUIBox, { "class": "flex items-center", sx: { flexDirection: { md: "row", sm: "row", xs: "column" } } }, testimonials.map(function (_a) {
+            React.createElement(mui_1.MUIBox, { className: "flex items-center", sx: { flexDirection: { md: "row", sm: "row", xs: "column" } } }, testimonials.map(function (_a) {
                 var message = _a.message, name = _a.name, logo = _a.logo, webSite = _a.webSite;
-                return (React.createElement(mui_1.MUICard, { key: name, "class": "m-6 rounded hover:rounded-lg", sx: { maxWidth: 275, borderRadius: 4 }, elevation: 16 },
+                return (React.createElement(mui_1.MUICard, { key: name, className: "m-6 rounded hover:rounded-lg", sx: { maxWidth: 275, borderRadius: 4 }, elevation: 16 },
                     React.createElement(mui_1.MUICardMedia, null,
                         React.createElement("img", { src: logo, alt: name, height: "194" })),
                     React.createElement(mui_1.MUICardContent, null,
