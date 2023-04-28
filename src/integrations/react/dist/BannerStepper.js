@@ -1,7 +1,6 @@
-/** @jsxImportSource react */
-"use client";
 "use strict";
 exports.__esModule = true;
+/** @jsxImportSource react */
 var react_1 = require("react");
 var react_swipeable_views_1 = require("react-swipeable-views");
 var react_swipeable_views_utils_1 = require("react-swipeable-views-utils");
@@ -40,7 +39,7 @@ var bannerImg = [
 var BannerStepper = function () {
     // export default component$(() => {
     var maxSteps = 3; // imagenes.length
-    var changeTime = 10000;
+    var changeTime = 5000; // 10000
     var theme = styles_1.useTheme();
     var _a = react_1.useState({ count: 0 }), store = _a[0], setStore = _a[1];
     // const store = useStore({ count: 0 });

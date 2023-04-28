@@ -20,10 +20,12 @@ var qwik_city_1 = require("@builder.io/qwik-city");
 exports.RouterHead = qwik_1.component$(function () {
     var head = qwik_city_1.useDocumentHead();
     var title = "NexaSoft";
-    var loc = qwik_city_1.useLocation();
+    var loc = qwik_city_1.useLocation(); // isNavigating, url, params
+    console.log('useLocation', loc);
     return (React.createElement(React.Fragment, null,
         React.createElement("title", null, title),
-        React.createElement("link", { rel: "canonical", href: loc.href }),
+        React.createElement("link", { rel: "canonical" }),
+        " ",
         React.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
         React.createElement("link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }),
         React.createElement("meta", { "http-equiv": "Content-Security-Policy", content: "default-src 'self';script-src 'unsafe-inline' 'unsafe-eval' http:; style-src 'unsafe-inline' http:; img-src http: data:; font-src http: data:;" }),

@@ -7,7 +7,7 @@ var mui_1 = require("~/integrations/react/mui");
 exports["default"] = qwik_1.component$(function () {
     qwik_1.useStylesScoped$(mainBanner_css_inline_1["default"]);
     // const store = useStore({ count: 0 });
-    // useClientEffect$(() => {
+    // useVisibleTask$(() => {
     //   // Only runs in the client
     //   const timer = setInterval(() => {
     //     maxSteps > store.count ? store.count++ : (store.count = 0);

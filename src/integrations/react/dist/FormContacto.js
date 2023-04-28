@@ -1,5 +1,3 @@
-/** @jsxImportSource react */
-"use client";
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -49,6 +47,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
+/** @jsxImportSource react */
 var material_1 = require("@mui/material");
 var react_1 = require("react");
 var FormContacto = function () {

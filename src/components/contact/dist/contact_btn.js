@@ -75,7 +75,7 @@ exports["default"] = qwik_1.component$(function (props) {
     qwik_1.useStylesScoped$(contact_css_inline_1["default"]);
     // const mongo_data = useSignal(mongo);
     // const response = useResource$(mongo);
-    qwik_1.useClientEffect$(function () {
+    qwik_1.useVisibleTask$(function () {
         // console.log("finalData", response.promise, response.loading, response.value, mongo_data); //.value
         console.log("store", store);
     });

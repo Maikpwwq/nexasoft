@@ -7,13 +7,14 @@ import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
 export const RouterHead = component$(() => {
   const head = useDocumentHead();
   const title = "NexaSoft";
-  const loc = useLocation();
+  const loc = useLocation(); // isNavigating, url, params
+  console.log('useLocation', loc)
 
   return (
     <>
       <title>{title}</title>
 
-      <link rel="canonical" href={loc.href} />
+       <link rel="canonical" /> {/* href={loc.url} */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 

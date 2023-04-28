@@ -2,7 +2,8 @@ import {
   component$,
   useStylesScoped$,
   // useSignal,
-  useClientEffect$,
+  // useClientEffect$, deprecated
+  useVisibleTask$,  
   // useResource$,
 } from "@builder.io/qwik";
 import styles from "./contact.css?inline";
@@ -32,7 +33,7 @@ export default component$((props: any) => {
   // const mongo_data = useSignal(mongo);
   // const response = useResource$(mongo);
 
-  useClientEffect$(() => {
+  useVisibleTask$(() => {
     // console.log("finalData", response.promise, response.loading, response.value, mongo_data); //.value
     console.log("store", store);
   });

@@ -1,5 +1,4 @@
 /** @jsxImportSource react */
-"use client";
 import { useState, useEffect } from "react";
 import SwipeableViews from "react-swipeable-views";
 import { bindKeyboard } from "react-swipeable-views-utils";
@@ -43,7 +42,7 @@ const bannerImg = [
 const BannerStepper = () => {
   // export default component$(() => {
   const maxSteps = 3; // imagenes.length
-  const changeTime = 10000;
+  const changeTime = 5000; // 10000
   const theme = useTheme();
 
   const [store, setStore] = useState({ count: 0 });
