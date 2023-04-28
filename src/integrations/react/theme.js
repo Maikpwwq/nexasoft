@@ -1,3 +1,4 @@
+/** @jsxImportSource react */
 import { createTheme } from '@mui/material/styles'
 import { green, grey, red } from '@mui/material/colors'
 
