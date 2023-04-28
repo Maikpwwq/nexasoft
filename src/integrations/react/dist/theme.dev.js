@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _index = _interopRequireDefault(require("@mui/material/styles/index"));
+var _createTheme = _interopRequireDefault(require("@mui/material/styles/createTheme"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -17,7 +17,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 // import { createTheme } from '@mui/material/styles'
 // import { green, grey, red } from '@mui/material/colors/index'
-var rawTheme = (0, _index["default"])({
+var rawTheme = (0, _createTheme["default"])({
   palette: {
     primary: {
       light: '#69696a',
