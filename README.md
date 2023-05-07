@@ -268,3 +268,9 @@ Add `--prod` flag to deploy to production.
 ```
 pnpm build.server
 ```
+
+## Static Site Generator (Node.js)
+
+```
+pnpm build.server
+```
