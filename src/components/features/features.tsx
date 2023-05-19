@@ -30,7 +30,7 @@ export default component$(() => {
       </MUITypography>
       <MUITypography className="mt-6 mb-6 pb-6" variant="body1">
         <br />
-        <strong>NexaSoft</strong> ofrece soluciones empresariales de software
+        <strong>🚀 NexaSoft SAS</strong> ofrece soluciones empresariales de software
         que te ayudarán a mejorar tu negocio. Con nuestros servicios de{" "}
         <strong>
           modernización de plataformas <MUIDevicesIcon />,{" "}

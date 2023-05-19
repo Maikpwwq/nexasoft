@@ -24,11 +24,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Bienvenido a NexaSoft",
+  title: "Bienvenido a NexaSoft SAS",
   meta: [
     {
       name: "description",
-      content: "NexaSoft, el futuro en soluciones de software.",
+      content: "NexaSoft SAS, el futuro en soluciones de software.",
     },
   ],
 };

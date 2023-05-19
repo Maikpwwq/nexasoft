@@ -13,7 +13,7 @@ exports["default"] = qwik_1.component$(function () {
             " "),
         React.createElement(mui_1.MUITypography, { className: "mt-6 mb-6 pb-6", variant: "body1" },
             React.createElement("br", null),
-            React.createElement("strong", null, "NexaSoft"),
+            React.createElement("strong", null, "\uD83D\uDE80 NexaSoft SAS"),
             " ofrece soluciones empresariales de software que te ayudar\u00E1n a mejorar tu negocio. Con nuestros servicios de",
             " ",
             React.createElement("strong", null,

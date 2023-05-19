@@ -12,10 +12,6 @@ exports["default"] = vite_2.extendConfig(vite_config_1["default"], function () {
             },
             outDir: '.netlify/edge-functions/entry.netlify-edge'
         },
-        plugins: [
-            vite_1.netifyEdgeAdaptor({
-                staticGenerate: true
-            }),
-        ]
+        plugins: [vite_1.netlifyEdgeAdapter()]
     };
 });

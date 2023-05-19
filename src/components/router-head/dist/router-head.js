@@ -19,7 +19,7 @@ var qwik_city_1 = require("@builder.io/qwik-city");
  */
 exports.RouterHead = qwik_1.component$(function () {
     var head = qwik_city_1.useDocumentHead();
-    var title = "NexaSoft";
+    var title = "NexaSoft SAS";
     var loc = qwik_city_1.useLocation(); // isNavigating, url, params
     console.log('useLocation', loc);
     return (React.createElement(React.Fragment, null,

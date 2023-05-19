@@ -51,7 +51,7 @@ export default component$(() => {
                 <MUITypography variant="body2">
                   {" "}
                   {/* <MUIAlternateEmailIcon fontSize="small" />  */}
-                  NexaSoft
+                  NexaSoft SAS
                 </MUITypography>
               </a>
             </MUIBox>

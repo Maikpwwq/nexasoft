@@ -4,7 +4,7 @@ import styles from "./header.css?inline";
 export default component$(() => {
   useStylesScoped$(styles);
 
-  const NexaSoftLogo = "NexaSoft";
+  const NexaSoftLogo = "NexaSoft SAS";
 
   return (
     <header>

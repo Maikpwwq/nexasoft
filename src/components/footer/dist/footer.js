@@ -28,7 +28,7 @@ exports["default"] = qwik_1.component$(function () {
                         React.createElement("a", { href: "mailto:nexasoftprofessionalsolutions@gmail.com", target: "_blank", title: "mail" },
                             React.createElement(mui_1.MUITypography, { variant: "body2" },
                                 " ",
-                                "NexaSoft"))),
+                                "NexaSoft SAS"))),
                     React.createElement(mui_1.MUITypography, { variant: "body2" },
                         React.createElement(mui_1.MUIWhatsAppIcon, { fontSize: "small" }),
                         " 3195137182"),

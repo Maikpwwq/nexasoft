@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "NexaSoft",
-  "short_name": "NexaSoft",
+  "name": "NexaSoft SAS",
+  "short_name": "NexaSoft SAS",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "NexaSoft, El futuro en soluciones de software."
+  "description": "NexaSoft SAS, El futuro en soluciones de software."
 }

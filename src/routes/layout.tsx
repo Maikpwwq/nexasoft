@@ -12,7 +12,7 @@ export default component$(() => {
       </main>
       <footer>
         <a href="/" target="_blank">
-          Made in Colombia ♡ by NexaSoft
+          Made in Colombia ♡ by NexaSoft SAS
         </a>
       </footer>
     </>
