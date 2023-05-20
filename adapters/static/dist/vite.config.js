@@ -13,7 +13,7 @@ exports["default"] = vite_2.extendConfig(vite_config_1["default"], function () {
         },
         plugins: [
             vite_1.staticAdapter({
-                origin: 'https://nexasoft.netlify.app/'
+                origin: 'https://nexasoft.dev/'
             }),
         ]
     };

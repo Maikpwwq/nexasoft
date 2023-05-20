@@ -104,7 +104,7 @@ devDependencies:
     version: 4.18.2
   netlify-cli:
     specifier: ^15.1.1
-    version: 15.1.1(@types/express@4.17.17)(@types/node@20.2.1)(typescript@5.0.4)
+    version: 15.1.1(@types/express@4.17.17)(@types/node@20.2.1)
   node-fetch:
     specifier: 3.3.1
     version: 3.3.1
@@ -1222,7 +1222,7 @@ packages:
       '@netlify/run-utils': 5.1.0
       '@netlify/zip-it-and-ship-it': 9.6.0(supports-color@9.3.1)
       '@sindresorhus/slugify': 2.2.1
-      ansi-escapes: 6.2.0(typescript@5.0.4)
+      ansi-escapes: 6.2.0
       chalk: 5.2.0
       clean-stack: 4.2.0
       execa: 6.1.0
@@ -1774,7 +1774,7 @@ packages:
       junk: 4.0.1
       locate-path: 7.2.0
       merge-options: 3.0.4
-      minimatch: 9.0.0
+      minimatch: 9.0.1
       normalize-path: 3.0.0
       p-map: 5.5.0
       path-exists: 5.0.0
@@ -2635,13 +2635,11 @@ packages:
       type-fest: 1.4.0
     dev: true
 
-  /ansi-escapes@6.2.0(typescript@5.0.4):
+  /ansi-escapes@6.2.0:
     resolution: {integrity: sha512-kzRaCqXnpzWs+3z5ABPQiVke+iq0KXkHo8xiWV4RPTi5Yli0l97BEQuhXV1s7+aSU/fu1kUuxgS4MsQ0fRuygw==}
     engines: {node: '>=14.16'}
     dependencies:
-      type-fest: 3.10.0(typescript@5.0.4)
-    transitivePeerDependencies:
-      - typescript
+      type-fest: 3.11.0
     dev: true
 
   /ansi-regex@2.1.1:
@@ -3111,7 +3109,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001488
       electron-to-chromium: 1.4.402
-      node-releases: 2.0.10
+      node-releases: 2.0.11
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
 
   /bson@5.3.0:
@@ -7218,8 +7216,8 @@ packages:
       brace-expansion: 2.0.1
     dev: true
 
-  /minimatch@9.0.0:
-    resolution: {integrity: sha512-0jJj8AvgKqWN05mrwuqi8QYKx1WmYSUoKSxu5Qhs9prezTz10sxAHGNZe9J9cqIJzta8DWsleh2KaVaLl6Ru2w==}
+  /minimatch@9.0.1:
+    resolution: {integrity: sha512-0jWhJpD/MdhPXwPuiRkCbfYfSKp2qnn2eOc279qI7f+osl/l+prKSrvhg157zSYvx/1nmgn2NqdT6k2Z7zSH9w==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       brace-expansion: 2.0.1
@@ -7437,7 +7435,7 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /netlify-cli@15.1.1(@types/express@4.17.17)(@types/node@20.2.1)(typescript@5.0.4):
+  /netlify-cli@15.1.1(@types/express@4.17.17)(@types/node@20.2.1):
     resolution: {integrity: sha512-U+UarUHIbmjUGlINgwqhbRldx2yC+nUPQk4iFzCBiDxXhTzhushTsqvupi5nZ0I5oUZgQBacE79oXT7KUIELnw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -7454,7 +7452,7 @@ packages:
       '@netlify/zip-it-and-ship-it': 9.6.0(supports-color@9.3.1)
       '@octokit/rest': 19.0.8
       '@skn0tt/lambda-local': 2.0.3
-      ansi-escapes: 6.2.0(typescript@5.0.4)
+      ansi-escapes: 6.2.0
       ansi-styles: 6.2.1
       ansi-to-html: 0.7.2
       ascii-table: 0.0.9
@@ -7557,7 +7555,6 @@ packages:
       - '@types/node'
       - encoding
       - supports-color
-      - typescript
       - zen-observable
       - zenObservable
     dev: true
@@ -7633,8 +7630,8 @@ packages:
     hasBin: true
     dev: true
 
-  /node-releases@2.0.10:
-    resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
+  /node-releases@2.0.11:
+    resolution: {integrity: sha512-+M0PwXeU80kRohZ3aT4J/OnR+l9/KD2nVLNNoRgFtnf+umQVFdGBAO2N8+nCnEi0xlh/Wk3zOGC+vNNx+uM79Q==}
 
   /node-source-walk@6.0.2:
     resolution: {integrity: sha512-jn9vOIK/nfqoFCcpK89/VCVaLg1IHE6UVfDOzvqmANaJ/rWCTEdH8RZ1V278nv2jr36BJdyQXIAavBLXpzdlag==}
@@ -9938,13 +9935,9 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /type-fest@3.10.0(typescript@5.0.4):
-    resolution: {integrity: sha512-hmAPf1datm+gt3c2mvu0sJyhFy6lTkIGf0GzyaZWxRLnabQfPUqg6tF95RPg6sLxKI7nFLGdFxBcf2/7+GXI+A==}
+  /type-fest@3.11.0:
+    resolution: {integrity: sha512-JaPw5U9ixP0XcpUbQoVSbxSDcK/K4nww20C3kjm9yE6cDRRhptU28AH60VWf9ltXmCrIfIbtt9J+2OUk2Uqiaw==}
     engines: {node: '>=14.16'}
-    peerDependencies:
-      typescript: '>=4.7.0'
-    dependencies:
-      typescript: 5.0.4
     dev: true
 
   /type-is@1.6.18:

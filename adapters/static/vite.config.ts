@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: 'https://nexasoft.netlify.app/',
+        origin: 'https://nexasoft.dev/', // https://nexasoft.netlify.app/
       }),
     ],
   };
