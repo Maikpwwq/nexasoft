@@ -34,12 +34,30 @@ const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
 
 export const handler = async (event) => {
   const { body } = event;
-  console.log("Raw body:", body);
+  // console.log("Raw body:", body);
+  
+  // Input data validation
+  if (!body || typeof body !== "string") {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: "Invalid request body" }),
+    };
+  }
+
+  const parsedBody = JSON.parse(body);
+
+  const contactData = {
+    name: parsedBody.name,
+    email: parsedBody.email,
+    phone: parsedBody.phone,
+    issue: parsedBody.issue,
+    message: parsedBody.message,
+  };
+
   try {
-    const parsedBody = JSON.parse(body);
-    console.log("Parsed body:", parsedBody, typeof parsedBody);
-    const res = await Contactos.create(parsedBody);
-    console.log("mongoRes", res);
+    // console.log("Parsed body:", parsedBody, typeof parsedBody);
+    const res = await Contactos.create(contactData);
+    // console.log("mongoRes", res);
     return {
       statusCode: 200,
       body: JSON.stringify(res),
