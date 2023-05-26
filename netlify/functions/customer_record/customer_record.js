@@ -64,5 +64,9 @@ export const handler = async (event) => {
   } catch (err) {
     console.error("[mongodb create new customer record]", MONGO_HOST, err);
     return { statusCode: 500, body: err.toString() };
-  }
+  } 
+  // finally {
+  //   // Ensures that the client will close when you finish/error
+  //   await clientPromise.close();
+  // }
 };
