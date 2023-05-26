@@ -19,8 +19,13 @@ export default component$(() => {
   // });
 
   return (
-    <contact id="contact-section" class="flex w-full justify-center">
-      <FormularioContacto />
+    <contact
+      id="contact-section"
+      class="container container-center container-spacing-xl"
+    >
+      <div class="flex w-full justify-center">
+        <FormularioContacto />
+      </div>
     </contact>
   );
 });

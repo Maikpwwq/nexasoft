@@ -1,16 +1,17 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
-import styles from "./header.css?inline";
+import { component$ } from "@builder.io/qwik";
+import styles from './header.module.css';
+// import { NexaSoftLogo } from '../icons/qwik';
 
 export default component$(() => {
-  useStylesScoped$(styles);
 
   const NexaSoftLogo = "NexaSoft SAS";
 
   return (
-    <header>
-      <div class="logo">
-        <a href="/" title="qwik">
-          {/* <NexaSoftLogo /> */}
+    <header class={styles.header}>
+      <div class={['container', styles.wrapper]}>
+      <div class={styles.logo}>
+        <a href="/" title="NexaSoft SAS">
+          {/* <NexaSoftLogo height={50} width={143} /> */}
           {NexaSoftLogo} <span class="lightning">⚡️</span>
         </a>
       </div>
@@ -61,6 +62,7 @@ export default component$(() => {
           </a>
         </li> */}
       </ul>
+      </div>
     </header>
   );
 });

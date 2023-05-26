@@ -45,26 +45,26 @@ export default component$(() => {
     <testimonials id="testimonials-section">
       <div>
         <MUITypography
-          variant="h6"
+          variant="h3"
           align="center"
-          color={"var(--qwik-dark-blue)"}
+          className="title"
         >
-          Testimonios y comentarios de clientes satisfechos.
+          Nuestros <span class="highlight">clientes</span> satisfechos.
         </MUITypography>
         <MUIBox
-          className="flex items-center"
+          className="flex items-center justify-center mt-6 mb-6"
           sx={{ flexDirection: { md: "row", sm: "row", xs: "column" } }}
         >
           {testimonials.map(({ message, name, logo, webSite }) => {
             return (
               <MUICard
                 key={name}
-                className="m-6 rounded hover:rounded-lg"
+                className="m-6 hover:rounded-3xl"
                 sx={{ maxWidth: 275, borderRadius: 4 }}
                 elevation={16}
               >
                 <MUICardMedia>
-                  <img src={logo} alt={name} height="194" />
+                  <img src={logo} alt={name} height={184} width={300}/>
                 </MUICardMedia>
                 <MUICardContent>
                   <MUITypography
@@ -75,8 +75,8 @@ export default component$(() => {
                     {/* sx={{ fontSize: 14 }} color="text.secondary" gutterBottom */}
                     {message}
                   </MUITypography>
-                  <MUITypography variant="body1" fontWeight={"bold"}>
-                    <a href={webSite}>{name}</a>{" "}
+                  <MUITypography variant="body1" fontWeight={"bold"} className="pt-3">
+                    <a href={webSite} >{name}</a>{" "}
                   </MUITypography>
                 </MUICardContent>
               </MUICard>

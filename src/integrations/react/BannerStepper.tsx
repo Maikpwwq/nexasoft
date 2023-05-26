@@ -94,7 +94,7 @@ const BannerStepper = () => {
               return (
                 <Box key={id} className="">
                   {id === store.count && (
-                    <img className="slider" src={img} alt={description} />
+                    <img className="slider" src={img} alt={description} width={700} height={300} />
                   )}
                 </Box>
               );

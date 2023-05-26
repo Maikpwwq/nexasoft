@@ -1,0 +1,35 @@
+.timeToCelebrate {
+  display: flex;
+  vertical-align: middle;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 450px;
+  justify-content: center;
+  gap: 40px;
+}
+
+.timeToCelebrate p {
+  color: white;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.title {
+  font-size: 3rem !important;
+}
+
+@media screen and (min-width: 768px) {
+  .timeToCelebrate {
+    gap: 60px;
+    height: 500px;
+  }
+
+  .timeToCelebrate p {
+    font-size: 1.3rem;
+  }
+
+  .title {
+    font-size: 5rem !important;
+  }
+}

@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
+import { component$ } from '@builder.io/qwik';
+import { useDocumentHead, useLocation } from '@builder.io/qwik-city';
 
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
@@ -7,48 +7,27 @@ import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
 export const RouterHead = component$(() => {
   const head = useDocumentHead();
   const title = "NexaSoft SAS";
-  const loc = useLocation(); // isNavigating, url, params
-  console.log('useLocation', loc)
+  const loc = useLocation();
 
   return (
     <>
       <title>{title}</title>
 
-       <link rel="canonical" /> {/* href={loc.url} */}
+      <link rel="canonical" href={loc.url.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-      <meta
-        http-equiv="Content-Security-Policy"
-        content="default-src 'self';script-src 'unsafe-inline' 'unsafe-eval' http:; style-src 'unsafe-inline' http:; img-src http: data:; font-src http: data:;"
-      />
-
-      {head.meta.map((m, k) => (
-        <meta key={k} {...m} />
+      {head.meta.map((m) => (
+        <meta key={m.key} {...m} />
       ))}
 
-      {head.links.map((l,k) => (
-        <link key={k} {...l} />
+      {head.links.map((l) => (
+        <link key={l.key} {...l} />
       ))}
 
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      />
-
-      {head.styles.map((s, k) => (
-        <style key={k} {...s.props} dangerouslySetInnerHTML={s.style} />
+      {head.styles.map((s) => (
+        <style key={s.key} {...s.props} dangerouslySetInnerHTML={s.style} />
       ))}
-
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-2PNKE0S3GJ"
-      ></script>
-      {/* <script>
-        window.dataLayer = window.dataLayer || []; function gtag()
-        {dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
-        'G-2PNKE0S3GJ');
-      </script> */}
     </>
   );
 });

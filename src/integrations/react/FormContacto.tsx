@@ -9,7 +9,13 @@ import {
   Input,
   InputLabel,
 } from "@mui/material";
+import { TextareaAutosize } from "@mui/base";
 import { useState } from "react";
+// import { styled } from '@mui/system';
+
+// const StyledTextarea = styled(TextareaAutosize)`
+
+// `
 
 const FormContacto = () => {
   const [store, setStore] = useState({
@@ -42,7 +48,7 @@ const FormContacto = () => {
   return (
     <>
       <Card
-        className="m-6 flex"
+        className="m-6 flex hover:rounded-3xl"
         sx={{ maxWidth: 369, borderRadius: 6 }}
         elevation={16}
       >
@@ -122,10 +128,11 @@ const FormContacto = () => {
               <InputLabel sx={{ position: "relative" }} htmlFor="form-message">
                 Mensaje:{" "}
               </InputLabel>
-              <Input
+              <TextareaAutosize
                 id="form-message"
-                multiline
-                rows={"3"}
+                minRows={5}
+                maxRows={48}
+                style={{ height: "auto" }}
                 value={store.message}
                 onChange={(event: any) => {
                   setStore({ ...store, message: event });
@@ -138,7 +145,11 @@ const FormContacto = () => {
               variant="standard"
               size="small"
             >
-              <Button type="submit" onClick={() => handleClick(store)}>
+              <Button
+                type="submit"
+                className="button"
+                onClick={() => handleClick(store)}
+              >
                 Enviar
               </Button>
             </FormControl>

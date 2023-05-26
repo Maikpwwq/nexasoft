@@ -115,6 +115,6 @@ export const TableApp = qwikify$(() => {
   return (
     <>
       <TableReactApp/>
-    </>
+    </> 
   );
 });
