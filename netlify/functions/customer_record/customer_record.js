@@ -20,7 +20,6 @@ const schema = new mongoose.Schema({
   message: String,
 });
 
-console.log("MONGOOSE_HOST", MONGO_HOST);
 const clientPromise = mongoose.createConnection(
   MONGO_HOST,
   {
@@ -34,8 +33,7 @@ const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
 
 export const handler = async (event) => {
   const { body } = event;
-  // console.log("Raw body:", body);
-  
+
   // Input data validation
   if (!body || typeof body !== "string") {
     return {
