@@ -29,7 +29,7 @@ const FormContacto = () => {
   const handleClick = async (store: Object) => {
     console.log("handleClick", store);
     await fetch(
-      "https://nexasoft.netlify.app/.netlify/functions/customer_record",
+      "https://nexasoft.dev/.netlify/functions/customer_record",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
