@@ -28,24 +28,17 @@ const clientPromise = mongoose.createConnection(
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
-  // , function (err) {
-  //   if (err) {
-  //     console.log("Connection error", err);
-  //   }
-  // }
 );
 
 const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
 
 export const handler = async (event) => {
-  // console.log("customer_record", event, context);
   const { body } = event;
-  const parsedBody = JSON.parse(body);
-  console.log("customer_record", typeof parsedBody);
+  console.log("Raw body:", body);
   try {
+    const parsedBody = JSON.parse(body);
+    console.log("Parsed body:", parsedBody, typeof parsedBody);
     const res = await Contactos.create(parsedBody);
-    // .exec()
-    // .then((res) => {
     console.log("mongoRes", res);
     return {
       statusCode: 200,
@@ -53,7 +46,7 @@ export const handler = async (event) => {
     };
     // }); // .toArray(); .exec() .clone()
   } catch (err) {
-    console.error("[db] Error", MONGO_HOST, err);
+    console.error("[mongodb create new customer record]", MONGO_HOST, err);
     return { statusCode: 500, body: err.toString() };
   }
 };
