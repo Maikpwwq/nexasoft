@@ -27,30 +27,30 @@ const clientPromise = mongoose.createConnection(
     dbName: DB_NAME,
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  },
-  function (err) {
-    if (err) {
-      console.log("Connection error", err);
-    }
   }
+  // , function (err) {
+  //   if (err) {
+  //     console.log("Connection error", err);
+  //   }
+  // }
 );
 
-const Contactos = clientPromise.model(MONGODB_COLLECTION, schema); 
+const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
 
 export const handler = async (event) => {
   // console.log("customer_record", event, context);
   const { body } = event;
   console.log("customer_record", body);
   try {
-    await Contactos.create({body})
-      // .exec()
-      .then((res) => {
-        console.log("mongoRes", res);
-        return {
-          statusCode: 200,
-          body: JSON.stringify(res),
-        };
-      }); // .toArray(); .exec() .clone()
+    const res = await Contactos.create(body);
+    // .exec()
+    // .then((res) => {
+    console.log("mongoRes", res);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(res),
+    };
+    // }); // .toArray(); .exec() .clone()
   } catch (err) {
     console.error("[db] Error", MONGO_HOST, err);
     return { statusCode: 500, body: err.toString() };
