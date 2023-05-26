@@ -40,9 +40,10 @@ const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
 export const handler = async (event) => {
   // console.log("customer_record", event, context);
   const { body } = event;
-  console.log("customer_record", body);
+  const parsedBody = JSON.parse(body);
+  console.log("customer_record", typeof parsedBody);
   try {
-    const res = await Contactos.create(body);
+    const res = await Contactos.create(parsedBody);
     // .exec()
     // .then((res) => {
     console.log("mongoRes", res);
