@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import mongoose from "mongoose"; // ,
 import * as dotenv from "dotenv";
-import {
-  type RequestHandler,
-} from "@builder.io/qwik-city";
+import { type RequestHandler } from "@builder.io/qwik-city";
 
 // import { component$ } from "@builder.io/qwik";
 // import { sharingInformationService } from "~/services/sharing-information";
@@ -53,26 +51,23 @@ const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
 // Called when this HTTP method is POST
 export const onRequest: RequestHandler = async (requestEvent) => {
   // console.log("requestEvent", requestEvent);
-  const { method, parseBody, url, json, text, redirect } = requestEvent;
+  const { parseBody, json, text } = requestEvent; // method, url, redirect
   // if (method === "POST") {
   try {
     const body = await parseBody();
     const bodyParsed = body as RegistroContacto;
     // console.log("bodyParsed", bodyParsed);
     // Check if bodyParsed is defined and has the expected properties
-    if (
-      !bodyParsed &&
-      typeof bodyParsed !== "object"
-    ) {
-      json(200, { error: "Invalid request body" });
-    }
-      const { name, email, phone, issue, message } = bodyParsed;
+    // if (!bodyParsed && typeof bodyParsed !== "object") {
+    //   json(200, { error: "Invalid request body" });
+    // }
+    if (bodyParsed && typeof bodyParsed === "object") {
       const contactData = {
-        name,
-        email,
-        phone,
-        issue,
-        message,
+        name: bodyParsed?.name,
+        email: bodyParsed?.email,
+        phone: bodyParsed?.phone,
+        issue: bodyParsed?.issue,
+        message: bodyParsed?.message,
       };
       // console.log("Parsed body:", parsedBody, typeof parsedBody);
       const res: any = await Contactos.create(contactData);
@@ -87,11 +82,12 @@ export const onRequest: RequestHandler = async (requestEvent) => {
       //   },
       // });
       // requestEvent.headers.set('Location', `${url.origin}`);
-      // requestEvent.text(303, user);
+      text(303, user);
       // json(200, res);
-      const redirectUrl = `${url.origin}`
+      // const redirectUrl = `${url.origin}`;
       // console.log("redirectUrl", redirectUrl);
-      redirect(303, redirectUrl);
+      // redirect(303, redirectUrl);
+    }
   } catch (err: any) {
     console.error(
       "[Error when trying to create new customer record]",
@@ -107,9 +103,7 @@ export const onRequest: RequestHandler = async (requestEvent) => {
     json(500, {
       error: "Error al intentar crear nuevo registro de contacto",
     });
-  }
- 
-  finally {
+  } finally {
     // Ensures that the client will close when you finish/error
     await clientPromise.close();
   }

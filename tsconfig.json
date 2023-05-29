@@ -18,7 +18,7 @@
     "noEmit": true,
     "types": ["node", "vite/client"],
     "baseUrl": ".",
-    "rootDir": "src",
+    "rootDir": ".",
     "paths": {
       "~/*": ["./src/*"],
       "@nf/*": ["./netlify/*"]
