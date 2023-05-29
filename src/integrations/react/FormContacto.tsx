@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import { TextareaAutosize } from "@mui/base";
 import { useState } from "react";
+// import { sharingInformationService } from "~/services/sharing-information";
+// import { newCustomerRecord } from "~/services/shared-services";
 // import { styled } from '@mui/system';
 
 // const StyledTextarea = styled(TextareaAutosize)`
@@ -26,24 +28,35 @@ const FormContacto = () => {
     message: "",
   });
 
-  const handleClick = async (store: Object) => {
-    console.log("handleClick", store);
-    await fetch(
-      "https://nexasoft.dev/.netlify/functions/customer_record",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(store),
-      }
-    )
-      .then((res) => {
-        console.log("MongoRes", res);
-        return res.json();
-      })
-      .then((docs) => {
-        console.log("My-docs", docs);
-      });
-  };
+  // const fetchCustomerRecord = async (e: any) => {
+  //   console.log("...", e)
+  //   await fetch(
+  //     "http://localhost:5173/customer-record",
+  //     // "https://nexasoft.dev/customer-record",
+  //     {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(store),
+  //     }
+  //   )
+  //     .then((res) => {
+  //       console.log("MongoRes", res);
+  //       return res.json();
+  //     })
+  //     .then((docs) => {
+  //       console.log("My-docs", docs);
+  //     });
+  // };
+
+  // const handleClick = async () => {
+  //   //   // e.preventDefault();
+  //   //   console.log("handleClick", store, e);
+  //   await fetchCustomerRecord();
+  //   //   // newCustomerRecord({ body: JSON.stringify(store) });
+  //   //   // const customerRecord =  console.log("customerRecord", customerRecord);
+  //   //   // const currentRecord = sharingInformationService.getSubject();
+  //   //   // console.log("currentRecord", currentRecord);
+  // };
 
   return (
     <>
@@ -70,7 +83,9 @@ const FormContacto = () => {
             noValidate
             autoComplete="off"
             className="mt-2 items-center"
-            onSubmit={handleClick}
+            method="post"
+            // onSubmit={fetchCustomerRecord}
+            action="/customer-record"
           >
             <FormControl variant="standard" className="m-0 mt-4" size="small">
               <InputLabel sx={{ position: "relative" }} htmlFor="form-name">
@@ -78,6 +93,7 @@ const FormContacto = () => {
               </InputLabel>
               <Input
                 id="form-name"
+                name="name"
                 value={store.name}
                 onChange={(event: any) => {
                   setStore({ ...store, name: event });
@@ -91,6 +107,7 @@ const FormContacto = () => {
               </InputLabel>
               <Input
                 id="form-email"
+                name="email"
                 value={store.email}
                 onChange={(event: any) => {
                   setStore({ ...store, email: event });
@@ -104,6 +121,7 @@ const FormContacto = () => {
               </InputLabel>
               <Input
                 id="form-phone"
+                name="phone"
                 value={store.phone}
                 onChange={(event: any) => {
                   setStore({ ...store, phone: event });
@@ -117,6 +135,7 @@ const FormContacto = () => {
               </InputLabel>
               <Input
                 id="form-issue"
+                name="issue"
                 value={store.issue}
                 onChange={(event: any) => {
                   setStore({ ...store, issue: event });
@@ -130,6 +149,7 @@ const FormContacto = () => {
               </InputLabel>
               <TextareaAutosize
                 id="form-message"
+                name="message"
                 minRows={5}
                 maxRows={48}
                 style={{ height: "auto" }}
@@ -148,7 +168,7 @@ const FormContacto = () => {
               <Button
                 type="submit"
                 className="button"
-                onClick={() => handleClick(store)}
+                // onClick={(e) => fetchCustomerRecord(e)}
               >
                 Enviar
               </Button>

@@ -1,0 +1,24 @@
+.Container404 {
+    color: #006ce9;
+    background-color: #fafafa;
+    padding: 30px;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+.Container404 p {
+    max-width: 70vw;
+    margin: 60px auto 30px auto;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0px 0px 50px -20px #006ce9;
+    word-break: break-word;
+}
+
+.Container404 div {
+    display: flex;
+    flex-direction: column;
+}
+
+.Container404 a {
+    padding: 15px;
+}
