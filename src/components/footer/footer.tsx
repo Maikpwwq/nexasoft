@@ -20,11 +20,15 @@ export default component$(() => {
 
   return (
     <footer>
-      <MUIStack direction={"row"} alignItems={"baseline"} justifyContent={"center"}>
+      <MUIStack
+        direction={"row"}
+        alignItems={"baseline"}
+        justifyContent={"center"}
+      >
         {" "}
-        <MUIContactPageIcon fontSize="large" className="mb-2"/>
+        <MUIContactPageIcon fontSize="large" className="mb-2" />
         <MUITypography variant="h3" align="center">
-            Datos de contacto
+          Datos de contacto
         </MUITypography>
       </MUIStack>
       <MUIBox
@@ -32,6 +36,7 @@ export default component$(() => {
         sx={{
           display: "flex",
           flexWrap: "wrap",
+          paddingBottom: "33px",
           "& > :not(style)": {
             m: 1,
             // width: 184,

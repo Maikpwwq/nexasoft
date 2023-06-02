@@ -1,0 +1,6 @@
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "@nf/*": ["./netlify/*"]
+    }

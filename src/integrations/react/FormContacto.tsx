@@ -11,13 +11,6 @@ import {
 } from "@mui/material";
 import { TextareaAutosize } from "@mui/base";
 import { useState } from "react";
-// import { sharingInformationService } from "~/services/sharing-information";
-// import { newCustomerRecord } from "~/services/shared-services";
-// import { styled } from '@mui/system';
-
-// const StyledTextarea = styled(TextareaAutosize)`
-
-// `
 
 const FormContacto = () => {
   const [store, setStore] = useState({
@@ -27,36 +20,6 @@ const FormContacto = () => {
     issue: "",
     message: "",
   });
-
-  // const fetchCustomerRecord = async (e: any) => {
-  //   console.log("...", e)
-  //   await fetch(
-  //     "http://localhost:5173/customer-record",
-  //     // "https://nexasoft.dev/customer-record",
-  //     {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(store),
-  //     }
-  //   )
-  //     .then((res) => {
-  //       console.log("MongoRes", res);
-  //       return res.json();
-  //     })
-  //     .then((docs) => {
-  //       console.log("My-docs", docs);
-  //     });
-  // };
-
-  // const handleClick = async () => {
-  //   //   // e.preventDefault();
-  //   //   console.log("handleClick", store, e);
-  //   await fetchCustomerRecord();
-  //   //   // newCustomerRecord({ body: JSON.stringify(store) });
-  //   //   // const customerRecord =  console.log("customerRecord", customerRecord);
-  //   //   // const currentRecord = sharingInformationService.getSubject();
-  //   //   // console.log("currentRecord", currentRecord);
-  // };
 
   return (
     <>
@@ -165,11 +128,7 @@ const FormContacto = () => {
               variant="standard"
               size="small"
             >
-              <Button
-                type="submit"
-                className="button"
-                // onClick={(e) => fetchCustomerRecord(e)}
-              >
+              <Button type="submit" className="button">
                 Enviar
               </Button>
             </FormControl>

@@ -2,9 +2,9 @@ import { component$, useStylesScoped$ } from "@builder.io/qwik";
 
 import styles from "./testimonials.css?inline";
 
-import ComunidadDezzpoLogo from "../../assets/img/logos/Comunidad-Dezzpo.jpg";
-import WaviPixelLogo from "../../assets/img/logos/WaviPixelLogo.png";
-import NagaLogo from "../../assets/img/logos/WaviPixelLogo.png";
+import ComunidadDezzpoLogo from "~/assets/img/logos/Comunidad-Dezzpo.jpg";
+import WaviPixelLogo from "~/assets/img/logos/WaviPixelLogo.png"; 
+import NagaLogo from "~/assets/img/logos/Naga-Reg-Aguas.png";
 
 import {
   MUITypography,
@@ -30,7 +30,7 @@ export default component$(() => {
         "NexaSoft SAS nos ayudó a mejorar la productividad de nuestros sistemas existentes, ahora confiamos en ellos el mantenimiento de nuestros sistemas, conociendo que estarán disponibles en todo momento y podremos cumplir con los plazos de entrega.",
       name: "Naga Regeneración de Aguas",
       logo: NagaLogo,
-      webSite: "https://maikpwwq.github.io/",
+      webSite: "https://naga-regeneracion-aguas-frontend.vercel.app",
     },
     {
       message:

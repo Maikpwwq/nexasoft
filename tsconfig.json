@@ -17,11 +17,8 @@
     "outDir": "tmp",
     "noEmit": true,
     "types": ["node", "vite/client"],
-    "baseUrl": ".",
-    "rootDir": ".",
     "paths": {
-      "~/*": ["./src/*"],
-      "@nf/*": ["./netlify/*"]
+      "~/*": ["./src/*"]
     }
   },
   "files": ["./.eslintrc.cjs"],
