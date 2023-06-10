@@ -1,5 +1,9 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { server$, Form } from "@builder.io/qwik-city";
+import {
+  server$,
+  // routeAction$,
+  Form,
+} from "@builder.io/qwik-city";
 import { MUITypography } from "~/integrations/react/mui";
 
 const styles = () => ({
@@ -32,12 +36,14 @@ const styles = () => ({
 });
 
 let successful = false;
+// const successful = false;
 
 // use the correct URL to connect functions
 // dev  http://localhost:5173/customer-record
 // prod  https://nexasoft.dev/customer-record
 
 const fetchCustomerRecord = async (customerRecord: any) => {
+  console.log("fetchCustomerRecord", customerRecord);
   const postCustomerRecord = await fetch(
     "http://localhost:5173/customer-record",
     // "https://nexasoft.dev/customer-record",
@@ -78,7 +84,13 @@ const addCustomer = server$(async function (data) {
   };
 });
 
+// export const useAddUser = routeAction$(async (data, requestEvent) => {
+//   console.log(data, requestEvent)
+// })
+
 export default component$(() => {
+  // const action = useAddUser();
+
   const classes = styles();
   const formData = {
     name: useSignal(""),
@@ -105,7 +117,7 @@ export default component$(() => {
         Solicita información adicional o una presentación de nuestros servicios.
       </MUITypography>
       <Form
-        //   action={action}
+        // action={action}
         style={classes.formFlex}
         // reloadDocument={true}
         // onSubmit$={async (e) => {

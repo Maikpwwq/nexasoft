@@ -1,27 +1,29 @@
 import { component$ } from "@builder.io/qwik";
 import { MUITypography } from "~/integrations/react/mui";
-import * as fs from "fs";
-import path from "path";
-import { fileURLToPath } from "node:url";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import WebProducts from "./WebProducts.json"
+// import * as fs from "fs";
+// import path from "path";
+// import { fileURLToPath } from "node:url";
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 interface Product {
   title: string;
   price: string;
   description: string;
-  benefit: [];
+  benefit: string[];
 }
 
 interface SoftwareProducts extends Array<Product> {}
 
-const WebProducts = fs.readFileSync(
-  path.resolve(__dirname, "./WebProducts.json"),
-  "utf-8"
-);
-const jsonProducts = JSON.parse(WebProducts);
-const dataProducts = jsonProducts.WebProducts;
-const products: SoftwareProducts = dataProducts;
+// const WebProducts = fs.readFileSync(
+//   path.resolve(__dirname, "./WebProducts.json"),
+//   "utf-8"
+// );
+// const jsonProducts = JSON.parse(WebProducts);
+// const dataProducts = jsonProducts.WebProducts;
+// const products: SoftwareProducts = dataProducts;
+const products: SoftwareProducts = WebProducts.WebProducts;
 
 const styles = () => ({
   price: {},
