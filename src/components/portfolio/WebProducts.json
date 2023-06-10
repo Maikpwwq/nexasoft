@@ -1,0 +1,72 @@
+{
+  "WebProducts": [
+    {
+      "title": "Diseño Web a medida",
+      "price": "249 900",
+      "description": "Potenciamos tu presencia en línea con un diseño de sitio web profesional para tu empresa.",
+      "benefit": ["Diseño a medida de tu sitio web en una pagina"]
+    },
+    {
+      "title": "Web LandingPage",
+      "price": "799 900",
+      "description": "Impulsamos tu negocio con una página de aterrizaje efectiva, que atraiga interesados y te ayude a alcanzar tus metas comerciales.",
+      "benefit": [
+        "Diseño a medida +",
+        "Pagina de aterrizaje +",
+        "Formulario contacto +",
+        "Link redes sociales +",
+        "1año Hosting +",
+        "1año Dominio +",
+        "1año Certificado SSL"
+      ]
+    },
+    {
+      "title": "Sitio Web Ecommerce",
+      "price": "1 299 900",
+      "description": "Desarrollamos sitios web de ecommerce par que exhibas tus productos, operes y vendas en línea. *  Sin Pasarela de pagos Online",
+      "benefit": [
+        "Diseño a medida +",
+        "Tienda Virtual Online +",
+        "Hasta cinco secciones +",
+        "Subida Catalogo hasta 30 productos +",
+        "1año Hosting +",
+        "1año Dominio +",
+        "1año Certificado SSL"
+      ]
+    },
+    {
+      "title": "Tienda Comercio Electrónico",
+      "price": "1 599 900",
+      "description": "Construimos una solución empresarial sólida para tu tienda con catálogo de productos y servicios, pasarelas de pago en línea, optimización SEO y todas las herramientas necesarias para atraer y convertir a nuevos clientes.",
+      "benefit": [
+        "Diseño a medida +",
+        "Tienda Virtual Online +",
+        "Subida Catalogo hasta 50 productos +",
+        "Pasarela Pagos +",
+        "Optimización SEO+",
+        "del perfil en google +",
+        "1año Hosting +",
+        "1año Dominio +",
+        "10 Correos +",
+        "1año Certificado SSL"
+      ]
+    },
+    {
+      "title": "Pagina Web Corporativa",
+      "price": "2 299 900",
+      "description": "Creamos sitios web adaptativos Que Integran las últimas tecnologías de software, brindándote una presencia digital moderna y funcional.",
+      "benefit": [
+        "Diseño a medida +",
+        "Hasta diez secciones +",
+        "Formulario de contacto +",
+        "Blog +",
+        "Optimización SEO+",
+        "del perfil en google +",
+        "1año Hosting +",
+        "1año Dominio +",
+        "10 Correos +",
+        "1año Certificado SSL"
+      ]
+    }
+  ]
+}

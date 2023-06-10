@@ -47,7 +47,7 @@ export default component$(() => {
         <MUITypography
           variant="h3"
           align="center"
-          className="title"
+          className="title font-bold m-5"
         >
           Nuestros <span class="highlight">clientes</span> satisfechos.
         </MUITypography>

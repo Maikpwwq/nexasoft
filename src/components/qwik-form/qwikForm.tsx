@@ -38,7 +38,7 @@ let successful = false;
 // prod  https://nexasoft.dev/customer-record
 
 const fetchCustomerRecord = async (customerRecord: any) => {
-  await fetch(
+  const postCustomerRecord = await fetch(
     "http://localhost:5173/customer-record",
     // "https://nexasoft.dev/customer-record",
     {
@@ -46,18 +46,22 @@ const fetchCustomerRecord = async (customerRecord: any) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(customerRecord),
     }
-  ).then((res) => {
-    // console.log("fetchCustomerRecord", res);
-    const statusCode = res.status;
-    if (statusCode === 303) {
-      successful = true;
-    }
-    // console.log("statusCode", statusCode, successful);
-    return statusCode;
-  });
+  );
+  const statusCode = postCustomerRecord.status;
+  const statusText = postCustomerRecord.statusText;
+  console.log("fetchCustomerRecord", statusCode, statusText);
+
+  if (statusCode === 303) {
+    console.log("fetchCustomerRecord", postCustomerRecord.text());
+    successful = true;
+  } else {
+    console.log("fetchCustomerRecord", statusCode, postCustomerRecord.json());
+  }
+  return statusCode;
 };
 
-const addCustomer = server$(async (data) => {
+const addCustomer = server$(async function (data) {
+  // async
   // This will only run on the server when the user submits the form (or when the action is called programatically)
   const customerRecord = {
     name: data.name.value,
@@ -66,11 +70,11 @@ const addCustomer = server$(async (data) => {
     issue: data.issue.value,
     message: data.message.value,
   };
-  // console.log("customerRecord", customerRecord);
-  const respuesta: any = await fetchCustomerRecord(customerRecord);
+
+  await fetchCustomerRecord(customerRecord);
+
   return {
     successful,
-    respuesta,
   };
 });
 
@@ -84,6 +88,14 @@ export default component$(() => {
     message: useSignal(""),
   };
 
+  // const resetForm = (() => {
+  //   formData.name.value = "";
+  //   formData.email.value = "";
+  //   formData.phone.value = "";
+  //   formData.issue.value = "";
+  //   formData.message.value = "";
+  // });
+
   return (
     <div style={classes.sheetFormStyle}>
       <MUITypography variant="h6" color={"var(--qwik-dark-blue)"}>
@@ -95,6 +107,15 @@ export default component$(() => {
       <Form
         //   action={action}
         style={classes.formFlex}
+        // reloadDocument={true}
+        // onSubmit$={async (e) => {
+        //   e.preventDefault();
+        //   const greeting = await addCustomer(formData);
+        //   // console.log("greeting", greeting.successful);
+        //   if (greeting.successful) {
+        //     alert("Gracias, su mensaje ha sido recibido.");
+        //   }
+        // }}
       >
         <label for="form-name" style={classes.labelStyle}>
           Nombre:{" "}

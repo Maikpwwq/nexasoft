@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import styles from "./timeToCelebrate.module.css"
+import styles from "./timeToCelebrate.module.css";
 import { MUITypography } from "~/integrations/react/mui";
 
 export default component$(() => {
@@ -59,11 +59,11 @@ export default component$(() => {
       }}
     >
       <MUITypography variant="h1" align="center" className={styles.title}>
-          Somos el <span class="highlight">futuro</span>
-          <br />
-          en <span class="highlight">soluciones</span> de software
-        </MUITypography>
-        <p>¡Consigue una ventaja competitiva con nosotros!.</p>
+        Somos el <span class="highlight">futuro</span>
+        <br />
+        en <span class="highlight">soluciones</span> de software
+      </MUITypography>
+      <p>¡Consigue una ventaja competitiva con nosotros!.</p>
     </div>
   );
 });

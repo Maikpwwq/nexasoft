@@ -4,6 +4,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import Contact from "~/components/contact/contact";
 // import Counter from "~/components/starter/counter/counter";
 import Features from "~/components/features/features";
+import PortfolioProducts from "~/components/portfolio/portfolioProducts";
 import Footer from "~/components/footer/footer";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
@@ -37,6 +38,7 @@ export default component$(() => {
       {/* <MainBanner /> */}
       <Features />
       <ImagesList />
+      <PortfolioProducts />
       <Testimonials />
 
       <div role="presentation" class="ellipsis"></div>
@@ -67,11 +69,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Qwik",
+  title: "🚀 NexaSoft SAS",
   meta: [
     {
       name: "description",
-      content: "Qwik site description",
+      content: "💥¡Vende en linea como un profesional!. Creamos tu sitio web o tienda digital a la medida de tu negocio.",
     },
   ],
 };

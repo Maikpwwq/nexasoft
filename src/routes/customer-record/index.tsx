@@ -96,13 +96,15 @@ export const onPost: RequestHandler = async (requestEvent) => {
       err
     );
     // if (err === "MongoNotConnectedError: Client must be connected before running operations")
+    // MongoServerSelectionError: connection <monitor> to 18.210.148.249:27017 closed
     json(500, {
       error: "Error al intentar crear nuevo registro de contacto",
     });
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await clientPromise.close();
-  }
+  } 
+  // finally {
+  //   // Ensures that the client will close when you finish/error
+  //   await clientPromise.close();
+  // }
 };
 
 // export default component$(() => {

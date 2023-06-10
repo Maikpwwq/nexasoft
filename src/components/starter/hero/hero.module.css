@@ -4,7 +4,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-  height: 450px;
+  height: "auto";
   justify-content: center;
   gap: 40px;
 }
@@ -24,7 +24,7 @@
 @media screen and (min-width: 768px) {
   .hero {
     gap: 60px;
-    height: 500px;
+    height: "auto";
   }
 
   .hero p {
