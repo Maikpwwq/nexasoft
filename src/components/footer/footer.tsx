@@ -34,9 +34,9 @@ export default component$(() => {
       <MUIBox
         className="w-full justify-center"
         sx={{
+          paddingBottom: { sm: "0", md: "33px" },
           display: "flex",
           flexWrap: "wrap",
-          paddingBottom: "33px",
           "& > :not(style)": {
             m: 1,
             // width: 184,

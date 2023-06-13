@@ -59,9 +59,10 @@ export default component$(() => {
       }}
     >
       <MUITypography variant="h1" align="center" className={styles.title}>
-        Somos el <span class="highlight">futuro</span>
+        Somos el futuro
         <br />
-        en <span class="highlight">soluciones</span> de software
+        en <span class="highlight">soluciones</span> de{" "}
+        <span class="highlight">software</span>
       </MUITypography>
       <p>¡Consigue una ventaja competitiva con nosotros!.</p>
     </div>

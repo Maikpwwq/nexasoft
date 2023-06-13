@@ -10,10 +10,10 @@ import theme from "./theme";
 // import { component$ } from "@builder.io/qwik";
 // import { useStore, useBrowserVisibleTask$ } from "@builder.io/qwik";
 
-import SoftwarePersonalizado from "../../assets/img/banners/Soluciones de software personalizadas.png";
-import Negociosdigitales from "../../assets/img/banners/Crecimiento y eficiencia de negocios digitales.png";
-import ModernizarPlataformas from "../../assets/img/banners/Modernizar y optimizar tus plataformas.png";
-import SolucionesSoftware from "../../assets/img/banners/Soluciones empresariales de software.png";
+import SoftwarePersonalizado from "~/assets/img/banners/Soluciones de software personalizadas.png";
+import Negociosdigitales from "~/assets/img/banners/Crecimiento y eficiencia de negocios digitales.png";
+import ModernizarPlataformas from "~/assets/img/banners/Modernizar y optimizar tus plataformas.png";
+import SolucionesSoftware from "~/assets/img/banners/Soluciones empresariales de software.png";
 
 const CustomSwipeableViews = bindKeyboard(SwipeableViews);
 
@@ -43,7 +43,7 @@ const bannerImg = [
 const BannerStepper = () => {
   // export default component$(() => {
   const maxSteps = 3; // imagenes.length
-  const changeTime = 5000; // 10000
+  const changeTime = 1000; // 10000
   // const theme = useTheme();
 
   const [store, setStore] = useState({ count: 0 });
@@ -52,17 +52,19 @@ const BannerStepper = () => {
 
   useEffect(() => {
     // useBrowserVisibleTask$(() => {
-    const timer = setInterval(() => {
-      maxSteps > store.count
+    // const timer = 
+    setInterval(() => {
+      maxSteps >= store.count
         ? setStore({ count: store.count++ })
         : setStore({ count: 0 });
       //   store.count++
       // : (store.count = 0);
     }, changeTime);
-    return () => {
-      clearInterval(timer);
-    };
+    // return () => {
+    //   clearInterval(timer);
+    // };
   });
+  // , [store.count]
 
   return (
     <Box sx={{ width: "100%", flexGrow: 1 }}>
@@ -83,6 +85,11 @@ const BannerStepper = () => {
             setStore({ count: step });
             // store.count = step;
           }}
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
           enableMouseEvents
           // slideRenderer={slideRenderer}
         >
@@ -94,7 +101,13 @@ const BannerStepper = () => {
               return (
                 <Box key={id} className="">
                   {id === store.count && (
-                    <img className="slider" src={img} alt={description} width={700} height={300} />
+                    <img
+                      className="slider"
+                      src={img}
+                      alt={description}
+                      width={700}
+                      height={300}
+                    />
                   )}
                 </Box>
               );
@@ -116,7 +129,7 @@ const BannerStepper = () => {
           flexDirection: "row",
         }}
         className="pb-4 mb-4"
-        steps={maxSteps}
+        steps={maxSteps+1}
         // position="static"
         activeStep={store.count}
         nextButton={
@@ -127,7 +140,7 @@ const BannerStepper = () => {
               // (store.count = 0)
             }
             className="arrow-next"
-            disabled={store.count === maxSteps - 1}
+            disabled={store.count === maxSteps+1}
           >
             {theme.direction === "rtl" ? (
               <KeyboardArrowLeft fontSize="large" />

@@ -32,6 +32,7 @@ const styles = () => ({
   sheetFormStyle: {
     maxWidth: "330px",
     margin: "33px 0",
+    padding: "0 33px",
   },
 });
 

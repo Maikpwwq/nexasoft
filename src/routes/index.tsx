@@ -19,7 +19,10 @@ const styles = () => ({
   contactBox: {
     flexDirection: "column",
     alignItems: "center",
-    paddingBottom: "0",
+    padding: "0",
+    paddingTop: "16px",
+    width: "auto",
+    margin: "auto",
   },
   contactCard: {
     borderRadius: "33px",

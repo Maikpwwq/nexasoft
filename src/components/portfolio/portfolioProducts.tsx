@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { MUITypography } from "~/integrations/react/mui";
-import WebProducts from "./WebProducts.json"
+import WebProducts from "./WebProducts.json";
 // import * as fs from "fs";
 // import path from "path";
 // import { fileURLToPath } from "node:url";
@@ -38,9 +38,7 @@ const styles = () => ({
     width: "21rem",
     border: "2px solid var(--qwik-light-blueberry)",
   },
-  cardTitle: {
- 
-  },
+  cardTitle: {},
   cardBody: {
     display: "flex",
     flexDirection: "column",
@@ -59,11 +57,10 @@ export default component$(() => {
   return (
     <div class="flex flex-col justify-center items-center">
       <MUITypography variant="h3" align="center" className="font-bold m-5">
-        ¡Simplificamos los precios para <br />
-        <span class="highlight">potenciar la efectividad </span>
-        de tu trabajo!
+        ¡Simplificamos los <span class="highlight">precios</span> para <br />
+        potenciar la efectividad de tu <span class="highlight">trabajo</span>!
       </MUITypography>
-      <p class="text-2xl px-4">
+      <p class="text-2xl px-4 mt-4 text-center">
         Tu satisfacción está 100% asegurada con nuestra garantía de devolución
         de dinero.
       </p>
@@ -72,21 +69,27 @@ export default component$(() => {
           products.map((product, index) => {
             const { title, price, description, benefit } = product;
             return (
-              <div
-                key={index}
-                class="flex items-stretch basis-1/5"
-              >
+              <div key={index} class="flex items-stretch basis-1/5">
                 <div class="bg-light" style={classes.card}>
                   <div class="card-body" style={classes.cardBody}>
-                    <h5 class="card-title font-bold py-3 text-xl" style={classes.cardTitle}>{title}</h5>
+                    <h5
+                      class="card-title font-bold py-3 text-xl"
+                      style={classes.cardTitle}
+                    >
+                      {title}
+                    </h5>
                     <p class="card-text my-3 font-light">{description}</p>
                     <p
                       class="card-subtitle mb-2 text-muted font-semibold text-2xl"
                       style={classes.price}
                     >
-                      $ {price}  <span class="font-light text-sm"> / Año </span>
-                    </p> 
-                    <a href="#contact-section" class="btn text-base text-center py-2" style={classes.cardBtn}>
+                      $ {price} <span class="font-light text-sm"> / Año </span>
+                    </p>
+                    <a
+                      href="#contact-section"
+                      class="btn text-base text-center py-2"
+                      style={classes.cardBtn}
+                    >
                       Escoger plan
                     </a>
                     <ul class="py-3">

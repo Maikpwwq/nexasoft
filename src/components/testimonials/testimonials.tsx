@@ -53,14 +53,14 @@ export default component$(() => {
         </MUITypography>
         <MUIBox
           className="flex items-center justify-center mt-6 mb-6"
-          sx={{ flexDirection: { md: "row", sm: "row", xs: "column" } }}
+          sx={{ flexDirection: { md: "row", sm: "row", xs: "column" } }} 
         >
           {testimonials.map(({ message, name, logo, webSite }) => {
             return (
               <MUICard
                 key={name}
                 className="m-6 hover:rounded-3xl"
-                sx={{ maxWidth: 275, borderRadius: 4 }}
+                sx={{ maxWidth: 300, borderRadius: 4 }}
                 elevation={16}
               >
                 <MUICardMedia>

@@ -5,7 +5,7 @@ header {
 .wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .logo {
@@ -44,5 +44,8 @@ header {
 @media (min-width: 450px) {
   .header li {
     display: inline-block;
+  }
+  .wrapper {
+    justify-content: space-evenly;
   }
 }
