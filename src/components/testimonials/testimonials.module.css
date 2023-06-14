@@ -1,0 +1,10 @@
+testimonials a {
+    color: var(--qwik-dark-blue) !important
+}
+
+.testimonials {
+    background-color: var(--qwik-light-purple);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

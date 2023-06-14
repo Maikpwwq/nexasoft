@@ -123,12 +123,12 @@ const FormContacto = () => {
                 }}
               />
             </FormControl>
-            <FormControl
-              sx={{ paddingTop: "16px" }}
-              variant="standard"
-              size="small"
-            >
-              <Button type="submit" className="button">
+            <FormControl variant="standard" size="small">
+              <Button
+                type="submit"
+                className="button"
+                sx={{ marginTop: "3rem" }}
+              >
                 Enviar
               </Button>
             </FormControl>

@@ -24,7 +24,7 @@ const styles = () => ({
     textAlign: "start",
   },
   btnStyle: {
-    margin: "0.5rem 0",
+    marginTop: "1.5rem",
     padding: "0.75rem 0",
     backgroundColor: "var(--qwik-light-blue)",
     color: "var(--qwik-dark-text)",

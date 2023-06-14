@@ -31,6 +31,7 @@ import ImageListItems from "./imageListItems";
 import FormContacto from "./FormContacto";
 import BannerStepper from "./BannerStepper";
 import TableReactApp from "./TableReactApp"
+import CustomersTestimonial from "./CustomersTestimonial";
 
 // import PushPinIcon from '@mui/icons-material/PushPin';
 // import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
@@ -91,6 +92,14 @@ export const ImagesList = qwikify$(() => {
       >
         <ImageListItems />
       </ImageList>
+    </>
+  );
+});
+
+export const CustomersTestimonials = qwikify$(() => {
+  return (
+    <>
+      <CustomersTestimonial />
     </>
   );
 });

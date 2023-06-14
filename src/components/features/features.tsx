@@ -19,10 +19,13 @@ export default component$(() => {
         <MUITypography variant="h2" align="center" className={styles.title}>
           ¡Transforma tu
           <br />
-          <span class="highlight">experiencia </span>en línea!
+          <span class="highlight">
+            experiencia{" "}
+          </span>
+          en línea!
         </MUITypography>
         <div class={styles.servicesBriefcase}>
-          <MUITypography className="mt-6 mb-6 pb-6" variant="body1">
+          <MUITypography className="mt-6 mb-6" variant="body1">
             <br />
             <strong class={styles.hint}>🚀 NexaSoft SAS</strong> ofrece
             soluciones empresariales de software que te ayudarán a mejorar tu

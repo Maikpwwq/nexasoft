@@ -44,7 +44,7 @@ h1 {
   will-change: transform, border-color;
 
   contain: strict;
-}
+} 
 
 .square.odd {
   --luminance: calc(1 - calc(calc(var(--index) * var(--odd-color-step)) / 256));

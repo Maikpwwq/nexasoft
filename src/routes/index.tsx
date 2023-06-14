@@ -20,7 +20,7 @@ const styles = () => ({
     flexDirection: "column",
     alignItems: "center",
     padding: "0",
-    paddingTop: "16px",
+    paddingTop: "5rem",
     width: "auto",
     margin: "auto",
   },
@@ -28,6 +28,7 @@ const styles = () => ({
     borderRadius: "33px",
     border: "1px solid #ac7ff4",
     backgroundColor: "var(--qwik-dirty-black)",
+    margin: "0 10px",
   },
 });
 
