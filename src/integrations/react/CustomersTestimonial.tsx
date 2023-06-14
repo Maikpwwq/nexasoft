@@ -64,11 +64,11 @@ const CustomersTestimonial = () => {
     },
   ];
 
-//   const [checked, setChecked] = useState(true);
+  // const [checked, setChecked] = useState(true);
 
-//   const handleChange = () => {
-//     setChecked((prev) => !prev);
-//   };
+  // const handleChange = () => {
+  //   setChecked((prev) => !prev);
+  // };
 
   return (
     <div
@@ -95,15 +95,15 @@ const CustomersTestimonial = () => {
         sx={{ flexDirection: { md: "row", sm: "column", xs: "column" } }}
       >
         {testimonials.map(({ message, name, logo, webSite }) => {
-
           // handleChange()
-        
+
           return (
             // <Grow
-            //   in={checked}
+            //   // in={checked}
+            //   appear={true}
             //   key={name}
-            // //   style={{ transformOrigin: "0 0 0" }}
-            // //   {...(checked ? { timeout: 1000 } : {})}
+            //   //   style={{ transformOrigin: "0 0 0" }}
+            //   //   {...(checked ? { timeout: 1000 } : {})}
             // >
               <Card
                 key={name}
