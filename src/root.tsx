@@ -37,33 +37,48 @@ export default component$(() => {
       fbq('track', 'PageView');
   `;
 
+  // , location, type
+  const proxyFb = function (url: any) {
+    const proxy = "https://nexasoft.dev" // "http://localhost/proxy/"
+    if (
+      url.hostname === "connect.facebook.net" ||
+      url.hostname === "www.googletagmanager.com" ||
+      url.hostname === "www.google-analytics.com"
+    ) {
+      const proxyUrl = new URL(proxy);
+      proxyUrl.searchParams.append("url", url.href);
+      return proxyUrl;
+    }
+    return url;
+  };
+
   return (
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
         {/* <script>
           partytown = {
-            resolveUrl: function (url, location, type) {
-              if (url.hostname === "connect.facebook.net" || url.hostname === "www.googletagmanager.com" || url.hostname === "www.google-analytics.com") {
-                var proxyUrl = new URL('http://localhost/proxy/');
-                proxyUrl.searchParams.append('url', url.href);
-                return proxyUrl;
-              }
-              return url;
-            },
+            resolveUrl: proxyFb,
             forward: ["fbq", 'dataLayer.push'],
           };
         </script> */}
-        <QwikPartytown forward={["dataLayer.push"]} />
+        <QwikPartytown
+          resolveUrl={proxyFb}
+          forward={["dataLayer.push", "fbq"]}
+        />
         {/* Google tag (gtag.js)  */}
         <script
           async
           type="text/partytown"
           src="https://www.googletagmanager.com/gtag/js?id=G-2PNKE0S3GJ"
         />
-        <script defer async dangerouslySetInnerHTML={analyticsScript}></script>
+        <script
+          type="text/partytown"
+          defer
+          async
+          dangerouslySetInnerHTML={analyticsScript}
+        ></script>
         {/* <!-- Meta Pixel Code --> */}
-        <QwikPartytown forward={["fbq"]} />
         <script
           type="text/partytown"
           defer
