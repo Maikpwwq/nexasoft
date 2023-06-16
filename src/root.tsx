@@ -85,14 +85,14 @@ export default component$(() => {
           async
           dangerouslySetInnerHTML={pixelFacebookScript}
         ></script>
-        <noscript>
+        {/* <noscript>
           <img
             height="1"
             width="1"
             style="display:none"
             src="https://www.facebook.com/tr?id=1328132094455273&ev=PageView&noscript=1"
           />
-        </noscript>
+        </noscript> */}
         {/* <!-- End Meta Pixel Code --> */}
 
         <link rel="manifest" href="/manifest.json" />

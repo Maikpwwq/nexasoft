@@ -1,8 +1,10 @@
 /** @jsxImportSource react */
-// import React, { useState } from "react";
+import React, { forwardRef, useState, useRef } from "react"; // useEffect,
 import {
   Box,
   // Grow,
+  Slide,
+  // Fade,
   Typography,
   Card,
   CardMedia,
@@ -37,6 +39,43 @@ const styles = () => ({
   // }
 });
 
+const TestimonialCard =
+  // (testimony: any) => {
+  forwardRef(function (props, ref) {
+    const classes = styles();
+    const { style, testimony } = props;
+    const { message, name, logo, webSite } = testimony;
+    console.log("testimony", testimony);
+
+    return (
+      <div ref={ref} style={style} {...props}>
+        <Card
+          style={classes.testimonialsCard}
+          sx={{ maxWidth: 300, borderRadius: 4 }}
+          elevation={16}
+        >
+          <CardMedia>
+            <img src={logo} alt={name} height={184} width={300} />
+          </CardMedia>
+          <CardContent>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              // component="div"
+            >
+              {/* sx={{ fontSize: 14 }} color="text.secondary" gutterBottom */}
+              {message}
+            </Typography>
+            <Typography variant="body1" fontWeight={"bold"} className="pt-3">
+              <a href={webSite}>{name}</a>{" "}
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  });
+// };
+
 const CustomersTestimonial = () => {
   const classes = styles();
 
@@ -64,11 +103,20 @@ const CustomersTestimonial = () => {
     },
   ];
 
-  // const [checked, setChecked] = useState(true);
+  const [checked] = useState(true);
+  // const checked = true;
+
+  // useEffect(() => {
+  // setTimeout(setChecked(true), 3000);
+  //   console.log("checked", checked)
+  // }, []);
 
   // const handleChange = () => {
   //   setChecked((prev) => !prev);
   // };
+
+  const ref = useRef(null);
+  const containerRef = React.useRef(null);
 
   return (
     <div
@@ -94,45 +142,31 @@ const CustomersTestimonial = () => {
         className="flex items-center justify-center mt-6 mb-6"
         sx={{ flexDirection: { md: "row", sm: "column", xs: "column" } }}
       >
-        {testimonials.map(({ message, name, logo, webSite }) => {
+        {testimonials.map((testimony, index) => {
           // handleChange()
 
           return (
-            // <Grow
-            //   // in={checked}
-            //   appear={true}
-            //   key={name}
-            //   //   style={{ transformOrigin: "0 0 0" }}
-            //   //   {...(checked ? { timeout: 1000 } : {})}
-            // >
-              <Card
-                key={name}
-                style={classes.testimonialsCard}
-                sx={{ maxWidth: 300, borderRadius: 4 }}
-                elevation={16}
-              >
-                <CardMedia>
-                  <img src={logo} alt={name} height={184} width={300} />
-                </CardMedia>
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    // component="div"
-                  >
-                    {/* sx={{ fontSize: 14 }} color="text.secondary" gutterBottom */}
-                    {message}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    fontWeight={"bold"}
-                    className="pt-3"
-                  >
-                    <a href={webSite}>{name}</a>{" "}
-                  </Typography>
-                </CardContent>
-              </Card>
-            // </Grow>
+            <Slide
+              direction="up"
+              in={checked}
+              key={index}
+              appear={true}
+              container={containerRef.current}
+              // {...(checked ? { timeout: 3000 } : {})}
+            >
+              {/* <Grow
+              in={checked}  
+              appear={true}
+              key={index}
+              //   style={{ transformOrigin: "0 0 0" }}
+              //   {...(checked ? { timeout: 1000 } : {})}
+            > */}
+              {/* {TestimonialCard(testimony)} */}
+              <div>
+                <TestimonialCard testimony={testimony} ref={ref} />
+              </div>
+              {/* </Grow> */}
+            </Slide>
           );
         })}
       </Box>
