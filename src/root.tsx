@@ -56,6 +56,7 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
+        <meta name="facebook-domain-verification" content="8r9sxxnm9fxblri4lae8azis4v45id" />
         {/* <script>
           partytown = {
             resolveUrl: proxyFb,
