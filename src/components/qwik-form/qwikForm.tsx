@@ -18,8 +18,8 @@ let successful = false;
 const fetchCustomerRecord = async (customerRecord: any) => {
   console.log("fetchCustomerRecord", customerRecord);
   const postCustomerRecord = await fetch(
-    "http://localhost:5173/customer-record",
-    // "https://nexasoft.dev/customer-record",
+    // "http://localhost:5173/customer-record",
+    "https://nexasoft.dev/customer-record",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
