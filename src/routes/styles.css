@@ -168,7 +168,7 @@ button.button-small {
 }
 .ellipsis-bottom {
   position: absolute;
-  top: 4550px;
+  top: 4300px;
   left: -100px;
   width: 400px;
   height: 400px;
@@ -193,7 +193,7 @@ button.button-small {
   transform: rotate(-5deg);
 }
 .ellipsis-bottom.ellipsis-purple-bottom {
-  top: 4150px;
+  top: 4000px;
   left: -100px;
   background: radial-gradient(
     50% 50% at 50% 50%,
@@ -215,13 +215,13 @@ button.button-small {
     left: -200px;
   }
   .ellipsis-bottom {
-    bottom: 300px;
+    top: 4300px;
     left: 350px;
     width: 1400px;
     height: 800px;
   }
   .ellipsis.ellipsis-purple-bottom {
-    bottom: 1300px;
+    top: 4000px;
     left: -200px;
   }
 }

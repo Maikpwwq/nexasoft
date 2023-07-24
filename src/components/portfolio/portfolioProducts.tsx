@@ -44,25 +44,22 @@ export default component$(() => {
             const { title, price, description, benefit } = product;
             return (
               <div key={index} class="flex items-stretch basis-1/5">
-                <div class="bg-light" style={styles.card}>
-                  <div class="card-body" style={styles.cardBody}>
+                <div class={["bg-light", styles.card]}>
+                  <div class={["card-body", styles.cardBody]}>
                     <h5
-                      class="card-title font-bold py-3 text-xl"
-                      style={styles.cardTitle}
+                      class={["card-title font-bold py-3 text-xl", styles.cardTitle]}
                     >
                       {title}
                     </h5>
                     <p class="card-text my-3 font-light">{description}</p>
                     <p
-                      class="card-subtitle mb-2 text-muted font-semibold text-2xl"
-                      style={styles.price}
+                      class={["card-subtitle mb-2 text-muted font-semibold text-2xl", styles.price]}
                     >
                       $ {price} <span class="font-light text-sm"> / Año </span>
                     </p>
                     <a
                       href="#contact-section"
-                      class="btn text-base text-center py-2"
-                      style={styles.cardBtn}
+                      class={["btn text-base text-center py-2", styles.cardBtn]}
                     >
                       Escoger plan
                     </a>
