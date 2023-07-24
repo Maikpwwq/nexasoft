@@ -2,6 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import {
   server$,
   // routeAction$,
+  useNavigate,
   Form,
 } from "@builder.io/qwik-city";
 import styles from "./qwikForm.module.css";
@@ -17,8 +18,8 @@ let successful = false;
 const fetchCustomerRecord = async (customerRecord: any) => {
   console.log("fetchCustomerRecord", customerRecord);
   const postCustomerRecord = await fetch(
-    // "http://localhost:5173/customer-record",
-    "https://nexasoft.dev/customer-record",
+    "http://localhost:5173/customer-record",
+    // "https://nexasoft.dev/customer-record",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -62,6 +63,7 @@ const addCustomer = server$(async function (data) {
 // })
 
 export default component$(() => {
+  const nav = useNavigate();
   // const action = useAddUser();
   const formData = {
     name: useSignal(""),
@@ -154,10 +156,16 @@ export default component$(() => {
           type="submit"
           class={styles.btnStyle}
           onClick$={async () => {
-            const greeting = await addCustomer(formData);
-            // console.log("greeting", greeting.successful);
-            if (greeting.successful) {
+            const greeting = await addCustomer(formData); // :{successful: boolean}
+            console.log("greeting", greeting);
+            if (!!greeting && greeting.successful) {
               alert("Gracias, su mensaje ha sido recibido.");
+              formData.name.value = ''
+              formData.email.value = ''
+              formData.phone.value = ''
+              formData.issue.value = ''
+              formData.message.value = ''
+              await nav('/');
             }
           }}
         >
