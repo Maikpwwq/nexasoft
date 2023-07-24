@@ -33,7 +33,8 @@ const fetchCustomerRecord = async (customerRecord: any) => {
     console.log("fetchCustomerRecord", postCustomerRecord.text());
     successful = true;
   } else {
-    console.log("fetchCustomerRecord", statusCode, postCustomerRecord.json());
+    console.log("fetchCustomerRecord", statusCode);
+    // console.log("fetchCustomerRecord", postCustomerRecord.json());
   }
   return statusCode;
 };

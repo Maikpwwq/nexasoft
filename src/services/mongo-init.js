@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import mongoose from "mongoose"; // ,
 
-export { Contactos };
-
 // Variables de entorno
 const DB_USER = `${process.env.VITE_DB_USER}`;
 // const DB_PASSWORD = `${process.env.VITE_DB_PASSWORD}`;
@@ -22,6 +20,10 @@ const schema = new mongoose.Schema({
   message: String,
 });
 
+// module.exports = connectionDB  // import * as connectionDB from ...
+// The alternative to the export model pattern is the export schema pattern.
+// module.exports = userSchema;
+
 const options = {
   dbName: DB_NAME,
   user: DB_USER,
@@ -30,6 +32,16 @@ const options = {
   // useUnifiedTopology: true,
 };
 
-const clientPromise = mongoose.createConnection(MONGO_HOST, options);
-
-const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
+export async function connectionDB(contactData) {
+  const dbPromise = mongoose.createConnection(MONGO_HOST, options);
+  const userModel = dbPromise.model(MONGODB_COLLECTION, schema);
+  // dbPromise.on("error", console.error.bind(console, "DB connection error: "));
+  dbPromise.once("open", function () {
+    console.log("Connected successfully to your DB");
+  });
+  const res = await userModel.create(contactData);
+  console.log("create userModel", res);
+  // Ensures that the client will close when you finish/error
+  // await dbPromise.close();
+  return res;
+}
