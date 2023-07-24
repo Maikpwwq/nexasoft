@@ -18,8 +18,8 @@ let successful = false;
 const fetchCustomerRecord = async (customerRecord: any) => {
   console.log("fetchCustomerRecord", customerRecord);
   const postCustomerRecord = await fetch(
-    // "http://localhost:5173/customer-record",
-    "https://nexasoft.dev/customer-record",
+    // "http://localhost:5173/customer-record/",
+    "https://nexasoft.dev/customer-record/",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -40,7 +40,7 @@ const fetchCustomerRecord = async (customerRecord: any) => {
   return statusCode;
 };
 
-const addCustomer = server$(async function (data) {
+const addCustomer = server$(async function (data) : Promise<{ successful: boolean; }> {
   // async
   // This will only run on the server when the user submits the form (or when the action is called programatically)
   const customerRecord = {
@@ -156,10 +156,9 @@ export default component$(() => {
           type="submit"
           class={styles.btnStyle}
           onClick$={async () => {
-            const greeting = await addCustomer(formData); // :{successful: boolean}
+            const greeting = await addCustomer(formData); 
             console.log("greeting", greeting);
-            // !!greeting && 
-            if (successful) {
+            if (!!greeting && greeting.successful) {
               alert("Gracias, su mensaje ha sido recibido.");
               formData.name.value = ''
               formData.email.value = ''

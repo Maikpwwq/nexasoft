@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { type RequestHandler } from "@builder.io/qwik-city";
-// import { component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import { connectionDB } from "~/services/mongo-init";
 
 interface RegistroContacto {
@@ -15,7 +15,7 @@ interface RegistroContacto {
 // onRequest, onGet, onPost, onPut, onDelete, onPatch, onHead
 export const onPost: RequestHandler = async (requestEvent) => {
   // console.log("requestEvent", requestEvent);
-  const { parseBody, text, json } = requestEvent; // , method, url, redirect
+  const { parseBody, text } = requestEvent; // , json , method, url, redirect
 
   try {
     const body = await parseBody();
@@ -35,10 +35,15 @@ export const onPost: RequestHandler = async (requestEvent) => {
         message: bodyParsed?.message,
       };
       console.log("Parsed body:", contactData);
-      const res: any = connectionDB(contactData);
-      const user = JSON.stringify(res);
-      console.log("mongoRes", res._id, user);
-      text(303, user);
+      const res = await connectionDB(contactData);
+      // res.then((data) =>{
+      if (res) {
+        console.log("Promise message", res);
+        const user = JSON.stringify(res);
+        console.log("mongoRes", user);
+        text(303, user);
+      }
+      // })
       // const redirectUrl = `${url.origin}`;
       // console.log("redirectUrl", redirectUrl);
       // redirect(303, redirectUrl);
@@ -51,19 +56,19 @@ export const onPost: RequestHandler = async (requestEvent) => {
     console.error("[Error when trying to create new customer record]", err);
     // if (err === "MongoNotConnectedError: Client must be connected before running operations")
     // MongoServerSelectionError: connection <monitor> to 18.210.148.249:27017 closed
-    json(500, {
-      error: "Error al intentar crear nuevo registro de contacto",
-    });
+    // json(500, {
+    //   error: "Error al intentar crear nuevo registro de contacto",
+    // });
   }
 };
 
-// export default component$(() => {
-//   return (
-//     <div>
-//       <h1>Alive!</h1>
-//     </div>
-//   );
-// });
+export default component$(() => {
+  return (
+    <div>
+      <h1>Se registro su mensaje</h1>
+    </div>
+  );
+});
 
 // const response = new Response(res, {
 //   status: 200,
