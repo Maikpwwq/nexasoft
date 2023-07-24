@@ -6,7 +6,7 @@ export default component$(() => {
   return (
     <imageslist>
       <div class="container container-center">
-        <MUITypography variant="h3" align="center" className={styles.title} >
+        <MUITypography variant="h3" align="center" className={styles.title}>
           ¡Despierta el potencial de tu negocio!
           <br />
           Contáctanos y descubre nuestras

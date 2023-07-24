@@ -16,14 +16,6 @@ import Testimonials from "~/components/testimonials/testimonials";
 import { MUICard, MUICardContent } from "~/integrations/react/mui";
 
 const styles = () => ({
-  contactBox: {
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "0",
-    paddingTop: "5rem",
-    width: "auto",
-    margin: "auto",
-  },
   contactCard: {
     borderRadius: "33px",
     border: "1px solid #ac7ff4",
@@ -55,7 +47,7 @@ export default component$(() => {
         <Counter />
       </div> */}
 
-      <div class="container container-flex" style={classes.contactBox}>
+      <div class="container container-flex contactBox">
         <MUICard style={classes.contactCard} variant="outlined">
           <MUICardContent>
             <Contact />
@@ -68,6 +60,11 @@ export default component$(() => {
           </MUICardContent>
         </MUICard>
       </div>
+      <div
+        role="presentation"
+        class="ellipsis-bottom ellipsis-purple-bottom"
+      ></div>
+      <div role="presentation" class="ellipsis-bottom"></div>
     </>
   );
 });
@@ -77,7 +74,8 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "💥¡Vende en linea como un profesional!. Creamos tu sitio web o tienda digital a la medida de tu negocio.",
+      content:
+        "💥¡Vende en linea como un profesional!. Creamos tu sitio web o tienda digital a la medida de tu negocio.",
     },
   ],
 };

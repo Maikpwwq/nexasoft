@@ -52,7 +52,7 @@ const BannerStepper = () => {
 
   useEffect(() => {
     // useBrowserVisibleTask$(() => {
-    // const timer = 
+    // const timer =
     setInterval(() => {
       maxSteps >= store.count
         ? setStore({ count: store.count++ })
@@ -129,7 +129,7 @@ const BannerStepper = () => {
           flexDirection: "row",
         }}
         className="pb-4 mb-4"
-        steps={maxSteps+1}
+        steps={maxSteps + 1}
         // position="static"
         activeStep={store.count}
         nextButton={
@@ -140,7 +140,7 @@ const BannerStepper = () => {
               // (store.count = 0)
             }
             className="arrow-next"
-            disabled={store.count === maxSteps+1}
+            disabled={store.count === maxSteps + 1}
           >
             {theme.direction === "rtl" ? (
               <KeyboardArrowLeft fontSize="large" />

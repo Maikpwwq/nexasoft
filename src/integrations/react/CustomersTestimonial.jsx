@@ -13,12 +13,14 @@ import {
 import ComunidadDezzpoLogo from "~/assets/img/logos/Comunidad-Dezzpo.jpg";
 import WaviPixelLogo from "~/assets/img/logos/WaviPixelLogo.png";
 import NagaLogo from "~/assets/img/logos/Naga-Reg-Aguas.png";
+import PrimalTrace from "~/assets/img/logos/PrimalTrace.png";
 
 const styles = () => ({
   title: {
     paddingTop: "1.5rem",
     margin: "1.25rem",
-    fontWeight: "700",
+    fontWeight: "300",
+    color: "rgba(255, 255, 255, 1)",
   },
   testimonialsCard: {
     margin: "1.5rem",
@@ -31,7 +33,7 @@ const styles = () => ({
     // animation-iteration-count: infinite,
   },
   testimonials: {
-    backgroundColor: "var(--qwik-light-purple)",
+    backgroundColor: "var(--qwik-purple-background)",
   },
   // @keyframes cardGrow{
   //     0%   {transform: scale3d(0)}
@@ -45,7 +47,7 @@ const TestimonialCard =
     const classes = styles();
     const { style, testimony } = props;
     const { message, name, logo, webSite } = testimony;
-    console.log("testimony", testimony);
+    // console.log("testimony", testimony);
 
     return (
       <div ref={ref} style={style} {...props}>
@@ -89,7 +91,7 @@ const CustomersTestimonial = () => {
     },
     {
       message:
-        "NexaSoft SAS nos ayudó a mejorar la productividad de nuestros sistemas existentes, ahora confiamos en ellos el mantenimiento de nuestros sistemas, conociendo que estarán disponibles en todo momento y podremos cumplir con los plazos de entrega.",
+        "Mejoramos la productividad de nuestros sistemas existentes, ahora confiamos en NexaSoft SAS el mantenimiento de nuestros sistemas, conociendo que estarán disponibles en todo momento y podremos cumplir con los plazos de entrega.",
       name: "Naga Regeneración de Aguas",
       logo: NagaLogo,
       webSite: "https://naga-regeneracion-aguas-frontend.vercel.app",
@@ -99,7 +101,14 @@ const CustomersTestimonial = () => {
         "NexaSoft SAS ha superado nuestras expectativas con sus servicios de desarrollo de aplicaciones móviles. Hemos reducido costos operativos de manera significativa. Además, la aplicación es fácil de usar y ha sido muy bien recibida por nuestros usuarios finales.",
       name: "Comunidad Dezzpo",
       logo: ComunidadDezzpoLogo,
-      webSite: "https://maikpwwq.github.io/",
+      webSite: "https://dezzpo.com/",
+    },
+    {
+      message:
+        "Con plena confianza, hemos establecido una estratégica asociación con NexaSoftSAS para garantizar una trazabilidad segura de nuestro proyecto en la blockchain.",
+      name: "PrimalTrace",
+      logo: PrimalTrace,
+      webSite: "https://primaltrace-nuxt-ssr.vercel.app/",
     },
   ];
 
@@ -127,12 +136,12 @@ const CustomersTestimonial = () => {
         variant="h3"
         align="center"
         style={classes.title}
-        sx={{ fontSize: { xs: "2rem", md: "3.75rem" } }}
+        sx={{ fontSize: { xs: "1.75rem", md: "3rem" } }}
       >
         Nuestros{" "}
         <span
-          className="highlight font-bold"
-          style={{ color: "var(--qwik-dark-purple)" }}
+          className="highlight font-bold md:text-6xl sm:text-3xl text-2xl"
+          style={{ color: "rgba(255, 255, 255, 1)", borderColor: "#e5e7eb" }}
         >
           clientes
         </span>{" "}

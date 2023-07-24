@@ -34,7 +34,7 @@ const clientPromise = mongoose.createConnection(
     if (err) {
       console.log("Connection error", err);
     }
-  }
+  },
 );
 
 const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);

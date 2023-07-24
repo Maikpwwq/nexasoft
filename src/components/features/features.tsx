@@ -19,9 +19,7 @@ export default component$(() => {
         <MUITypography variant="h2" align="center" className={styles.title}>
           ¡Transforma tu
           <br />
-          <span class="highlight">
-            experiencia{" "}
-          </span>
+          <span class="highlight">experiencia </span>
           en línea!
         </MUITypography>
         <div class={styles.servicesBriefcase}>

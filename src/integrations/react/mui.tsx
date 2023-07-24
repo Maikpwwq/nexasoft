@@ -30,7 +30,7 @@ import {
 import ImageListItems from "./imageListItems";
 import FormContacto from "./FormContacto";
 import BannerStepper from "./BannerStepper";
-import TableReactApp from "./TableReactApp"
+import TableReactApp from "./TableReactApp";
 import CustomersTestimonial from "./CustomersTestimonial";
 
 // import PushPinIcon from '@mui/icons-material/PushPin';
@@ -123,7 +123,7 @@ export const BannerImgStepper = qwikify$(() => {
 export const TableApp = qwikify$(() => {
   return (
     <>
-      <TableReactApp/>
-    </> 
+      <TableReactApp />
+    </>
   );
 });

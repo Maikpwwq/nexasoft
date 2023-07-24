@@ -1,8 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 
-import {
-  MUITypography,
-} from "~/integrations/react/mui";
+import { MUITypography } from "~/integrations/react/mui";
 
 export default component$(() => {
   // useStylesScoped$(styles);

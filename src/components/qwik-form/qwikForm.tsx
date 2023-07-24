@@ -4,37 +4,8 @@ import {
   // routeAction$,
   Form,
 } from "@builder.io/qwik-city";
+import styles from "./qwikForm.module.css";
 import { MUITypography } from "~/integrations/react/mui";
-
-const styles = () => ({
-  formFlex: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  inputStyle: {
-    color: "black",
-    margin: "0.5rem 0",
-    border: "2px solid white",
-    borderRadius: "13px",
-    padding: "0.5rem 0.5rem",
-    backgroundColor: "aliceblue",
-  },
-  labelStyle: {
-    position: "relative",
-    textAlign: "start",
-  },
-  btnStyle: {
-    marginTop: "1.5rem",
-    padding: "0.75rem 0",
-    backgroundColor: "var(--qwik-light-blue)",
-    color: "var(--qwik-dark-text)",
-  },
-  sheetFormStyle: {
-    maxWidth: "330px",
-    margin: "33px 0",
-    padding: "0 33px",
-  },
-});
 
 let successful = false;
 // const successful = false;
@@ -46,13 +17,13 @@ let successful = false;
 const fetchCustomerRecord = async (customerRecord: any) => {
   console.log("fetchCustomerRecord", customerRecord);
   const postCustomerRecord = await fetch(
-    "http://localhost:5173/customer-record",
-    // "https://nexasoft.dev/customer-record",
+    // "http://localhost:5173/customer-record",
+    "https://nexasoft.dev/customer-record",
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(customerRecord),
-    }
+    },
   );
   const statusCode = postCustomerRecord.status;
   const statusText = postCustomerRecord.statusText;
@@ -91,8 +62,6 @@ const addCustomer = server$(async function (data) {
 
 export default component$(() => {
   // const action = useAddUser();
-
-  const classes = styles();
   const formData = {
     name: useSignal(""),
     email: useSignal(""),
@@ -110,7 +79,7 @@ export default component$(() => {
   // });
 
   return (
-    <div style={classes.sheetFormStyle}>
+    <div class={styles.sheetFormStyle}>
       <MUITypography variant="h6" color={"var(--qwik-dark-blue)"}>
         Formulario de contacto
       </MUITypography>
@@ -119,7 +88,7 @@ export default component$(() => {
       </MUITypography>
       <Form
         // action={action}
-        style={classes.formFlex}
+        class={styles.formFlex}
         // reloadDocument={true}
         // onSubmit$={async (e) => {
         //   e.preventDefault();
@@ -130,59 +99,59 @@ export default component$(() => {
         //   }
         // }}
       >
-        <label for="form-name" style={classes.labelStyle}>
+        <label for="form-name" class={styles.labelStyle}>
           Nombre:{" "}
         </label>
         <input
           id="form-name"
           name="fullName"
           type="text"
-          style={classes.inputStyle}
+          class={styles.inputStyle}
           bind:value={formData.name}
         />
-        <label for="form-email" style={classes.labelStyle}>
+        <label for="form-email" class={styles.labelStyle}>
           Correo electrónico:{" "}
         </label>
         <input
           id="form-email"
           name="email"
           type="email"
-          style={classes.inputStyle}
+          class={styles.inputStyle}
           bind:value={formData.email}
         />
-        <label for="form-phone" style={classes.labelStyle}>
+        <label for="form-phone" class={styles.labelStyle}>
           Teléfono:{" "}
         </label>
         <input
           id="form-phone"
           name="phone"
           type="phone"
-          style={classes.inputStyle}
+          class={styles.inputStyle}
           bind:value={formData.phone}
         />
-        <label for="form-issue" style={classes.labelStyle}>
+        <label for="form-issue" class={styles.labelStyle}>
           Asunto:{" "}
         </label>
         <input
           id="form-issue"
           name="issue"
           type="text"
-          style={classes.inputStyle}
+          class={styles.inputStyle}
           bind:value={formData.issue}
         />
-        <label for="form-message" style={classes.labelStyle}>
+        <label for="form-message" class={styles.labelStyle}>
           Mensaje:{" "}
         </label>
         <textarea
           id="form-message"
           rows={7}
           name="message"
-          style={classes.inputStyle}
+          class={styles.inputStyle}
           bind:value={formData.message}
         />
         <button
           type="submit"
-          style={classes.btnStyle}
+          class={styles.btnStyle}
           onClick$={async () => {
             const greeting = await addCustomer(formData);
             // console.log("greeting", greeting.successful);

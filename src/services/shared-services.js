@@ -7,7 +7,7 @@ const newCustomerRecord = (formData) =>
     try {
       console.log(
         "newCustomerRecord",
-        formData
+        formData,
         // subscriber
       );
       subscriber.next(response);
@@ -21,4 +21,4 @@ const getNewCustomerRecord = () => {
   return newCustomerRecord;
 };
 
-export { newCustomerRecord,getNewCustomerRecord };
+export { newCustomerRecord, getNewCustomerRecord };

@@ -24,11 +24,11 @@ const MONGODB_COLLECTION = `${VITE_MONGODB_COLLECTION}`;
 
 const MONGO_HOST = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?authMechanism=SCRAM-SHA-1`;
 
-console.log("MONGO_HOST", MONGO_HOST); 
+console.log("MONGO_HOST", MONGO_HOST);
 
 const mongoClient = new MongoClient();
 
-const clientPromise = mongoClient.connect(MONGO_HOST); 
+const clientPromise = mongoClient.connect(MONGO_HOST);
 
 const handler = async () => {
   try {
@@ -54,4 +54,3 @@ const handler = async () => {
 export const config = { path: "/get_contactos" };
 
 export default handler;
-

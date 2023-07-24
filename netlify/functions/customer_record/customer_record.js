@@ -20,14 +20,11 @@ const schema = new mongoose.Schema({
   message: String,
 });
 
-const clientPromise = mongoose.createConnection(
-  MONGO_HOST,
-  {
-    dbName: DB_NAME,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+const clientPromise = mongoose.createConnection(MONGO_HOST, {
+  dbName: DB_NAME,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
 
@@ -64,7 +61,7 @@ export const handler = async (event) => {
   } catch (err) {
     console.error("[mongodb create new customer record]", MONGO_HOST, err);
     return { statusCode: 500, body: err.toString() };
-  } 
+  }
   // finally {
   //   // Ensures that the client will close when you finish/error
   //   await clientPromise.close();

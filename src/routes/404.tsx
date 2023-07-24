@@ -1,8 +1,7 @@
 import { component$ } from "@builder.io/qwik";
-import './404.module.css'
+import "./404.module.css";
 
 export default component$(() => {
-
   return (
     <div class="Container404">
       <p>

@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import mongoose from "mongoose"; // ,
-import * as dotenv from "dotenv";
 
-dotenv.config();
+export { Contactos };
 
 // Variables de entorno
 const DB_USER = `${process.env.VITE_DB_USER}`;
@@ -15,26 +14,22 @@ const MONGODB_COLLECTION = `${process.env.VITE_MONGODB_COLLECTION}`;
 const MONGO_HOST = `${process.env.VITE_MONGO_HOST}`;
 // console.log("MONGO_HOST:", MONGO_HOST);
 
-
 const schema = new mongoose.Schema({
-    name: String,
-    email: String,
-    phone: String,
-    issue: String,
-    message: String,
-  });
-  
-  const options = {
-    dbName: DB_NAME,
-    user: DB_USER,
-    pass: DB_PASSWORD2,
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-  };
+  name: String,
+  email: String,
+  phone: String,
+  issue: String,
+  message: String,
+});
 
+const options = {
+  dbName: DB_NAME,
+  user: DB_USER,
+  pass: DB_PASSWORD2,
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true,
+};
 
 const clientPromise = mongoose.createConnection(MONGO_HOST, options);
 
 const Contactos = clientPromise.model(MONGODB_COLLECTION, schema);
-
-export { Contactos }

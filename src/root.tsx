@@ -9,6 +9,10 @@ import { QwikPartytown } from "./components/partytown/partytown";
 
 import "./global.css";
 
+// Dot env config as soon as posible
+import * as dotenv from "dotenv";
+dotenv.config();
+
 export default component$(() => {
   /**
    * The root of a QwikCity site always start with the <QwikCityProvider> component,
@@ -39,7 +43,7 @@ export default component$(() => {
 
   // , location, type
   const proxyFb = function (url: any) {
-    const proxy = "https://nexasoft.dev" // "http://localhost/proxy/"
+    const proxy = "https://nexasoft.dev"; // "http://localhost/proxy/"
     if (
       url.hostname === "connect.facebook.net" ||
       url.hostname === "www.googletagmanager.com" ||
@@ -56,7 +60,10 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
-        <meta name="facebook-domain-verification" content="8r9sxxnm9fxblri4lae8azis4v45id" />
+        <meta
+          name="facebook-domain-verification"
+          content="8r9sxxnm9fxblri4lae8azis4v45id"
+        />
         {/* <script>
           partytown = {
             resolveUrl: proxyFb,

@@ -1,61 +1,60 @@
-// /* eslint-disable @typescript-eslint/no-var-requires */
-// import { type RequestHandler } from "@builder.io/qwik-city";
-// // import { component$ } from "@builder.io/qwik";
-// import { Contactos } from "~/services/mongo-init";
+/* eslint-disable @typescript-eslint/no-var-requires */
+import { type RequestHandler } from "@builder.io/qwik-city";
+// import { component$ } from "@builder.io/qwik";
+import { Contactos } from "~/services/mongo-init";
 
-// interface RegistroContacto {
-//   name: String;
-//   email: String;
-//   phone: String;
-//   issue: String;
-//   message: String;
-// }
+interface RegistroContacto {
+  name: String;
+  email: String;
+  phone: String;
+  issue: String;
+  message: String;
+}
 
-// // Called when this HTTP method is POST
-// // onRequest, onGet, onPost, onPut, onDelete, onPatch, onHead
-// export const onPost: RequestHandler = async (requestEvent) => {
-//   // console.log("requestEvent", requestEvent);
-//   const { parseBody, json, text } = requestEvent; // method, url, redirect
+// Called when this HTTP method is POST
+// onRequest, onGet, onPost, onPut, onDelete, onPatch, onHead
+export const onPost: RequestHandler = async (requestEvent) => {
+  // console.log("requestEvent", requestEvent);
+  const { parseBody } = requestEvent; // , json, text, method, url, redirect
 
-//   try {
-//     const body = await parseBody();
-//     // console.log("bodyParsed", body);
-//     const bodyParsed = body as RegistroContacto;
-//     // console.log("bodyParsed", bodyParsed);
-//     // Check if bodyParsed is defined and has the expected properties
-//     // if (!bodyParsed && typeof bodyParsed !== "object") {
-//     //   json(200, { error: "Invalid request body" });
-//     // }
-//     if (bodyParsed && typeof bodyParsed === "object") {
-//       const contactData = {
-//         name: bodyParsed?.name,
-//         email: bodyParsed?.email,
-//         phone: bodyParsed?.phone,
-//         issue: bodyParsed?.issue,
-//         message: bodyParsed?.message,
-//       };
-//       // console.log("Parsed body:", parsedBody, typeof parsedBody);
-//       const res: any = await Contactos.create(contactData);
-//       const user = JSON.stringify(res);
-//       // console.log("mongoRes", res._id, user);
-//       text(303, user);
-//     }
-//   } catch (err: any) {
-//     console.error(
-//       "[Error when trying to create new customer record]",
-//       err
-//     );
-//     // if (err === "MongoNotConnectedError: Client must be connected before running operations")
-//     // MongoServerSelectionError: connection <monitor> to 18.210.148.249:27017 closed
-//     json(500, {
-//       error: "Error al intentar crear nuevo registro de contacto",
-//     });
-//   }
-//   // finally {
-//   //   // Ensures that the client will close when you finish/error
-//   //   await clientPromise.close();
-//   // }
-// };
+  try {
+    const body = await parseBody();
+    // console.log("bodyParsed", body);
+    const bodyParsed = body as RegistroContacto;
+    // console.log("bodyParsed", bodyParsed);
+    // Check if bodyParsed is defined and has the expected properties
+    // if (!bodyParsed && typeof bodyParsed !== "object") {
+    //   json(200, { error: "Invalid request body" });
+    // }
+    if (bodyParsed && typeof bodyParsed === "object") {
+      const contactData = {
+        name: bodyParsed?.name,
+        email: bodyParsed?.email,
+        phone: bodyParsed?.phone,
+        issue: bodyParsed?.issue,
+        message: bodyParsed?.message,
+      };
+      console.log("Parsed body:", contactData);
+      // const res: any = await Contactos.create(contactData);
+      // const res: any = Contactos.create(contactData);
+      // console.log("mongoRes", res);
+      // const user = JSON.stringify(res);
+      // console.log("mongoRes", res._id, user);
+      // text(303, user);
+    }
+  } catch (err: any) {
+    console.error("[Error when trying to create new customer record]", err);
+    // if (err === "MongoNotConnectedError: Client must be connected before running operations")
+    // MongoServerSelectionError: connection <monitor> to 18.210.148.249:27017 closed
+    // json(500, {
+    //   error: "Error al intentar crear nuevo registro de contacto",
+    // });
+  }
+  // finally {
+  //   // Ensures that the client will close when you finish/error
+  //   await clientPromise.close();
+  // }
+};
 
 // export default component$(() => {
 //   return (

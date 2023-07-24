@@ -26,7 +26,7 @@ export default component$(() => {
   //, left: `-${store.count}00vw`
   return (
     <mainbanner>
-      <BannerImgStepper/>
+      <BannerImgStepper />
     </mainbanner>
   );
 });

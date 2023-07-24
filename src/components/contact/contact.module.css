@@ -1,10 +1,10 @@
 .contactSection {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .cardContactForm {
-    margin: 0 33px !important;
-    border: 2px solid white;
-    border-radius: 13px !important;
+  margin: 0 33px !important;
+  border: 2px solid white;
+  border-radius: 13px !important;
 }

@@ -5,7 +5,6 @@ import QwikForm from "~/components/qwik-form/qwikForm";
 import { MUIPaper } from "~/integrations/react/mui";
 
 export default component$(() => {
- 
   return (
     <contact
       id="contact-section"

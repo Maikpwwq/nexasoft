@@ -1,6 +1,6 @@
-// import { 
-//     component$, 
-//     Slot 
+// import {
+//     component$,
+//     Slot
 // } from "@builder.io/qwik";
 // import {
 //     useNavigate,
