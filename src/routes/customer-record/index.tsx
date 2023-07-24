@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { type RequestHandler } from "@builder.io/qwik-city";
 // import { component$ } from "@builder.io/qwik";
-import { Contactos } from "~/services/mongo-init";
+// import { Contactos } from "~/services/mongo-init";
 
 interface RegistroContacto {
   name: String;
