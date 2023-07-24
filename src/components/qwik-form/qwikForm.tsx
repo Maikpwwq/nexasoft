@@ -158,7 +158,8 @@ export default component$(() => {
           onClick$={async () => {
             const greeting = await addCustomer(formData); // :{successful: boolean}
             console.log("greeting", greeting);
-            if (!!greeting && successful) {
+            // !!greeting && 
+            if (successful) {
               alert("Gracias, su mensaje ha sido recibido.");
               formData.name.value = ''
               formData.email.value = ''
