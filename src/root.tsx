@@ -10,8 +10,8 @@ import { QwikPartytown } from "./components/partytown/partytown";
 import "./global.css";
 
 // Dot env config as soon as posible
-import * as dotenv from "dotenv";
-dotenv.config();
+// import * as dotenv from "dotenv";
+// dotenv.config();
 
 export default component$(() => {
   /**

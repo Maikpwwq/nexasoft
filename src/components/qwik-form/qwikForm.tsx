@@ -1,4 +1,5 @@
 import { component$, useSignal } from "@builder.io/qwik";
+import { connectionDB } from "~/services/mongo-init";
 import {
   server$,
   // routeAction$,
@@ -15,30 +16,30 @@ let successful = false;
 // dev  http://localhost:5173/customer-record
 // prod  https://nexasoft.dev/customer-record
 
-const fetchCustomerRecord = async (customerRecord: any) => {
-  console.log("fetchCustomerRecord", customerRecord);
-  const postCustomerRecord = await fetch(
-    // "http://localhost:5173/customer-record/",
-    "https://nexasoft.dev/customer-record/",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(customerRecord),
-    }
-  );
-  const statusCode = postCustomerRecord.status;
-  const statusText = postCustomerRecord.statusText;
-  console.log("fetchCustomerResponse", statusCode, statusText);
+// const fetchCustomerRecord = async (customerRecord: any) => {
+//   console.log("fetchCustomerRecord", customerRecord);
+//   const postCustomerRecord = await fetch(
+//     // "http://localhost:5173/customer-record/",
+//     "https://nexasoft.dev/customer-record/",
+//     {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify(customerRecord),
+//     }
+//   );
+//   const statusCode = postCustomerRecord.status;
+//   const statusText = postCustomerRecord.statusText;
+//   console.log("fetchCustomerResponse", statusCode, statusText);
 
-  // if (statusCode === 303) {
-  //   console.log("fetchCustomerSuccess", postCustomerRecord.text());
-  successful = true;
-  // } else {
-  //   console.log("fetchCustomerFail", statusCode);
-  //   // console.log("fetchCustomerRecord", postCustomerRecord.json());
-  // }
-  // return statusCode;
-};
+//   // if (statusCode === 303) {
+//   //   console.log("fetchCustomerSuccess", postCustomerRecord.text());
+//   successful = true;
+//   // } else {
+//   //   console.log("fetchCustomerFail", statusCode);
+//   //   // console.log("fetchCustomerRecord", postCustomerRecord.json());
+//   // }
+//   // return statusCode;
+// };
 
 export const addCustomer = server$(async function (data): Promise<{
   successful: boolean;
@@ -53,7 +54,12 @@ export const addCustomer = server$(async function (data): Promise<{
     message: data.message.value,
   };
 
-  await fetchCustomerRecord(customerRecord);
+  // await fetchCustomerRecord(customerRecord);
+  const resume = await connectionDB(customerRecord);
+  if (resume) {
+    console.log("Promise message", resume);
+    successful = true
+  }
 
   return {
     successful,
@@ -150,8 +156,16 @@ export default component$(() => {
           type="submit"
           class={styles.btnStyle}
           onClick$={async () => {
-            const greeting = await addCustomer(formData);
-            console.log("greeting", greeting);
+            // const customerRecord = {
+            //   name: formData.name.value,
+            //   email: formData.email.value,
+            //   phone: formData.phone.value,
+            //   issue: formData.issue.value,
+            //   message: formData.message.value,
+            // };
+            // const resume = await connectionDB(customerRecord);
+            const resume = await addCustomer(formData);
+            console.log("greeting", resume);
             const resetForm = () => {
               formData.name.value = "";
               formData.email.value = "";
@@ -160,7 +174,7 @@ export default component$(() => {
               formData.message.value = "";
             };
             //  && successful
-            if (greeting) {
+            if (resume) {
               alert("Gracias, su mensaje ha sido recibido.");
               resetForm();
               successful = false;

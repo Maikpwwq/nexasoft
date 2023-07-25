@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import mongoose from "mongoose"; // ,
 
+import * as dotenv from "dotenv";
+dotenv.config();
+
 // Variables de entorno
 const DB_USER = `${process.env.VITE_DB_USER}`;
 // const DB_PASSWORD = `${process.env.VITE_DB_PASSWORD}`;
