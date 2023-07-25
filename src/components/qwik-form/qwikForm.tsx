@@ -24,23 +24,25 @@ const fetchCustomerRecord = async (customerRecord: any) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(customerRecord),
-    },
+    }
   );
   const statusCode = postCustomerRecord.status;
   const statusText = postCustomerRecord.statusText;
-  console.log("fetchCustomerRecord", statusCode, statusText);
+  console.log("fetchCustomerResponse", statusCode, statusText);
 
-  if (statusCode === 303) {
-    console.log("fetchCustomerRecord", postCustomerRecord.text());
-    successful = true;
-  } else {
-    console.log("fetchCustomerRecord", statusCode);
-    // console.log("fetchCustomerRecord", postCustomerRecord.json());
-  }
-  return statusCode;
+  // if (statusCode === 303) {
+  //   console.log("fetchCustomerSuccess", postCustomerRecord.text());
+  successful = true;
+  // } else {
+  //   console.log("fetchCustomerFail", statusCode);
+  //   // console.log("fetchCustomerRecord", postCustomerRecord.json());
+  // }
+  // return statusCode;
 };
 
-const addCustomer = server$(async function (data) : Promise<{ successful: boolean; }> {
+const addCustomer = server$(async function (data): Promise<{
+  successful: boolean;
+}> {
   // async
   // This will only run on the server when the user submits the form (or when the action is called programatically)
   const customerRecord = {
@@ -72,14 +74,6 @@ export default component$(() => {
     issue: useSignal(""),
     message: useSignal(""),
   };
-
-  // const resetForm = (() => {
-  //   formData.name.value = "";
-  //   formData.email.value = "";
-  //   formData.phone.value = "";
-  //   formData.issue.value = "";
-  //   formData.message.value = "";
-  // });
 
   return (
     <div class={styles.sheetFormStyle}>
@@ -156,16 +150,21 @@ export default component$(() => {
           type="submit"
           class={styles.btnStyle}
           onClick$={async () => {
-            const greeting = await addCustomer(formData); 
+            const greeting = await addCustomer(formData);
             console.log("greeting", greeting);
-            if (!!greeting && greeting.successful) {
+            const resetForm = () => {
+              formData.name.value = "";
+              formData.email.value = "";
+              formData.phone.value = "";
+              formData.issue.value = "";
+              formData.message.value = "";
+            };
+            //  && successful
+            if (greeting) {
               alert("Gracias, su mensaje ha sido recibido.");
-              formData.name.value = ''
-              formData.email.value = ''
-              formData.phone.value = ''
-              formData.issue.value = ''
-              formData.message.value = ''
-              await nav('/');
+              resetForm()
+              successful = false;
+              await nav("/");
             }
           }}
         >
