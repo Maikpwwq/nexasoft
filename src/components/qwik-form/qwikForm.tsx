@@ -41,9 +41,12 @@ let successful = false;
 //   // return statusCode;
 // };
 
-// : Promise<{successful: boolean;}> 
+// : Promise<{successful: boolean;}>
 
-export const addCustomer = server$(async function (data){
+// routeAction$()` can only be declared in `layout.tsx`, `index.tsx` and `plugin.tsx` inside the src/routes directory
+// export const useAddUser = routeAction$(async (data, requestEvent) => {
+//   console.log(data, requestEvent)
+export const addCustomer = server$(async function (data) {
   // async
   // This will only run on the server when the user submits the form (or when the action is called programatically)
   const customerRecord = {
@@ -56,19 +59,17 @@ export const addCustomer = server$(async function (data){
 
   // await fetchCustomerRecord(customerRecord);
   const resume = await connectionDB(customerRecord);
-  if (resume) {
-    console.log("Promise message", resume);
-    successful = true
-  }
+  // const record = JSON.stringify(resume);
+  // if (resume) {
+  console.log("Promise message", resume);
+  successful = true;
+  // }
 
   return {
     successful,
   };
 });
 
-// export const useAddUser = routeAction$(async (data, requestEvent) => {
-//   console.log(data, requestEvent)
-// })
 
 export default component$(() => {
   const nav = useNavigate();
@@ -153,7 +154,7 @@ export default component$(() => {
           bind:value={formData.message}
         />
         <button
-          type="submit"
+          // type="submit"
           class={styles.btnStyle}
           onClick$={async () => {
             // const customerRecord = {
@@ -165,7 +166,7 @@ export default component$(() => {
             // };
             // const resume = await connectionDB(customerRecord);
             const resume = await addCustomer(formData);
-            console.log("greeting", resume);
+            console.log("greeting", resume, successful);
             const resetForm = () => {
               formData.name.value = "";
               formData.email.value = "";
@@ -177,7 +178,7 @@ export default component$(() => {
             if (resume) {
               alert("Gracias, su mensaje ha sido recibido.");
               resetForm();
-              successful = false;
+              // successful = false; READ only
               await nav("/");
             }
           }}
