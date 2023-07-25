@@ -41,9 +41,9 @@ let successful = false;
 //   // return statusCode;
 // };
 
-export const addCustomer = server$(async function (data): Promise<{
-  successful: boolean;
-}> {
+// : Promise<{successful: boolean;}> 
+
+export const addCustomer = server$(async function (data){
   // async
   // This will only run on the server when the user submits the form (or when the action is called programatically)
   const customerRecord = {
