@@ -5,7 +5,7 @@ export default component$(() => {
   return (
     <div class="Container404">
       <p>
-        <strong>404</strong> <span>/customer-record not found.</span>
+        <strong>404</strong> <span>dirección no encontrada.</span>
       </p>
 
       <div>

@@ -162,7 +162,7 @@ export default component$(() => {
             //  && successful
             if (greeting) {
               alert("Gracias, su mensaje ha sido recibido.");
-              resetForm()
+              resetForm();
               successful = false;
               await nav("/");
             }
