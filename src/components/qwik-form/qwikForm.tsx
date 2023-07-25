@@ -49,16 +49,16 @@ let successful = false;
 export const addCustomer = server$(async function (data) {
   // async
   // This will only run on the server when the user submits the form (or when the action is called programatically)
-  const customerRecord = {
-    name: data.name.value,
-    email: data.email.value,
-    phone: data.phone.value,
-    issue: data.issue.value,
-    message: data.message.value,
-  };
+  // const customerRecord = {
+  //   name: data.name.value,
+  //   email: data.email.value,
+  //   phone: data.phone.value,
+  //   issue: data.issue.value,
+  //   message: data.message.value,
+  // };
 
   // await fetchCustomerRecord(customerRecord);
-  const resume = await connectionDB(customerRecord);
+  const resume = await connectionDB(data);
   // const record = JSON.stringify(resume);
   // if (resume) {
   console.log("Promise message", resume);
@@ -157,15 +157,15 @@ export default component$(() => {
           // type="submit"
           class={styles.btnStyle}
           onClick$={async () => {
-            // const customerRecord = {
-            //   name: formData.name.value,
-            //   email: formData.email.value,
-            //   phone: formData.phone.value,
-            //   issue: formData.issue.value,
-            //   message: formData.message.value,
-            // };
+            const customerRecord = {
+              name: formData.name.value,
+              email: formData.email.value,
+              phone: formData.phone.value,
+              issue: formData.issue.value,
+              message: formData.message.value,
+            };
             // const resume = await connectionDB(customerRecord);
-            const resume = await addCustomer(formData);
+            const resume = await addCustomer(customerRecord);
             console.log("greeting", resume, successful);
             const resetForm = () => {
               formData.name.value = "";
