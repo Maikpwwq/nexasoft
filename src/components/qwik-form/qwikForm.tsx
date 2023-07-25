@@ -4,7 +4,7 @@ import {
   server$,
   // routeAction$,
   useNavigate,
-  Form,
+  // Form,
 } from "@builder.io/qwik-city";
 import styles from "./qwikForm.module.css";
 import { MUITypography } from "~/integrations/react/mui";
@@ -49,16 +49,16 @@ let successful = false;
 export const addCustomer = server$(async function (data) {
   // async
   // This will only run on the server when the user submits the form (or when the action is called programatically)
-  // const customerRecord = {
-  //   name: data.name.value,
-  //   email: data.email.value,
-  //   phone: data.phone.value,
-  //   issue: data.issue.value,
-  //   message: data.message.value,
-  // };
+  const customerRecord = {
+    name: data.name.value,
+    email: data.email.value,
+    phone: data.phone.value,
+    issue: data.issue.value,
+    message: data.message.value,
+  };
 
   // await fetchCustomerRecord(customerRecord);
-  const resume = await connectionDB(data);
+  const resume = await connectionDB(customerRecord);
   // const record = JSON.stringify(resume);
   // if (resume) {
   console.log("Promise message", resume);
@@ -90,7 +90,7 @@ export default component$(() => {
       <MUITypography variant="body1" className="pt-2 pb-4" align="center">
         Solicita información adicional o una presentación de nuestros servicios.
       </MUITypography>
-      <Form
+      <div
         // action={action}
         class={styles.formFlex}
         // reloadDocument={true}
@@ -157,15 +157,15 @@ export default component$(() => {
           // type="submit"
           class={styles.btnStyle}
           onClick$={async () => {
-            const customerRecord = {
-              name: formData.name.value,
-              email: formData.email.value,
-              phone: formData.phone.value,
-              issue: formData.issue.value,
-              message: formData.message.value,
-            };
+            // const customerRecord = {
+            //   name: formData.name.value,
+            //   email: formData.email.value,
+            //   phone: formData.phone.value,
+            //   issue: formData.issue.value,
+            //   message: formData.message.value,
+            // };
             // const resume = await connectionDB(customerRecord);
-            const resume = await addCustomer(customerRecord);
+            const resume = await addCustomer(formData);
             console.log("greeting", resume, successful);
             const resetForm = () => {
               formData.name.value = "";
@@ -185,7 +185,7 @@ export default component$(() => {
         >
           Enviar
         </button>
-      </Form>
+      </div>
       {/* {successful && (
         // When the action is done successfully, the `action.value` property will contain the return value of the action
         <p>Gracias, su mensaje ha sido recibido.</p>
