@@ -40,7 +40,7 @@ const fetchCustomerRecord = async (customerRecord: any) => {
   // return statusCode;
 };
 
-const addCustomer = server$(async function (data): Promise<{
+export const addCustomer = server$(async function (data): Promise<{
   successful: boolean;
 }> {
   // async
