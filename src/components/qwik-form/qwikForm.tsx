@@ -47,7 +47,6 @@ let successful = false;
 // export const useAddUser = routeAction$(async (data, requestEvent) => {
 //   console.log(data, requestEvent)
 export const addCustomer = server$(async function (data) {
-  // async
   // This will only run on the server when the user submits the form (or when the action is called programatically)
   const customerRecord = {
     name: data.name.value,
