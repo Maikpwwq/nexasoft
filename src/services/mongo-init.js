@@ -36,7 +36,7 @@ const options = {
 };
 
 export async function connectionDB(contactData) {
-  const dbPromise = mongoose.createConnection(MONGO_HOST, options);
+  const dbPromise = await mongoose.createConnection(MONGO_HOST, options);
   const userModel = dbPromise.model(MONGODB_COLLECTION, schema);
   // dbPromise.on("error", console.error.bind(console, "DB connection error: "));
   dbPromise.once("open", function () {
