@@ -3,27 +3,27 @@ import { connectionDB } from "~/services/mongo-init";
 import {
   server$,
   // routeAction$,
-  routeLoader$, 
-  type DocumentHead,
-  useNavigate,
+  routeLoader$,
+  // type DocumentHead,
+  // useNavigate,
   // Form,
   z,
 } from "@builder.io/qwik-city";
 import styles from "~/components/qwik-form/qwikForm.module.css";
 import { MUITypography } from "~/integrations/react/mui";
 
-import { TextInput } from '~/components/qwik-form/TextInput'
+import { TextInput } from "~/components/qwik-form/TextInput";
 
 import {
-  email,
-  minLength,
-  required,
+  // email,
+  // minLength,
+  // required,
   useForm,
   formAction$,
   zodForm$,
-} from '@modular-forms/qwik';
+} from "@modular-forms/qwik";
 
-import type { InitialValues, SubmitHandler } from '@modular-forms/qwik';
+import type { InitialValues, SubmitHandler } from "@modular-forms/qwik";
 
 let successful = false;
 // const successful = false;
@@ -38,12 +38,12 @@ type LoginForm = {
 };
 
 export const useFormLoader = routeLoader$<InitialValues<LoginForm>>(() => ({
-  name: '',
-  email: '',
-  password: '',
-  phone: '',
-  issue: '',
-  message: '',
+  name: "",
+  email: "",
+  password: "",
+  phone: "",
+  issue: "",
+  message: "",
 }));
 
 // use the correct URL to connect functions
@@ -104,32 +104,42 @@ export const addCustomer = server$(async function (data) {
 });
 
 const loginSchema = z.object({
+  name: z
+    .string()
+    .min(1, "Por favor introduzca su nombre."),
   email: z
     .string()
-    .min(1, 'Please enter your email.')
-    .email('The email address is badly formatted.'),
-  password: z
+    .min(1, "Por favor introduzca su email.")
+    .email("The email address is badly formatted."),
+  phone: z
     .string()
-    .min(1, 'Please enter your password.')
-    .min(8, 'You password must have 8 characters or more.'),
+    .min(1, "Por favor introduzca su teléfono.")
+    .min(10, "Tu teléfono debe tener 10 caracteres o más."),
+  issue: z
+    .string()
+    .min(1, "Por favor introduzca su asunto."),
+  message: z
+    .string()
+    .min(1, "Por favor introduzca su mensaje.")
+    .min(8, "Tu mensaje debe tener 8 caracteres o más."),
 });
 
 export const useFormAction = formAction$<LoginForm>(async (values) => {
   // Runs on server
-  console.log('useFormAction', values )
-  await connectionDB(values)
+  console.log("useFormAction", values);
+  await connectionDB(values);
 }, zodForm$(loginSchema));
 
 export default component$(() => {
-  const nav = useNavigate();
+  // const nav = useNavigate();
   // const action = useAddUser();
-  const formData = {
-    name: useSignal(""),
-    email: useSignal(""),
-    phone: useSignal(""),
-    issue: useSignal(""),
-    message: useSignal(""),
-  };
+  // const formData = {
+  //   name: useSignal(""),
+  //   email: useSignal(""),
+  //   phone: useSignal(""),
+  //   issue: useSignal(""),
+  //   message: useSignal(""),
+  // };
 
   const [loginForm, { Form, Field, FieldArray }] = useForm<LoginForm>({
     loader: useFormLoader(),
@@ -137,12 +147,14 @@ export default component$(() => {
     validate: zodForm$(loginSchema),
   });
 
-  
-  const handleSubmit: SubmitHandler<LoginForm> = $(async (values: any, event: any) => {
+  const handleSubmit: SubmitHandler<LoginForm> = async (
+    values: any,
+    event: any
+  ) => {
     // Runs on client
-    console.log('handleSubmit', values )
-    await connectionDB(values)
-  });
+    console.log("handleSubmit", values, event);
+    await connectionDB(values);
+  };
 
   return (
     <div class={styles.sheetFormStyle}>
@@ -165,7 +177,7 @@ export default component$(() => {
         //   }
         // }}
         // async (values) => await connectionDB(values)
-        onSubmit$={handleSubmit}
+        // onSubmit$={handleSubmit}
       >
         <label for="form-name" class={styles.labelStyle}>
           Nombre:{" "}
@@ -173,17 +185,15 @@ export default component$(() => {
         <Field
           // id="form-name"
           name="name"
-          // type="text"
           // class={styles.inputStyle}
-          // bind:value={formData.name}
-          >
+        >
           {(field, props) => (
             <TextInput
               {...props}
               value={field.value}
               error={field.error}
               type="text"
-              label="Nombre"
+              label="Nombre:"
               placeholder="Nombre"
               required
             />
@@ -192,43 +202,83 @@ export default component$(() => {
         <label for="form-email" class={styles.labelStyle}>
           Correo electrónico:{" "}
         </label>
-        <input
-          id="form-email"
+        <Field
+          // id="form-email"
           name="email"
-          type="email"
-          class={styles.inputStyle}
-          // bind:value={formData.email}
-        />
+          // class={styles.inputStyle}
+        >
+          {(field, props) => (
+            <TextInput
+              {...props}
+              value={field.value}
+              error={field.error}
+              type="email"
+              label="Email:"
+              placeholder="Correo electrónico"
+              required
+            />
+          )}
+        </Field>
         <label for="form-phone" class={styles.labelStyle}>
           Teléfono:{" "}
         </label>
-        <input
-          id="form-phone"
+        <Field
+          // id="form-phone"
           name="phone"
-          type="phone"
-          class={styles.inputStyle}
-          // bind:value={formData.phone}
-        />
+          // class={styles.inputStyle}
+        >
+          {(field, props) => (
+            <TextInput
+              {...props}
+              value={field.value}
+              error={field.error}
+              type="tel"
+              label="Teléfono:"
+              placeholder="Teléfono"
+              required
+            />
+          )}
+        </Field>
         <label for="form-issue" class={styles.labelStyle}>
           Asunto:{" "}
         </label>
-        <input
-          id="form-issue"
+        <Field
+          // id="form-issue"
           name="issue"
-          type="text"
-          class={styles.inputStyle}
-          // bind:value={formData.issue}
-        />
+          // class={styles.inputStyle}
+        >
+          {(field, props) => (
+            <TextInput
+              {...props}
+              value={field.value}
+              error={field.error}
+              type="text"
+              label="Asunto:"
+              placeholder="Asunto"
+              required
+            />
+          )}
+        </Field>
         <label for="form-message" class={styles.labelStyle}>
           Mensaje:{" "}
         </label>
-        <textarea
-          id="form-message"
-          rows={7}
+        <Field
+          // id="form-message"
           name="message"
-          class={styles.inputStyle}
-          // bind:value={formData.message}
-        />
+          // class={styles.inputStyle}
+        >
+          {(field, props) => (
+            <TextInput
+              {...props}
+              value={field.value}
+              error={field.error}
+              type="text"
+              label="Mensaje:"
+              placeholder="Mensaje"
+              required
+            />
+          )}
+        </Field>
         <button
           type="submit"
           class={styles.btnStyle}
