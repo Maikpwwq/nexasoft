@@ -58,7 +58,7 @@ export const addCustomer = async (data: any) => {
   };
 
   // await fetchCustomerRecord(customerRecord);
-  const resume = async () => await connectionDB(customerRecord);
+  const resume = await connectionDB(customerRecord);
   // const record = JSON.stringify(resume);
   // if (resume) {
   console.log("Promise message", resume);
