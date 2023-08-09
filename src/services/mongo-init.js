@@ -13,7 +13,7 @@ const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`; // `${p
 // const DB_HOST = `${process.env.VITE_DB_HOST}`;
 // const MONGO_HOST = `mongodb+srv://${DB_USER}:${DB_PASSWORD2}@${DB_HOST}/?retryWrites=true&w=majority`;
 const MONGO_HOST = `${import.meta.env.VITE_MONGO_HOST}`; // `${process.env.VITE_MONGO_HOST}`;
-console.log("MONGO_HOST:", MONGO_HOST);
+// console.log("MONGO_HOST:", MONGO_HOST);
 
 const messageSchema = new mongoose.Schema({
   name: String,
