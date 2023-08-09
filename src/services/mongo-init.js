@@ -35,10 +35,11 @@ const options = {
   // useUnifiedTopology: true,
 };
 
-export async function connectionDB(contactData) {
+export const connectionDB = async (contactData) => {
+  console.log("connectionDB", contactData);
   // const dbPromise = mongoose.createConnection(MONGO_HOST, options);
-  const dbPromise = async () => await mongoose.connect(MONGO_HOST, options);
-  const userModel = () => dbPromise.model(MONGODB_COLLECTION, messageSchema);
+  const dbPromise = await mongoose.connect(MONGO_HOST, options);
+  const userModel = dbPromise.model(MONGODB_COLLECTION, messageSchema);
   // dbPromise.on("error", console.error.bind(console, "DB connection error: "));
   // (( ) => dbPromise.once("open", function () {
   //   console.log("Connected successfully to your DB");
@@ -46,7 +47,7 @@ export async function connectionDB(contactData) {
   // const message = new userModel({contactData});
   // // Insert the message in our MongoDB database
   // await message.save();
-  const res = async () => await userModel.create(contactData);
+  const res = await userModel.create(contactData);
   console.log("create userModel", res);
   // Ensures that the client will close when you finish/error
   // await dbPromise.close();

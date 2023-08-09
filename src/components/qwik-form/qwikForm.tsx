@@ -1,15 +1,16 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import { connectionDB } from "~/services/mongo-init";
 import {
-  // server$,
+  server$,
   // routeAction$,
+  // globalAction$,
   useNavigate,
   // Form,
 } from "@builder.io/qwik-city";
 import styles from "./qwikForm.module.css";
 import { MUITypography } from "~/integrations/react/mui";
 
-let successful = false;
+const successful : boolean = false;
 // const successful = false;
 
 // use the correct URL to connect functions
@@ -44,36 +45,47 @@ let successful = false;
 // : Promise<{successful: boolean;}>
 
 // routeAction$()` can only be declared in `layout.tsx`, `index.tsx` and `plugin.tsx` inside the src/routes directory
-// export const useAddUser = routeAction$(async (data, requestEvent) => {
+// export const useAddCustomer = routeAction$(async (data, requestEvent) => {
 //   console.log(data, requestEvent)
-// export const addCustomer = server$(async function (data) {
-export const addCustomer = async (data: any) => {
+export const addCustomer = server$(async (data) => {
+// export const addCustomer = async (data: any) => {
+// globalAction$() is globally available across the whole app. Think about it like a "public" action.
+// export const useAddCustomer = globalAction$(async (data: any) => {
   // This will only run on the server when the user submits the form (or when the action is called programatically)
-  const customerRecord = {
-    name: data.name.value,
-    email: data.email.value,
-    phone: data.phone.value,
-    issue: data.issue.value,
-    message: data.message.value,
-  };
-
-  // await fetchCustomerRecord(customerRecord);
-  const resume = await connectionDB(customerRecord);
-  // const record = JSON.stringify(resume);
-  // if (resume) {
-  console.log("Promise message", resume);
-  successful = true;
-  // }
-
-  return {
-    successful,
-  };
-  // });
-};
+  // const customerRecord = {
+  //   name: data.name.value,
+  //   email: data.email.value,
+  //   phone: data.phone.value,
+  //   issue: data.issue.value,
+  //   message: data.message.value,
+  // };
+  console.log("useAddCustomer data", data);
+  // const customerRecord = {
+  //   name: data.name,
+  //   email: data.email,
+  //   phone: data.phone,
+  //   issue: data.issue,
+  //   message: data.message,
+  // };
+  try {
+    console.log("useAddCustomer message", data);
+    // await fetchCustomerRecord(customerRecord);
+    const resume = await connectionDB(data);
+    // // const record = JSON.stringify(resume);
+    console.log("Promise message", resume);
+    return {
+      success: true,
+    }; 
+  } catch {
+    return {
+      success: false,
+    };
+  }
+});
 
 export default component$(() => {
   const nav = useNavigate();
-  // const action = useAddUser();
+  // const action = useAddCustomer();
   const formData = {
     name: useSignal(""),
     email: useSignal(""),
@@ -108,7 +120,7 @@ export default component$(() => {
         </label>
         <input
           id="form-name"
-          name="fullName"
+          name="name"
           type="text"
           class={styles.inputStyle}
           bind:value={formData.name}
@@ -157,16 +169,17 @@ export default component$(() => {
           // type="submit"
           class={styles.btnStyle}
           onClick$={async () => {
-            // const customerRecord = {
-            //   name: formData.name.value,
-            //   email: formData.email.value,
-            //   phone: formData.phone.value,
-            //   issue: formData.issue.value,
-            //   message: formData.message.value,
-            // };
+            const customerRecord = {
+              name: formData.name.value,
+              email: formData.email.value,
+              phone: formData.phone.value,
+              issue: formData.issue.value,
+              message: formData.message.value,
+            };
             // const resume = await connectionDB(customerRecord);
-            const resume = await addCustomer(formData);
+            const resume = await addCustomer(customerRecord); // addCustomer
             console.log("greeting", resume, successful);
+            // const { value } = await action.submit(formData)
             const resetForm = () => {
               formData.name.value = "";
               formData.email.value = "";
@@ -174,17 +187,21 @@ export default component$(() => {
               formData.issue.value = "";
               formData.message.value = "";
             };
-            //  && successful
-            if (resume) {
-              alert("Gracias, su mensaje ha sido recibido.");
-              resetForm();
-              // successful = false; READ only
-              await nav("/");
-            }
+            // console.log('action triggered programmatically', value)
+            // resume && successful
+            // if (successful) {
+            alert("Gracias, su mensaje ha sido recibido." + resume);
+            resetForm();
+            //   // successful = false; READ only
+            await nav("/");
+            // }
           }}
         >
           Enviar
         </button>
+        {/* {action.value?.success && (
+           alert("Gracias, su mensaje ha sido recibido.");
+        )} */}
       </div>
       {/* {successful && (
         // When the action is done successfully, the `action.value` property will contain the return value of the action
