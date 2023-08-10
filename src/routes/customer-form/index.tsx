@@ -122,14 +122,14 @@ export default component$(() => {
     }
   );
 
-  const successData = async (message) => {
+  const successData = async () => {
     console.log(
       "handleSubmitSuccess",
       loginForm.submitted,
       loginForm.submitting,
       loginForm.response
     );
-    alert(message);
+    alert(loginForm.response.message);
     reset(loginForm); // , useFormLoader
     // clearResponse(loginForm);
     // const value = getValue(form, name, options);
@@ -252,9 +252,9 @@ export default component$(() => {
               Enviar
             </button>
 
-            {loginForm.submitted &&
+            {loginForm.submitted && loginForm.submitting === false &&
               loginForm.response.status === "success" &&
-              successData(loginForm.response.message)}
+              successData()}
           </Form>
         </div>
       </MUIPaper>
