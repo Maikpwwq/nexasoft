@@ -133,7 +133,7 @@ export default component$(() => {
     reset(loginForm); // , useFormLoader
     // clearResponse(loginForm);
     // const value = getValue(form, name, options);
-    await nav("/");
+    // await nav("/");
   };
 
   return (
@@ -252,7 +252,8 @@ export default component$(() => {
               Enviar
             </button>
 
-            {loginForm.submitted && loginForm.submitting === false &&
+            {
+            // loginForm.submitted && loginForm.submitting === false &&
               loginForm.response.status === "success" &&
               successData()}
           </Form>
