@@ -36,22 +36,26 @@ const options = {
 };
 
 export const connectionDB = async (contactData) => {
-  console.log("connectionDB", contactData);
+  console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
   // const dbPromise = mongoose.createConnection(MONGO_HOST, options);
-  const dbPromise = await mongoose.connect(MONGO_HOST, options);
-  const userModel = dbPromise.model(MONGODB_COLLECTION, messageSchema);
-  // dbPromise.on("error", console.error.bind(console, "DB connection error: "));
-  // (( ) => dbPromise.once("open", function () {
-  //   console.log("Connected successfully to your DB");
-  // }))();
-  // const message = new userModel({contactData});
-  // // Insert the message in our MongoDB database
-  // await message.save();
-  const res = await userModel.create(contactData);
-  const { _id } = res;
-  const customerId = JSON.stringify(_id)
-  console.log("create userModel", customerId );
-  // Ensures that the client will close when you finish/error
-  // await dbPromise.close();
-  return customerId;
+  try {
+    const dbPromise = await mongoose.connect(MONGO_HOST, options);
+    const userModel = dbPromise.model(MONGODB_COLLECTION, messageSchema);
+    // dbPromise.on("error", console.error.bind(console, "DB connection error: "));
+    // (( ) => dbPromise.once("open", function () {
+    //   console.log("Connected successfully to your DB");
+    // }))();
+    // const message = new userModel({contactData});
+    // // Insert the message in our MongoDB database
+    // await message.save();
+    const res = await userModel.create(contactData);
+    const _id = res._id;
+    const customerId = JSON.stringify(_id);
+    console.log("create userModel", customerId);
+    // Ensures that the client will close when you finish/error
+    // await dbPromise.close();
+    return customerId;
+  } catch (error) {
+    return error;
+  }
 };

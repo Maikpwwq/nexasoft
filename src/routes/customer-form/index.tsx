@@ -1,6 +1,7 @@
 // @ts-nocheck
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { component$, $ } from "@builder.io/qwik"; // , useSignal
+import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
+import { isServer } from '@builder.io/qwik/build';
 import { connectionDB } from "~/services/mongo-init";
 import clsx from "clsx";
 import {
@@ -76,8 +77,8 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
     console.log("useFormAction", values);
     try {
       const resume = await connectionDB(values);
-      const record = JSON.parse(resume);
       if (resume) {
+        const record = JSON.parse(resume);
         console.log("Promise message", resume, record);
         // setResponse(loginForm, response); // , options
         return {
@@ -86,7 +87,8 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
           data: { customerId: record },
         };
       }
-    } catch {
+    } catch (error) {
+      console.log(error);
       return {
         status: "error",
         message: "No se ha podido enviar su mensaje.",
@@ -122,7 +124,7 @@ export default component$(() => {
     }
   );
 
-  const successData = async () => {
+  const successData = $(async () => {
     console.log(
       "handleSubmitSuccess",
       loginForm.submitted,
@@ -134,7 +136,21 @@ export default component$(() => {
     // clearResponse(loginForm);
     // const value = getValue(form, name, options);
     // await nav("/");
-  };
+  });
+
+  useTask$(({ track }) => {
+    track(() => loginForm.response?.status);
+    if (isServer) {
+      return; // Server guard
+    }
+    if (
+      loginForm.submitted &&
+      loginForm.submitting === false &&
+      loginForm.response.status === "success"
+    ) {
+      successData();
+    }
+  });
 
   return (
     <div class="container container-center flex justify-center" style={{}}>

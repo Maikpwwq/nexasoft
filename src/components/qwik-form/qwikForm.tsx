@@ -76,7 +76,7 @@ export const addCustomer = server$(async (data) => {
     return {
       success: true,
     }; 
-  } catch {
+  } catch (error) {
     return {
       success: false,
     };

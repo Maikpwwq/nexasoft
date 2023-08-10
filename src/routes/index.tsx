@@ -1,6 +1,7 @@
 // @ts-nocheck
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { component$, $ } from "@builder.io/qwik"; // , useSignal
+import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
+import { isServer } from '@builder.io/qwik/build';
 import { connectionDB } from "~/services/mongo-init";
 import clsx from "clsx";
 import {
@@ -114,7 +115,8 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(async (values)
           data: { customerId: record },
         };
       }
-    } catch {
+    } catch  (error) {
+      console.log(error)
       return {
         status: "error",
         message: "No se ha podido enviar su mensaje.",
@@ -142,19 +144,33 @@ export default component$(() => {
     }
   );
 
-  const successData = async (message) => {
+  const successData = $(async () => {
     console.log(
       "handleSubmitSuccess",
       loginForm.submitted,
       loginForm.submitting,
       loginForm.response
     );
-    alert(message);
+    alert(loginForm.response.message);
     reset(loginForm); // , useFormLoader
     // clearResponse(loginForm);
     // const value = getValue(form, name, options);
     // await nav("/");
-  };
+  });
+
+  useTask$(({ track }) => {
+    track(() => loginForm.response?.status);
+    if (isServer) {
+      return; // Server guard
+    }
+    if (
+      loginForm.submitted &&
+      loginForm.submitting === false &&
+      loginForm.response.status === "success"
+    ) {
+      successData();
+    }
+  });
 
   return (
     <>
