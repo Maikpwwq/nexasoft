@@ -1,14 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import mongoose from "mongoose"; // ,
-
+import dbPromise from "./clientPromise"
 // import * as dotenv from "dotenv";
 // dotenv.config();
 
 // Variables de entorno
-const DB_USER = `${import.meta.env.VITE_DB_USER}`; // `${process.env.VITE_DB_USER}`;
-// const DB_PASSWORD = `${process.env.VITE_DB_PASSWORD}`;
-const DB_PASSWORD2 = `${import.meta.env.VITE_DB_PASSWORD2}`; // `${process.env.VITE_DB_PASSWORD2}`;
-const DB_NAME = `${import.meta.env.VITE_DB_NAME}`; // `${process.env.VITE_DB_NAME}`;
 const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`; // `${process.env.VITE_MONGODB_COLLECTION}`;
 // const DB_HOST = `${process.env.VITE_DB_HOST}`;
 // const MONGO_HOST = `mongodb+srv://${DB_USER}:${DB_PASSWORD2}@${DB_HOST}/?retryWrites=true&w=majority`;
@@ -27,19 +23,10 @@ const messageSchema = new mongoose.Schema({
 // The alternative to the export model pattern is the export schema pattern.
 // module.exports = userSchema;
 
-const options = {
-  dbName: DB_NAME,
-  user: DB_USER,
-  pass: DB_PASSWORD2,
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true,
-};
-
 export const connectionDB = async (contactData) => {
   console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
   // const dbPromise = mongoose.createConnection(MONGO_HOST, options);
   try {
-    const dbPromise = await mongoose.connect(MONGO_HOST, options);
     const userModel = dbPromise.model(MONGODB_COLLECTION, messageSchema);
     // dbPromise.on("error", console.error.bind(console, "DB connection error: "));
     // (( ) => dbPromise.once("open", function () {
