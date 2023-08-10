@@ -48,8 +48,10 @@ export const connectionDB = async (contactData) => {
   // // Insert the message in our MongoDB database
   // await message.save();
   const res = await userModel.create(contactData);
-  console.log("create userModel", res);
+  const { _id } = res;
+  const customerId = JSON.stringify(_id)
+  console.log("create userModel", customerId );
   // Ensures that the client will close when you finish/error
   // await dbPromise.close();
-  return res;
-}
+  return customerId;
+};

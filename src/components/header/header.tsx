@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { Link } from '@builder.io/qwik-city';
 import styles from "./header.module.css";
 // import { NexaSoftLogo } from '../icons/qwik';
 
@@ -9,17 +10,17 @@ export default component$(() => {
     <header class={styles.header}>
       <div class={["container", styles.wrapper]}>
         <div class={styles.logo}>
-          <a href="/" title="NexaSoft SAS">
+          <Link href="/" title="NexaSoft SAS">
             {/* <NexaSoftLogo height={50} width={143} /> */}
             {NexaSoftLogo} <span class="lightning">⚡️</span>
-          </a>
+          </Link>
         </div>
         <ul>
           <li>
-            <a href="#features-section">Servicios</a>
+            <Link href="/#products-section">Servicios</Link>
           </li>
           <li>
-            <a href="#testimonials-section">Casos de éxito</a>
+            <Link href="/#testimonials-section">Casos de éxito</Link>
           </li>
           {/* <li>
           <a
@@ -30,7 +31,7 @@ export default component$(() => {
           </a>
         </li> */}
           <li>
-            <a href="#contact-section">Contacto</a>
+            <Link href="/#contact-section">Contacto</Link>
           </li>
           {/* <li>
           <a

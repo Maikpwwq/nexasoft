@@ -1,0 +1,48 @@
+.contactSection {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+} 
+
+.cardContactForm {
+  /* margin: 0 33px !important; */
+  border: 2px solid white;
+  border-radius: 13px !important;
+}
+
+.contactCard {
+  border-radius: 33px !important;
+  border: 1px solid #ac7ff4 !important;
+  background-color: var(--qwik-dirty-black) !important;
+  margin: 0 10px;
+}
+
+.formFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputStyle {
+  color: black;
+  margin: 0.5rem 0;
+  border: 2px solid white;
+  border-radius: 13px;
+  padding: 0.5rem 0.5rem;
+  background-color: aliceblue;
+}
+
+.labelStyle {
+  position: relative;
+  text-align: start;
+}
+
+.btnStyle {
+  margin-top: 2rem;
+  padding: 0.75rem 0;
+  background-color: black !important;
+  color: var(--qwik-dark-text);
+}
+
+.sheetFormStyle {
+  max-width: 350px;
+  margin: 33px auto;
+}

@@ -7,7 +7,7 @@ import { MUIPaper } from "~/integrations/react/mui";
 export default component$(() => {
   return (
     <contact
-      id="contact-section"
+      // id="contact-section"
       class="container container-center flex justify-center"
       style={{}}
     >

@@ -7,7 +7,7 @@ export default component$(() => {
     <div class={["container", styles.hero]}>
       <TimeToCelebrate />
       <div class={styles["button-group"]}>
-        <a href="#contact-section" class="button">
+        <a href="/customer-form/" class="button">
           Solicitar información
         </a>
       </div>
