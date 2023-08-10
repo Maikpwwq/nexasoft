@@ -153,7 +153,7 @@ export default component$(() => {
     reset(loginForm); // , useFormLoader
     // clearResponse(loginForm);
     // const value = getValue(form, name, options);
-    await nav("/");
+    // await nav("/");
   };
 
   return (
