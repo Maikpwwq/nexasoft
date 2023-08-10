@@ -115,13 +115,13 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
     try {
       const resume = await connectionDB(values);
       if (resume) {
-        const record = JSON.parse(resume);
-        console.log("Promise message", resume, record);
+        // const record = JSON.parse(resume);
+        console.log("Promise message", resume); //, record
         // setResponse(loginForm, response); // , options
         return {
           status: "success",
           message: "Gracias, su mensaje ha sido recibido.",
-          data: { customerId: record },
+          data: { customerId: "record" },
         };
       }
     } catch (error) {
