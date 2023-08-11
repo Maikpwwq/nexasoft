@@ -60,9 +60,9 @@ export const connectionDB = $(async (contactData: LoginForm) => {
     // connection is hanging use to see if you haven't opened a connection properly
     // mongoose.set('bufferCommands', false);
     // await userModel.createCollection();
-    await mongoose
-      .connect(MONGO_HOST, options)
-      .catch((error) => console.log("mongoose connection error", error));
+    await mongoose.connect(MONGO_HOST, options).catch((error) => {
+      console.log("mongoose connection error", error);
+    });
     // console.log('mongoose.connection', mongoose.connection.mongo.DB)
     const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
     const res = await userModel.create(contactData);
@@ -186,7 +186,7 @@ export default component$(() => {
   });
 
   useTask$(({ track }) => {
-    track(() => loginForm.response?.status);
+    track(() => loginForm.response.status);
     if (isServer) {
       return; // Server guard
     }

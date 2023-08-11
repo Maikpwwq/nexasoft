@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import mongoose from "mongoose"; // ,
-import dbPromise from "./clientPromise"
+// import dbPromise from "./clientPromise";
 // import * as dotenv from "dotenv";
 // dotenv.config();
 
@@ -10,6 +10,16 @@ const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`; // `${p
 // const MONGO_HOST = `mongodb+srv://${DB_USER}:${DB_PASSWORD2}@${DB_HOST}/?retryWrites=true&w=majority`;
 const MONGO_HOST = `${import.meta.env.VITE_MONGO_HOST}`; // `${process.env.VITE_MONGO_HOST}`;
 // console.log("MONGO_HOST:", MONGO_HOST);
+
+const DB_USER = `${import.meta.env.VITE_DB_USER}`;
+// const DB_PASSWORD = `${process.env.VITE_DB_PASSWORD}`;
+const DB_PASSWORD2 = `${import.meta.env.VITE_DB_PASSWORD2}`;
+const DB_NAME = `${import.meta.env.VITE_DB_NAME}`;
+const options = {
+  dbName: DB_NAME,
+  user: DB_USER,
+  pass: DB_PASSWORD2,
+};
 
 const messageSchema = new mongoose.Schema({
   name: String,
@@ -27,7 +37,10 @@ export const connectionDB = async (contactData) => {
   console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
   // const dbPromise = mongoose.createConnection(MONGO_HOST, options);
   try {
-    const userModel = dbPromise.model(MONGODB_COLLECTION, messageSchema);
+    await mongoose.connect(MONGO_HOST, options).catch((error) => {
+      console.log("mongoose connection error", error);
+    });
+    const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
     // dbPromise.on("error", console.error.bind(console, "DB connection error: "));
     // (( ) => dbPromise.once("open", function () {
     //   console.log("Connected successfully to your DB");
