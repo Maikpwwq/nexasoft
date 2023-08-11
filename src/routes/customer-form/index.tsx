@@ -1,8 +1,8 @@
 // @ts-nocheck
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
-import { isServer } from '@builder.io/qwik/build';
-import { connectionDB } from "~/services/mongo-init";
+import { isServer } from "@builder.io/qwik/build";
+// import { connectionDB } from "~/services/mongo-init";
 import clsx from "clsx";
 import {
   // server$,
@@ -28,42 +28,50 @@ import styles from "~/components/modular-forms/modularForm.module.css";
 import { MUITypography, MUIPaper } from "~/integrations/react/mui";
 import { TextInput } from "~/components/modular-forms/TextInput";
 
-// $(async () => {})
-// import mongoose from "mongoose";
-// const DB_USER = `${import.meta.env.VITE_DB_USER}`; 
-// const DB_PASSWORD2 = `${import.meta.env.VITE_DB_PASSWORD2}`; 
-// const DB_NAME = `${import.meta.env.VITE_DB_NAME}`; 
-// const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`;
-// const MONGO_HOST = `${import.meta.env.VITE_MONGO_HOST}`; 
+$(async () => {});
+import mongoose from "mongoose";
+const DB_USER = `${import.meta.env.VITE_DB_USER}`;
+const DB_PASSWORD2 = `${import.meta.env.VITE_DB_PASSWORD2}`;
+const DB_NAME = `${import.meta.env.VITE_DB_NAME}`;
+const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`;
+const MONGO_HOST = `${import.meta.env.VITE_MONGO_HOST}`;
 
-// const messageSchema = new mongoose.Schema({
-//   name: String,
-//   email: String,
-//   phone: String,
-//   issue: String,
-//   message: String,
+const messageSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  phone: String,
+  issue: String,
+  message: String,
+});
+
+const options = {
+  dbName: DB_NAME,
+  user: DB_USER,
+  pass: DB_PASSWORD2,
+};
+
+// export const dbPromise = $(async () => {
+//   await mongoose.connect(MONGO_HOST, options).catch(error => handleError(error));
 // });
 
-// const options = {
-//   dbName: DB_NAME,
-//   user: DB_USER,
-//   pass: DB_PASSWORD2,
-// };
-
-// export const connectionDB = async (contactData) => {
-//   console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
-//   try {
-//     const dbPromise = await mongoose.connect(MONGO_HOST, options);
-//     const userModel = dbPromise.model(MONGODB_COLLECTION, messageSchema);
-//     const res = await userModel.create(contactData);
-//     const _id = res._id;
-//     const customerId = JSON.stringify(_id);
-//     console.log("create userModel", customerId);
-//     return customerId;
-//   } catch (error) {
-//     return error;
-//   }
-// };
+export const connectionDB = $(async (contactData) => {
+  console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
+  try {
+    // connection is hanging use to see if you haven't opened a connection properly
+    // mongoose.set('bufferCommands', false);
+    // await userModel.createCollection();
+    await mongoose.connect(MONGO_HOST, options).catch(error => handleError(error));
+    // console.log('mongoose.connection', mongoose.connection.mongo.DB)
+    const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
+    const res = await userModel.create(contactData);
+    const _id = res._id;
+    const customerId = JSON.stringify(_id);
+    console.log("create userModel", customerId);
+    return customerId;
+  } catch (error) {
+    return error;
+  }
+});
 
 type LoginForm = {
   name: string;
