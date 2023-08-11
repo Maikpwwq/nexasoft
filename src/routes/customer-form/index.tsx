@@ -8,7 +8,7 @@ import {
   // server$,
   // routeAction$,
   // type DocumentHead,
-  useNavigate,
+  // useNavigate,
   routeLoader$,
   z,
 } from "@builder.io/qwik-city";
@@ -21,7 +21,7 @@ import {
   formAction$,
   zodForm$,
   reset,
-  setResponse,
+  // setResponse,
   // valiForm$,
 } from "@modular-forms/qwik";
 import styles from "~/components/modular-forms/modularForm.module.css";
@@ -54,13 +54,15 @@ const options = {
 //   await mongoose.connect(MONGO_HOST, options).catch(error => handleError(error));
 // });
 
-export const connectionDB = $(async (contactData) => {
+export const connectionDB = $(async (contactData: LoginForm) => {
   console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
   try {
     // connection is hanging use to see if you haven't opened a connection properly
     // mongoose.set('bufferCommands', false);
     // await userModel.createCollection();
-    await mongoose.connect(MONGO_HOST, options).catch(error => handleError(error));
+    await mongoose
+      .connect(MONGO_HOST, options)
+      .catch((error) => console.log("mongoose connection error", error));
     // console.log('mongoose.connection', mongoose.connection.mongo.DB)
     const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
     const res = await userModel.create(contactData);
@@ -145,7 +147,7 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
 ); // valiForm$(LoginSchema)
 
 export default component$(() => {
-  const nav = useNavigate();
+  // const nav = useNavigate();
 
   // , FieldArray
   const [loginForm, { Form, Field }] = useForm<LoginForm, ResponseData>({
