@@ -49,6 +49,7 @@ const options = {
   pass: DB_PASSWORD2,
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  // useCreateIndex: true,
 };
 
 // export const dbPromise = $(async () => {
@@ -69,9 +70,12 @@ export const connectionDB = $(async (contactData: LoginForm) => {
     const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
     const res = await userModel.create(contactData);
     const _id = res._id;
-    const customerId = JSON.stringify(_id);
-    console.log("create userModel", customerId);
-    return customerId;
+    console.log("typeof _id", typeof _id)
+    if ( typeof _id === "object" ) {
+      const customerId = JSON.stringify(_id);
+      console.log("create userModel", _id, customerId);
+      return customerId;
+    }
   } catch (error) {
     return error;
   }
@@ -136,8 +140,8 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
       // const _id = res._id;
       // const customerId = JSON.stringify(_id);
       // console.log("Promise message", res, customerId);
-      console.log("Promise message", resume);
-      if (typeof resume === "string" ) {
+      console.log("Promise message", typeof resume);
+      if (typeof resume === "string") {
         // const record = JSON.parse(resume);
         //, record
         // setResponse(loginForm, response); // , options
