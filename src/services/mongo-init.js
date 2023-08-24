@@ -37,9 +37,10 @@ export const connectionDB = async (contactData) => {
   console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
   // const dbPromise = mongoose.createConnection(MONGO_HOST, options);
   try {
-    await mongoose.connect(MONGO_HOST, options).catch((error) => {
-      console.log("mongoose connection error", error);
-    });
+    await mongoose.connect(MONGO_HOST, options)
+    // .catch((error) => {
+    //   console.log("mongoose connection error", error);
+    // });
     const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
     // dbPromise.on("error", console.error.bind(console, "DB connection error: "));
     // (( ) => dbPromise.once("open", function () {

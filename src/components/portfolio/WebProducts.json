@@ -2,13 +2,13 @@
   "WebProducts": [
     {
       "title": "Diseño Web a medida",
-      "price": "249 900",
+      "price": "349 900",
       "description": "Potenciamos tu presencia en línea con un diseño de sitio web profesional para tu empresa.",
       "benefit": ["Diseño a medida de tu sitio web en una pagina"]
     },
     {
       "title": "Web LandingPage",
-      "price": "799 900",
+      "price": "899 900",
       "description": "Impulsamos tu negocio con una página de aterrizaje efectiva, que atraiga interesados y te ayude a alcanzar tus metas comerciales.",
       "benefit": [
         "Diseño a medida +",
@@ -22,8 +22,8 @@
     },
     {
       "title": "Sitio Web Ecommerce",
-      "price": "1 299 900",
-      "description": "Desarrollamos sitios web de ecommerce par que exhibas tus productos, operes y vendas en línea.     *  Sin Pasarela de pagos Online",
+      "price": "1 399 900",
+      "description": "Desarrollamos sitios web de ecommerce para que exhiban tus productos, operando y vendiendo en línea.     *  Sin Pasarela de pagos Online inluida",
       "benefit": [
         "Diseño a medida +",
         "Tienda Virtual Online +",
@@ -36,7 +36,7 @@
     },
     {
       "title": "Tienda Comercio Electrónico",
-      "price": "1 599 900",
+      "price": "1 699 900",
       "description": "Construimos una solución empresarial sólida para tu tienda con catálogo de productos y servicios, pasarelas de pago en línea, optimización SEO y todas las herramientas necesarias para atraer y convertir a nuevos clientes.",
       "benefit": [
         "Diseño a medida +",
@@ -53,8 +53,8 @@
     },
     {
       "title": "Pagina Web Corporativa",
-      "price": "2 299 900",
-      "description": "Creamos sitios web adaptativos Que Integran las últimas tecnologías de software, brindándote una presencia digital moderna y funcional.",
+      "price": "2 499 900",
+      "description": "Creamos sitios web adaptativos que integran las últimas tecnologías para web, brindándole una presencia digital moderna y funcional a tu negocio.",
       "benefit": [
         "Diseño a medida +",
         "Hasta diez secciones +",

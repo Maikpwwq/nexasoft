@@ -1,5 +1,3 @@
-// @ts-nocheck
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
 import { isServer } from "@builder.io/qwik/build";
 // import { connectionDB } from "~/services/mongo-init";
@@ -12,7 +10,7 @@ import {
   routeLoader$,
   z,
 } from "@builder.io/qwik-city";
-import type { InitialValues, SubmitHandler } from "@modular-forms/qwik";
+import type { InitialValues, SubmitHandler } from "@modular-forms/qwik"; //
 import {
   // email,
   // minLength,
@@ -28,7 +26,8 @@ import styles from "~/components/modular-forms/modularForm.module.css";
 import { MUITypography, MUIPaper } from "~/integrations/react/mui";
 import { TextInput } from "~/components/modular-forms/TextInput";
 
-$(async () => {});
+// $(async () => {});
+
 import mongoose from "mongoose";
 const DB_USER = `${import.meta.env.VITE_DB_USER}`;
 const DB_PASSWORD2 = `${import.meta.env.VITE_DB_PASSWORD2}`;
@@ -48,6 +47,8 @@ const options = {
   dbName: DB_NAME,
   user: DB_USER,
   pass: DB_PASSWORD2,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 };
 
 // export const dbPromise = $(async () => {
@@ -60,9 +61,10 @@ export const connectionDB = $(async (contactData: LoginForm) => {
     // connection is hanging use to see if you haven't opened a connection properly
     // mongoose.set('bufferCommands', false);
     // await userModel.createCollection();
-    await mongoose.connect(MONGO_HOST, options).catch((error) => {
-      console.log("mongoose connection error", error);
-    });
+    await mongoose.connect(MONGO_HOST, options);
+    // .catch((error) => {
+    //   console.log("mongoose connection error", error);
+    // });
     // console.log('mongoose.connection', mongoose.connection.mongo.DB)
     const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
     const res = await userModel.create(contactData);
@@ -124,14 +126,25 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
     console.log("useFormAction", values);
     try {
       const resume = await connectionDB(values);
-      if (resume) {
+      // mongoose.connect(MONGO_HOST, options)
+      // .catch((error) => {
+      //   console.log("mongoose connection error", error);
+      // });
+      // console.log('mongoose.connection', mongoose.connection.mongo.DB)
+      // const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
+      // const res = await userModel.create(values);
+      // const _id = res._id;
+      // const customerId = JSON.stringify(_id);
+      // console.log("Promise message", res, customerId);
+      console.log("Promise message", resume);
+      if (typeof resume === "string" ) {
         // const record = JSON.parse(resume);
-        console.log("Promise message", resume); //, record
+        //, record
         // setResponse(loginForm, response); // , options
         return {
           status: "success",
           message: "Gracias, su mensaje ha sido recibido.",
-          data: { customerId: "record" },
+          data: { customerId: resume },
         };
       }
     } catch (error) {
@@ -159,15 +172,37 @@ export default component$(() => {
   const handleSubmit = $<SubmitHandler<LoginForm>>(
     async (values: any, event: any) => {
       // Runs on CLIENT
-      // console.log("handleSubmit", values, event);
-      // console.log(
-      //   "handleSubmitClient",
-      //   loginForm.internal.fields.name?.value,
-      //   loginForm.submitted,
-      //   loginForm.submitting,
-      //   loginForm.response.status,
-      //   loginForm.response.data
-      // );
+      console.log("handleSubmit", values, event);
+      // try {
+      //   // const resume = await connectionDB(values);
+
+      //   await mongoose.connect(MONGO_HOST, options).catch((error) => {
+      //     console.log("mongoose connection error", error);
+      //   });
+      //   // console.log('mongoose.connection', mongoose.connection.mongo.DB)
+      //   const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
+      //   const res = await userModel.create(values);
+      //   const _id = res._id;
+      //   const customerId = JSON.stringify(_id);
+
+      //   if (customerId) {
+      //     // const record = JSON.parse(resume);
+      //     console.log("Promise message", customerId); //, record
+      //     // setResponse(loginForm, response); // , options
+      //     return {
+      //       status: "success",
+      //       message: "Gracias, su mensaje ha sido recibido.",
+      //       data: { customerId: "record" },
+      //     };
+      //   }
+      // } catch (error) {
+      //   console.log(error);
+      //   return {
+      //     status: "error",
+      //     message: "No se ha podido enviar su mensaje.",
+      //     data: { customerId: "" },
+      //   };
+      // }
     }
   );
 
