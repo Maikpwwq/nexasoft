@@ -54,7 +54,7 @@ const options = {
   pass: DB_PASSWORD2,
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
+  // useCreateIndex: true,
 };
 
 // export const dbPromise = $(async () => {
@@ -101,7 +101,6 @@ export const connectionDB = $(async (contactData: LoginForm) => {
 type LoginForm = {
   name: string;
   email: string;
-  password: string;
   phone: string;
   issue: string;
   message: string;
@@ -131,7 +130,6 @@ const loginSchema = z.object({
 export const useFormLoader = routeLoader$<InitialValues<LoginForm>>(() => ({
   name: "",
   email: "",
-  password: "",
   phone: "",
   issue: "",
   message: "",
@@ -162,11 +160,12 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
 
       // Create a single supabase client for interacting with your database
       const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-      const { name, email, password, phone, issue, message } = values;
-      const recordID = uuidv4()
+      const { name, email, phone, issue, message } = values;
+      const recordID : string = uuidv4();
+      const hexNumber : number = 1; // parseInt(recordID.replace(/-/g, ''), 16);
       const { data: customer_form, error } = await supabase
         .from("customer_form")
-        .insert([{ id: recordID, created_at: new Date(), name, email, password, phone, issue, message }])
+        .insert([{ id: hexNumber, created_at: new Date(), name, email, phone, issue, message }])
         .select("*");
 
       console.log("supabase contact form", customer_form, error);
