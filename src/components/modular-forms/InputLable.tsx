@@ -1,11 +1,11 @@
-import { component$ } from '@builder.io/qwik';
-import clsx from 'clsx';
+import { component$ } from "@builder.io/qwik";
+import clsx from "clsx";
 
 type InputLabelProps = {
   name: string;
   label?: string;
   required?: boolean;
-  margin?: 'none';
+  margin?: "none";
 };
 
 /**
@@ -17,17 +17,17 @@ export const InputLabel = component$(
       {label && (
         <label
           class={clsx(
-            'inline-block font-medium md:text-lg lg:text-xl',
-            !margin && 'mb-2 lg:mb-3 mt-4 lg:mt-5'
+            "inline-block font-medium md:text-lg lg:text-xl",
+            !margin && "mb-2 lg:mb-3 mt-4 lg:mt-5",
           )}
           for={name}
         >
-          {label}{' '}
+          {label}{" "}
           {required && (
             <span class="ml-1 text-red-600 dark:text-red-400">*</span>
           )}
         </label>
       )}
     </>
-  )
+  ),
 );

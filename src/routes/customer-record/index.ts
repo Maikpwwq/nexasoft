@@ -3,7 +3,7 @@
 import { type RequestHandler } from "@builder.io/qwik-city";
 // import { component$ } from "@builder.io/qwik";
 import { connectionDB } from "~/services/mongo-init";
- 
+
 interface RegistroContacto {
   name: String;
   email: String;
@@ -16,9 +16,10 @@ interface RegistroContacto {
 // onRequest, onGet, onPost, onPut, onDelete, onPatch, onHead
 // export const useFormDetails = routeLoader$(async (requestEvent) => {
 // export const onRequest: RequestHandler = async (requestEvent) => {  // To use in jsx file with component$ as page + Endpoint
-export const onPost: RequestHandler = async (requestEvent) => { // Endpoint post /customer-record/
+export const onPost: RequestHandler = async (requestEvent) => {
+  // Endpoint post /customer-record/
   // console.log("requestEvent", requestEvent);
-  const { parseBody, text  } = requestEvent; // , json , method, url, redirect
+  const { parseBody, text } = requestEvent; // , json , method, url, redirect
 
   try {
     const body = await parseBody();

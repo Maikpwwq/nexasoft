@@ -68,18 +68,25 @@ export const connectionDB = $(async (contactData: LoginForm) => {
     // });
     // console.log('mongoose.connection', mongoose.connection.mongo.DB)
     const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
-    const res = await userModel.create(contactData);
-    // const responseObject = res.toJSON();
-    // const _id = responseObject._id;
-    const _id = res._id.toString();
-    // console.log("typeof _id", typeof _id, res.toJSON());
-    if (typeof _id === "string") {
-      // const customerId = JSON.stringify(_id);
-      console.log("create userModel", _id);
-      return _id;
-    }
+
+    return await userModel
+      .create(contactData)
+      .then((data) => {
+        const _id = data._id.toString();
+        // const responseObject = data.toJSON();
+        // const _id = responseObject._id;
+        // if (typeof _id === "string") {
+        // const customerId = JSON.stringify(_id);
+        console.log("create userModel", _id, typeof _id);
+        return _id;
+        // }
+      })
+      .catch((err) => {
+        console.log("err", err);
+        return `${err}`;
+      });
   } catch (error) {
-    return error;
+    return `${error}`;
   }
 });
 
@@ -162,7 +169,7 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
       };
     }
   },
-  zodForm$(loginSchema)
+  zodForm$(loginSchema),
 ); // valiForm$(LoginSchema)
 
 export default component$(() => {
@@ -209,7 +216,7 @@ export default component$(() => {
       //     data: { customerId: "" },
       //   };
       // }
-    }
+    },
   );
 
   const successData = $(async () => {
@@ -217,13 +224,23 @@ export default component$(() => {
       "handleSubmitSuccess",
       loginForm.submitted,
       loginForm.submitting,
-      loginForm.response
+      loginForm.response,
     );
     alert(loginForm.response.message);
     reset(loginForm); // , useFormLoader
     // clearResponse(loginForm);
     // const value = getValue(form, name, options);
     // await nav("/");
+  });
+
+  const errorData = $(async () => {
+    console.log(
+      "handleSubmitError",
+      loginForm.submitted,
+      loginForm.submitting,
+      loginForm.response,
+    );
+    alert(loginForm.response.message);
   });
 
   useTask$(({ track }) => {
@@ -237,6 +254,12 @@ export default component$(() => {
       loginForm.response.status === "success"
     ) {
       successData();
+    } else if (
+      loginForm.submitted &&
+      loginForm.submitting === false &&
+      loginForm.response.status === "error"
+    ) {
+      errorData();
     }
   });
 

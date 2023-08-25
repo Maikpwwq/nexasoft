@@ -10,7 +10,7 @@ import {
 import styles from "./qwikForm.module.css";
 import { MUITypography } from "~/integrations/react/mui";
 
-const successful : boolean = false;
+const successful: boolean = false;
 // const successful = false;
 
 // use the correct URL to connect functions
@@ -48,9 +48,9 @@ const successful : boolean = false;
 // export const useAddCustomer = routeAction$(async (data, requestEvent) => {
 //   console.log(data, requestEvent)
 export const addCustomer = server$(async (data) => {
-// export const addCustomer = async (data: any) => {
-// globalAction$() is globally available across the whole app. Think about it like a "public" action.
-// export const useAddCustomer = globalAction$(async (data: any) => {
+  // export const addCustomer = async (data: any) => {
+  // globalAction$() is globally available across the whole app. Think about it like a "public" action.
+  // export const useAddCustomer = globalAction$(async (data: any) => {
   // This will only run on the server when the user submits the form (or when the action is called programatically)
   // const customerRecord = {
   //   name: data.name.value,
@@ -75,7 +75,7 @@ export const addCustomer = server$(async (data) => {
     console.log("Promise message", resume);
     return {
       success: true,
-    }; 
+    };
   } catch (error) {
     return {
       success: false,

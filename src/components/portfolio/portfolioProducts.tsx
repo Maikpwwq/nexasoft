@@ -28,8 +28,11 @@ const products: SoftwareProducts = WebProducts.WebProducts;
 
 export default component$(() => {
   // console.log("products", dataProducts);
-  return ( 
-    <div id="products-section" class="flex flex-col justify-center items-center">
+  return (
+    <div
+      id="products-section"
+      class="flex flex-col justify-center items-center"
+    >
       <MUITypography variant="h3" align="center" className="font-bold m-5">
         ¡Simplificamos los <span class="highlight">precios</span> para <br />
         potenciar la efectividad de tu <span class="highlight">trabajo</span>!
@@ -47,18 +50,24 @@ export default component$(() => {
                 <div class={["bg-light", styles.card]}>
                   <div class={["card-body", styles.cardBody]}>
                     <h5
-                      class={["card-title font-bold py-3 text-xl", styles.cardTitle]}
+                      class={[
+                        "card-title font-bold py-3 text-xl",
+                        styles.cardTitle,
+                      ]}
                     >
                       {title}
                     </h5>
                     <p class="card-text my-3 font-light">{description}</p>
                     <p
-                      class={["card-subtitle mb-2 text-muted font-semibold text-2xl", styles.price]}
+                      class={[
+                        "card-subtitle mb-2 text-muted font-semibold text-2xl",
+                        styles.price,
+                      ]}
                     >
                       $ {price} <span class="font-light text-sm"> / Año </span>
                     </p>
                     <a
-                      href="/customer-form/" // #contact-section 
+                      href="/customer-form/" // #contact-section
                       class={["btn text-base text-center py-2", styles.cardBtn]}
                     >
                       Escoger plan

@@ -1,6 +1,6 @@
-import { component$, useSignal, useTask$ } from '@builder.io/qwik';
-import { isBrowser } from '@builder.io/qwik/build';
-import { Expandable } from './Expandable';
+import { component$, useSignal, useTask$ } from "@builder.io/qwik";
+import { isBrowser } from "@builder.io/qwik/build";
+import { Expandable } from "./Expandable";
 
 type InputErrorProps = {
   name: string;
