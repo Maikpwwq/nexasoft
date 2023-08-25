@@ -84,12 +84,12 @@ export const connectionDB = $(async (contactData: LoginForm) => {
       .catch((err) => {
         console.error("err", err);
         // return `${err}`;
-        throw new Error ("Error mientras se retorno _id de registro.")
+        throw new Error("Error mientras se retorno _id de registro.");
       });
   } catch (error) {
     // return `${error}`;
     console.error("error", error);
-    throw new Error ("Error mientras se accedio a crear un nuevo registro.")
+    throw new Error("Error mientras se accedio a crear un nuevo registro.");
   }
 });
 
@@ -141,30 +141,29 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
     // Runs on SERVER
     console.log("useFormAction", values);
     try {
-      const resume : string  = await connectionDB(values);
-      // mongoose.connect(MONGO_HOST, options)
-      // .catch((error) => {
-      //   console.log("mongoose connection error", error);
-      // });
-      // console.log('mongoose.connection', mongoose.connection.mongo.DB)
-      // const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
-      // const res = await userModel.create(values);
-      // const _id = res._id;
-      // const customerId = JSON.stringify(_id);
-      // console.log("Promise message", res, customerId);
-
-      console.log("Promise message", typeof resume, resume);
+      // const resume : string  = await connectionDB(values);
+      await mongoose.connect(MONGO_HOST, options).catch((error) => {
+        console.log("mongoose connection error", error);
+        throw new Error("Error mientras se accedio a crear un nuevo registro.");
+      });
+      // console.log("mongoose.connection", mongoose.connection.mongo.DB);
+      const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
+      const res = await userModel.create(values);
+      const _id = res._id;
+      const customerId = _id.toString(); // JSON.stringify(_id);
+      console.log("Promise message", res, customerId);
+      // console.log("Promise message", typeof resume, resume);
       return {
         status: "success",
-        message: `Gracias, su mensaje ha sido recibido. ${resume}`,
-        data: { customerId: resume },
+        message: `Gracias, su mensaje ha sido recibido. ${customerId}`,
+        data: { customerId: customerId },
       };
       // if (typeof resume === "string") {
-        // const record = JSON.parse(resume);
-        //, record
-        // setResponse(loginForm, response); // , options 
+      // const record = JSON.parse(resume);
+      //, record
+      // setResponse(loginForm, response); // , options
       // }
-    } catch (error ) {
+    } catch (error) {
       console.error(error);
       return {
         status: "error",
