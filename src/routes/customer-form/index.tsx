@@ -72,11 +72,11 @@ export const connectionDB = $(async (contactData: LoginForm) => {
     // const responseObject = res.toJSON();
     // const _id = responseObject._id;
     const _id = res._id.toString();
-    console.log("typeof _id", typeof _id, res.toJSON());
+    // console.log("typeof _id", typeof _id, res.toJSON());
     if (typeof _id === "string") {
       // const customerId = JSON.stringify(_id);
       console.log("create userModel", _id);
-      return  _id;
+      return _id;
     }
   } catch (error) {
     return error;
