@@ -1,5 +1,7 @@
 import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
 import { isServer } from "@builder.io/qwik/build";
+import { createClient } from "@supabase/supabase-js";
+import { v4 as uuidv4 } from 'uuid'
 // import { connectionDB } from "~/services/mongo-init";
 import clsx from "clsx";
 import {
@@ -35,6 +37,9 @@ const DB_NAME = `${import.meta.env.VITE_DB_NAME}`;
 const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`;
 const MONGO_HOST = `${import.meta.env.VITE_MONGO_HOST}`;
 
+const SUPABASE_URL = `${import.meta.env.VITE_SUPABASE_URL}`;
+const SUPABASE_KEY = `${import.meta.env.VITE_SUPABASE_KEY}`;
+
 const messageSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -43,13 +48,13 @@ const messageSchema = new mongoose.Schema({
   message: String,
 });
 
-// useCreateIndex: true,
 const options = {
   dbName: DB_NAME,
   user: DB_USER,
   pass: DB_PASSWORD2,
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
 };
 
 // export const dbPromise = $(async () => {
@@ -148,15 +153,35 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
       });
       // console.log("mongoose.connection", mongoose.connection.mongo.DB);
       const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
-      const res = await userModel.create(values);
-      const _id = res._id;
-      const customerId = _id.toString(); // JSON.stringify(_id);
-      console.log("Promise message", res, customerId);
+      // const res =
+      await userModel.create(values);
+      // const _id = res._id;
+      // const customerId = _id.toString(); // JSON.stringify(_id);
+      // console.log("Promise message", res, customerId);
       // console.log("Promise message", typeof resume, resume);
+
+      // Create a single supabase client for interacting with your database
+      const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+      const { name, email, password, phone, issue, message } = values;
+      const recordID = uuidv4()
+      const { data: customer_form, error } = await supabase
+        .from("customer_form")
+        .insert([{ id: recordID, created_at: new Date(), name, email, password, phone, issue, message }])
+        .select("*");
+
+      console.log("supabase contact form", customer_form, error);
+      if (customer_form) {
+        console.log("Success supabase contact form", customer_form[0].id);
+      }
+
+      if (error) {
+        console.log("Error supabase contact form", error);
+      }
+
       return {
         status: "success",
-        message: `Gracias, su mensaje ha sido recibido. ${customerId}`,
-        data: { customerId: customerId },
+        message: `Gracias, su mensaje ha sido recibido. ${recordID}`,
+        data: { customerId: recordID },
       };
       // if (typeof resume === "string") {
       // const record = JSON.parse(resume);
