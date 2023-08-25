@@ -43,13 +43,13 @@ const messageSchema = new mongoose.Schema({
   message: String,
 });
 
+// useCreateIndex: true,
 const options = {
   dbName: DB_NAME,
   user: DB_USER,
   pass: DB_PASSWORD2,
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  // useCreateIndex: true,
 };
 
 // export const dbPromise = $(async () => {
@@ -69,12 +69,14 @@ export const connectionDB = $(async (contactData: LoginForm) => {
     // console.log('mongoose.connection', mongoose.connection.mongo.DB)
     const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
     const res = await userModel.create(contactData);
-    const _id = res._id;
-    console.log("typeof _id", typeof _id)
-    if ( typeof _id === "object" ) {
-      const customerId = JSON.stringify(_id);
-      console.log("create userModel", _id, customerId);
-      return customerId;
+    // const responseObject = res.toJSON();
+    // const _id = responseObject._id;
+    const _id = res._id.toString();
+    console.log("typeof _id", typeof _id, res.toJSON());
+    if (typeof _id === "string") {
+      // const customerId = JSON.stringify(_id);
+      console.log("create userModel", _id);
+      return  _id;
     }
   } catch (error) {
     return error;
