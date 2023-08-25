@@ -145,14 +145,14 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
     console.log("useFormAction", values);
     try {
       // const resume : string  = await connectionDB(values);
-      await mongoose.connect(MONGO_HOST, options).catch((error) => {
-        console.log("mongoose connection error", error);
-        throw new Error("Error mientras se accedio a crear un nuevo registro.");
-      });
+      // await mongoose.connect(MONGO_HOST, options).catch((error) => {
+      //   console.log("mongoose connection error", error);
+      //   throw new Error("Error mientras se accedio a crear un nuevo registro.");
+      // });
       // console.log("mongoose.connection", mongoose.connection.mongo.DB);
-      const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
+      // const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
       // const res =
-      await userModel.create(values);
+      // await userModel.create(values);
       // const _id = res._id;
       // const customerId = _id.toString(); // JSON.stringify(_id);
       // console.log("Promise message", res, customerId);
