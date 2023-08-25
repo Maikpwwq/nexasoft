@@ -56,7 +56,7 @@ const options = {
 //   await mongoose.connect(MONGO_HOST, options).catch(error => handleError(error));
 // });
 
-export const connectionDB = (async (contactData: LoginForm) => {
+export const connectionDB = $(async (contactData: LoginForm) => {
   console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
   try {
     // connection is hanging use to see if you haven't opened a connection properly
@@ -82,12 +82,13 @@ export const connectionDB = (async (contactData: LoginForm) => {
         // }
       })
       .catch((err) => {
-        console.log("err", err);
+        console.error("err", err);
         // return `${err}`;
         throw new Error ("Error mientras se retorno _id de registro.")
       });
   } catch (error) {
     // return `${error}`;
+    console.error("error", error);
     throw new Error ("Error mientras se accedio a crear un nuevo registro.")
   }
 });
@@ -163,8 +164,8 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
         //, record
         // setResponse(loginForm, response); // , options 
       // }
-    } catch (error) {
-      console.log(error);
+    } catch (error ) {
+      console.error(error);
       return {
         status: "error",
         message: `No se ha podido enviar su mensaje. ${error}`,
