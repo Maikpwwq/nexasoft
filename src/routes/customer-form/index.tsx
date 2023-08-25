@@ -56,7 +56,7 @@ const options = {
 //   await mongoose.connect(MONGO_HOST, options).catch(error => handleError(error));
 // });
 
-export const connectionDB = $(async (contactData: LoginForm) => {
+export const connectionDB = (async (contactData: LoginForm) => {
   console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
   try {
     // connection is hanging use to see if you haven't opened a connection properly
@@ -83,10 +83,12 @@ export const connectionDB = $(async (contactData: LoginForm) => {
       })
       .catch((err) => {
         console.log("err", err);
-        return `${err}`;
+        // return `${err}`;
+        throw new Error ("Error mientras se retorno _id de registro.")
       });
   } catch (error) {
-    return `${error}`;
+    // return `${error}`;
+    throw new Error ("Error mientras se accedio a crear un nuevo registro.")
   }
 });
 
@@ -138,7 +140,7 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
     // Runs on SERVER
     console.log("useFormAction", values);
     try {
-      const resume = await connectionDB(values);
+      const resume : string  = await connectionDB(values);
       // mongoose.connect(MONGO_HOST, options)
       // .catch((error) => {
       //   console.log("mongoose connection error", error);
@@ -149,22 +151,23 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
       // const _id = res._id;
       // const customerId = JSON.stringify(_id);
       // console.log("Promise message", res, customerId);
-      console.log("Promise message", typeof resume);
-      if (typeof resume === "string") {
+
+      console.log("Promise message", typeof resume, resume);
+      return {
+        status: "success",
+        message: `Gracias, su mensaje ha sido recibido. ${resume}`,
+        data: { customerId: resume },
+      };
+      // if (typeof resume === "string") {
         // const record = JSON.parse(resume);
         //, record
-        // setResponse(loginForm, response); // , options
-        return {
-          status: "success",
-          message: "Gracias, su mensaje ha sido recibido.",
-          data: { customerId: resume },
-        };
-      }
+        // setResponse(loginForm, response); // , options 
+      // }
     } catch (error) {
       console.log(error);
       return {
         status: "error",
-        message: "No se ha podido enviar su mensaje.",
+        message: `No se ha podido enviar su mensaje. ${error}`,
         data: { customerId: "" },
       };
     }
