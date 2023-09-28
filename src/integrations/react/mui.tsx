@@ -46,6 +46,7 @@ import {
   Security,
   SmartButton,
   LocalPolice,
+  Menu
 } from "@mui/icons-material";
 
 import ImageListItems from "./imageListItems";
@@ -102,6 +103,9 @@ export const MUILocalPoliceIcon = qwikify$(LocalPolice);
 // more
 export const MUIAppsIcon = qwikify$(Apps);
 export const MUIDifferenceIcon = qwikify$(Difference);
+
+// Menu
+export const MUIMenuIcon = qwikify$(Menu);
 
 // import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
 // import ChargingStationIcon from '@mui/icons-material/ChargingStation';

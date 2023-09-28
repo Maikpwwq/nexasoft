@@ -7,12 +7,11 @@ export default component$(() => {
     <imageslist>
       <div class="container container-center">
         <MUITypography variant="h3" align="center" className={styles.title}>
-          ¡Despierta el potencial de tu negocio!
-          <br />
-          Contáctanos y descubre nuestras
-          <br />
-          <span class="highlight"> poderosas soluciones de software</span>.
-          <br />
+          ¡Despierta el <span class="highlight"> potencial </span> de tu
+          negocio!
+        </MUITypography>
+        <MUITypography className="mt-4 mb-6 text-xl" variant="body1">
+          Contáctanos y descubre nuestras poderosas soluciones de software.
         </MUITypography>
         <MUIBox className="w-100 flex justify-center">
           <ImagesList />

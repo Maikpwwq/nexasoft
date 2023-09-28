@@ -2,12 +2,13 @@
   "WebProducts": [
     {
       "title": "Diseño Web a medida",
-      "price": "349 900",
+      "price": "449 900",
       "description": "Potenciamos tu presencia en línea con un diseño de sitio web profesional para tu empresa.",
-      "benefit": ["Diseño a medida de tu sitio web en una pagina"]
+      "benefit": ["Diseño a medida de tu sitio web en una pagina"],
+      "scope": "12 Horas de diseño"
     },
     {
-      "title": "Web LandingPage",
+      "title": "Sitio Web Informativo",
       "price": "899 900",
       "description": "Impulsamos tu negocio con una página de aterrizaje efectiva, que atraiga interesados y te ayude a alcanzar tus metas comerciales.",
       "benefit": [
@@ -15,13 +16,14 @@
         "Pagina de aterrizaje +",
         "Formulario contacto +",
         "Link redes sociales +",
-        "1año Hosting +",
-        "1año Dominio +",
-        "1año Certificado SSL"
-      ]
+        "1 año Hosting +",
+        "1 año Dominio +",
+        "1 año Certificado SSL"
+      ],
+      "scope": "16 Horas de programación"
     },
     {
-      "title": "Sitio Web Ecommerce",
+      "title": "Vitrina virtual",
       "price": "1 399 900",
       "description": "Desarrollamos sitios web de ecommerce para que exhiban tus productos, operando y vendiendo en línea.     *  Sin Pasarela de pagos Online inluida",
       "benefit": [
@@ -29,14 +31,15 @@
         "Tienda Virtual Online +",
         "Hasta cinco secciones +",
         "Subida Catalogo hasta 30 productos +",
-        "1año Hosting +",
-        "1año Dominio +",
-        "1año Certificado SSL"
-      ]
+        "1 año Hosting +",
+        "1 año Dominio +",
+        "1 año Certificado SSL"
+      ],
+      "scope": "24 Horas de programación"
     },
     {
-      "title": "Tienda Comercio Electrónico",
-      "price": "1 699 900",
+      "title": "Tienda Online de Comercio Electrónico",
+      "price": "1 799 900",
       "description": "Construimos una solución empresarial sólida para tu tienda con catálogo de productos y servicios, pasarelas de pago en línea, optimización SEO y todas las herramientas necesarias para atraer y convertir a nuevos clientes.",
       "benefit": [
         "Diseño a medida +",
@@ -48,25 +51,27 @@
         "1año Hosting +",
         "1año Dominio +",
         "10 Correos +",
-        "1año Certificado SSL"
-      ]
+        "1 año Certificado SSL"
+      ],
+      "scope": "40 Horas de programación"
     },
     {
       "title": "Pagina Web Corporativa",
-      "price": "2 499 900",
+      "price": "2 599 900",
       "description": "Creamos sitios web adaptativos que integran las últimas tecnologías para web, brindándole una presencia digital moderna y funcional a tu negocio.",
       "benefit": [
         "Diseño a medida +",
         "Hasta diez secciones +",
         "Formulario de contacto +",
         "Blog +",
-        "Optimización SEO+",
+        "Optimización SEO",
         "del perfil en google +",
         "1año Hosting +",
         "1año Dominio +",
         "10 Correos +",
-        "1año Certificado SSL"
-      ]
+        "1 año Certificado SSL"
+      ],
+      "scope": "90 Horas de programación"
     }
   ]
 }

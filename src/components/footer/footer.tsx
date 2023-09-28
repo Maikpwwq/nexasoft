@@ -46,27 +46,33 @@ export default component$(() => {
       >
         <MUIPaper elevation={3} className="p-4 w-full">
           <MUIStack>
-            <MUITypography variant="body2" align="center">
+            <MUITypography variant="body1" align="center">
               <MUIPlaceIcon /> Bogotá, Colombia.
             </MUITypography>
             <MUIBox className="flex flex-row justify-center items-center">
-              <MUIMailOutlineIcon />
               <a
                 href="mailto:nexasoftprofessionalsolutions@gmail.com"
                 target="_blank"
                 title="mail"
               >
-                <MUITypography variant="body2">
+                <MUITypography className="flex flex-row justify-center items-end" variant="body1">
                   {" "}
                   {/* <MUIAlternateEmailIcon fontSize="small" />  */}
-                  NexaSoft SAS
+                  <MUIMailOutlineIcon className="me-1"/> NexaSoft SAS
                 </MUITypography>
               </a>
             </MUIBox>
-            <MUITypography variant="body2" align="center">
-              <MUIWhatsAppIcon fontSize="small" /> 3195137182
-            </MUITypography>
-            <MUIBox className="flex flex-row justify-center">
+            <a
+              href="https://api.whatsapp.com/send?phone=573195137182"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MUITypography className="flex flex-row justify-center items-end" variant="body1" align="center">
+                <MUIWhatsAppIcon className="me-1" /> 3195137182
+              </MUITypography>
+            </a>
+
+            <MUIBox className="flex flex-row justify-center mb-2">
               <a
                 href="https://www.instagram.com/nexa_soft/"
                 target="_blank"

@@ -5,7 +5,7 @@
 .wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -41,11 +41,35 @@
   color: var(--qwik-light-blue);
 }
 
-@media (min-width: 450px) {
+.mobileMenu ul {
+  position: absolute;
+  left: 25px;
+  display: none;
+  flex-direction: column;
+  top: 80px;
+  padding: 1.5rem !important;
+  background-color: var(--qwik-light-blue);
+  opacity: 93%;
+  border-radius: 16px;
+}
+
+@media screen and (min-width: 900px) {
   .header li {
     display: inline-block;
   }
   .wrapper {
     justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper:hover .mobileMenu ul {
+    display: flex !important;
+  }
+  .mobileMenu li {
+    display: inline-block;
+  }
+  .mobileMenu li a, .mobileMenu li a:hover, .mobileMenu li a:visited{
+    color: var(--qwik-dark-text);
   }
 }

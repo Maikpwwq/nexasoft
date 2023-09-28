@@ -13,6 +13,7 @@ interface Product {
   price: string;
   description: string;
   benefit: string[];
+  scope: string;
 }
 
 interface SoftwareProducts extends Array<Product> {}
@@ -33,18 +34,18 @@ export default component$(() => {
       id="products-section"
       class="flex flex-col justify-center items-center"
     >
-      <MUITypography variant="h3" align="center" className="font-bold m-5">
-        ¡Simplificamos los <span class="highlight">precios</span> para <br />
+      <MUITypography variant="h3" align="center" className="font-bold mx-auto m-5 w-3/4">
+        ¡Simplificamos los <span class="highlight">precios</span> para
         potenciar la efectividad de tu <span class="highlight">trabajo</span>!
       </MUITypography>
-      <p class="text-2xl px-4 mt-4 text-center">
+      <p class="text-xl px-4 mt-4 text-center">
         Tu satisfacción está 100% asegurada con nuestra garantía de devolución
         de dinero.
       </p>
       <div class="flex flex-col sm:flex-row flex-wrap my-10 justify-center">
         {products! &&
           products.map((product, index) => {
-            const { title, price, description, benefit } = product;
+            const { title, price, description, benefit, scope } = product;
             return (
               <div key={index} class="flex items-stretch basis-1/5">
                 <div class={["bg-light", styles.card]}>
@@ -68,10 +69,11 @@ export default component$(() => {
                     </p>
                     <a
                       href="/customer-form/" // #contact-section
-                      class={["btn text-base text-center py-2", styles.cardBtn]}
+                      class={["btn text-lg text-center py-2", styles.cardBtn]}
                     >
                       Escoger plan
                     </a>
+                    <p class="card-text mt-3 font-light text-sm text-center">{scope}</p>
                     <ul class="py-3">
                       {benefit! &&
                         benefit.map((beneficio, index) => {

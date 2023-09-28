@@ -22,19 +22,19 @@ export default component$(() => {
           </MUITypography>
           <ul class="mt-6 mb-6">
             <li class={[styles.listItem, "my-2"]}>
-              <MUISavedSearchIcon className="me-3" /> Posicionamiento SEO para
+              <MUISavedSearchIcon fontSize="large" className="me-3" /> Posicionamiento SEO para
               destacar en los motores de búsqueda.
             </li>
             <li class={[styles.listItem, "my-2"]}>
-              <MUIOpenInBrowserIcon className="me-3" /> Control total con
+              <MUIOpenInBrowserIcon fontSize="large" className="me-3" /> Control total con
               Administradores de Contenidos.
             </li>
             <li class={[styles.listItem, "my-2"]}>
-              <MUIIntegrationInstructionsIcon className="me-3" /> Actualización
+              <MUIIntegrationInstructionsIcon fontSize="large" className="me-3" /> Actualización
               para mantener tu plataforma al día.
             </li>
             <li class={[styles.listItem, "my-2"]}>
-              <MUIDeveloperBoardIcon className="me-3" /> Optimización de
+              <MUIDeveloperBoardIcon fontSize="large" className="me-3" /> Optimización de
               recursos y procesos.
             </li>
             <li class={[styles.listItem, "my-2"]}>
