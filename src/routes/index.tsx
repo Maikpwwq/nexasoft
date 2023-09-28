@@ -47,6 +47,9 @@ import {
   MUICardContent,
   MUIPaper,
 } from "~/integrations/react/mui";
+import Resume from "~/components/resume/resume";
+import Further from "~/components/further/further";
+import Advantages from "~/components/advantages/advantages";
 
 // const styles = () => ({
 //   contactCard: {
@@ -181,8 +184,11 @@ export default component$(() => {
       {/* <Starter /> */}
       {/* <MainBanner /> */}
       <Features />
+      <Resume />
       <ImagesList />
       <PortfolioProducts />
+      <Further />
+      <Advantages />
       <Testimonials />
 
       <div role="presentation" class="ellipsis"></div>

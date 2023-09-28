@@ -1,0 +1,36 @@
+.advantages {
+    background-color: var(--qwik-light-blue);
+    width: 100%;
+    display: flex;
+}
+ 
+.advantagesList {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    line-height: 1.5;
+    gap: 10px;
+    width: fit-content;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 2rem !important;
+    padding-top: 1.5rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .title {
+      font-size: 3.5rem !important;
+    }
+  }

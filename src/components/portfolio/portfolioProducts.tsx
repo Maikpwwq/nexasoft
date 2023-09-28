@@ -64,7 +64,7 @@ export default component$(() => {
                         styles.price,
                       ]}
                     >
-                      $ {price} <span class="font-light text-sm"> / Año </span>
+                      <span class="font-light text-sm">Desde</span> $ {price} <span class="font-light text-sm"> / Año </span>
                     </p>
                     <a
                       href="/customer-form/" // #contact-section

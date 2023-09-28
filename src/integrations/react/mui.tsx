@@ -25,6 +25,27 @@ import {
   WhatsApp,
   Instagram,
   Facebook,
+  OpenInBrowser,
+  DesignServices,
+  Phonelink,
+  LaptopMac,
+  Language,
+  CastForEducation,
+  MonitorHeart,
+  LocalGroceryStore,
+  Store,
+  Apps,
+  AppShortcut,
+  SavedSearch,
+  Difference,
+  ManageHistory,
+  IntegrationInstructions,
+  AspectRatio,
+  DeveloperBoard,
+  BrandingWatermark,
+  Security,
+  SmartButton,
+  LocalPolice,
 } from "@mui/icons-material";
 
 import ImageListItems from "./imageListItems";
@@ -55,6 +76,32 @@ export const MUIInsertDriveFileIcon = qwikify$(InsertDriveFile);
 export const MUIWhatsAppIcon = qwikify$(WhatsApp);
 export const MUIInstagramIcon = qwikify$(Instagram);
 export const MUIFacebookIcon = qwikify$(Facebook);
+
+// resume Icons
+export const MUIDesignServicesIcon = qwikify$(DesignServices);
+export const MUIPhonelinkIcon = qwikify$(Phonelink);
+export const MUILaptopMacIcon = qwikify$(LaptopMac);
+export const MUICastForEducationIcon = qwikify$(CastForEducation);
+export const MUILocalGroceryStoreIcon = qwikify$(LocalGroceryStore);
+export const MUIStoreIcon = qwikify$(Store);
+export const MUIAppShortcutIcon = qwikify$(AppShortcut);
+// further Icons
+export const MUIOpenInBrowserIcon = qwikify$(OpenInBrowser);
+export const MUISavedSearchIcon = qwikify$(SavedSearch);
+export const MUIIntegrationInstructionsIcon = qwikify$(IntegrationInstructions);
+export const MUIDeveloperBoardIcon = qwikify$(DeveloperBoard);
+export const MUIBrandingWatermarkIcon = qwikify$(BrandingWatermark);
+export const MUISecurityIcon = qwikify$(Security);
+// advantages Icons
+export const MUILanguageIcon = qwikify$(Language);
+export const MUIMonitorHeartIcon = qwikify$(MonitorHeart);
+export const MUIManageHistoryIcon = qwikify$(ManageHistory);
+export const MUIAspectRatioIcon = qwikify$(AspectRatio);
+export const MUISmartButtonIcon = qwikify$(SmartButton);
+export const MUILocalPoliceIcon = qwikify$(LocalPolice);
+// more
+export const MUIAppsIcon = qwikify$(Apps);
+export const MUIDifferenceIcon = qwikify$(Difference);
 
 // import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly';
 // import ChargingStationIcon from '@mui/icons-material/ChargingStation';

@@ -6,7 +6,7 @@ export default component$(() => {
   return (
     <testimonials
       id="testimonials-section"
-      class={["mt-6", styles.testimonials]}
+      class={[styles.testimonials]}
     >
       <CustomersTestimonials />
     </testimonials>
