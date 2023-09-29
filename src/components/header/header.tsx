@@ -4,7 +4,6 @@ import styles from "./header.module.css";
 // import { NexaSoftLogo } from '../icons/qwik';
 
 import {
-  MUITypography,
   MUIMenuIcon,
 } from "~/integrations/react/mui";
 
