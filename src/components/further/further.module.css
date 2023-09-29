@@ -2,11 +2,12 @@
     background-color: var(--qwik-light-blue);
     width: 100%;
     display: flex;
+    color: var(--qwik-dirty-black);
 }
  
 .furtherList {
     display: flex;
-    color: white;
+    color: var(--qwik-dirty-black);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -27,6 +28,7 @@
 .title {
     font-size: 2rem !important;
     padding-top: 1.5rem;
+    color: var(--qwik-dirty-black);
   }
   
   @media screen and (min-width: 768px) {

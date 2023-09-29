@@ -195,8 +195,6 @@ export default component$(() => {
       <Secrets />
       <Questions />
 
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
       {/* 
         <h3>
           You can <span class="highlight">count</span>
@@ -340,11 +338,11 @@ export default component$(() => {
           </MUICardContent>
         </MUICard>
       </div>
-      <div
+      {/* <div
         role="presentation"
         class="ellipsis-bottom ellipsis-purple-bottom"
       ></div>
-      <div role="presentation" class="ellipsis-bottom"></div>
+      <div role="presentation" class="ellipsis-bottom"></div> */}
     </>
   );
 });

@@ -4,8 +4,10 @@ import styles from "./imagesList.module.css";
 
 export default component$(() => {
   return (
-    <imageslist>
+    <imageslist class="relative">
       <div class="container container-center">
+        <div role="presentation" class="ellipsis"></div>
+        <div role="presentation" class="ellipsis ellipsis-purple"></div>
         <MUITypography variant="h3" align="center" className={styles.title}>
           ¡Despierta el <span class="highlight"> potencial </span> de tu
           negocio!
