@@ -59,7 +59,7 @@ const TestimonialCard =
       <div ref={ref} style={style} {...props}>
         <Card
           style={classes.testimonialsCard}
-          sx={{ maxWidth: 300, borderRadius: 4 }}
+          sx={{ width: 300, borderRadius: 4 }}
           elevation={16}
         >
           <CardMedia>
@@ -142,7 +142,7 @@ const CustomersTestimonial = () => {
 
   return (
     <div
-      className="container  mx-auto container-purple container-center px-0"
+      className="mt-6 mx-auto container-purple container-center px-0"
       style={classes.testimonials}
     >
       <Typography
@@ -161,7 +161,7 @@ const CustomersTestimonial = () => {
         satisfechos.
       </Typography>
       <Box
-        className="flex items-center justify-center mt-6 mb-6"
+        className="flex items-center justify-center mt-6 mb-6 flex-wrap"
         sx={{ flexDirection: { md: "row", sm: "column", xs: "column" } }}
       >
         {testimonials.map((testimony, index) => {

@@ -51,6 +51,7 @@ import Resume from "~/components/resume/resume";
 import Further from "~/components/further/further";
 import Advantages from "~/components/advantages/advantages";
 import Secrets from "~/components/secrets/secrets";
+import Questions from "~/components/common-questions/questions";
 
 // const styles = () => ({
 //   contactCard: {
@@ -192,6 +193,7 @@ export default component$(() => {
       <Advantages />
       <Testimonials />
       <Secrets />
+      <Questions />
 
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>

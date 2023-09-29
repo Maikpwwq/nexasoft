@@ -11,6 +11,7 @@ import {
   CardContent,
   CardMedia,
   Stack,
+  Divider
 } from "@mui/material";
 import {
   Devices,
@@ -49,11 +50,13 @@ import {
   Menu
 } from "@mui/icons-material";
 
-import ImageListItems from "./imageListItems";
-import FormContacto from "./FormContacto";
-import BannerStepper from "./BannerStepper";
-import TableReactApp from "./TableReactApp";
-import CustomersTestimonial from "./CustomersTestimonial";
+import ImageListItems from "~/integrations/react/imageListItems";
+import FormContacto from "~/integrations/react/FormContacto";
+import BannerStepper from "~/integrations/react/BannerStepper";
+import TableReactApp from "~/integrations/react/TableReactApp";
+import CustomersTestimonial from "~/integrations/react/CustomersTestimonial";
+import CommonQuestions from "~/integrations/react/CommonQuestions";
+
 
 // import PushPinIcon from '@mui/icons-material/PushPin';
 // import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
@@ -128,6 +131,8 @@ export const MUICard = qwikify$(Card);
 export const MUICardContent = qwikify$(CardContent);
 export const MUICardMedia = qwikify$(CardMedia);
 export const MUIStack = qwikify$(Stack);
+export const MuiDivider = qwikify$(Divider);
+
 // export const MUIFormControl = qwikify$(FormControl);
 // export const MUIInput = qwikify$(Input);
 // export const MUIInputLabel = qwikify$(InputLabel);
@@ -151,6 +156,14 @@ export const CustomersTestimonials = qwikify$(() => {
   return (
     <>
       <CustomersTestimonial />
+    </>
+  );
+});
+
+export const CustomersQuestions = qwikify$(() => {
+  return (
+    <>
+      <CommonQuestions />
     </>
   );
 });
