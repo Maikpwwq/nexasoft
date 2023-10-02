@@ -64,7 +64,7 @@ export default component$(() => {
         en <span class="highlight">soluciones</span> de{" "}
         <span class="highlight">software</span>
       </MUITypography>
-      <p>¡Consigue una ventaja competitiva con nosotros!.</p>
+      <p class="text-center">¡Consigue una ventaja competitiva con nosotros!.</p>
     </div>
   );
 });

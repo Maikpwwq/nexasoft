@@ -9,49 +9,53 @@ import {
 
 import { ExpandMore } from "@mui/icons-material";
 
-const AccordionQuestion = forwardRef(function (props, ref) {
-  const { value, style } = props;
-  const { id, pregunta, respuesta, panel, panelNumber } = value;
-  const [expanded, setExpanded] = useState(false);
+const CommonQuestions = () => {
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    console.log(panel, isExpanded);
-    setExpanded(isExpanded ? panel : false);
+  const [expanded, setExpanded] = useState(false);
+  
+  const handleChange = (panel) => {
+    // => (event, isExpanded)
+    console.log(panel)
+    // console.log(panel, expanded, isExpanded);
+    // setExpanded(isExpanded ? panel : false);
   };
 
-  return (
-    <Accordion
-      key={id}
-      ref={ref}
-      style={style} 
-      {...props}
-      expanded={expanded === `${panelNumber}`}
-      onChange={handleChange(`${panelNumber}`)}
-      sx={{backgroundColor: 'black', color: 'white'}}
-    >
-      <AccordionSummary
-        expandIcon={<ExpandMore color="primary"/>}
-        aria-controls={panel}
-        id={panel}
+  const AccordionQuestion = forwardRef(function (props, ref) {
+    const { value, style } = props;
+    const { id, pregunta, respuesta, panel, panelNumber } = value;
+    // console.log(panel, expanded, panelNumber);
+    return (
+      <Accordion
+        key={id}
+        ref={ref}
+        style={style} 
+        {...props}
+        expanded={expanded !== `${panelNumber}`} // All true
+        onChange={() => handleChange(`${panelNumber}`)}
+        sx={{backgroundColor: 'black', color: 'white'}}
       >
-        <Typography className="text-lg font-normal" variant="h5">
-          {pregunta}
-        </Typography>
-      </AccordionSummary>
-      <AccordionDetails>
-        <Typography
-          align="left"
-          className="mt-6 mb-6 text-lg font-normal"
-          variant="body1"
+        <AccordionSummary
+          expandIcon={<ExpandMore color="primary"/>}
+          aria-controls={panel}
+          id={panel}
         >
-          {respuesta}
-        </Typography>
-      </AccordionDetails>
-    </Accordion>
-  );
-});
+          <Typography className="text-lg font-semibold" variant="h5">
+            {pregunta}
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography
+            align="left"
+            className="text-base font-light"
+            variant="body1"
+          >
+            {respuesta}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+    );
+  });
 
-const CommonQuestions = () => {
   const questionsInfo = [
     {
       id: 1,
@@ -154,14 +158,16 @@ const CommonQuestions = () => {
   ];
 
   const ref = useRef(null);
+  const containerRef = useRef(null);
+
   // const [expanded, setExpanded] = useState(false);
 
   return (
     <>
       {questionsInfo.map((value, index) => {
         return (
-          <div>
-            <AccordionQuestion value={value} key={index} ref={ref}/>
+          <div container={containerRef.current} key={index}>
+            <AccordionQuestion value={value} ref={ref}/>
             {/* expanded={expanded} setExpanded={setExpanded()} */}
           </div>
         );
