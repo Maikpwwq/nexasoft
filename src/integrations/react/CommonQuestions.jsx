@@ -35,11 +35,11 @@ const CommonQuestions = () => {
         sx={{backgroundColor: 'black', color: 'white'}}
       >
         <AccordionSummary
-          expandIcon={<ExpandMore color="primary"/>}
+          // expandIcon={<ExpandMore color="primary"/>}
           aria-controls={panel}
           id={panel}
         >
-          <Typography className="text-lg font-semibold" variant="h5">
+          <Typography className="text-lg font-semibold" variant="h5" color={'#f4c043'}>
             {pregunta}
           </Typography>
         </AccordionSummary>
