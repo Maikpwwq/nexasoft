@@ -3,43 +3,62 @@ import { Link } from "@builder.io/qwik-city";
 import styles from "./header.module.css";
 // import { NexaSoftLogo } from '../icons/qwik';
 
-import {
-  MUIMenuIcon,
-} from "~/integrations/react/mui";
+import { MUIMenuIcon } from "~/integrations/react/mui";
 
 export default component$(() => {
   const NexaSoftLogo = "NexaSoft SAS";
   const state = useStore({
-    visible: false
+    visible: false,
   });
 
   const handleClick = $(() => {
-    console.log('handleClick', state.visible)
-    state.visible = !state.visible
-  })
+    console.log("handleClick", state.visible);
+    state.visible = !state.visible;
+  });
+
+  const navItems = [
+    {
+      name: "Servicios",
+      route: "/#products-section",
+    },
+    {
+      name: "Casos de éxito",
+      route: "/#testimonials-section",
+    },
+    {
+      name: "Contacto",
+      route: "/#contact-section",
+    },
+    {
+      name: "Preguntas frecuentes",
+      route: "/#questions-section",
+    },
+  ];
 
   return (
     <header class={styles.header}>
       <div class={["container", styles.wrapper]}>
-      <MUIMenuIcon 
-         onClick$={() => handleClick()}
-         sx={{ display: { md: 'none', sm: 'block'}}} 
-         className={styles.dropdownMobile}
-         />
+        <MUIMenuIcon
+          onClick$={() => handleClick()}
+          sx={{ display: { md: "none", sm: "block" } }}
+          className={styles.dropdownMobile}
+        />
         <div class={styles.logo}>
           <Link href="/" title="NexaSoft SAS">
             {/* <NexaSoftLogo height={50} width={143} /> */}
-            {NexaSoftLogo} <span class="lightning">⚡️</span> 
+            {NexaSoftLogo} <span class="lightning">⚡️</span>
           </Link>
         </div>
-        
-        <ul> 
-          <li>
-            <Link href="/#products-section">Servicios</Link>
-          </li>
-          <li>
-            <Link href="/#testimonials-section">Casos de éxito</Link>
-          </li>
+
+        <ul>
+          {navItems.map((item, index) => {
+            const { name, route } = item;
+            return (
+              <li key={index}>
+                <Link href={route}>{name}</Link>
+              </li>
+            );
+          })}
           {/* <li>
           <a
             href="/"
@@ -47,19 +66,14 @@ export default component$(() => {
           >
             Nosotros
           </a>
-        </li> */}
-          <li>
-            <Link href="/#contact-section">Contacto</Link>
-          </li>
-          {/* <li>
+        </li> <li>
           <a
             href="/"
             target="_blank"
           >
             Blog
           </a>
-        </li> */}
-          {/* <li>
+        </li> <li>
           <a
             href="/"
             target="_blank"
@@ -70,18 +84,17 @@ export default component$(() => {
         </ul>
         {/* { state.visible &&     }   */}
         <div class={styles.mobileMenu}>
-          <ul > 
-            <li>
-              <Link href="/#products-section">Servicios</Link>
-            </li>
-            <li>
-              <Link href="/#testimonials-section">Casos de éxito</Link>
-            </li>
-            <li>
-              <Link href="/#contact-section">Contacto</Link>
-            </li>
+          <ul>
+            {navItems.map((item, index) => {
+              const { name, route } = item;
+              return (
+                <li key={index}>
+                  <Link href={route}>{name}</Link>
+                </li>
+              );
+            })}
           </ul>
-        </div>       
+        </div>
       </div>
     </header>
   );
