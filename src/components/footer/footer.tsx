@@ -15,6 +15,8 @@ import {
   MUITypography,
 } from "~/integrations/react/mui";
 
+import NexaSoftLogo from "~/assets/img/Logos Nexasoft/White (small).png";
+
 export default component$(() => {
   useStylesScoped$(styles);
 
@@ -46,6 +48,7 @@ export default component$(() => {
       >
         <MUIPaper elevation={3} className="p-4 w-full">
           <MUIStack>
+            <img src={NexaSoftLogo} height={50} width={210} class="pb-4"/>
             <MUITypography variant="body1" align="center">
               <MUIPlaceIcon /> Bogotá, Colombia.
             </MUITypography>
@@ -58,7 +61,7 @@ export default component$(() => {
                 <MUITypography className="flex flex-row justify-center items-end" variant="body1">
                   {" "}
                   {/* <MUIAlternateEmailIcon fontSize="small" />  */}
-                  <MUIMailOutlineIcon className="me-1"/> NexaSoft SAS
+                  <MUIMailOutlineIcon className="me-1"/> NexaSoft SAS 
                 </MUITypography>
               </a>
             </MUIBox>
@@ -72,7 +75,7 @@ export default component$(() => {
               </MUITypography>
             </a>
 
-            <MUIBox className="flex flex-row justify-center mb-2">
+            <MUIBox className="flex flex-row justify-center mb-4">
               <a
                 href="https://www.instagram.com/nexa_soft/"
                 target="_blank"
@@ -88,8 +91,8 @@ export default component$(() => {
                 <MUIFacebookIcon />
               </a>
             </MUIBox>
-            <MUITypography variant="body2">
-              <MUIInsertDriveFileIcon /> Políticas de privacidad.
+            <MUITypography variant="body2" align="center">
+              <MUIInsertDriveFileIcon /> Políticas de privacidad
             </MUITypography>
           </MUIStack>
         </MUIPaper>

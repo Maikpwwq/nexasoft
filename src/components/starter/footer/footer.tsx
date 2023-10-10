@@ -13,7 +13,7 @@ export default component$(() => {
         <div class="flex flex-row justify-center text-sm align-bottom">
           <span>Made in Colombia with ♡ by </span>
           <a href="https://www.nexasoft.dev/" class={styles.anchor}>
-            NexaSoft SAS
+            NexaSoft SAS <span class="lightning">⚡️</span>
             <span class={styles.spacer}>|</span>
           </a>
           <span>{yearTime}</span>

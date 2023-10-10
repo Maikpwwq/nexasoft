@@ -12,6 +12,9 @@ export default component$(() => {
         <a href="/customer-form/" class="button text-xl font-bold">
           Solicitar información
         </a>
+        <a href="#products-section" class="button text-xl font-bold">
+          Planes
+        </a>
       </div>
     </div>
   );

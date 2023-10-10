@@ -4,9 +4,9 @@ import styles from "./header.module.css";
 // import { NexaSoftLogo } from '../icons/qwik';
 
 import { MUIMenuIcon } from "~/integrations/react/mui";
+import NexaSoftLogo from "~/assets/img/Logos Nexasoft/Blue (small).png";
 
-export default component$(() => {
-  const NexaSoftLogo = "NexaSoft SAS";
+export default component$(() => {  
   const state = useStore({
     visible: false,
   });
@@ -45,8 +45,7 @@ export default component$(() => {
         />
         <div class={styles.logo}>
           <Link href="/" title="NexaSoft SAS">
-            {/* <NexaSoftLogo height={50} width={143} /> */}
-            {NexaSoftLogo} <span class="lightning">⚡️</span>
+            <img src={NexaSoftLogo} height={50} width={210} />
           </Link>
         </div>
 

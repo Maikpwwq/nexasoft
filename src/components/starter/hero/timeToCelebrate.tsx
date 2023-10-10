@@ -59,12 +59,15 @@ export default component$(() => {
       }}
     >
       <MUITypography variant="h1" align="center" className={styles.title}>
-        Somos el futuro
+        Soluciones de
         <br />
-        en <span class="highlight">soluciones</span> de{" "}
-        <span class="highlight">software</span>
+        <span class="highlight">desarrollo Web</span>
+        <br />
+        en <span class="highlight">Colombia</span>
       </MUITypography>
-      <p class="text-center">¡Consigue una ventaja competitiva con nosotros!.</p>
+      <p class="text-center">
+        ¡Consigue una ventaja competitiva con nosotros!.
+      </p>
     </div>
   );
 });
