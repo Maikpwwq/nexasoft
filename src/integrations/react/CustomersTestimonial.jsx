@@ -93,7 +93,7 @@ const CustomersTestimonial = () => {
   const testimonials = [
     {
       message:
-        "Trabajar con NexaSoft SAS fue una experiencia increíble. Al modernizar la plataforma, hemos podido atender mejor a nuestros clientes y aumentar nuestras ventas.",
+        "¡Increíble experiencia trabajando con NexaSoft SAS! Modernizamos nuestra plataforma para brindar un servicio mejorado a nuestros clientes y aumentar nuestras ventas.",
       name: "WaviAeronautics",
       logo: WaviPixelLogo,
       image: WaviImage,
@@ -109,7 +109,7 @@ const CustomersTestimonial = () => {
     },
     {
       message:
-        "NexaSoft SAS ha superado nuestras expectativas con sus servicios de desarrollo de aplicaciones móviles. Hemos reducido costos operativos de manera significativa. Además, la aplicación es fácil de usar y ha sido muy bien recibida por nuestros usuarios finales.",
+        "¡NexaSoft SAS ha transformado nuestra experiencia! Costos reducidos, aplicación intuitiva y gran aceptación entre nuestros usuarios finales. Impresionante.",
       name: "Comunidad Dezzpo",
       logo: ComunidadDezzpoLogo,
       image: ComunidadDezzpoImage,
@@ -117,7 +117,7 @@ const CustomersTestimonial = () => {
     },
     {
       message:
-        "Con plena confianza, hemos establecido una estratégica asociación con NexaSoftSAS para garantizar una trazabilidad segura de nuestro proyecto en la blockchain.",
+        "Con plena confianza, hemos establecido una estratégica asociación con NexaSoft SAS para garantizar una trazabilidad segura de nuestro proyecto en la blockchain.",
       name: "PrimalTrace",
       logo: PrimalTrace,
       image: PrimalTraceImage,

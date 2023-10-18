@@ -52,6 +52,7 @@ import Further from "~/components/further/further";
 import Advantages from "~/components/advantages/advantages";
 import Secrets from "~/components/secrets/secrets";
 import Questions from "~/components/common-questions/questions";
+import Support from "~/components/support/support"
 
 // const styles = () => ({
 //   contactCard: {
@@ -338,6 +339,8 @@ export default component$(() => {
           </MUICardContent>
         </MUICard>
       </div>
+
+      <Support />
       {/* <div
         role="presentation"
         class="ellipsis-bottom ellipsis-purple-bottom"
