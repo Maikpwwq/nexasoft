@@ -12,7 +12,7 @@ export default component$(() => {
           ¡Despierta el <span class="highlight"> potencial </span> de tu
           negocio!
         </MUITypography>
-        <MUITypography className="mt-4 mb-6 text-xl" variant="body1">
+        <MUITypography className="pt-4 pb-6 text-xl" variant="body1">
           Contáctanos y descubre nuestras poderosas soluciones de software.
         </MUITypography>
         <MUIBox className="w-100 flex justify-center">

@@ -5,7 +5,7 @@ import { MUITypography } from "~/integrations/react/mui";
 
 export default component$(() => {
   return (
-    <secrets id="secrets-section" class={[styles.secrets]}>
+    <secrets id="secrets-section" class={["pb-6", styles.secrets]}>
       <div class="container container-purple">
         <div class={["mt-1", styles.secretsList]}>
           <MUITypography variant="h2" align="center" className={styles.title}>
@@ -32,7 +32,7 @@ export default component$(() => {
             marca en Internet. Con nosotros, accede a la automatización,
             seguridad y cumplimiento que necesitas para el éxito en línea.            
           </MUITypography>
-          <MUITypography className="mt-6 mb-6 pt-5" variant="body1" sx={{display: { md: 'none', sm: 'block'}}}>
+          <MUITypography className="mt-6 pb-6 pt-5" variant="body1" sx={{display: { md: 'none', sm: 'block'}}}>
             🚀 NexaSoft SAS: Transformamos tu negocio con Diseño Web de vanguardia, E-commerce, SEO y más. ¡Impulsa tu éxito digital hoy!
           </MUITypography>
         </div>

@@ -14,7 +14,7 @@ import {
 
 export default component$(() => {
   return (
-    <features id="features-section" class={["mt-6", styles.features]}>
+    <features id="features-section" class={["pb-6", styles.features]}>
       <div class="container container-purple container-center">
         <MUITypography variant="h2" align="center" className={styles.title}>
           ¡Transforma tu
