@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./support.module.css";
 
-import { MUITypography } from "~/integrations/react/mui";
+// import { MUITypography } from "~/integrations/react/mui";
 import CCB from "~/assets/img/logos/Logo_Cámara_de_Comercio_de_Bogotá_CCB.png";
 import Fedesoft from "~/assets/img/logos/logo-fedesoft-Color.png";
 import MarcaPais from "~/assets/img/logos/logo_Marca_país_Colombia.png";

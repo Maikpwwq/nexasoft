@@ -95,7 +95,7 @@ const BannerStepper = () => {
         >
           {/* TODO: CREAR PIEZAS VISUALES PARA EL BANNER */}
 
-          {!!bannerImg &&
+          {bannerImg.length > 0 &&
             bannerImg.map((element) => {
               const { img, description, id } = element;
               return (

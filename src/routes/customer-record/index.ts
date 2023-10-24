@@ -30,13 +30,13 @@ export const onPost: RequestHandler = async (requestEvent) => {
     // if (!bodyParsed && typeof bodyParsed !== "object") {
     //   json(200, { error: "Invalid request body" });
     // }
-    if (bodyParsed && typeof bodyParsed === "object") {
+    if (typeof bodyParsed === "object") {
       const contactData = {
-        name: bodyParsed?.name,
-        email: bodyParsed?.email,
-        phone: bodyParsed?.phone,
-        issue: bodyParsed?.issue,
-        message: bodyParsed?.message,
+        name: bodyParsed.name,
+        email: bodyParsed.email,
+        phone: bodyParsed.phone,
+        issue: bodyParsed.issue,
+        message: bodyParsed.message,
       };
       console.log("Parsed body:", contactData);
       const res = await connectionDB(contactData);

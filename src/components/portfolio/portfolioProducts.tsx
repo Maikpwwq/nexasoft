@@ -45,7 +45,7 @@ export default component$(() => {
         de dinero.
       </p>
       <div class="flex flex-col sm:flex-row flex-wrap my-10 justify-center">
-        {products! &&
+        {products.length > 0 &&
           products.map((product, index) => {
             const { title, price, description, benefit, scope } = product;
             return (
@@ -77,7 +77,7 @@ export default component$(() => {
                     </a>
                     <p class="card-text mt-3 font-light text-sm text-center">{scope}</p>
                     <ul class="py-3">
-                      {benefit! &&
+                      {benefit.length > 0 &&
                         benefit.map((beneficio, index) => {
                           return (
                             <li key={index} class="font-extralight">
