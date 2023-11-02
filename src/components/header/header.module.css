@@ -46,12 +46,12 @@
   left: 25px;
   display: none;
   flex-direction: column;
-  top: 80px;
-  padding: 1.5rem !important;
+  top: 90px;
+  padding: 3rem !important;
   background-color: var(--qwik-light-blue);
   /* opacity: 93%; */
   z-index: 15;
-  min-width: 300px;
+  min-width: 330px;
   border-radius: 16px;
 }
 

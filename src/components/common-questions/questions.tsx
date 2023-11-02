@@ -7,13 +7,13 @@ export default component$(() => {
     <questions id="questions-section" class={[styles.questions, "relative"]}>
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
-      <div class="container">
+      <div class={[styles.questionsContainer, "container"]}>
         <MUITypography variant="h3" align="center" className={styles.title}>
           ¡Aclara tus Dudas sobre el{" "}
           <span class="highlight">Éxito Digital</span> de la mano de{" "}
           <span class="highlight">NexaSoft SAS!</span>
         </MUITypography>
-        <div class={["mt-6"]}>
+        <div class={["container"]}>
           <CustomersQuestions />
         </div>
       </div>

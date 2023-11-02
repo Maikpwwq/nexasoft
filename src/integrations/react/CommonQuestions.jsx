@@ -30,6 +30,7 @@ const CommonQuestions = () => {
         ref={ref}
         style={style} 
         {...props}
+        className="p-6 pb-0"
         expanded={expanded !== `${panelNumber}`} // All true
         onChange={() => handleChange(`${panelNumber}`)}
         sx={{backgroundColor: 'black', color: 'white'}}

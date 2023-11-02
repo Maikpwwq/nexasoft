@@ -23,7 +23,7 @@ export default component$(() => {
           en línea!
         </MUITypography>
         <div class={styles.servicesBriefcase}>
-          <MUITypography className="mt-6 mb-6" variant="body1" sx={{display: { md: 'block', sm: 'none', xs: 'none'}}}>
+          <MUITypography className="mt-6 mb-6" fontSize={"1.125rem"} variant="body1" sx={{display: { md: 'block', sm: 'none', xs: 'none'}}}>
             <br />
             <strong class={styles.hint}>🚀 NexaSoft SAS</strong> ofrece
             soluciones empresariales de software que te ayudarán a mejorar tu
@@ -42,6 +42,7 @@ export default component$(() => {
             sistemas existentes.
             <br />
             <br />
+            <br />
             Nuestros{" "}
             <strong class={styles.hint}>
               desarrolladores de aplicaciones móviles <MUIPhoneAndroidIcon />
@@ -56,6 +57,7 @@ export default component$(() => {
             , quienes te ayudaran a crear: Sitios Web, Landing pages y Stores
             adaptativas de e-commerce, con integración a pasarelas de pagos
             online.
+            <br />
             <br />
             <br />
             También mejoramos tu posicionamiento{" "}

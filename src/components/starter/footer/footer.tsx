@@ -11,12 +11,11 @@ export default component$(() => {
     <footer class={styles.bgcolor}>
       <div class="container">
         <div class="flex flex-row justify-center text-sm align-bottom">
-          <span>Made in Colombia with ♡ by </span>
+          <span>Copyright © {yearTime} <span class={styles.spacer}>|</span> </span> 
+          <span> Hecho con  ♡  por </span>
           <a href="https://www.nexasoft.dev/" class={styles.anchor}>
-            NexaSoft SAS <span class="lightning">⚡️</span>
-            <span class={styles.spacer}>|</span>
-          </a>
-          <span>{yearTime}</span>
+            NexaSoft SAS <span class="lightning">⚡️</span> Soluciones Web
+          </a>     
         </div>
       </div>
     </footer>

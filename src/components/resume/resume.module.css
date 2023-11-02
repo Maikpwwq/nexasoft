@@ -15,7 +15,7 @@
     line-height: 1.5;
     gap: 10px;
     width: fit-content;
-    max-width: 800px;
+   max-width: 1200px;
     margin: 0 auto;
     font-size: 1rem;
 }
@@ -27,9 +27,10 @@
 }
 
 .title {
-    font-size: 1.25rem !important;
     padding-top: 1rem;
     color: var(--qwik-dirty-black);
+    font-size: 2rem !important;
+    margin: 1.5rem 0;
   }
   
   @media screen and (min-width: 768px) {

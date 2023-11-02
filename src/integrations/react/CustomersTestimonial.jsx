@@ -24,7 +24,7 @@ import PrimalTraceImage from "~/assets/img/webClientes/PrimalTraceImage.png";
 const styles = () => ({
   title: {
     paddingTop: "1.5rem",
-    margin: "1.25rem",
+    margin: "1.5rem 0",
     fontWeight: "300",
     color: "rgba(255, 255, 255, 1)",
   },
@@ -142,7 +142,7 @@ const CustomersTestimonial = () => {
 
   return (
     <div
-      className="mt-6 mx-auto container-purple container-center px-0"
+      className="mt-6 mx-auto container-purple container-center px-0 py-5"
       style={classes.testimonials}
     >
       <Typography

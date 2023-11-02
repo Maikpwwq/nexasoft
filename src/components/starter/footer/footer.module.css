@@ -10,7 +10,7 @@
   text-decoration: none;
   line-height: 1.5;
   color: #009dfd;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .anchor span:not(.spacer) {
@@ -18,7 +18,7 @@
 }
 
 .spacer {
-  display: none;
+  /* display: none; */
   padding: 0 15px;
 }
 

@@ -13,8 +13,8 @@ import {
 
 export default component$(() => {
   return (
-    <advantages id="advantages-section" class={[styles.advantages]}>
-      <div class="container container-blue">
+    <advantages id="advantages-section" class={["", styles.advantages]}>
+      <div class={["container container-blue", styles.advantagesContainer]}>
         <div class={["mt-1", styles.advantagesList]}>
           <MUITypography variant="h2" align="center" className={styles.title}>
             <span class="highlight">Maximiza tu Éxito</span> en Línea con Todos

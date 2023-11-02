@@ -12,9 +12,11 @@ export default component$(() => {
             ¡Domina la <span class="highlight">Web</span> en un solo lugar!
             Descubre los Secretos para el <span class="highlight">Éxito en Línea</span>                        
           </MUITypography>
-          <MUITypography className="mt-6 mb-6 pt-5" align="center" variant="body1" sx={{display: { md: 'block', sm: 'none', xs: 'none'}}}>
+          <MUITypography className="mt-6 mb-6 pt-5" fontSize={"1.125rem"} align="center" variant="body1" sx={{display: { md: 'block', sm: 'none', xs: 'none'}}}>
             ¡Desbloquea tu Éxito Digital con NexaSoft SAS y transforma tu
-            presencia en línea con un clic.!
+            presencia en línea.!
+            <br />
+            <br />
             <br />
             NexaSoft SAS líderes en Diseño Web a medida, Sitios Web
             Informativos, Vitrinas virtuales y Tiendas Online de Comercio
