@@ -1,7 +1,7 @@
 import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
 import { isServer } from "@builder.io/qwik/build";
 import { createClient } from "@supabase/supabase-js";
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from "uuid";
 // import { connectionDB } from "~/services/mongo-init";
 import clsx from "clsx";
 import {
@@ -161,11 +161,21 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
       // Create a single supabase client for interacting with your database
       const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
       const { name, email, phone, issue, message } = values;
-      const recordID : string = uuidv4();
-      const hexNumber : number = 1; // parseInt(recordID.replace(/-/g, ''), 16);
+      const recordID: string = uuidv4();
+      const hexNumber: number = 1; // parseInt(recordID.replace(/-/g, ''), 16);
       const { data: customer_form, error } = await supabase
         .from("customer_form")
-        .insert([{ id: hexNumber, created_at: new Date(), name, email, phone, issue, message }])
+        .insert([
+          {
+            id: hexNumber,
+            created_at: new Date(),
+            name,
+            email,
+            phone,
+            issue,
+            message,
+          },
+        ])
         .select("*");
 
       console.log("supabase contact form", customer_form, error);
@@ -291,7 +301,13 @@ export default component$(() => {
   });
 
   return (
-    <div class="container container-center flex justify-center" style={{}}>
+    <div
+      class="container container-center flex justify-center"
+      style={{
+        paddingLeft: {sm: "0 !important" },
+        paddingRight: {sm: "0 !important" },
+      }}
+    >
       <MUIPaper className={styles.cardContactForm} elevation={16}>
         <div class={styles.sheetFormStyle}>
           <MUITypography

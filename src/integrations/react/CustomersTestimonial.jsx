@@ -22,8 +22,7 @@ import PrimalTraceImage from "~/assets/img/webClientes/PrimalTraceImage.png";
 
 
 const styles = () => ({
-  title: {
-    paddingTop: "1.5rem",
+  title: {    
     margin: "1.5rem 0",
     fontWeight: "300",
     color: "rgba(255, 255, 255, 1)",
@@ -40,6 +39,7 @@ const styles = () => ({
   },
   testimonials: {
     backgroundColor: "var(--qwik-purple-background)",
+    width: "100%"
   },
   // @keyframes cardGrow{
   //     0%   {transform: scale3d(0)}
@@ -142,12 +142,13 @@ const CustomersTestimonial = () => {
 
   return (
     <div
-      className="mt-6 mx-auto container-purple container-center px-0 py-5"
+      className="container container-purple container-center px-0 py-5 w-100"
       style={classes.testimonials}
     >
       <Typography
-        variant="h3"
+        variant="h2"
         align="center"
+        className="pt-6"
         style={classes.title}
         sx={{ fontSize: { xs: "1.75rem", md: "3rem" } }}
       >
@@ -161,7 +162,7 @@ const CustomersTestimonial = () => {
         satisfechos.
       </Typography>
       <Box
-        className="flex items-center justify-center mt-6 mb-6 flex-wrap"
+        className="flex items-center justify-center mx-auto my-6 flex-wrap"
         sx={{ flexDirection: { md: "row", sm: "column", xs: "column" } }}
       >
         {testimonials.map((testimony, index) => {

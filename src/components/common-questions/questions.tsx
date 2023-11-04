@@ -13,7 +13,7 @@ export default component$(() => {
           <span class="highlight">Éxito Digital</span> de la mano de{" "}
           <span class="highlight">NexaSoft SAS!</span>
         </MUITypography>
-        <div class={["container"]}>
+        <div class={[""]} style={{}}>
           <CustomersQuestions />
         </div>
       </div>

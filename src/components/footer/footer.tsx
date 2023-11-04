@@ -28,8 +28,8 @@ export default component$(() => {
         justifyContent={"center"}
       >
         {" "}
-        <MUIContactPageIcon fontSize="large" className="mb-2" />
-        <MUITypography variant="h3" align="center">
+        <MUIContactPageIcon fontSize="large" className="mb-3 me-2" />
+        <MUITypography variant="h3" className="text-xl" style={{fontWeight: 'bold !important'}} fontSize={'1.25rem !important'} align="center">
           Datos de contacto
         </MUITypography>
       </MUIStack>

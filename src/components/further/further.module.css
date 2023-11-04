@@ -8,7 +8,7 @@
 .furtherList {
     display: flex;
     color: var(--qwik-dirty-black);
-    flex-direction: column;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     height: auto;

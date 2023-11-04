@@ -5,14 +5,14 @@ import styles from "./imagesList.module.css";
 export default component$(() => {
   return (
     <imageslist class="relative">
-      <div class="container container-center">
+      <div class="container">
         <div role="presentation" class="ellipsis"></div>
         <div role="presentation" class="ellipsis ellipsis-purple"></div>
-        <MUITypography variant="h3" align="center" className={styles.title}>
-          ¡Despierta el <span class="highlight"> potencial </span> de tu
-          negocio!
+        <MUITypography variant="h2" align="center" className={styles.title}>
+          ¡Despierta el <span class="blueHighlight font-bold"> potencial </span> de tu
+          negocio! 
         </MUITypography>
-        <MUITypography className="pt-4 pb-6 text-xl" variant="body1">
+        <MUITypography className="py-6 text-xl" align="center" variant="body1">
           Contáctanos y descubre nuestras poderosas soluciones de software.
         </MUITypography>
         <MUIBox className="w-100 flex justify-center">

@@ -91,7 +91,7 @@ export default component$(() => {
         </ul>
         {/* { state.visible &&     }   */}
         <div class={styles.mobileMenu}>
-          <ul class="m-4">
+          <ul class="">
             {navItems.map((item, index) => {
               const { name, route } = item;
               return (

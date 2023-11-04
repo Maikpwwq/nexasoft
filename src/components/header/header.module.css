@@ -1,11 +1,16 @@
-/* header {
-  border-bottom: 3px solid var(--qwik-dark-purple);
-} */
+header {
+  /* border-bottom: 3px solid var(--qwik-dark-purple); */
+  position: sticky;
+  top: 0; /* -110px use to hide with scroll */
+  background-color: var(--qwik-dark-background);
+  z-index: 25;
+}
 
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 18px 0 !important;  
 }
 
 .logo {

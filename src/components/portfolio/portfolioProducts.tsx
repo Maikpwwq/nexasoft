@@ -32,13 +32,13 @@ export default component$(() => {
   return (
     <div
       id="products-section"
-      class="flex flex-col justify-center items-center relative"
+      class="container flex flex-col justify-center items-center relative"
     >
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
-      <MUITypography variant="h3" align="center" className="font-bold mx-auto m-5 w-3/4 py-4">
-        ¡Simplificamos los <span class="highlight">precios</span> para
-        potenciar la efectividad de tu <span class="highlight">trabajo</span>!
+      <MUITypography variant="h2" align="center" className="my-5 py-4">
+        ¡Simplificamos los <span class="blueHighlight font-bold">precios</span> para
+        potenciar la efectividad de tu <span class="blueHighlight font-bold">trabajo</span>!
       </MUITypography>
       <p class="text-xl px-4 mt-4 text-center">
         Tu satisfacción está 100% asegurada con nuestra garantía de devolución

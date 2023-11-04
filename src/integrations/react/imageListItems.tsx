@@ -1,6 +1,6 @@
 /** @jsxImportSource react */
 import { ImageListItem } from "@mui/material";
-
+// import { useCallback } from "react";
 import AplicacionesMoviles from "../../assets/img/lista imagenes/Aplicaciones móviles.jpg";
 import Aplications from "../../assets/img/lista imagenes/aplications.jpg";
 import Automatizacion from "../../assets/img/lista imagenes/Automatización.jpg";
@@ -20,7 +20,9 @@ import RemoteOffice from "../../assets/img/lista imagenes/remote office.jpg";
 import SeguridadInformatica from "../../assets/img/lista imagenes/Seguridad informática.jpg";
 import Tecnologia from "../../assets/img/lista imagenes/Tecnología.jpg";
 
-const itemData = [
+// useCallback(() : Array<any> => (), [])
+
+const itemData: Array<any> = [
   {
     id: 0,
     img: AplicacionesMoviles,
@@ -141,7 +143,7 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 const ImageListItems = () => {
   return (
     <>
-      {itemData.length > 0 ? (
+      {itemData.length > 0 && (
         itemData.map((item) => {
           const { id, title, img, cols, rows } = item;
           return (
@@ -154,8 +156,6 @@ const ImageListItems = () => {
             </ImageListItem>
           );
         })
-      ) : (
-        <></>
       )}
     </>
   );
