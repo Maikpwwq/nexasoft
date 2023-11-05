@@ -303,10 +303,10 @@ export default component$(() => {
   return (
     <div
       class="container container-center flex justify-center"
-      style={{
-        paddingLeft: {sm: "0 !important" },
-        paddingRight: {sm: "0 !important" },
-      }}
+      // style={{
+      //   paddingLeft: {sm: "0 !important" },
+      //   paddingRight: {sm: "0 !important" },
+      // }}
     >
       <MUIPaper className={styles.cardContactForm} elevation={16}>
         <div class={styles.sheetFormStyle}>
