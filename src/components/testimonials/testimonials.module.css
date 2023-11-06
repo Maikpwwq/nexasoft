@@ -4,7 +4,6 @@ testimonials a {
 
 .testimonials {
   background-color: var(--qwik-purple-background);
-  width: 100%;
   display: flex;
   justify-content: center;
 }

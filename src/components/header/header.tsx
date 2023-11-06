@@ -43,6 +43,7 @@ export default component$(() => {
     <header class={styles.header}>
       <div class={["container", styles.wrapper]}>
         <MUIMenuIcon
+          fontSize="large"
           onClick$={() => handleClick()}
           sx={{ display: { md: "none", sm: "block" } }}
           className={styles.dropdownMobile}

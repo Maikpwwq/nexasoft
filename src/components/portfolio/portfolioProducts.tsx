@@ -36,8 +36,8 @@ export default component$(() => {
     >
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
-      <MUITypography variant="h2" align="center" className="my-5 py-4">
-        ¡Simplificamos los <span class="blueHighlight font-bold">precios</span> para
+      <MUITypography variant="h2" align="center" className={styles.title}>
+        ¡Simplificamos los <span class="blueHighlight font-bold">precios</span> para 
         potenciar la efectividad de tu <span class="blueHighlight font-bold">trabajo</span>!
       </MUITypography>
       <p class="text-xl px-4 mt-4 text-center">

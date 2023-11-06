@@ -308,16 +308,16 @@ export default component$(() => {
       //   paddingRight: {sm: "0 !important" },
       // }}
     >
-      <MUIPaper className={styles.cardContactForm} elevation={16}>
+      <MUIPaper className={styles.cardContactForm} elevation={16}> 
         <div class={styles.sheetFormStyle}>
           <MUITypography
-            variant="h6"
+            variant="h4"
             color={"var(--qwik-dark-blue)"}
             align="center"
           >
             Formulario de contacto
           </MUITypography>
-          <MUITypography variant="body1" className="pt-2 pb-4" align="center">
+          <MUITypography variant="body1" className="py-6 w-80 mx-auto text-lg" align="center">
             Solicita información adicional o una presentación de nuestros
             servicios.
           </MUITypography>
@@ -400,7 +400,7 @@ export default component$(() => {
             <Field
               // id="form-message"
               name="message"
-              // class={styles.inputStyle}
+              // class={styles.inputStyle}            
             >
               {(field, props) => (
                 <TextInput
@@ -414,10 +414,11 @@ export default component$(() => {
                 />
               )}
             </Field>
+            <br class="mb-4"/>
             <button
               type="submit"
               // preventdefault:click
-              class={clsx("mx-3 lg:mx-5", styles.btnStyle)}
+              class={clsx("m-auto mt-6", styles.btnStyle)}
             >
               Enviar
             </button>

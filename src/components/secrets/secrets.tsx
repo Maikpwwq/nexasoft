@@ -8,8 +8,8 @@ export default component$(() => {
     <secrets id="secrets-section" class={["pb-6", styles.secrets]}>
       <div class="container container-purple">
         <div class={["mt-1", styles.secretsList]}>
-          <MUITypography variant="h2" align="center" className={styles.title}>
-            ¡Domina la <span class="highlight">Web</span> en un solo lugar!
+          <MUITypography variant="h2" align="center" className={styles.title}> 
+            ¡Domina la <span class="highlight">Web</span> en un solo lugar! 
             Descubre los Secretos para el <span class="highlight">Éxito en Línea</span>                        
           </MUITypography>
           <MUITypography className="mt-6 mb-6 pt-5" fontSize={"1.125rem"} align="center" variant="body1" sx={{display: { md: 'block', sm: 'none', xs: 'none'}}}>

@@ -26,6 +26,7 @@ const styles = () => ({
     margin: "1.5rem 0",
     fontWeight: "300",
     color: "rgba(255, 255, 255, 1)",
+    // fontSize: "2rem !important",
   },
   testimonialsCard: {
     margin: "1.5rem",
@@ -150,16 +151,16 @@ const CustomersTestimonial = () => {
         align="center"
         className="pt-6"
         style={classes.title}
-        sx={{ fontSize: { xs: "1.75rem", md: "3rem" } }}
+        sx={{ fontSize: { xs: "2rem", md: "3.5rem" } }}
       >
         Nuestros{" "}
         <span
           className="highlight font-bold md:text-6xl sm:text-3xl text-2xl"
           style={{ color: "rgba(255, 255, 255, 1)", borderColor: "#e5e7eb" }}
-        >
-          clientes
+        > 
+          Clientes
         </span>{" "}
-        satisfechos.
+        Satisfechos.
       </Typography>
       <Box
         className="flex items-center justify-center mx-auto my-6 flex-wrap"

@@ -60,6 +60,10 @@ header {
   border-radius: 16px;
 }
 
+.dropdownMobile {
+  margin: 0 3rem;
+}
+
 @media screen and (min-width: 900px) {
   .header li {
     display: inline-block;
