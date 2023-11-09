@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import styles from "./support.module.css";
 
 // import { MUITypography } from "~/integrations/react/mui";
+import CHCoraSoft from "~/assets/img/logos/Logo_Fondo_Blanco_Otros.png";
 import CCB from "~/assets/img/logos/Logo_Cámara_de_Comercio_de_Bogotá_CCB.png";
 import Fedesoft from "~/assets/img/logos/logo-fedesoft-Color.png";
 import MarcaPais from "~/assets/img/logos/logo_Marca_país_Colombia.png";
@@ -9,6 +10,11 @@ import MarcaPais from "~/assets/img/logos/logo_Marca_país_Colombia.png";
 export default component$(() => {
   const supportLogos = [
     // "#products-section"
+    {
+      name: "Logo Chicó corazón de software",
+      icon: CHCoraSoft,
+      width: 180,
+    },
     {
       name: "Logo Cámara de Comercio de Bogotá",
       icon: CCB,

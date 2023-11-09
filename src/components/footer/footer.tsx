@@ -16,6 +16,7 @@ import {
 } from "~/integrations/react/mui";
 
 import NexaSoftLogo from "~/assets/img/Logos Nexasoft/White (small).png";
+import CHCoraSoft from "~/assets/img/logos/Logo_Fondo_Negro.png";
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -97,6 +98,9 @@ export default component$(() => {
           </MUIStack>
         </MUIPaper>
       </MUIBox>
+      <MUIStack alignItems={"center"}>
+        <img src={CHCoraSoft} height={50} width={210} class="pb-4"/>
+      </MUIStack>
     </footer>
   );
 });
