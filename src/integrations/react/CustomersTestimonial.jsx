@@ -20,9 +20,30 @@ import WaviImage from "~/assets/img/webClientes/WaviImage.png";
 import NagaImage from "~/assets/img/webClientes/NagaImage.png";
 import PrimalTraceImage from "~/assets/img/webClientes/PrimalTraceImage.png";
 
+import ethersIcon from "~/assets/img/technologies/ethers.png";
+import FirebaseIcon from "~/assets/img/technologies/Firebase.png";
+import SendbirdIcon from "~/assets/img/technologies/Sendbird.png";
+import NextJsBlancoIcon from "~/assets/img/technologies/NextJsBlanco.png";
+// import NextJsNegroIcon from "~/assets/img/technologies/NextJsNegro.png";
+import PiniaIcon from "~/assets/img/technologies/Pinia.png";
+import ReduxIcon from "~/assets/img/technologies/Redux.png";
+import SolidityIcon from "~/assets/img/technologies/Solidity.png";
+import SqliteIcon from "~/assets/img/technologies/Sqlite.png";
+import SupabaseIcon from "~/assets/img/technologies/Supabase.png";
+import TheGraphIcon from "~/assets/img/technologies/The-Graph.png";
+import VikeJsIcon from "~/assets/img/technologies/VikeJs.png";
+import ViteIcon from "~/assets/img/technologies/Vite.png";
+import MuiMaterialIcon from "~/assets/img/technologies/MuiMaterial.png";
+import TailwindIcon from "~/assets/img/technologies/Tailwind.png";
+// import VueRouterIcon from "~/assets/img/technologies/Vue Router.png";
+import VueJsIcon from "~/assets/img/technologies/VueJs.png";
+import VuetifyIcon from "~/assets/img/technologies/Vuetify.png";
+import VuexIcon from "~/assets/img/technologies/Vuex.png";
+import web3AuthIcon from "~/assets/img/technologies/web3-auth.png";
+// import web3authIcon from "~/assets/img/technologies/web3auth.png";
 
 const styles = () => ({
-  title: {    
+  title: {
     margin: "1.5rem 0",
     fontWeight: "300",
     color: "rgba(255, 255, 255, 1)",
@@ -40,7 +61,7 @@ const styles = () => ({
   },
   testimonials: {
     backgroundColor: "var(--qwik-purple-background)",
-    width: "100%"
+    width: "100%",
   },
   // @keyframes cardGrow{
   //     0%   {transform: scale3d(0)}
@@ -53,7 +74,7 @@ const TestimonialCard =
   forwardRef(function (props, ref) {
     const classes = styles();
     const { style, testimony } = props;
-    const { message, name, logo, image, webSite } = testimony;
+    const { message, name, logo, image, webSite, technologies } = testimony;
     // console.log("testimony", testimony);
 
     return (
@@ -67,20 +88,44 @@ const TestimonialCard =
             <img src={image} alt={name} height={184} width={300} />
           </CardMedia>
           <CardContent>
+            <Typography variant="body1 text-xl" fontWeight={"bold"}>
+              <a
+                href={webSite}
+                className="flex flex-col justify-center items-center"
+              >
+                <img
+                  src={logo}
+                  alt={name}
+                  height={84}
+                  width={84}
+                  className="mt-2 mb-4 me-2"
+                />
+                {name}
+              </a>{" "}
+            </Typography>
             <Typography
               variant="body2"
               color="text.secondary"
+              className="mt-4"
               // component="div"
             >
               {/* sx={{ fontSize: 14 }} color="text.secondary" gutterBottom */}
               {message}
             </Typography>
-            <Typography variant="body1 text-xl" fontWeight={"bold"}>
-              <a href={webSite} className="mt-3 flex flex-col justify-center items-center" >
-                {name}
-                <img src={logo} alt={name} height={84} width={84} className="mt-2 me-2"/>
-              </a>{" "}
-            </Typography>
+            <Box className="flex flex-row items-center justify-center mx-auto my-6 flex-wrap">
+              {technologies.map((icon, index) => {
+                return (
+                  <img
+                    src={icon}
+                    className="mx-1"
+                    key={index}
+                    alt="iconTechnology"
+                    height={33}
+                    width={33}
+                  />
+                );
+              })}
+            </Box>
           </CardContent>
         </Card>
       </div>
@@ -99,6 +144,13 @@ const CustomersTestimonial = () => {
       logo: WaviPixelLogo,
       image: WaviImage,
       webSite: "https://wavi-aeronautics.vercel.app/",
+      technologies: [
+        NextJsBlancoIcon,
+        FirebaseIcon,
+        TailwindIcon,
+        ReduxIcon,
+        PiniaIcon,
+      ],
     },
     {
       message:
@@ -107,6 +159,7 @@ const CustomersTestimonial = () => {
       logo: NagaLogo,
       image: NagaImage,
       webSite: "https://naga-regeneracion-aguas-frontend.vercel.app",
+      technologies: [VueJsIcon, PiniaIcon, VuetifyIcon, SqliteIcon],
     },
     {
       message:
@@ -115,6 +168,15 @@ const CustomersTestimonial = () => {
       logo: ComunidadDezzpoLogo,
       image: ComunidadDezzpoImage,
       webSite: "https://dezzpo.com/",
+      technologies: [
+        VikeJsIcon,
+        ViteIcon,
+        FirebaseIcon,
+        ReduxIcon,
+        MuiMaterialIcon,
+        TailwindIcon,
+        SendbirdIcon,
+      ],
     },
     {
       message:
@@ -123,6 +185,15 @@ const CustomersTestimonial = () => {
       logo: PrimalTrace,
       image: PrimalTraceImage,
       webSite: "https://primaltrace-nuxt-ssr.vercel.app/",
+      technologies: [
+        VuexIcon,
+        PiniaIcon,
+        SupabaseIcon,
+        ethersIcon,
+        SolidityIcon,
+        web3AuthIcon,
+        TheGraphIcon,
+      ],
     },
   ];
 
@@ -157,7 +228,7 @@ const CustomersTestimonial = () => {
         <span
           className="highlight font-bold md:text-6xl sm:text-3xl text-2xl"
           style={{ color: "rgba(255, 255, 255, 1)", borderColor: "#e5e7eb" }}
-        > 
+        >
           Clientes
         </span>{" "}
         Satisfechos.
