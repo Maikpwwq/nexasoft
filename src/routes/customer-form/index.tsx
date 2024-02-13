@@ -1,4 +1,5 @@
 import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
+import type { QRL } from "@builder.io/qwik";
 import { isServer } from "@builder.io/qwik/build";
 import { createClient } from "@supabase/supabase-js";
 import { v4 as uuidv4 } from "uuid";
@@ -111,7 +112,7 @@ const loginSchema = z.object({
   email: z
     .string()
     .min(1, "Por favor introduzca su email.")
-    .email("The email address is badly formatted."),
+    .email("La dirección de correo electrónico está mal formateada."),
   phone: z
     .string()
     .min(1, "Por favor introduzca su teléfono.")
@@ -219,7 +220,7 @@ export default component$(() => {
     validate: zodForm$(loginSchema),
   });
 
-  const handleSubmit = $<SubmitHandler<LoginForm>>(
+  const handleSubmit : QRL<SubmitHandler<LoginForm>> = $ (
     async (values: any, event: any) => {
       // Runs on CLIENT
       console.log("handleSubmit", values, event);
@@ -260,7 +261,7 @@ export default component$(() => {
     console.log(
       "handleSubmitSuccess",
       loginForm.submitted,
-      loginForm.submitting,
+      loginForm.submitting, // display a loading animation and disable the submit button.
       loginForm.response,
     );
     alert(loginForm.response.message);
@@ -274,7 +275,7 @@ export default component$(() => {
     console.log(
       "handleSubmitError",
       loginForm.submitted,
-      loginForm.submitting,
+      loginForm.submitting, // display a loading animation and disable the submit button.
       loginForm.response,
     );
     alert(loginForm.response.message);
