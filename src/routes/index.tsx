@@ -167,7 +167,7 @@ export default component$(() => {
   });
 
   useTask$(({ track }) => {
-    track(() => loginForm.response?.status);
+    track(() => loginForm.response.status);
     if (isServer) {
       return; // Server guard
     }
