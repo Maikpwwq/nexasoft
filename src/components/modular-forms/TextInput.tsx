@@ -1,30 +1,23 @@
+// update component following example
+// https://github.com/fabian-hiller/modular-forms/blob/main/playgrounds/qwik/src/components/TextInput.tsx
 import {
   component$,
   useSignal,
   useTask$,
-  type PropFunction,
-  type QwikChangeEvent,
-  type QwikFocusEvent,
+  type QRL,
 } from "@builder.io/qwik";
 import clsx from "clsx";
 import { InputError } from "./InputError";
 import { InputLabel } from "./InputLable";
 
 type TextInputProps = {
-  ref: PropFunction<(element: Element) => void>;
+  ref: QRL<(element: HTMLInputElement) => void>;
   type: "text" | "email" | "tel" | "password" | "url" | "number" | "date";
   name: string;
   value: string | number | undefined;
-  onInput$: PropFunction<(event: Event, element: HTMLInputElement) => void>;
-  onChange$: PropFunction<
-    (
-      event: QwikChangeEvent<HTMLInputElement>,
-      element: HTMLInputElement,
-    ) => void
-  >;
-  onBlur$: PropFunction<
-    (event: QwikFocusEvent<HTMLInputElement>, element: HTMLInputElement) => void
-  >;
+  onInput$: (event: Event, element: HTMLInputElement) => void;
+  onChange$: (event: Event, element: HTMLInputElement) => void;
+  onBlur$: (event: Event, element: HTMLInputElement) => void;
   placeholder?: string;
   required?: boolean;
   class?: string;
