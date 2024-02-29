@@ -22,7 +22,7 @@ import {
   formAction$,
   zodForm$,
   reset,
-  // setResponse,
+  setResponse,
   // valiForm$,
 } from "@modular-forms/qwik";
 import styles from "~/components/modular-forms/modularForm.module.css";
@@ -137,7 +137,7 @@ export const useFormLoader = routeLoader$<InitialValues<LoginForm>>(() => ({
 }));
 
 type ResponseData = {
-  customerId: string;
+  customerId: string | bigint; //   number
 };
 
 export const useFormAction = formAction$<LoginForm, ResponseData>(
@@ -145,6 +145,7 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
     // Runs on SERVER
     console.log("useFormAction", values);
     try {
+      // Mongo Atlas Example
       // const resume : string  = await connectionDB(values);
       // await mongoose.connect(MONGO_HOST, options).catch((error) => {
       //   console.log("mongoose connection error", error);
@@ -158,17 +159,25 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
       // const customerId = _id.toString(); // JSON.stringify(_id);
       // console.log("Promise message", res, customerId);
       // console.log("Promise message", typeof resume, resume);
+      // if (typeof resume === "string") {
+      // const record = JSON.parse(resume);
+      //, record
+      // setResponse(loginForm, response); // , options
+      // }
 
       // Create a single supabase client for interacting with your database
       const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
       const { name, email, phone, issue, message } = values;
       const recordID: string = uuidv4();
-      const hexNumber: number = 1; // parseInt(recordID.replace(/-/g, ''), 16);
+      // const hexNumber: string = '0x' + (recordID.replace(/-/g, ''));      
+      // const decimalNumber : bigint = BigInt(hexNumber)
+      const decimalNumber : number = parseInt(recordID.replace(/-/g, ''))
+      console.log(decimalNumber, recordID)
       const { data: customer_form, error } = await supabase
         .from("customer_form")
         .insert([
           {
-            id: hexNumber,
+            id: decimalNumber.toString(),
             created_at: new Date(),
             name,
             email,
@@ -190,14 +199,10 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
 
       return {
         status: "success",
-        message: `Gracias, su mensaje ha sido recibido. ${recordID}`,
-        data: { customerId: recordID },
+        message: `Gracias, su mensaje ha sido recibido. ${decimalNumber}`,
+        data: { customerId: decimalNumber.toString() },
       };
-      // if (typeof resume === "string") {
-      // const record = JSON.parse(resume);
-      //, record
-      // setResponse(loginForm, response); // , options
-      // }
+
     } catch (error) {
       console.error(error);
       return {
@@ -255,6 +260,55 @@ export default component$(() => {
       //     data: { customerId: "" },
       //   };
       // }
+
+      // This does not work in form action above
+      try { 
+        // Create a single supabase client for interacting with your database
+        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+        const { name, email, phone, issue, message } = values;
+        // const recordID: string = uuidv4();
+        // const hexNumber: string = '0x' + (recordID.replace(/-/g, ''));      
+        // const decimalNumber : bigint = BigInt(hexNumber)
+        // const decimalNumber : number = parseInt(recordID.replace(/-/g, ''))
+        // console.log(decimalNumber, recordID)
+        const { data: customer_form, error } = await supabase
+          .from("customer_form")
+          .insert([
+            {
+              // id: decimalNumber, // Automatic set an id
+              created_at: new Date(),
+              name,
+              email,
+              phone,
+              issue,
+              message,
+            },
+          ])
+          .select("*");
+  
+        console.log("supabase contact form", customer_form, error);
+        if (customer_form) {
+          console.log("Success your supabase contact form ID", customer_form[0].id);        
+          setResponse(loginForm, {
+            status: "success",
+            message: `Gracias ${name} su mensaje ha sido recibido, nos pondremos en contacto pronto.`,
+            data: { customerId: customer_form[0].id },
+          });
+          console.log("Success form information", loginForm.submitted, loginForm.submitting, loginForm.response.status );
+        }
+  
+        if (error) {
+          console.log("Error supabase contact form", error);
+        }
+      } catch (error) {
+        console.error(error);          
+        setResponse(loginForm, {
+          status: "error",
+          message: `No se ha podido enviar su mensaje. ${error}`,
+          data: { customerId: "" },
+        });
+        console.error("Error form information", loginForm.submitted, loginForm.submitting, loginForm.response.status );      
+      }
     },
   );
 
@@ -283,7 +337,8 @@ export default component$(() => {
   });
 
   useTask$(({ track }) => {
-    track(() => loginForm.response.status);
+    // console.log("form information here", loginForm.submitted,  loginForm.submitting, loginForm.response.status )
+    track(() => loginForm.response.status); 
     if (isServer) {
       return; // Server guard
     }
