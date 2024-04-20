@@ -14,12 +14,15 @@ import ComunidadDezzpoLogo from "~/assets/img/logos/Comunidad-Dezzpo.jpg";
 import WaviPixelLogo from "~/assets/img/logos/WaviPixelLogo.png";
 import NagaLogo from "~/assets/img/logos/Naga-Reg-Aguas.png";
 import PrimalTrace from "~/assets/img/logos/PrimalTrace.png";
+import ConstructoraColombia from "~/assets/img/logos/ConstructoraColombiaOficial.png";
 
 import ComunidadDezzpoImage from "~/assets/img/webClientes/ComunidadDezzpoImage.png";
 import WaviImage from "~/assets/img/webClientes/WaviImage.png";
 import NagaImage from "~/assets/img/webClientes/NagaImage.png";
 import PrimalTraceImage from "~/assets/img/webClientes/PrimalTraceImage.png";
+import ConstructoraColombiaImage from "~/assets/img/webClientes/ConstructoraColombiaImage.png";
 
+import AstroIcon from "~/assets/img/technologies/Astro.png";
 import ethersIcon from "~/assets/img/technologies/ethers.png";
 import FirebaseIcon from "~/assets/img/technologies/Firebase.png";
 import SendbirdIcon from "~/assets/img/technologies/Sendbird.png";
@@ -193,6 +196,19 @@ const CustomersTestimonial = () => {
         SolidityIcon,
         web3AuthIcon,
         TheGraphIcon,
+      ],
+    },
+    {
+      message:
+      "Me encantó trabajar mi sitio web con Nexasoft SAS. Sus expertos resolvieron todas mis dudas y definieron cada etapa con total transparencia. ¡Muy recomendados!",
+      name: "Constructora Colombia",
+      logo: ConstructoraColombia,
+      image: ConstructoraColombiaImage,
+      webSite: "https://constructoracolombia.co/",
+      technologies: [
+        AstroIcon,
+        TailwindIcon,        
+        ViteIcon,
       ],
     },
   ];
