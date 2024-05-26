@@ -50,6 +50,7 @@ import {
 import Resume from "~/components/resume/resume";
 import Further from "~/components/further/further";
 import Advantages from "~/components/advantages/advantages";
+import BlogPost from "~/components/blog/BlogPost";
 import Secrets from "~/components/secrets/secrets";
 import Questions from "~/components/common-questions/questions";
 
@@ -193,8 +194,8 @@ export default component$(() => {
       <Advantages />
       <Testimonials />
       <Secrets />
+      <BlogPost />
       <Questions />
-
       {/* 
         <h3>
           You can <span class="highlight">count</span>
