@@ -1,6 +1,21 @@
 import SDLC from "~/assets/img/blog/SDLC.png"
 
-export const webPosts = [
+export interface Posts {
+  id: string;
+  title: string;
+  description: string;
+  cycle: Cycle[];
+  image: string;
+  alt: string;
+  route: string;
+}
+
+export interface Cycle { 
+  stage: string;
+  body: string;
+}
+
+export const webPosts: [Posts] = [
     {
       id: "SDLC",
       title:

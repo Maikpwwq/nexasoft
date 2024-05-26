@@ -10,7 +10,7 @@ export interface PostProps {
 export default component$((props: PostProps) => {
   const postId = useSignal(props.detail);
   const postData = webPosts.find((entry) => entry.id === postId.value);
-  const { title, description, cycle, alt, image, route } = postData;
+  const { title, description, cycle, alt, image } = postData;
 
   return (
     <>
@@ -31,7 +31,7 @@ export default component$((props: PostProps) => {
                 height={210}
                 width={210}
               />
-              {cycle.map((element, index) => {
+              {cycle.map((element: any, index : any) => {
                 const { stage, body } = element;
                 return (
                   <li class={[styles.listItem, "my-2 items-start"]} key={index}>

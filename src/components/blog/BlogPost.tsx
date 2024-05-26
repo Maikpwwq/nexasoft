@@ -33,7 +33,7 @@ export default component$(() => {
             <div class="ps-12 w-3/4">
               <ul class="mt-6 mb-6 p-0">
                 {webPosts.map((post, index) => {
-                  const { title, description, image, route } = post;
+                  const { title, description, route } = post;
                   return (
                     <a href={route} key={index}>
                       <li class={[styles.listItem, "my-2"]}>
