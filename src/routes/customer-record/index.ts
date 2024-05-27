@@ -5,11 +5,11 @@ import { type RequestHandler } from "@builder.io/qwik-city";
 import { connectionDB } from "~/services/mongo-init";
 
 interface RegistroContacto {
-  name: String;
-  email: String;
-  phone: String;
-  issue: String;
-  message: String;
+  name: string;
+  email: string;
+  phone: string;
+  issue: string;
+  message: string;
 }
 
 // Called when this HTTP method is POST
