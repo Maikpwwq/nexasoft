@@ -169,10 +169,10 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
       const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
       const { name, email, phone, issue, message } = values;
       const recordID: string = uuidv4();
-      // const hexNumber: string = '0x' + (recordID.replace(/-/g, ''));      
+      // const hexNumber: string = '0x' + (recordID.replace(/-/g, ''));
       // const decimalNumber : bigint = BigInt(hexNumber)
-      const decimalNumber : number = parseInt(recordID.replace(/-/g, ''))
-      console.log(decimalNumber, recordID)
+      const decimalNumber: number = parseInt(recordID.replace(/-/g, ""));
+      console.log(decimalNumber, recordID);
       const { data: customer_form, error } = await supabase
         .from("customer_form")
         .insert([
@@ -202,7 +202,6 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
         message: `Gracias, su mensaje ha sido recibido. ${decimalNumber}`,
         data: { customerId: decimalNumber.toString() },
       };
-
     } catch (error) {
       console.error(error);
       return {
@@ -226,7 +225,7 @@ export default component$(() => {
     validate: zodForm$(loginSchema),
   });
 
-  const handleSubmit : QRL<SubmitHandler<LoginForm>> = $ (
+  const handleSubmit: QRL<SubmitHandler<LoginForm>> = $(
     async (values: any, event: any) => {
       // Runs on CLIENT
       console.log("handleSubmit", values, event);
@@ -262,12 +261,12 @@ export default component$(() => {
       // }
 
       // This does not work in form action above
-      try { 
+      try {
         // Create a single supabase client for interacting with your database
         const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
         const { name, email, phone, issue, message } = values;
         // const recordID: string = uuidv4();
-        // const hexNumber: string = '0x' + (recordID.replace(/-/g, ''));      
+        // const hexNumber: string = '0x' + (recordID.replace(/-/g, ''));
         // const decimalNumber : bigint = BigInt(hexNumber)
         // const decimalNumber : number = parseInt(recordID.replace(/-/g, ''))
         // console.log(decimalNumber, recordID)
@@ -285,29 +284,42 @@ export default component$(() => {
             },
           ])
           .select("*");
-  
+
         console.log("supabase contact form", customer_form, error);
         if (customer_form) {
-          console.log("Success your supabase contact form ID", customer_form[0].id);        
+          console.log(
+            "Success your supabase contact form ID",
+            customer_form[0].id,
+          );
           setResponse(loginForm, {
             status: "success",
             message: `Gracias ${name} su mensaje ha sido recibido, nos pondremos en contacto pronto.`,
             data: { customerId: customer_form[0].id },
           });
-          console.log("Success form information", loginForm.submitted, loginForm.submitting, loginForm.response.status );
+          console.log(
+            "Success form information",
+            loginForm.submitted,
+            loginForm.submitting,
+            loginForm.response.status,
+          );
         }
-  
+
         if (error) {
           console.log("Error supabase contact form", error);
         }
       } catch (error) {
-        console.error(error);          
+        console.error(error);
         setResponse(loginForm, {
           status: "error",
           message: `No se ha podido enviar su mensaje. ${error}`,
           data: { customerId: "" },
         });
-        console.error("Error form information", loginForm.submitted, loginForm.submitting, loginForm.response.status );      
+        console.error(
+          "Error form information",
+          loginForm.submitted,
+          loginForm.submitting,
+          loginForm.response.status,
+        );
       }
     },
   );
@@ -338,7 +350,7 @@ export default component$(() => {
 
   useTask$(({ track }) => {
     // console.log("form information here", loginForm.submitted,  loginForm.submitting, loginForm.response.status )
-    track(() => loginForm.response.status); 
+    track(() => loginForm.response.status);
     if (isServer) {
       return; // Server guard
     }
@@ -365,7 +377,7 @@ export default component$(() => {
       //   paddingRight: {sm: "0 !important" },
       // }}
     >
-      <MUIPaper className={styles.cardContactForm} elevation={16}> 
+      <MUIPaper className={styles.cardContactForm} elevation={16}>
         <div class={styles.sheetFormStyle}>
           <MUITypography
             variant="h4"
@@ -374,7 +386,11 @@ export default component$(() => {
           >
             Formulario de contacto
           </MUITypography>
-          <MUITypography variant="body1" className="py-6 w-80 mx-auto text-lg" align="center">
+          <MUITypography
+            variant="body1"
+            className="py-6 w-80 mx-auto text-lg"
+            align="center"
+          >
             Solicita información adicional o una presentación de nuestros
             servicios.
           </MUITypography>
@@ -457,7 +473,7 @@ export default component$(() => {
             <Field
               // id="form-message"
               name="message"
-              // class={styles.inputStyle}            
+              // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -471,7 +487,7 @@ export default component$(() => {
                 />
               )}
             </Field>
-            <br class="mb-4"/>
+            <br class="mb-4" />
             <button
               type="submit"
               // preventdefault:click

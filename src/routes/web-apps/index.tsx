@@ -3,7 +3,10 @@ import { MUITypography } from "~/integrations/react/mui";
 
 export default component$(() => {
   return (
-    <div class="container container-center flex justify-center" style={{height: '80vh'}}>
+    <div
+      class="container container-center flex justify-center"
+      style={{ height: "80vh" }}
+    >
       <div class="flex flex-col justify-center items-center relative">
         <div role="presentation" class="ellipsis"></div>
         <div role="presentation" class="ellipsis ellipsis-purple"></div>

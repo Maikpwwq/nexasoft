@@ -1,12 +1,7 @@
 // update component following example
 // https://github.com/fabian-hiller/modular-forms/blob/main/playgrounds/qwik/src/components/TextInput.tsx
 // https://modularforms.dev/qwik/guides/input-components
-import {
-  component$,
-  useSignal,
-  useTask$,
-  type QRL,
-} from "@builder.io/qwik";
+import { component$, useSignal, useTask$, type QRL } from "@builder.io/qwik";
 import clsx from "clsx";
 import { InputError } from "./InputError";
 import { InputLabel } from "./InputLable";

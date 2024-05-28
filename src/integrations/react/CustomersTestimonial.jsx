@@ -200,16 +200,12 @@ const CustomersTestimonial = () => {
     },
     {
       message:
-      "Me encantó trabajar mi sitio web con Nexasoft SAS. Sus expertos resolvieron todas mis dudas y definieron cada etapa con total transparencia. ¡Muy recomendados!",
+        "Me encantó trabajar mi sitio web con Nexasoft SAS. Sus expertos resolvieron todas mis dudas y definieron cada etapa con total transparencia. ¡Muy recomendados!",
       name: "Constructora Colombia",
       logo: ConstructoraColombia,
       image: ConstructoraColombiaImage,
       webSite: "https://constructoracolombia.co/",
-      technologies: [
-        AstroIcon,
-        TailwindIcon,        
-        ViteIcon,
-      ],
+      technologies: [AstroIcon, TailwindIcon, ViteIcon],
     },
   ];
 

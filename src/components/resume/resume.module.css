@@ -1,40 +1,41 @@
 .resume {
-    background-color: var(--qwik-light-blue);
-    width: 100%;
-    display: flex;
-    color: var(--qwik-dirty-black);
-}
- 
-.resumeList {
-    display: flex;
-    color: var(--qwik-dirty-black);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    line-height: 1.5;
-    gap: 10px;
-    width: fit-content;
-   max-width: 1200px;
-    margin: 0 auto;
-    font-size: 1rem;
+  background-color: var(--qwik-light-blue);
+  width: 100%;
+  display: flex;
+  color: var(--qwik-dirty-black);
 }
 
-.listItem, .listItem a {
-    display: flex;
-    align-items: center;
-    color: var(--qwik-dirty-black);
+.resumeList {
+  display: flex;
+  color: var(--qwik-dirty-black);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  line-height: 1.5;
+  gap: 10px;
+  width: fit-content;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+.listItem,
+.listItem a {
+  display: flex;
+  align-items: center;
+  color: var(--qwik-dirty-black);
 }
 
 .title {
-    padding-top: 1rem;
-    color: var(--qwik-dirty-black);
-    font-size: 2rem !important;
-    margin: 1.5rem 0;
+  padding-top: 1rem;
+  color: var(--qwik-dirty-black);
+  font-size: 2rem !important;
+  margin: 1.5rem 0;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 3rem !important;
   }
-  
-  @media screen and (min-width: 768px) {
-    .title {
-      font-size: 3rem !important;
-    }
-  }
+}

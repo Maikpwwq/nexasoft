@@ -30,7 +30,13 @@ export default component$(() => {
       >
         {" "}
         <MUIContactPageIcon fontSize="large" className="mb-3 me-2" />
-        <MUITypography variant="h3" className="text-xl" style={{fontWeight: 'bold !important'}} fontSize={'1.25rem !important'} align="center">
+        <MUITypography
+          variant="h3"
+          className="text-xl"
+          style={{ fontWeight: "bold !important" }}
+          fontSize={"1.25rem !important"}
+          align="center"
+        >
           Datos de contacto
         </MUITypography>
       </MUIStack>
@@ -49,7 +55,7 @@ export default component$(() => {
       >
         <MUIPaper elevation={3} className="p-4 w-full">
           <MUIStack>
-            <img src={NexaSoftLogo} height={50} width={210} class="pb-4"/>
+            <img src={NexaSoftLogo} height={50} width={210} class="pb-4" />
             <MUITypography variant="body1" align="center">
               <MUIPlaceIcon /> Bogotá, Colombia.
             </MUITypography>
@@ -59,10 +65,13 @@ export default component$(() => {
                 target="_blank"
                 title="mail"
               >
-                <MUITypography className="flex flex-row justify-center items-end" variant="body1">
+                <MUITypography
+                  className="flex flex-row justify-center items-end"
+                  variant="body1"
+                >
                   {" "}
                   {/* <MUIAlternateEmailIcon fontSize="small" />  */}
-                  <MUIMailOutlineIcon className="me-1"/> NexaSoft SAS 
+                  <MUIMailOutlineIcon className="me-1" /> NexaSoft SAS
                 </MUITypography>
               </a>
             </MUIBox>
@@ -71,7 +80,11 @@ export default component$(() => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <MUITypography className="flex flex-row justify-center items-end" variant="body1" align="center">
+              <MUITypography
+                className="flex flex-row justify-center items-end"
+                variant="body1"
+                align="center"
+              >
                 <MUIWhatsAppIcon className="me-1" /> 3195137182
               </MUITypography>
             </a>
@@ -99,7 +112,7 @@ export default component$(() => {
         </MUIPaper>
       </MUIBox>
       <MUIStack alignItems={"center"}>
-        <img src={CHCoraSoft} height={50} width={210} class="pb-4"/>
+        <img src={CHCoraSoft} height={50} width={210} class="pb-4" />
       </MUIStack>
     </footer>
   );

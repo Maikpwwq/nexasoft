@@ -10,7 +10,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0 !important;  
+  padding: 18px 0 !important;
 }
 
 .logo {
@@ -80,7 +80,9 @@ header {
   .mobileMenu li {
     display: inline-block;
   }
-  .mobileMenu li a, .mobileMenu li a:hover, .mobileMenu li a:visited{
+  .mobileMenu li a,
+  .mobileMenu li a:hover,
+  .mobileMenu li a:visited {
     color: var(--qwik-dark-text);
   }
 }

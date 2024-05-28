@@ -23,7 +23,12 @@ export default component$(() => {
           en línea!
         </MUITypography>
         <div class={styles.servicesBriefcase}>
-          <MUITypography className="mt-6 mb-6" fontSize={"1.125rem"} variant="body1" sx={{display: { md: 'block', sm: 'none', xs: 'none'}}}>
+          <MUITypography
+            className="mt-6 mb-6"
+            fontSize={"1.125rem"}
+            variant="body1"
+            sx={{ display: { md: "block", sm: "none", xs: "none" } }}
+          >
             <br />
             <strong class={styles.hint}>🚀 NexaSoft SAS</strong> ofrece
             soluciones empresariales de software que te ayudarán a mejorar tu
@@ -81,17 +86,19 @@ export default component$(() => {
             normas y regulaciones aplicables. <br />
             <br />
           </MUITypography>
-          <MUITypography className="mt-6 mb-6" variant="body1" sx={{display: { md: 'none', sm: 'block'}}}>
+          <MUITypography
+            className="mt-6 mb-6"
+            variant="body1"
+            sx={{ display: { md: "none", sm: "block" } }}
+          >
             <br />
-            <strong class={styles.hint}>🚀 NexaSoft SAS.</strong> Transformamos tu negocio con tecnología 
-            de vanguardia. Modernizamos tu plataforma para un rendimiento +100%. Apps móviles, web, SEO, 
-            automatización y seguridad. ¡Impulsa tu éxito digital hoy!
+            <strong class={styles.hint}>🚀 NexaSoft SAS.</strong> Transformamos
+            tu negocio con tecnología de vanguardia. Modernizamos tu plataforma
+            para un rendimiento +100%. Apps móviles, web, SEO, automatización y
+            seguridad. ¡Impulsa tu éxito digital hoy!
             <br />
-            <MUIWebIcon />{" "}
-            <MUIDevicesIcon />{" "}
-            <MUILaptopIcon />{" "}
-            <MUIPhoneAndroidIcon />{" "}
-            <MUIPhoneIphoneIcon />{" "}
+            <MUIWebIcon /> <MUIDevicesIcon /> <MUILaptopIcon />{" "}
+            <MUIPhoneAndroidIcon /> <MUIPhoneIphoneIcon />{" "}
           </MUITypography>
         </div>
       </div>

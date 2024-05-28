@@ -9,8 +9,8 @@ export default component$(() => {
         <div role="presentation" class="ellipsis"></div>
         <div role="presentation" class="ellipsis ellipsis-purple"></div>
         <MUITypography variant="h2" align="center" className={styles.title}>
-          ¡Despierta el <span class="blueHighlight font-bold"> potencial </span> de tu
-          negocio! 
+          ¡Despierta el <span class="blueHighlight font-bold"> potencial </span>{" "}
+          de tu negocio!
         </MUITypography>
         <MUITypography className="py-6 text-xl" align="center" variant="body1">
           Contáctanos y descubre nuestras poderosas soluciones de software.

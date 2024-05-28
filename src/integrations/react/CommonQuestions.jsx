@@ -10,12 +10,11 @@ import {
 import { ExpandMore } from "@mui/icons-material";
 
 const CommonQuestions = () => {
-
   const [expanded, setExpanded] = useState(false);
-  
+
   const handleChange = (panel) => {
     // => (event, isExpanded)
-    console.log(panel)
+    console.log(panel);
     // console.log(panel, expanded, isExpanded);
     // setExpanded(isExpanded ? panel : false);
   };
@@ -28,19 +27,23 @@ const CommonQuestions = () => {
       <Accordion
         key={id}
         ref={ref}
-        style={style} 
+        style={style}
         {...props}
         className="p-6 pb-0"
         expanded={expanded !== `${panelNumber}`} // All true
         onChange={() => handleChange(`${panelNumber}`)}
-        sx={{backgroundColor: 'black', color: 'white'}}
+        sx={{ backgroundColor: "black", color: "white" }}
       >
         <AccordionSummary
           // expandIcon={<ExpandMore color="primary"/>}
           aria-controls={panel}
           id={panel}
         >
-          <Typography className="text-lg font-semibold" variant="h5" color={'#f4c043'}>
+          <Typography
+            className="text-lg font-semibold"
+            variant="h5"
+            color={"#f4c043"}
+          >
             {pregunta}
           </Typography>
         </AccordionSummary>
@@ -168,7 +171,7 @@ const CommonQuestions = () => {
       {questionsInfo.map((value, index) => {
         return (
           <div container={containerRef.current} key={index}>
-            <AccordionQuestion value={value} ref={ref}/>
+            <AccordionQuestion value={value} ref={ref} />
             {/* expanded={expanded} setExpanded={setExpanded()} */}
           </div>
         );

@@ -12,7 +12,11 @@ export default component$(() => {
         <a href="/customer-form/" class="text-2xl button font-bold">
           Solicitar información
         </a>
-        <a href="#products-section" class="text-2xl text-white button font-bold flex items-center" style={{color: 'var(--qwik-dark-text)'}}>
+        <a
+          href="#products-section"
+          class="text-2xl text-white button font-bold flex items-center"
+          style={{ color: "var(--qwik-dark-text)" }}
+        >
           Planes
         </a>
       </div>

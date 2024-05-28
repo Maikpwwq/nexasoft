@@ -2,6 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import styles from "./blogPost.module.css";
 import { webPosts } from "~/const/blog-posts";
 import { MUITypography } from "~/integrations/react/mui";
+import type { Posts } from "~/const/blog-posts"
 
 export interface PostProps {
   detail: string;
@@ -9,7 +10,7 @@ export interface PostProps {
 
 export default component$((props: PostProps) => {
   const postId = useSignal(props.detail);
-  const postData = webPosts.find((entry) => entry.id === postId.value);
+  const postData : Posts = webPosts.find((entry) => entry.id === postId.value);
   const { title, description, cycle, alt, image } = postData;
 
   return (
@@ -31,7 +32,7 @@ export default component$((props: PostProps) => {
                 height={210}
                 width={210}
               />
-              {cycle.map((element: any, index : any) => {
+              {cycle.map((element: any, index: any) => {
                 const { stage, body } = element;
                 return (
                   <li class={[styles.listItem, "my-2 items-start"]} key={index}>

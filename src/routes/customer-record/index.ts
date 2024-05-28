@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+ 
 // import { routeLoader$ } from "@builder.io/qwik-city";
 import { type RequestHandler } from "@builder.io/qwik-city";
 // import { component$ } from "@builder.io/qwik";

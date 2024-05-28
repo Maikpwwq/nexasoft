@@ -6,10 +6,9 @@ import tseslint from "typescript-eslint";
 // import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
 // import pluginQwikConfig from "eslint-plugin-qwik/index.js";
 
-
 export default [
   {
-    languageOptions: { globals: {...globals.browser, ...globals.node} },
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
     rules: {
       "qwik/no-react-props": "off",
       // "@typescript-eslint/no-explicit-any": "off",
@@ -28,7 +27,7 @@ export default [
       "@typescript-eslint/no-unused-vars": ["error"],
       "@typescript-eslint/consistent-type-imports": "warn",
       // "@typescript-eslint/no-unnecessary-condition": "warn",
-    }
+    },
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,

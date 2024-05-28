@@ -6,7 +6,7 @@ import styles from "./header.module.css";
 import { MUIMenuIcon, MUITypography } from "~/integrations/react/mui";
 import NexaSoftLogo from "~/assets/img/Logos Nexasoft/Blue (small).png";
 
-export default component$(() => {  
+export default component$(() => {
   const state = useStore({
     visible: false,
   });
@@ -60,7 +60,11 @@ export default component$(() => {
             return (
               <li key={index}>
                 <Link href={route}>
-                  <MUITypography className="" fontSize={"1.125rem"} variant="body1">
+                  <MUITypography
+                    className=""
+                    fontSize={"1.125rem"}
+                    variant="body1"
+                  >
                     {name}
                   </MUITypography>
                 </Link>
@@ -98,7 +102,11 @@ export default component$(() => {
               return (
                 <li key={index}>
                   <Link href={route}>
-                    <MUITypography className="" fontSize={"1rem"} variant="body2">
+                    <MUITypography
+                      className=""
+                      fontSize={"1rem"}
+                      variant="body2"
+                    >
                       {name}
                     </MUITypography>
                   </Link>

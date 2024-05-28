@@ -143,7 +143,7 @@ function srcset(image: string, size: number, rows = 1, cols = 1) {
 const ImageListItems = () => {
   return (
     <>
-      {itemData.length > 0 && (
+      {itemData.length > 0 &&
         itemData.map((item) => {
           const { id, title, img, cols, rows } = item;
           return (
@@ -155,8 +155,7 @@ const ImageListItems = () => {
               />
             </ImageListItem>
           );
-        })
-      )}
+        })}
     </>
   );
 };

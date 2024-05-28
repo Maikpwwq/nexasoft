@@ -11,7 +11,7 @@ import {
   CardContent,
   CardMedia,
   Stack,
-  Divider
+  Divider,
 } from "@mui/material";
 import {
   Devices,
@@ -47,7 +47,7 @@ import {
   Security,
   SmartButton,
   LocalPolice,
-  Menu
+  Menu,
 } from "@mui/icons-material";
 
 import ImageListItems from "~/integrations/react/imageListItems";
@@ -56,7 +56,6 @@ import BannerStepper from "~/integrations/react/BannerStepper";
 import TableReactApp from "~/integrations/react/TableReactApp";
 import CustomersTestimonial from "~/integrations/react/CustomersTestimonial";
 import CommonQuestions from "~/integrations/react/CommonQuestions";
-
 
 // import PushPinIcon from '@mui/icons-material/PushPin';
 // import LocationSearchingIcon from '@mui/icons-material/LocationSearching';

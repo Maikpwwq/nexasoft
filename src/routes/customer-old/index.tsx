@@ -1,19 +1,11 @@
 import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
 import { isServer } from "@builder.io/qwik/build";
 import { createClient } from "@supabase/supabase-js";
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from "uuid";
 import clsx from "clsx";
-import {
-  routeLoader$,
-  z,
-} from "@builder.io/qwik-city";
+import { routeLoader$, z } from "@builder.io/qwik-city";
 import type { InitialValues, SubmitHandler } from "@modular-forms/qwik"; //
-import {
-  useForm,
-  formAction$,
-  zodForm$,
-  reset,
-} from "@modular-forms/qwik";
+import { useForm, formAction$, zodForm$, reset } from "@modular-forms/qwik";
 import styles from "~/components/modular-forms/modularForm.module.css";
 import { MUITypography, MUIPaper } from "~/integrations/react/mui";
 import { TextInput } from "~/components/modular-forms/TextInput";
@@ -70,11 +62,21 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
       // Create a single supabase client for interacting with your database
       const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
       const { name, email, phone, issue, message } = values;
-      const recordID : string = uuidv4();
-      const hexNumber : number = 1; // parseInt(recordID.replace(/-/g, ''), 16);
+      const recordID: string = uuidv4();
+      const hexNumber: number = 1; // parseInt(recordID.replace(/-/g, ''), 16);
       const { data: customer_form, error } = await supabase
         .from("customer_form")
-        .insert([{ id: hexNumber, created_at: new Date(), name, email, phone, issue, message }])
+        .insert([
+          {
+            id: hexNumber,
+            created_at: new Date(),
+            name,
+            email,
+            phone,
+            issue,
+            message,
+          },
+        ])
         .select("*");
 
       console.log("supabase contact form", customer_form, error);
@@ -185,9 +187,7 @@ export default component$(() => {
             // preventdefault:submit
             // reloadDocument={true}
           >
-            <Field
-              name="name"
-            >
+            <Field name="name">
               {(field, props) => (
                 <TextInput
                   {...props}
@@ -200,9 +200,7 @@ export default component$(() => {
                 />
               )}
             </Field>
-            <Field
-              name="email"
-            >
+            <Field name="email">
               {(field, props) => (
                 <TextInput
                   {...props}
@@ -215,9 +213,7 @@ export default component$(() => {
                 />
               )}
             </Field>
-            <Field
-              name="phone"
-            >
+            <Field name="phone">
               {(field, props) => (
                 <TextInput
                   {...props}
@@ -230,9 +226,7 @@ export default component$(() => {
                 />
               )}
             </Field>
-            <Field
-              name="issue"
-            >
+            <Field name="issue">
               {(field, props) => (
                 <TextInput
                   {...props}
@@ -245,9 +239,7 @@ export default component$(() => {
                 />
               )}
             </Field>
-            <Field
-              name="message"
-            >
+            <Field name="message">
               {(field, props) => (
                 <TextInput
                   {...props}
@@ -260,10 +252,7 @@ export default component$(() => {
                 />
               )}
             </Field>
-            <button
-              type="submit"
-              class={clsx("mx-3 lg:mx-5", styles.btnStyle)}
-            >
+            <button type="submit" class={clsx("mx-3 lg:mx-5", styles.btnStyle)}>
               Enviar
             </button>
           </Form>

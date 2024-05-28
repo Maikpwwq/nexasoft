@@ -8,11 +8,18 @@ export default component$(() => {
     <secrets id="secrets-section" class={["pb-6", styles.secrets]}>
       <div class="container container-purple">
         <div class={["mt-1", styles.secretsList]}>
-          <MUITypography variant="h2" align="center" className={styles.title}> 
-            ¡Domina la <span class="highlight">Web</span> en un solo lugar! 
-            Descubre los Secretos para el <span class="highlight">Éxito en Línea</span>                        
+          <MUITypography variant="h2" align="center" className={styles.title}>
+            ¡Domina la <span class="highlight">Web</span> en un solo lugar!
+            Descubre los Secretos para el{" "}
+            <span class="highlight">Éxito en Línea</span>
           </MUITypography>
-          <MUITypography className="mt-6 mb-6 pt-5" fontSize={"1.125rem"} align="center" variant="body1" sx={{display: { md: 'block', sm: 'none', xs: 'none'}}}>
+          <MUITypography
+            className="mt-6 mb-6 pt-5"
+            fontSize={"1.125rem"}
+            align="center"
+            variant="body1"
+            sx={{ display: { md: "block", sm: "none", xs: "none" } }}
+          >
             ¡Desbloquea tu Éxito Digital con NexaSoft SAS y transforma tu
             presencia en línea.!
             <br />
@@ -32,10 +39,15 @@ export default component$(() => {
             e-commerce, integración de pasarelas de pagos online, y mejoramos tu
             posicionamiento SEO para optimizar el reconocimiento digital de tu
             marca en Internet. Con nosotros, accede a la automatización,
-            seguridad y cumplimiento que necesitas para el éxito en línea.            
+            seguridad y cumplimiento que necesitas para el éxito en línea.
           </MUITypography>
-          <MUITypography className="mt-6 pb-6 pt-5" variant="body1" sx={{display: { md: 'none', sm: 'block'}}}>
-            🚀 NexaSoft SAS: Transformamos tu negocio con Diseño Web de vanguardia, E-commerce, SEO y más. ¡Impulsa tu éxito digital hoy!
+          <MUITypography
+            className="mt-6 pb-6 pt-5"
+            variant="body1"
+            sx={{ display: { md: "none", sm: "block" } }}
+          >
+            🚀 NexaSoft SAS: Transformamos tu negocio con Diseño Web de
+            vanguardia, E-commerce, SEO y más. ¡Impulsa tu éxito digital hoy!
           </MUITypography>
         </div>
       </div>

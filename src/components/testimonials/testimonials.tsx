@@ -4,10 +4,7 @@ import styles from "./testimonials.module.css";
 
 export default component$(() => {
   return (
-    <testimonials
-      id="testimonials-section"
-      class={[styles.testimonials]}
-    >
+    <testimonials id="testimonials-section" class={[styles.testimonials]}>
       <CustomersTestimonials />
     </testimonials>
   );

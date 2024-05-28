@@ -35,19 +35,19 @@ export default component$(() => {
   return (
     <support id="support-section" class={[styles.support]}>
       <div class="container">
-          <ul class={[styles.supportList]}>
+        <ul class={[styles.supportList]}>
           {/* <MUITypography variant="h4" align="center" className={styles.title}>
             Apoya
           </MUITypography> */}
-            {supportLogos.map((support, index) => {
-              const { icon, name, width } = support;
-              return (
-                <li key={index} class={[styles.listItem, "mx-3"]}>
-                  <img src={icon} alt={name} width={width} height={60} />
-                </li>
-              );
-            })}
-          </ul>
+          {supportLogos.map((support, index) => {
+            const { icon, name, width } = support;
+            return (
+              <li key={index} class={[styles.listItem, "mx-3"]}>
+                <img src={icon} alt={name} width={width} height={60} />
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </support>
   );

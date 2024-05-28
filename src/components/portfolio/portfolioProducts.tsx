@@ -37,8 +37,9 @@ export default component$(() => {
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
       <MUITypography variant="h2" align="center" className={styles.title}>
-        ¡Simplificamos los <span class="blueHighlight font-bold">precios</span> para 
-        potenciar la efectividad de tu <span class="blueHighlight font-bold">trabajo</span>!
+        ¡Simplificamos los <span class="blueHighlight font-bold">precios</span>{" "}
+        para potenciar la efectividad de tu{" "}
+        <span class="blueHighlight font-bold">trabajo</span>!
       </MUITypography>
       <p class="text-xl px-4 mt-4 text-center">
         Tu satisfacción está 100% asegurada con nuestra garantía de devolución
@@ -75,7 +76,9 @@ export default component$(() => {
                     >
                       Escoger plan
                     </a>
-                    <p class="card-text mt-3 font-light text-sm text-center">{scope}</p>
+                    <p class="card-text mt-3 font-light text-sm text-center">
+                      {scope}
+                    </p>
                     <ul class="py-3">
                       {benefit.length > 0 &&
                         benefit.map((beneficio, index) => {

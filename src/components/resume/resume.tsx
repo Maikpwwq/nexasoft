@@ -13,45 +13,44 @@ import {
 } from "~/integrations/react/mui";
 
 export default component$(() => {
-
   const webServices = [
     // "#products-section"
     {
-      name: 'Diseño Web a medida',
-      icon: <MUIDesignServicesIcon fontSize="large" className="me-3"/>,
+      name: "Diseño Web a medida",
+      icon: <MUIDesignServicesIcon fontSize="large" className="me-3" />,
       route: "/web-design/",
     },
     {
-      name: 'Sitio Web Informativo',
+      name: "Sitio Web Informativo",
       icon: <MUILaptopMacIcon fontSize="large" className="me-3" />,
       route: "/web-sites/",
     },
     {
-      name: 'Vitrinas virtuales',
+      name: "Vitrinas virtuales",
       icon: <MUIPhonelinkIcon fontSize="large" className="me-3" />,
       route: "/web-stores/",
     },
     {
-      name: 'Tiendas Online de Comercio Electrónico',
+      name: "Tiendas Online de Comercio Electrónico",
       icon: <MUILocalGroceryStoreIcon fontSize="large" className="me-3" />,
       route: "/e-commerces/",
     },
     {
-      name: 'Paginas Web Corporativas',
+      name: "Paginas Web Corporativas",
       icon: <MUICastForEducationIcon fontSize="large" className="me-3" />,
       route: "/web-corporate/",
     },
     {
-      name: 'Market Places',
+      name: "Market Places",
       icon: <MUIStoreIcon fontSize="large" className="me-3" />,
       route: "/marketplaces/",
     },
     {
-      name: 'Aplicativos',
+      name: "Aplicativos",
       icon: <MUIAppShortcutIcon fontSize="large" className="me-3" />,
       route: "/web-apps/",
-    }
-  ]
+    },
+  ];
 
   return (
     <features id="resume-section" class={[styles.resume]}>
@@ -62,15 +61,15 @@ export default component$(() => {
             Colombia
           </MUITypography>
           <ul class="mt-6 mb-6">
-            { webServices.map((service, index)=>{
-              const {name, icon, route} = service
+            {webServices.map((service, index) => {
+              const { name, icon, route } = service;
               return (
                 <li key={index} class={[styles.listItem, "my-2"]}>
-                  <a href={route} > 
-                  {icon} {name}
+                  <a href={route}>
+                    {icon} {name}
                   </a>
                 </li>
-              )          
+              );
             })}
           </ul>
         </div>
