@@ -15,20 +15,20 @@ export default component$((props: PostProps) => {
 
   return (
     <>
-      <blogpost id="blog-post-section" className={[styles.blogposts]}>
-        <div className="container">
+      <blogpost id="blog-post-section" class={[styles.blogposts]}>
+        <div class="container">
           <MUITypography variant="h2" align="left" className={styles.title}>
-            <span className="font-bold highlight">{title}</span>
+            <span class="font-bold highlight">{title}</span>
           </MUITypography>
           <MUITypography variant="h5" align="left">
             {description}
           </MUITypography>
-          <div className={["m-0 w-full", styles.blogpostsList]}>
-            <ul className="mt-6 mb-6 p-0">
+          <div class={["m-0 w-full", styles.blogpostsList]}>
+            <ul class="mt-6 mb-6 p-0">
               <img
                 src={image}
                 alt={alt}
-                className="w-3/4 h-auto mx-auto"
+                class="w-3/4 h-auto mx-auto"
                 height={210}
                 width={210}
               />
@@ -36,7 +36,7 @@ export default component$((props: PostProps) => {
               cycle.map((element: any, index: any) => {
                 const { stage, body } = element;
                 return (
-                  <li className={[styles.listItem, "my-2 items-start"]} key={index}>
+                  <li class={[styles.listItem, "my-2 items-start"]} key={index}>
                     <MUITypography
                       variant="h5"
                       align="left"
@@ -58,7 +58,7 @@ export default component$((props: PostProps) => {
           </div>
           <a
             href="/blog/"
-            className="text-2xl w-fit text-white button font-bold flex items-center"
+            class="text-2xl w-fit text-white button font-bold flex items-center"
             style={{
               color: "var(--qwik-dark-text)",
               background: "var(--qwik-fusha)",
