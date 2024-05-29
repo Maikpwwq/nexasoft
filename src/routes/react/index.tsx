@@ -13,6 +13,7 @@ export default component$(() => {
       <select
         value={variant.value}
         onChange$={(ev) => {
+          // eslint-disable-next-line  @typescript-eslint/no-explicit-any
           variant.value = (ev.target as any).value;
         }}
       >

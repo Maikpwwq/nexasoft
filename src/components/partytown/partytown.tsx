@@ -16,6 +16,7 @@ export interface PartytownProps extends PartytownConfig {}
  * @public
  * You can pass setting with props
  */
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 export const QwikPartytown = (props: PartytownProps): any => {
   return <script dangerouslySetInnerHTML={partytownSnippet(props)} />;
 };

@@ -21,13 +21,17 @@ export default component$(() => {
         };
 
         function loadConfetti() {
+          // eslint-disable-next-line  @typescript-eslint/no-explicit-any
           return new Promise<(opts: any) => void>((resolve, reject) => {
+            // eslint-disable-next-line  @typescript-eslint/no-explicit-any
             if ((globalThis as any).confetti) {
+              // eslint-disable-next-line  @typescript-eslint/no-explicit-any
               return resolve((globalThis as any).confetti as any);
             }
             const script = document.createElement("script");
             script.src =
               "https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js";
+            // eslint-disable-next-line  @typescript-eslint/no-explicit-any
             script.onload = () => resolve((globalThis as any).confetti as any);
             script.onerror = reject;
             document.head.appendChild(script);

@@ -11,6 +11,7 @@ import {
   MUISecurityIcon,
 } from "~/integrations/react/mui";
 
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 const furtherItems: Array<any> = [
   {
     icon: <MUISavedSearchIcon fontSize="large" className="me-3" />,

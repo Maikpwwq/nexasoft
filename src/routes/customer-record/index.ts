@@ -57,6 +57,7 @@ export const onPost: RequestHandler = async (requestEvent) => {
       //   new URL("/", url).toString()
       // );
     }
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   } catch (err: any) {
     console.error("[Error when trying to create new customer record]", err);
     // return '{}'

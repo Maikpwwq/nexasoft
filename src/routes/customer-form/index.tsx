@@ -226,6 +226,7 @@ export default component$(() => {
   });
 
   const handleSubmit: QRL<SubmitHandler<LoginForm>> = $(
+    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
     async (values: any, event: any) => {
       // Runs on CLIENT
       console.log("handleSubmit", values, event);
