@@ -15,6 +15,21 @@ export interface Cycle {
   body: string;
 }
 
+export const voidPost: Posts = {
+  id: "",
+  title: "",
+  description: "",
+  cycle: [
+    {
+      stage: "",
+      body: "",
+    },
+  ],
+  image: "",
+  alt: "",
+  route: "/",
+};
+
 export const webPosts: [Posts] = [
   {
     id: "SDLC",
