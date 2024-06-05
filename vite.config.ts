@@ -15,6 +15,12 @@ export default defineConfig(() => {
       qwikReact(),
       // partytownVite({ dest: join(__dirname, "dist", "~partytown") }),
     ],
+    // server:{
+    //   https: {
+    //     key: readFileSync('ssl/tls.key'),
+    //     cert: readFileSync('ssl/tls.crt'),
+    //   },
+    // },
     preview: {
       headers: {
         "Cache-Control": "public, max-age=600",

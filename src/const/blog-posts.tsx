@@ -69,6 +69,6 @@ export const webPosts: [Posts] = [
     ],
     image: SDLC,
     alt: "Grafico de las siete etapas del ciclo de desarrollo de software",
-    route: "/blog/SDLC",
+    route: "/blog/?=SDLC",
   },
 ];
