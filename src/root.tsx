@@ -104,6 +104,7 @@ export default component$(() => {
         {/* <!-- End Meta Pixel Code --> */}
 
         <link rel="manifest" href="/manifest.json" />
+        <base href="/" />
         <RouterHead />
       </head>
       <body lang="en">

@@ -396,6 +396,10 @@ export default component$(() => {
             servicios.
           </MUITypography>
           <Form
+            data-netlify={true}
+            name="customer-form"
+            // data-netlify-recaptcha="true"
+            // netlify-honeypot="bot-field"
             // action={action}
             class={styles.formFlex}
             onSubmit$={handleSubmit}
@@ -488,6 +492,7 @@ export default component$(() => {
                 />
               )}
             </Field>
+            {/* <div data-netlify-recaptcha="true"></div> */}
             <br class="mb-4" />
             <button
               type="submit"
