@@ -30,6 +30,8 @@ lerna-debug.log*
 
 # Editor
 .vscode/*
+!.vscode/launch.json
+!.vscode/*.code-snippets
 !.vscode/extensions.json
 .idea
 .DS_Store

@@ -1,5 +1,5 @@
 /*
- * WHAT IS THIS FILE?
+ * WHAT IS THIS FILE? 
  *
  * It's the bundle entry point for `npm run preview`.
  * That is, serving your app built in production mode.
@@ -12,6 +12,7 @@
  */
 import { createQwikCity } from "@builder.io/qwik-city/middleware/node";
 import qwikCityPlan from "@qwik-city-plan";
+// make sure qwikCityPlan is imported before entry
 import render from "./entry.ssr";
 
 /**

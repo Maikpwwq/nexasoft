@@ -1,5 +1,5 @@
 // @ts-check
-
+ 
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
@@ -28,7 +28,30 @@ export default [
       "@typescript-eslint/consistent-type-imports": "warn",
       // "@typescript-eslint/no-unnecessary-condition": "warn",
     },
+    root: true,
+    // extends: [pluginQwikConfig],
+    extends: [
+      "eslint:recommended",
+      // "plugin:@typescript-eslint/recommended",  
+      "plugin:qwik/recommended",
+    ],
+    env: {
+      browser: true,
+      es2021: true,
+      node: true,
+    },
+    parser: "@typescript-eslint/parser",
+    parserOptions: {
+      tsconfigRootDir: __dirname,
+      project: ["./tsconfig.json"],
+      ecmaVersion: 2021,
+      sourceType: "module",
+      ecmaFeatures: {
+        jsx: true,
+      },
+    },
   },
+  // pluginQwikConfig.configs.recommended,
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   // pluginReactConfig,

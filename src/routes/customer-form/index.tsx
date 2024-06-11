@@ -38,7 +38,7 @@ const DB_NAME = `${import.meta.env.VITE_DB_NAME}`;
 const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`;
 const MONGO_HOST = `${import.meta.env.VITE_MONGO_HOST}`;
 
-const SUPABASE_URL = "/signed" ;// `${import.meta.env.VITE_SUPABASE_URL}`;
+const SUPABASE_URL = `${import.meta.env.VITE_SUPABASE_URL}`; // "/signed" ;
 const SUPABASE_KEY = `${import.meta.env.VITE_SUPABASE_KEY}`;
 
 const messageSchema = new mongoose.Schema({

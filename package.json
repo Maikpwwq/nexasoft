@@ -41,11 +41,14 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@eslint/js": "^9.4.0",
+    "@modular-forms/qwik": "^0.25.0",
     "@mui/material": "^5.15.19",
     "@mui/x-data-grid": "^7.6.2",
     "@types/eslint": "^8.56.10",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.14.2",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "@typescript-eslint/parser": "^7.7.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/react-swipeable-views": "^0.13.5",
@@ -71,7 +74,6 @@
     "vite-tsconfig-paths": "^4.3.2"
   },
   "dependencies": {
-    "@modular-forms/qwik": "^0.25.0",
     "@mui/icons-material": "^5.15.19",
     "@supabase/supabase-js": "^2.43.4",
     "clsx": "^2.1.1",
