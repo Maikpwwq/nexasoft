@@ -13,10 +13,7 @@ import ImagesList from "~/components/images-list/imagesList";
 // import Starter from '~/components/starter/next-steps/next-steps';
 import Testimonials from "~/components/testimonials/testimonials";
 
-import {
-  MUICard,
-  MUICardContent,
-} from "~/integrations/react/mui";
+import { MUICard, MUICardContent } from "~/integrations/react/mui";
 import Resume from "~/components/resume/resume";
 import Further from "~/components/further/further";
 import Advantages from "~/components/advantages/advantages";

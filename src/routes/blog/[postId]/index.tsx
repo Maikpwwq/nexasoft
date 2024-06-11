@@ -3,8 +3,8 @@ import { useLocation } from "@builder.io/qwik-city";
 import Post from "~/components/blog/post";
 
 export default component$(() => {
-  const post = useLocation();
-  const detail  = post.params.postId;
+  const { params } = useLocation();
+  const detail = params.postId;
   return (
     <div
       class="container container-center flex justify-center"

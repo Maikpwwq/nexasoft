@@ -11,3 +11,4 @@ to = "https://askjyjhjnwtnqwcupwxy.supabase.co"
 status = 200
 force = true
 headers = {X-From = "Netlify"}
+

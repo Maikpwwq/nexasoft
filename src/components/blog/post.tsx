@@ -2,7 +2,7 @@ import { component$, useSignal } from "@builder.io/qwik";
 import styles from "./blogPost.module.css";
 import { webPosts, voidPost } from "~/const/blog-posts";
 import { MUITypography } from "~/integrations/react/mui";
-import type { Posts } from "~/const/blog-posts"
+import type { Posts } from "~/const/blog-posts";
 
 export interface PostProps {
   detail: string;
@@ -10,7 +10,8 @@ export interface PostProps {
 
 export default component$((props: PostProps) => {
   const postId = useSignal(props.detail);
-  const postData : Posts = webPosts.find((entry) => entry.id === postId.value) || voidPost;
+  const postData: Posts =
+    webPosts.find((entry) => entry.id === postId.value) || voidPost;
   const { title, description, cycle, alt, image } = postData;
 
   return (
@@ -32,28 +33,33 @@ export default component$((props: PostProps) => {
                 height={210}
                 width={210}
               />
-              {// eslint-disable-next-line  @typescript-eslint/no-explicit-any  
-              cycle.map((element: any, index: any) => {
-                const { stage, body } = element;
-                return (
-                  <li class={[styles.listItem, "my-2 items-start"]} key={index}>
-                    <MUITypography
-                      variant="h5"
-                      align="left"
-                      className="pt-6 mb-2 text-black font-semibold"
+              {
+                // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+                cycle.map((element: any, index: any) => {
+                  const { stage, body } = element;
+                  return (
+                    <li
+                      class={[styles.listItem, "my-2 items-start"]}
+                      key={index}
                     >
-                      {stage}
-                    </MUITypography>
-                    <MUITypography
-                      variant="body1"
-                      align="left"
-                      className="mb-2"
-                    >
-                      {body}
-                    </MUITypography>
-                  </li>
-                );
-              })}
+                      <MUITypography
+                        variant="h5"
+                        align="left"
+                        className="pt-6 mb-2 text-black font-semibold"
+                      >
+                        {stage}
+                      </MUITypography>
+                      <MUITypography
+                        variant="body1"
+                        align="left"
+                        className="mb-2"
+                      >
+                        {body}
+                      </MUITypography>
+                    </li>
+                  );
+                })
+              }
             </ul>
           </div>
           <a

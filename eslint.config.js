@@ -1,5 +1,5 @@
 // @ts-check
- 
+
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
@@ -32,7 +32,7 @@ export default [
     // extends: [pluginQwikConfig],
     extends: [
       "eslint:recommended",
-      // "plugin:@typescript-eslint/recommended",  
+      "plugin:@typescript-eslint/recommended",
       "plugin:qwik/recommended",
     ],
     env: {
@@ -51,7 +51,6 @@ export default [
       },
     },
   },
-  // pluginQwikConfig.configs.recommended,
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   // pluginReactConfig,
