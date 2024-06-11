@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@modular-forms/qwik':
-        specifier: ^0.24.0
-        version: 0.24.0(@builder.io/qwik-city@1.5.6(@types/node@20.14.2)(rollup@4.18.0))(@builder.io/qwik@1.5.6(@types/node@20.14.2)(undici@6.18.2))
+        specifier: ^0.25.0
+        version: 0.25.0(@builder.io/qwik-city@1.5.6(@types/node@20.14.2)(rollup@4.18.0))(@builder.io/qwik@1.5.6(@types/node@20.14.2)(undici@6.18.2))
       '@mui/icons-material':
         specifier: ^5.15.19
         version: 5.15.19(@mui/material@5.15.19(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@types/react@18.3.3)(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.3)(react@18.3.1)
@@ -33,8 +33,8 @@ importers:
         specifier: ^0.33.4
         version: 0.33.4
       uuid:
-        specifier: ^9.0.1
-        version: 9.0.1
+        specifier: ^10.0.0
+        version: 10.0.0
     devDependencies:
       '@builder.io/partytown':
         specifier: ^0.10.2
@@ -623,8 +623,8 @@ packages:
   '@mdx-js/mdx@3.0.1':
     resolution: {integrity: sha512-eIQ4QTrOWyL3LWEe/bu6Taqzq2HQvHcyTMaOrI95P2/LmJE7AsfPfgJGuFLPVqBUE1BC1rik3VIhU+s9u72arA==}
 
-  '@modular-forms/qwik@0.24.0':
-    resolution: {integrity: sha512-mF+cOw2lmiEjCf7odYW65d1gxp5ozqAbDfX5Z6yAt0wE7wsRHBZgi0YoXAh63vRCEcR5UMG/9kdTXj3KCjxhug==}
+  '@modular-forms/qwik@0.25.0':
+    resolution: {integrity: sha512-HtAnJp00w3D9guxv8UoNUifrLNbqwSSNFJ1aEaRz/CHUhrjwIfwsbsdw4gsPBgM638AAN85QFO6CecX1Ju9V2g==}
     peerDependencies:
       '@builder.io/qwik': ^1.4.0
       '@builder.io/qwik-city': ^1.4.0
@@ -2682,9 +2682,12 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  uuid@9.0.1:
-    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+  uuid@10.0.0:
+    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
     hasBin: true
+
+  valibot@0.31.1:
+    resolution: {integrity: sha512-2YYIhPrnVSz/gfT2/iXVTrSj92HwchCt9Cga/6hX4B26iCz9zkIsGTS0HjDYTZfTi1Un0X6aRvhBi1cfqs/i0Q==}
 
   vfile-message@4.0.2:
     resolution: {integrity: sha512-jRDZ1IMLttGj41KcZvlrYAaI3CfqpLpfpf+Mfig13viT6NKvRzWZ+lXz0Y5D60w6uJIBAOGq9mSHf0gktF0duw==}
@@ -3292,11 +3295,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@modular-forms/qwik@0.24.0(@builder.io/qwik-city@1.5.6(@types/node@20.14.2)(rollup@4.18.0))(@builder.io/qwik@1.5.6(@types/node@20.14.2)(undici@6.18.2))':
+  '@modular-forms/qwik@0.25.0(@builder.io/qwik-city@1.5.6(@types/node@20.14.2)(rollup@4.18.0))(@builder.io/qwik@1.5.6(@types/node@20.14.2)(undici@6.18.2))':
     dependencies:
       '@builder.io/qwik': 1.5.6(@types/node@20.14.2)(undici@6.18.2)
       '@builder.io/qwik-city': 1.5.6(@types/node@20.14.2)(rollup@4.18.0)
       decode-formdata: 0.7.5
+      valibot: 0.31.1
 
   '@mongodb-js/saslprep@1.1.7':
     dependencies:
@@ -5836,7 +5840,9 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  uuid@9.0.1: {}
+  uuid@10.0.0: {}
+
+  valibot@0.31.1: {}
 
   vfile-message@4.0.2:
     dependencies:
