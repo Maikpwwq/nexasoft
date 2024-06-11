@@ -5,3 +5,9 @@ command = "pnpm build"
 [functions]
 node_bundler = "esbuild"
 
+[[redirects]]
+from = "/signed"
+to = "https://askjyjhjnwtnqwcupwxy.supabase.co"
+status = 200
+force = true
+headers = {X-From = "Netlify"}
