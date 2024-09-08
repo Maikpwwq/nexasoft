@@ -405,7 +405,6 @@ export default component$(() => {
             onSubmit$={handleSubmit}
             // preventdefault:submit
             // reloadDocument={true}
-            netlify
           >
             {/* class={styles.labelStyle} */}
             <Field
