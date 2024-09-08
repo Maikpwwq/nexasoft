@@ -5,6 +5,7 @@ import {
   ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
+import { isDev } from "@builder.io/qwik/build";
 // import { QwikPartytown } from "./components/partytown/partytown";
 
 import "./global.css";
@@ -60,6 +61,13 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charset="utf-8" />
+        {!isDev && (
+          <link
+            rel="manifest"
+            href={`${import.meta.env.BASE_URL}manifest.json`}
+          />
+        )}
+        <base href="/" />
         <meta
           name="facebook-domain-verification"
           content="8r9sxxnm9fxblri4lae8azis4v45id"
@@ -102,14 +110,12 @@ export default component$(() => {
           />
         </noscript> */}
         {/* <!-- End Meta Pixel Code --> */}
-
-        <link rel="manifest" href="/manifest.json" />
-        <base href="/" />
+        
         <RouterHead />
       </head>
       <body lang="en">
         <RouterOutlet />
-        <ServiceWorkerRegister />
+        {!isDev && <ServiceWorkerRegister />}
       </body>
     </QwikCityProvider>
   );

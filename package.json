@@ -1,5 +1,5 @@
 {
-  "name": "nexasoft-progresive-web-app",
+  "name": "nexasoft-progresive-web-app", 
   "description": "NexaSoft professional solutions, el futuro en soluciones de software.",
   "keywords": [
     "software development",
@@ -12,9 +12,14 @@
   "author": "Nexasoft SAS",
   "license": "MIT",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
   },
-  "packageManager": "pnpm@9.3.0",
+  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
+  "trustedDependencies": [
+    "sharp"
+  ],
+  "trustedDependencies-annotation": "Needed for bun to allow running install scripts",
+  "packageManager": "pnpm@9.9.0",
   "private": true,
   "scripts": {
     "build": "qwik build",
@@ -86,5 +91,9 @@
     "mongoose": "^8.6.1",
     "rxjs": "^7.8.1",
     "sharp": "^0.33.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
   }
 }
