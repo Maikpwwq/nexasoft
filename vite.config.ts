@@ -73,7 +73,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
       rollupOptions: {
         onwarn(warning, warn) {
           if (
-            warning.code === "MODULE_LEVEL_DIRECTIVE" &&
+            warning.code === "MODULE_LEVEL_DIRECTIVES" ||
             warning.message.includes(`"use client"`)
           ) {
             return;
