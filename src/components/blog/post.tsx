@@ -1,3 +1,4 @@
+'use client'
 import { component$, useSignal } from "@builder.io/qwik";
 import styles from "./blogPost.module.css";
 import { webPosts, voidPost } from "~/const/blog-posts";
