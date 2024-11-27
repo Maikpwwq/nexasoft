@@ -4,13 +4,11 @@
 /lib-types
 /server
 
-# Environment Variables
+# Development
+node_modules
 .env
 .env.development
 .env.production
-
-# Development
-node_modules
 *.local
 
 # Cache
