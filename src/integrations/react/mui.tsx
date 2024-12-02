@@ -165,7 +165,7 @@ export const CustomersQuestions = qwikify$(() => {
       <CommonQuestions />
     </>
   );
-});
+}, { eagerness: 'hover' });
 
 export const FormularioContacto = qwikify$(() => {
   return (
@@ -173,7 +173,7 @@ export const FormularioContacto = qwikify$(() => {
       <FormContacto />
     </>
   );
-});
+}, { eagerness: 'hover' });
 
 export const BannerImgStepper = qwikify$(() => {
   return (

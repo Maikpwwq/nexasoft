@@ -27,6 +27,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
     optimizeDeps: {
       // Put problematic deps that break bundling here, mostly those with binaries.
       // For example ['better-sqlite3'] if you use that in server functions.
+      include: ['@mui/icons-material'],
       exclude: [],
     },
 
@@ -46,6 +47,9 @@ export default defineConfig(({ command, mode }): UserConfig => {
     //         external: Object.keys(dependencies),
     //       }
     //     : undefined,
+    ssr: {
+      noExternal: ['@mui/icons-material'],
+    },
 
     server: {
       headers: {

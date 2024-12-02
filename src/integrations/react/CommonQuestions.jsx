@@ -7,7 +7,7 @@ import {
   AccordionDetails,
 } from "@mui/material";
 
-import { ExpandMore } from "@mui/icons-material";
+// import { ExpandMore } from "@mui/icons-material";
 
 const CommonQuestions = () => {
   const [expanded, setExpanded] = useState(false);
