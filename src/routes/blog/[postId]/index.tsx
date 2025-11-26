@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import Post from "~/components/blog/post";

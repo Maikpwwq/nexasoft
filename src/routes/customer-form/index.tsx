@@ -31,73 +31,73 @@ import { TextInput } from "~/components/modular-forms/TextInput";
 
 // $(async () => {});
 
-import mongoose from "mongoose";
-const DB_USER = `${import.meta.env.VITE_DB_USER}`;
-const DB_PASSWORD2 = `${import.meta.env.VITE_DB_PASSWORD2}`;
-const DB_NAME = `${import.meta.env.VITE_DB_NAME}`;
-const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`;
-const MONGO_HOST = `${import.meta.env.VITE_MONGO_HOST}`;
+// import mongoose from "mongoose";
+// const DB_USER = `${import.meta.env.VITE_DB_USER}`;
+// const DB_PASSWORD2 = `${import.meta.env.VITE_DB_PASSWORD2}`;
+// const DB_NAME = `${import.meta.env.VITE_DB_NAME}`;
+// const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`;
+// const MONGO_HOST = `${import.meta.env.VITE_MONGO_HOST}`;
 
 const SUPABASE_URL = `${import.meta.env.VITE_SUPABASE_URL}`; // "/signed" ;
 const SUPABASE_KEY = `${import.meta.env.VITE_SUPABASE_KEY}`;
 
-const messageSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  phone: String,
-  issue: String,
-  message: String,
-});
+// const messageSchema = new mongoose.Schema({
+//   name: String,
+//   email: String,
+//   phone: String,
+//   issue: String,
+//   message: String,
+// });
 
-const options = {
-  dbName: DB_NAME,
-  user: DB_USER,
-  pass: DB_PASSWORD2,
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  // useCreateIndex: true,
-};
+// const options = {
+//   dbName: DB_NAME,
+//   user: DB_USER,
+//   pass: DB_PASSWORD2,
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   // useCreateIndex: true,
+// };
 
 // export const dbPromise = $(async () => {
 //   await mongoose.connect(MONGO_HOST, options).catch(error => handleError(error));
 // });
 
-export const connectionDB = $(async (contactData: LoginForm) => {
-  console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
-  try {
-    // connection is hanging use to see if you haven't opened a connection properly
-    // mongoose.set('bufferCommands', false);
-    // await userModel.createCollection();
-    await mongoose.connect(MONGO_HOST, options);
-    // .catch((error) => {
-    //   console.log("mongoose connection error", error);
-    // });
-    // console.log('mongoose.connection', mongoose.connection.mongo.DB)
-    const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
+// export const connectionDB = $(async (contactData: LoginForm) => {
+//   console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
+//   try {
+//     // connection is hanging use to see if you haven't opened a connection properly
+//     // mongoose.set('bufferCommands', false);
+//     // await userModel.createCollection();
+//     await mongoose.connect(MONGO_HOST, options);
+//     // .catch((error) => {
+//     //   console.log("mongoose connection error", error);
+//     // });
+//     // console.log('mongoose.connection', mongoose.connection.mongo.DB)
+//     const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
 
-    return await userModel
-      .create(contactData)
-      .then((data) => {
-        const _id = data._id.toString();
-        // const responseObject = data.toJSON();
-        // const _id = responseObject._id;
-        // if (typeof _id === "string") {
-        // const customerId = JSON.stringify(_id);
-        console.log("create userModel", _id, typeof _id);
-        return _id;
-        // }
-      })
-      .catch((err) => {
-        console.error("err", err);
-        // return `${err}`;
-        throw new Error("Error mientras se retorno _id de registro.");
-      });
-  } catch (error) {
-    // return `${error}`;
-    console.error("error", error);
-    throw new Error("Error mientras se accedio a crear un nuevo registro.");
-  }
-});
+//     return await userModel
+//       .create(contactData)
+//       .then((data) => {
+//         const _id = data._id.toString();
+//         // const responseObject = data.toJSON();
+//         // const _id = responseObject._id;
+//         // if (typeof _id === "string") {
+//         // const customerId = JSON.stringify(_id);
+//         console.log("create userModel", _id, typeof _id);
+//         return _id;
+//         // }
+//       })
+//       .catch((err) => {
+//         console.error("err", err);
+//         // return `${err}`;
+//         throw new Error("Error mientras se retorno _id de registro.");
+//       });
+//   } catch (error) {
+//     // return `${error}`;
+//     console.error("error", error);
+//     throw new Error("Error mientras se accedio a crear un nuevo registro.");
+//   }
+// });
 
 type LoginForm = {
   name: string;
@@ -141,43 +141,34 @@ type ResponseData = {
 };
 
 export const useFormAction = formAction$<LoginForm, ResponseData>(
-  async (values) => {
+  async (values, event) => {
     // Runs on SERVER
     console.log("useFormAction", values);
     try {
-      // Mongo Atlas Example
-      // const resume : string  = await connectionDB(values);
-      // await mongoose.connect(MONGO_HOST, options).catch((error) => {
-      //   console.log("mongoose connection error", error);
-      //   throw new Error("Error mientras se accedio a crear un nuevo registro.");
-      // });
-      // console.log("mongoose.connection", mongoose.connection.mongo.DB);
-      // const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
-      // const res =
-      // await userModel.create(values);
-      // const _id = res._id;
-      // const customerId = _id.toString(); // JSON.stringify(_id);
-      // console.log("Promise message", res, customerId);
-      // console.log("Promise message", typeof resume, resume);
-      // if (typeof resume === "string") {
-      // const record = JSON.parse(resume);
-      //, record
-      // setResponse(loginForm, response); // , options
-      // }
+      const SUPABASE_URL = event.env.get("VITE_SUPABASE_URL");
+      const SUPABASE_KEY = event.env.get("VITE_SUPABASE_KEY");
+
+      if (!SUPABASE_URL || !SUPABASE_KEY) {
+        console.error("Missing Supabase environment variables");
+        throw new Error("Configuration error");
+      }
 
       // Create a single supabase client for interacting with your database
       const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
       const { name, email, phone, issue, message } = values;
-      const recordID: string = uuidv4();
-      // const hexNumber: string = '0x' + (recordID.replace(/-/g, ''));
-      // const decimalNumber : bigint = BigInt(hexNumber)
-      const decimalNumber: number = parseInt(recordID.replace(/-/g, ""));
-      console.log(decimalNumber, recordID);
+
+      // Generate a unique numeric ID (Safe Integer)
+      // Format: Timestamp (13 digits) + Random (3 digits)
+      const numericId = Date.now() * 1000 + Math.floor(Math.random() * 1000);
+      const recordID = numericId.toString();
+
+      console.log("Inserting record with ID:", recordID);
+
       const { data: customer_form, error } = await supabase
         .from("customer_form")
         .insert([
           {
-            id: decimalNumber.toString(),
+            id: recordID,
             created_at: new Date(),
             name,
             email,
@@ -188,25 +179,23 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
         ])
         .select("*");
 
-      console.log("supabase contact form", customer_form, error);
-      if (customer_form) {
-        console.log("Success supabase contact form", customer_form[0].id);
+      if (error) {
+        console.error("Supabase Error:", error);
+        throw new Error(error.message);
       }
 
-      if (error) {
-        console.log("Error supabase contact form", error);
-      }
+      console.log("Success supabase contact form", customer_form?.[0]?.id);
 
       return {
         status: "success",
-        message: `Gracias, su mensaje ha sido recibido. ${decimalNumber}`,
-        data: { customerId: decimalNumber.toString() },
+        message: `Gracias, su mensaje ha sido recibido.`,
+        data: { customerId: recordID },
       };
     } catch (error) {
-      console.error(error);
+      console.error("Form Action Error:", error);
       return {
         status: "error",
-        message: `No se ha podido enviar su mensaje. ${error}`,
+        message: `No se ha podido enviar su mensaje.`,
         data: { customerId: "" },
       };
     }
@@ -373,10 +362,10 @@ export default component$(() => {
   return (
     <div
       class="container container-center flex justify-center"
-      // style={{
-      //   paddingLeft: {sm: "0 !important" },
-      //   paddingRight: {sm: "0 !important" },
-      // }}
+    // style={{
+    //   paddingLeft: {sm: "0 !important" },
+    //   paddingRight: {sm: "0 !important" },
+    // }}
     >
       <MUIPaper className={styles.cardContactForm} elevation={16}>
         <div class={styles.sheetFormStyle}>
@@ -403,14 +392,14 @@ export default component$(() => {
             // action={action}
             class={styles.formFlex}
             onSubmit$={handleSubmit}
-            // preventdefault:submit
-            // reloadDocument={true}
+          // preventdefault:submit
+          // reloadDocument={true}
           >
             {/* class={styles.labelStyle} */}
             <Field
               // id="form-name"
               name="name"
-              // class={styles.inputStyle}
+            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -427,7 +416,7 @@ export default component$(() => {
             <Field
               // id="form-email"
               name="email"
-              // class={styles.inputStyle}
+            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -444,7 +433,7 @@ export default component$(() => {
             <Field
               // id="form-phone"
               name="phone"
-              // class={styles.inputStyle}
+            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -461,7 +450,7 @@ export default component$(() => {
             <Field
               // id="form-issue"
               name="issue"
-              // class={styles.inputStyle}
+            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -478,7 +467,7 @@ export default component$(() => {
             <Field
               // id="form-message"
               name="message"
-              // class={styles.inputStyle}
+            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput

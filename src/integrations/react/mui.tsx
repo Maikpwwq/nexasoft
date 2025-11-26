@@ -1,4 +1,6 @@
 /** @jsxImportSource react */
+
+/** @jsxImportSource react */
 import { qwikify$ } from "@builder.io/qwik-react";
 import {
   Box,
@@ -159,21 +161,27 @@ export const CustomersTestimonials = qwikify$(() => {
   );
 });
 
-export const CustomersQuestions = qwikify$(() => {
-  return (
-    <>
-      <CommonQuestions />
-    </>
-  );
-}, { eagerness: 'hover' });
+export const CustomersQuestions = qwikify$(
+  () => {
+    return (
+      <>
+        <CommonQuestions />
+      </>
+    );
+  },
+  { eagerness: "hover" },
+);
 
-export const FormularioContacto = qwikify$(() => {
-  return (
-    <>
-      <FormContacto />
-    </>
-  );
-}, { eagerness: 'hover' });
+export const FormularioContacto = qwikify$(
+  () => {
+    return (
+      <>
+        <FormContacto />
+      </>
+    );
+  },
+  { eagerness: "hover" },
+);
 
 export const BannerImgStepper = qwikify$(() => {
   return (

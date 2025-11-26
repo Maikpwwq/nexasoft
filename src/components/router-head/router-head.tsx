@@ -33,7 +33,7 @@ export const RouterHead = component$(() => {
             ? {}
             : { dangerouslySetInnerHTML: s.style })}
         />
-      ))} 
+      ))}
 
       {head.scripts.map((s) => (
         <script
