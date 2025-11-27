@@ -92,7 +92,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
         onwarn(warning, warn) {
           if (
             warning.code === "MODULE_LEVEL_DIRECTIVES" ||
-            warning.message.includes(`"use client"`)
+            warning.message.includes(`"use client"`) ||
+            warning.message.includes("Module level directives")
           ) {
             return;
           }
