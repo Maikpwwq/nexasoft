@@ -2,6 +2,15 @@
 publish = "dist"
 command = "pnpm run build"
 
+[functions]
+directory = "netlify/functions"
+node_bundler = "esbuild"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
 [[redirects]]
 from = "/signed"
 to = "https://dvjcuwsdfkdjuotqaqbu.supabase.co"
