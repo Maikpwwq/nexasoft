@@ -149,7 +149,7 @@ export const ImagesList = qwikify$(() => {
       </ImageList>
     </>
   );
-});
+}, { eagerness: "load" });
 
 export const CustomersTestimonials = qwikify$(() => {
   return (
@@ -157,7 +157,7 @@ export const CustomersTestimonials = qwikify$(() => {
       <CustomersTestimonial />
     </>
   );
-});
+}, { eagerness: "load" });
 
 export const CustomersQuestions = qwikify$(
   () => {
@@ -167,7 +167,7 @@ export const CustomersQuestions = qwikify$(
       </>
     );
   },
-  { eagerness: "hover" },
+  { eagerness: "load" },
 );
 
 export const FormularioContacto = qwikify$(
@@ -178,7 +178,7 @@ export const FormularioContacto = qwikify$(
       </>
     );
   },
-  { eagerness: "hover" },
+  { eagerness: "load" },
 );
 
 export const BannerImgStepper = qwikify$(() => {
@@ -187,7 +187,7 @@ export const BannerImgStepper = qwikify$(() => {
       <BannerStepper />
     </>
   );
-});
+}, { eagerness: "load" });
 
 export const TableApp = qwikify$(() => {
   return (
@@ -195,4 +195,4 @@ export const TableApp = qwikify$(() => {
       <TableReactApp />
     </>
   );
-});
+}, { eagerness: "load" });
