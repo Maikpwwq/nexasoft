@@ -13,7 +13,7 @@ import ImagesList from "~/components/images-list/imagesList";
 // import Starter from '~/components/starter/next-steps/next-steps';
 import Testimonials from "~/components/testimonials/testimonials";
 
-import { MUICard, MUICardContent } from "~/integrations/react/mui";
+
 import Resume from "~/components/resume/resume";
 import Further from "~/components/further/further";
 import Advantages from "~/components/advantages/advantages";
@@ -49,15 +49,13 @@ export default component$(() => {
       <BlogPost />
       <Questions />
       <div id="contact-section" class="container container-flex contactBox">
-        <MUICard className={styles.contactCard} variant="outlined">
-          <MUICardContent>
-            <Infobox>
-              <>
-                <Footer />
-              </>
-            </Infobox>
-          </MUICardContent>
-        </MUICard>
+        <div class={styles.contactCard}>
+          <Infobox>
+            <>
+              <Footer />
+            </>
+          </Infobox>
+        </div>
       </div>
     </>
   );
