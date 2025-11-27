@@ -47,6 +47,7 @@ export default component$(() => {
           host:onClick$={() => handleClick()}
           sx={{ display: { md: "none", sm: "block" } }}
           className={styles.dropdownMobile}
+          client:only
         />
         <div class={styles.logo}>
           <Link href="/" title="NexaSoft SAS">
@@ -60,13 +61,12 @@ export default component$(() => {
             return (
               <li key={index}>
                 <Link href={route}>
-                  <MUITypography
+                  <span
                     className=""
-                    fontSize={"1.125rem"}
-                    variant="body1"
+                    style={{ fontSize: "1.125rem", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}
                   >
                     {name}
-                  </MUITypography>
+                  </span>
                 </Link>
               </li>
             );
@@ -102,13 +102,12 @@ export default component$(() => {
               return (
                 <li key={index}>
                   <Link href={route}>
-                    <MUITypography
+                    <span
                       className=""
-                      fontSize={"1rem"}
-                      variant="body2"
+                      style={{ fontSize: "1rem", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}
                     >
                       {name}
-                    </MUITypography>
+                    </span>
                   </Link>
                 </li>
               );

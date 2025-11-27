@@ -1,14 +1,10 @@
 [build]
 publish = "dist"
-command = "pnpm build"
-
-[functions]
-node_bundler = "esbuild"
+command = "npm run build"
 
 [[redirects]]
 from = "/signed"
-to = "https://askjyjhjnwtnqwcupwxy.supabase.co"
+to = "https://dvjcuwsdfkdjuotqaqbu.supabase.co"
 status = 200
 force = true
 headers = {X-From = "Netlify"}
-

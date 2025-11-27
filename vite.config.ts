@@ -10,6 +10,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import pkg from "./package.json";
 import { partytownVite } from "@qwik.dev/partytown/utils";
 import { join } from "path";
+import path from 'path';
 import tailwindcss from "@tailwindcss/vite";
 type PkgDep = Record<string, string>;
 const { dependencies = {}, devDependencies = {} } = pkg as any as {
@@ -32,6 +33,12 @@ export default defineConfig(({ command, mode }): UserConfig => {
       partytownVite({ dest: join(__dirname, "dist", "~partytown") }),
       tailwindcss(),
     ],
+    resolve: {
+      alias: {
+        // "@mui/icons-material": "@mui/icons-material/esm",
+        'node:async_hooks': path.resolve(__dirname, 'empty-async-hooks.js')
+      },
+    },
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {
       // Put problematic deps that break bundling here, mostly those with binaries.
