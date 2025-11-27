@@ -2,10 +2,6 @@
 publish = "dist"
 command = "pnpm run build"
 
-[functions]
-directory = "netlify/functions"
-node_bundler = "esbuild"
-
 [[redirects]]
 from = "/*"
 to = "/index.html"

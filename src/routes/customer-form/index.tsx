@@ -73,79 +73,25 @@ type ResponseData = {
   customerId: string | bigint; //   number
 };
 
+// Server-side action removed for static deployment
 export const useFormAction = formAction$<LoginForm, ResponseData>(
-  async (values, event) => {
-    // Runs on SERVER
-    console.log("useFormAction", values);
-    try {
-      const SUPABASE_URL = event.env.get("VITE_SUPABASE_URL");
-      const SUPABASE_KEY = event.env.get("VITE_SUPABASE_KEY");
-
-      if (!SUPABASE_URL || !SUPABASE_KEY) {
-        console.error("Missing Supabase environment variables");
-        throw new Error("Configuration error");
-      }
-
-      // Create a single supabase client for interacting with your database
-      const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-      const { name, email, phone, issue, message } = values;
-
-      // const id = crypto.randomUUID(); 
-
-      // Generate a unique numeric ID (Safe Integer)
-      // Format: Timestamp (13 digits) + Random (3 digits)
-      const numericId = Date.now() * 1000 + Math.floor(Math.random() * 1000);
-      const recordID = numericId.toString();
-
-      console.log("Inserting record with ID:", recordID);
-
-      const { data: customer_form, error } = await supabase
-        .from("customer_form")
-        .insert([
-          {
-            id: recordID,
-            created_at: new Date(),
-            name,
-            email,
-            phone,
-            issue,
-            message,
-          },
-        ])
-        .select("*");
-
-      if (error) {
-        console.error("Supabase Error:", error);
-        throw new Error(error.message);
-      }
-
-      console.log("Success supabase contact form", customer_form?.[0]?.id);
-
-      return {
-        status: "success",
-        message: `Gracias, su mensaje ha sido recibido.`,
-        data: { customerId: recordID },
-      };
-    } catch (error) {
-      console.error("Form Action Error:", error);
-      return {
-        status: "error",
-        message: `No se ha podido enviar su mensaje.`,
-        data: { customerId: "" },
-      };
-    }
+  async () => {
+    return {
+      status: "success",
+      data: { customerId: "" },
+    };
   },
   zodForm$(loginSchema),
-); // valiForm$(LoginSchema)
+);
 
 // https://modularforms.dev/qwik/guides/handle-submission
 export default component$(() => {
   // const nav = useNavigate();
 
   // , FieldArray
+  // Client-side submission only
   const [loginForm, { Form, Field }] = useForm<LoginForm, ResponseData>({
     loader: useFormLoader(),
-    action: useFormAction(),
     validate: zodForm$(loginSchema),
   });
 

@@ -67,14 +67,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
     //       }
     //     : undefined,
     ssr: {
-      external: [
-        "@mui/material",
-        "@mui/icons-material",
-        "@mui/system",
-        "@emotion/react",
-        "@emotion/styled",
-        "@emotion/cache"
-      ],
+      // noExternal: ["@mui/icons-material"],
     },
     server: {
       headers: {
