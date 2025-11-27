@@ -1,7 +1,7 @@
 // import { routeLoader$ } from "@builder.io/qwik-city";
 import { type RequestHandler } from "@builder.io/qwik-city";
 // import { component$ } from "@builder.io/qwik";
-import { connectionDB } from "~/services/mongo-init";
+// import { connectionDB } from "~/services/mongo-init";
 
 interface RegistroContacto {
   name: string;
@@ -38,7 +38,9 @@ export const onPost: RequestHandler = async (requestEvent) => {
         message: bodyParsed.message,
       };
       console.log("Parsed body:", contactData);
-      const res = await connectionDB(contactData);
+      // const res = await connectionDB(contactData);
+      // Placeholder: MongoDB disabled for Edge compatibility
+      const res = "mongodb-disabled";
       // res.then((data) =>{
       if (res) {
         console.log("Promise message", res);

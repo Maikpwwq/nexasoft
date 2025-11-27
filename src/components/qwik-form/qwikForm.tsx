@@ -1,5 +1,5 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { connectionDB } from "~/services/mongo-init";
+// import { connectionDB } from "~/services/mongo-init";
 import {
   server$,
   // routeAction$,
@@ -70,7 +70,9 @@ export const addCustomer = server$(async (data) => {
   try {
     console.log("useAddCustomer message", data);
     // await fetchCustomerRecord(customerRecord);
-    const resume = await connectionDB(data);
+    // const resume = await connectionDB(data);
+    // MongoDB disabled for Edge compatibility
+    const resume = "mongodb-disabled";
     // // const record = JSON.stringify(resume);
     console.log("Promise message", resume);
     return {
@@ -105,15 +107,15 @@ export default component$(() => {
       <div
         // action={action}
         class={styles.formFlex}
-        // reloadDocument={true}
-        // onSubmit$={async (e) => {
-        //   e.preventDefault();
-        //   const greeting = await addCustomer(formData);
-        //   // console.log("greeting", greeting.successful);
-        //   if (greeting.successful) {
-        //     alert("Gracias, su mensaje ha sido recibido.");
-        //   }
-        // }}
+      // reloadDocument={true}
+      // onSubmit$={async (e) => {
+      //   e.preventDefault();
+      //   const greeting = await addCustomer(formData);
+      //   // console.log("greeting", greeting.successful);
+      //   if (greeting.successful) {
+      //     alert("Gracias, su mensaje ha sido recibido.");
+      //   }
+      // }}
       >
         <label for="form-name" class={styles.labelStyle}>
           Nombre:{" "}
