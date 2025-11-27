@@ -119,18 +119,18 @@ export const MUIMenuIcon = qwikify$(Menu);
 // import RollerSkatingIcon from '@mui/icons-material/RollerSkating';
 // import AddBoxIcon from '@mui/icons-material/AddBox';
 
-export const MUIPaper = qwikify$(Paper);
-export const MUIBox = qwikify$(Box);
-export const MUITypography = qwikify$(Typography);
+export const MUIPaper = qwikify$(Paper, { eagerness: "load" });
+export const MUIBox = qwikify$(Box, { eagerness: "load" });
+export const MUITypography = qwikify$(Typography, { eagerness: "load" });
 // export const MUIImageList = qwikify$(ImageList);
 // export const MUIImageListItem = qwikify$(ImageListItem);
-export const MUIButton = qwikify$(Button);
-export const MUISlider = qwikify$(Slider, { eagerness: "hover" });
-export const MUICard = qwikify$(Card);
-export const MUICardContent = qwikify$(CardContent);
-export const MUICardMedia = qwikify$(CardMedia);
-export const MUIStack = qwikify$(Stack);
-export const MuiDivider = qwikify$(Divider);
+export const MUIButton = qwikify$(Button, { eagerness: "load" });
+export const MUISlider = qwikify$(Slider, { eagerness: "load" });
+export const MUICard = qwikify$(Card, { eagerness: "load" });
+export const MUICardContent = qwikify$(CardContent, { eagerness: "load" });
+export const MUICardMedia = qwikify$(CardMedia, { eagerness: "load" });
+export const MUIStack = qwikify$(Stack, { eagerness: "load" });
+export const MuiDivider = qwikify$(Divider, { eagerness: "load" });
 
 // export const MUIFormControl = qwikify$(FormControl);
 // export const MUIInput = qwikify$(Input);
