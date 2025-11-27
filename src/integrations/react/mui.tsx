@@ -15,42 +15,40 @@ import {
   Stack,
   Divider,
 } from "@mui/material";
-import {
-  Devices,
-  Laptop,
-  PhoneAndroid,
-  PhoneIphone,
-  Web,
-  Place,
-  ContactPage,
-  MailOutline,
-  InsertDriveFile,
-  WhatsApp,
-  Instagram,
-  Facebook,
-  OpenInBrowser,
-  DesignServices,
-  Phonelink,
-  LaptopMac,
-  Language,
-  CastForEducation,
-  MonitorHeart,
-  LocalGroceryStore,
-  Store,
-  Apps,
-  AppShortcut,
-  SavedSearch,
-  Difference,
-  ManageHistory,
-  IntegrationInstructions,
-  AspectRatio,
-  DeveloperBoard,
-  BrandingWatermark,
-  Security,
-  SmartButton,
-  LocalPolice,
-  Menu,
-} from "@mui/icons-material";
+import Devices from "@mui/icons-material/Devices";
+import Laptop from "@mui/icons-material/Laptop";
+import PhoneAndroid from "@mui/icons-material/PhoneAndroid";
+import PhoneIphone from "@mui/icons-material/PhoneIphone";
+import Web from "@mui/icons-material/Web";
+import Place from "@mui/icons-material/Place";
+import ContactPage from "@mui/icons-material/ContactPage";
+import MailOutline from "@mui/icons-material/MailOutline";
+import InsertDriveFile from "@mui/icons-material/InsertDriveFile";
+import WhatsApp from "@mui/icons-material/WhatsApp";
+import Instagram from "@mui/icons-material/Instagram";
+import Facebook from "@mui/icons-material/Facebook";
+import OpenInBrowser from "@mui/icons-material/OpenInBrowser";
+import DesignServices from "@mui/icons-material/DesignServices";
+import Phonelink from "@mui/icons-material/Phonelink";
+import LaptopMac from "@mui/icons-material/LaptopMac";
+import Language from "@mui/icons-material/Language";
+import CastForEducation from "@mui/icons-material/CastForEducation";
+import MonitorHeart from "@mui/icons-material/MonitorHeart";
+import LocalGroceryStore from "@mui/icons-material/LocalGroceryStore";
+import Store from "@mui/icons-material/Store";
+import Apps from "@mui/icons-material/Apps";
+import AppShortcut from "@mui/icons-material/AppShortcut";
+import SavedSearch from "@mui/icons-material/SavedSearch";
+import Difference from "@mui/icons-material/Difference";
+import ManageHistory from "@mui/icons-material/ManageHistory";
+import IntegrationInstructions from "@mui/icons-material/IntegrationInstructions";
+import AspectRatio from "@mui/icons-material/AspectRatio";
+import DeveloperBoard from "@mui/icons-material/DeveloperBoard";
+import BrandingWatermark from "@mui/icons-material/BrandingWatermark";
+import Security from "@mui/icons-material/Security";
+import SmartButton from "@mui/icons-material/SmartButton";
+import LocalPolice from "@mui/icons-material/LocalPolice";
+import Menu from "@mui/icons-material/Menu";
 
 import ImageListItems from "~/integrations/react/imageListItems";
 import FormContacto from "~/integrations/react/FormContacto";
