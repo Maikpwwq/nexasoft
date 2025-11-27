@@ -19,8 +19,8 @@ import {
   useForm,
   formAction$,
   zodForm$,
-  // reset,
-  // setResponse,
+  reset,
+  setResponse,
   // valiForm$,
 } from "@modular-forms/qwik";
 import styles from "~/components/modular-forms/modularForm.module.css";
