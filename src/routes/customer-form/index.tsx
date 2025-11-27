@@ -2,8 +2,6 @@ import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
 import type { QRL } from "@builder.io/qwik";
 import { isServer } from "@builder.io/qwik/build";
 import { createClient } from "@supabase/supabase-js";
-import { v4 as uuidv4 } from "uuid";
-// import { connectionDB } from "~/services/mongo-init";
 import clsx from "clsx";
 import {
   // server$,
@@ -31,73 +29,8 @@ import { TextInput } from "~/components/modular-forms/TextInput";
 
 // $(async () => {});
 
-// import mongoose from "mongoose";
-// const DB_USER = `${import.meta.env.VITE_DB_USER}`;
-// const DB_PASSWORD2 = `${import.meta.env.VITE_DB_PASSWORD2}`;
-// const DB_NAME = `${import.meta.env.VITE_DB_NAME}`;
-// const MONGODB_COLLECTION = `${import.meta.env.VITE_MONGODB_COLLECTION}`;
-// const MONGO_HOST = `${import.meta.env.VITE_MONGO_HOST}`;
-
-const SUPABASE_URL = `${import.meta.env.VITE_SUPABASE_URL}`; // "/signed" ;
+const SUPABASE_URL = `${import.meta.env.VITE_SUPABASE_URL}`;
 const SUPABASE_KEY = `${import.meta.env.VITE_SUPABASE_KEY}`;
-
-// const messageSchema = new mongoose.Schema({
-//   name: String,
-//   email: String,
-//   phone: String,
-//   issue: String,
-//   message: String,
-// });
-
-// const options = {
-//   dbName: DB_NAME,
-//   user: DB_USER,
-//   pass: DB_PASSWORD2,
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   // useCreateIndex: true,
-// };
-
-// export const dbPromise = $(async () => {
-//   await mongoose.connect(MONGO_HOST, options).catch(error => handleError(error));
-// });
-
-// export const connectionDB = $(async (contactData: LoginForm) => {
-//   console.log("connectionDB", contactData, MONGO_HOST, MONGODB_COLLECTION);
-//   try {
-//     // connection is hanging use to see if you haven't opened a connection properly
-//     // mongoose.set('bufferCommands', false);
-//     // await userModel.createCollection();
-//     await mongoose.connect(MONGO_HOST, options);
-//     // .catch((error) => {
-//     //   console.log("mongoose connection error", error);
-//     // });
-//     // console.log('mongoose.connection', mongoose.connection.mongo.DB)
-//     const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
-
-//     return await userModel
-//       .create(contactData)
-//       .then((data) => {
-//         const _id = data._id.toString();
-//         // const responseObject = data.toJSON();
-//         // const _id = responseObject._id;
-//         // if (typeof _id === "string") {
-//         // const customerId = JSON.stringify(_id);
-//         console.log("create userModel", _id, typeof _id);
-//         return _id;
-//         // }
-//       })
-//       .catch((err) => {
-//         console.error("err", err);
-//         // return `${err}`;
-//         throw new Error("Error mientras se retorno _id de registro.");
-//       });
-//   } catch (error) {
-//     // return `${error}`;
-//     console.error("error", error);
-//     throw new Error("Error mientras se accedio a crear un nuevo registro.");
-//   }
-// });
 
 type LoginForm = {
   name: string;

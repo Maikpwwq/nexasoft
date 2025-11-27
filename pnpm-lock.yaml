@@ -141,9 +141,6 @@ importers:
       undici:
         specifier: ^7.16.0
         version: 7.16.0
-      uuid:
-        specifier: ^13.0.0
-        version: 13.0.0
       vite:
         specifier: ^7.2.4
         version: 7.2.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)
