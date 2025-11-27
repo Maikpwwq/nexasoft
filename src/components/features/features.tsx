@@ -16,7 +16,7 @@ export default component$(() => {
   return (
     <features id="features-section" class={["pb-6", styles.features]}>
       <div class="container container-purple container-center">
-        <MUITypography variant="h2" align="center" className={styles.title}>
+        <MUITypography variant="h2" align="center" class={styles.title}>
           ¡Transforma tu
           <br />
           <span class="highlight">experiencia </span>
@@ -24,7 +24,7 @@ export default component$(() => {
         </MUITypography>
         <div class={styles.servicesBriefcase}>
           <MUITypography
-            className="mt-6 mb-6"
+            class="mt-6 mb-6"
             fontSize={"1.125rem"}
             variant="body1"
             sx={{ display: { md: "block", sm: "none", xs: "none" } }}
@@ -87,7 +87,7 @@ export default component$(() => {
             <br />
           </MUITypography>
           <MUITypography
-            className="mt-6 mb-6"
+            class="mt-6 mb-6"
             variant="body1"
             sx={{ display: { md: "none", sm: "block" } }}
           >

@@ -22,7 +22,7 @@ import Tecnologia from "../../assets/img/lista imagenes/Tecnología.jpg";
 
 // useCallback(() : Array<any> => (), [])
 
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+ 
 const itemData: Array<any> = [
   {
     id: 0,

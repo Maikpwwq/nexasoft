@@ -7,7 +7,7 @@ export default component$(() => {
 
   return (
     <solutions id="solutions-section" class="mt-6 mb-6">
-      <MUITypography className="mt-6 mb-6 pb-6" variant="body1">
+      <MUITypography class="mt-6 mb-6 pb-6" variant="body1">
         Software Solutions
       </MUITypography>
     </solutions>

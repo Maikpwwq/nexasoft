@@ -78,7 +78,7 @@ export const addCustomer = server$(async (data) => {
     return {
       success: true,
     };
-  } catch (error) {
+  } catch {
     return {
       success: false,
     };
@@ -101,7 +101,7 @@ export default component$(() => {
       <MUITypography variant="h6" color={"var(--qwik-dark-blue)"}>
         Formulario de contacto
       </MUITypography>
-      <MUITypography variant="body1" className="pt-2 pb-4" align="center">
+      <MUITypography variant="body1" class="pt-2 pb-4" align="center">
         Solicita información adicional o una presentación de nuestros servicios.
       </MUITypography>
       <div

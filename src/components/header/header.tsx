@@ -3,7 +3,7 @@ import { Link } from "@builder.io/qwik-city";
 import styles from "./header.module.css";
 // import { NexaSoftLogo } from '../icons/qwik';
 
-import { MUIMenuIcon, MUITypography } from "~/integrations/react/mui";
+import { MUIMenuIcon } from "~/integrations/react/mui";
 import NexaSoftLogo from "~/assets/img/Logos Nexasoft/Blue (small).png";
 
 export default component$(() => {
@@ -46,7 +46,7 @@ export default component$(() => {
           fontSize="large"
           host:onClick$={() => handleClick()}
           sx={{ display: { md: "none", sm: "block" } }}
-          className={styles.dropdownMobile}
+          class={styles.dropdownMobile}
           client:only
         />
         <div class={styles.logo}>
@@ -62,7 +62,7 @@ export default component$(() => {
               <li key={index}>
                 <Link href={route}>
                   <span
-                    className=""
+                    class=""
                     style={{ fontSize: "1.125rem", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}
                   >
                     {name}
@@ -103,7 +103,7 @@ export default component$(() => {
                 <li key={index}>
                   <Link href={route}>
                     <span
-                      className=""
+                      class=""
                       style={{ fontSize: "1rem", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}
                     >
                       {name}

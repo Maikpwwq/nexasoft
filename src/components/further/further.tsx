@@ -11,30 +11,30 @@ import {
   MUISecurityIcon,
 } from "~/integrations/react/mui";
 
-// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+ 
 const furtherItems: Array<any> = [
   {
-    icon: <MUISavedSearchIcon fontSize="large" className="me-3" />,
+    icon: <MUISavedSearchIcon fontSize="large" class="me-3" />,
     title: "Posicionamiento SEO para destacar en los motores de búsqueda.",
   },
   {
-    icon: <MUIOpenInBrowserIcon fontSize="large" className="me-3" />,
+    icon: <MUIOpenInBrowserIcon fontSize="large" class="me-3" />,
     title: "Control total con Administradores de Contenidos.",
   },
   {
-    icon: <MUIIntegrationInstructionsIcon fontSize="large" className="me-3" />,
+    icon: <MUIIntegrationInstructionsIcon fontSize="large" class="me-3" />,
     title: "Actualización para mantener tu plataforma al día.",
   },
   {
-    icon: <MUIDeveloperBoardIcon fontSize="large" className="me-3" />,
+    icon: <MUIDeveloperBoardIcon fontSize="large" class="me-3" />,
     title: "Optimización de recursos y procesos.",
   },
   {
-    icon: <MUIBrandingWatermarkIcon fontSize="large" className="me-3" />,
+    icon: <MUIBrandingWatermarkIcon fontSize="large" class="me-3" />,
     title: "Construcción de una identidad de marca sólida en la web.",
   },
   {
-    icon: <MUISecurityIcon fontSize="large" className="me-3" />,
+    icon: <MUISecurityIcon fontSize="large" class="me-3" />,
     title: "Automatiza y refuerza tu seguridad en línea.",
   },
 ];
@@ -44,7 +44,7 @@ export default component$(() => {
     <further id="further-section" class={[styles.further]}>
       <div class="container container-blue">
         <div class={["mt-1", styles.furtherList]}>
-          <MUITypography variant="h2" align="center" className={styles.title}>
+          <MUITypography variant="h2" align="center" class={styles.title}>
             ¡Desbloquea tu <span class="highlight">Éxito Digital</span> con
             Nuestros <span class="highlight">Servicios Adicionales!</span>
           </MUITypography>

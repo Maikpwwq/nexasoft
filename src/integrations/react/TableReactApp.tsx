@@ -4,7 +4,6 @@ import {
   DataGrid,
   type GridColDef,
   GridValueGetterParams,
-  type GridValueOptionsParams,
 } from "@mui/x-data-grid";
 
 const TableReactApp = () => {

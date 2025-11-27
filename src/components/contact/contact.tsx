@@ -11,7 +11,7 @@ export default component$(() => {
       class="container container-center flex justify-center"
       style={{}}
     >
-      <MUIPaper className={styles.cardContactForm} elevation={16}>
+      <MUIPaper class={styles.cardContactForm} elevation={16}>
         {/* <FormularioContacto /> */}
         <QwikForm />
       </MUIPaper>

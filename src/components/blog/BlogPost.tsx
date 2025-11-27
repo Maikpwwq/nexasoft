@@ -8,7 +8,7 @@ export default component$(() => {
     <>
       <blogposts id="blog-post-section" class={[styles.blogposts]}>
         <div class="container">
-          <MUITypography variant="h2" align="left" className={styles.title}>
+          <MUITypography variant="h2" align="left" class={styles.title}>
             <span class="font-bold highlight">Últimos Blogs</span>
           </MUITypography>
           <MUITypography variant="h5" align="left">
@@ -32,7 +32,7 @@ export default component$(() => {
                         <MUITypography
                           variant="h5"
                           align="left"
-                          className="pt-6 mb-2 text-black font-semibold"
+                          class="pt-6 mb-2 text-black font-semibold"
                         >
                           {" "}
                           {title}
@@ -40,7 +40,7 @@ export default component$(() => {
                         <MUITypography
                           variant="body1"
                           align="left"
-                          className="mb-2"
+                          class="mb-2"
                         >
                           {description}
                         </MUITypography>
@@ -60,7 +60,7 @@ export default component$(() => {
                         <MUITypography
                           variant="h5"
                           align="left"
-                          className="mb-2 text-black font-semibold"
+                          class="mb-2 text-black font-semibold"
                         >
                           {" "}
                           {title}
@@ -68,7 +68,7 @@ export default component$(() => {
                         <MUITypography
                           variant="body1"
                           align="left"
-                          className="mb-2"
+                          class="mb-2"
                         >
                           {description}
                         </MUITypography>

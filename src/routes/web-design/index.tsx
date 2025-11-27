@@ -13,7 +13,7 @@ export default component$(() => {
         <MUITypography
           variant="h3"
           align="center"
-          className="font-bold mx-auto m-5 w-100"
+          class="font-bold mx-auto m-5 w-100"
         >
           Diseño Web <span class="highlight">a medida</span>
         </MUITypography>

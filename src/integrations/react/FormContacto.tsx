@@ -59,7 +59,7 @@ const FormContacto = () => {
                 id="form-name"
                 name="name"
                 value={store.name}
-                // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+                 
                 onChange={(event: any) => {
                   setStore({ ...store, name: event });
                   console.log(store, event);
@@ -74,7 +74,7 @@ const FormContacto = () => {
                 id="form-email"
                 name="email"
                 value={store.email}
-                // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+                 
                 onChange={(event: any) => {
                   setStore({ ...store, email: event });
                   console.log(store, event);
@@ -89,7 +89,7 @@ const FormContacto = () => {
                 id="form-phone"
                 name="phone"
                 value={store.phone}
-                // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+                 
                 onChange={(event: any) => {
                   setStore({ ...store, phone: event });
                   console.log(store, event);
@@ -104,7 +104,7 @@ const FormContacto = () => {
                 id="form-issue"
                 name="issue"
                 value={store.issue}
-                // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+                 
                 onChange={(event: any) => {
                   setStore({ ...store, issue: event });
                   console.log(store, event);
@@ -122,7 +122,7 @@ const FormContacto = () => {
                 maxRows={48}
                 style={{ height: "auto" }}
                 value={store.message}
-                // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+                 
                 onChange={(event: any) => {
                   setStore({ ...store, message: event });
                   console.log(store, event);

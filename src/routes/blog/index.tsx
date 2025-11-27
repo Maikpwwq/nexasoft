@@ -11,7 +11,7 @@ export default component$(() => {
         <MUITypography
           variant="h3"
           align="center"
-          className="font-bold mx-auto m-5 w-100"
+          class="font-bold mx-auto m-5 w-100"
         >
           Blog <span class="highlight">Web</span>
         </MUITypography>

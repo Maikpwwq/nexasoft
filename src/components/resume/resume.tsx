@@ -17,37 +17,37 @@ export default component$(() => {
     // "#products-section"
     {
       name: "Diseño Web a medida",
-      icon: <MUIDesignServicesIcon fontSize="large" className="me-3" />,
+      icon: <MUIDesignServicesIcon fontSize="large" class="me-3" />,
       route: "/web-design/",
     },
     {
       name: "Sitio Web Informativo",
-      icon: <MUILaptopMacIcon fontSize="large" className="me-3" />,
+      icon: <MUILaptopMacIcon fontSize="large" class="me-3" />,
       route: "/web-sites/",
     },
     {
       name: "Vitrinas virtuales",
-      icon: <MUIPhonelinkIcon fontSize="large" className="me-3" />,
+      icon: <MUIPhonelinkIcon fontSize="large" class="me-3" />,
       route: "/web-stores/",
     },
     {
       name: "Tiendas Online de Comercio Electrónico",
-      icon: <MUILocalGroceryStoreIcon fontSize="large" className="me-3" />,
+      icon: <MUILocalGroceryStoreIcon fontSize="large" class="me-3" />,
       route: "/e-commerces/",
     },
     {
       name: "Paginas Web Corporativas",
-      icon: <MUICastForEducationIcon fontSize="large" className="me-3" />,
+      icon: <MUICastForEducationIcon fontSize="large" class="me-3" />,
       route: "/web-corporate/",
     },
     {
       name: "Market Places",
-      icon: <MUIStoreIcon fontSize="large" className="me-3" />,
+      icon: <MUIStoreIcon fontSize="large" class="me-3" />,
       route: "/marketplaces/",
     },
     {
       name: "Aplicativos",
-      icon: <MUIAppShortcutIcon fontSize="large" className="me-3" />,
+      icon: <MUIAppShortcutIcon fontSize="large" class="me-3" />,
       route: "/web-apps/",
     },
   ];
@@ -56,7 +56,7 @@ export default component$(() => {
     <features id="resume-section" class={[styles.resume]}>
       <div class="container container-blue">
         <div class={["mt-1", styles.resumeList]}>
-          <MUITypography variant="h2" align="center" className={styles.title}>
+          <MUITypography variant="h2" align="center" class={styles.title}>
             Soluciones de <span class="highlight">desarrollo Web</span> en
             Colombia
           </MUITypography>

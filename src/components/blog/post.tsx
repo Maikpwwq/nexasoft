@@ -19,7 +19,7 @@ export default component$((props: PostProps) => {
     <>
       <blogpost id="blog-post-section" class={[styles.blogposts]}>
         <div class="container">
-          <MUITypography variant="h2" align="left" className={styles.title}>
+          <MUITypography variant="h2" align="left" class={styles.title}>
             <span class="font-bold highlight">{title}</span>
           </MUITypography>
           <MUITypography variant="h5" align="left">
@@ -35,7 +35,7 @@ export default component$((props: PostProps) => {
                 width={210}
               />
               {
-                // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+                 
                 cycle.map((element: any, index: any) => {
                   const { stage, body } = element;
                   return (
@@ -46,14 +46,14 @@ export default component$((props: PostProps) => {
                       <MUITypography
                         variant="h5"
                         align="left"
-                        className="pt-6 mb-2 text-black font-semibold"
+                        class="pt-6 mb-2 text-black font-semibold"
                       >
                         {stage}
                       </MUITypography>
                       <MUITypography
                         variant="body1"
                         align="left"
-                        className="mb-2"
+                        class="mb-2"
                       >
                         {body}
                       </MUITypography>

@@ -96,7 +96,7 @@ export default component$(() => {
   });
 
   const handleSubmit: QRL<SubmitHandler<LoginForm>> = $(
-    // eslint-disable-next-line  @typescript-eslint/no-explicit-any
+     
     async (values: any, event: any) => {
       // Runs on CLIENT
       console.log("handleSubmit", values, event);
@@ -248,7 +248,7 @@ export default component$(() => {
     //   paddingRight: {sm: "0 !important" },
     // }}
     >
-      <MUIPaper className={styles.cardContactForm} elevation={16}>
+      <MUIPaper class={styles.cardContactForm} elevation={16}>
         <div class={styles.sheetFormStyle}>
           <MUITypography
             variant="h4"
@@ -259,7 +259,7 @@ export default component$(() => {
           </MUITypography>
           <MUITypography
             variant="body1"
-            className="py-6 w-80 mx-auto text-lg"
+            class="py-6 w-80 mx-auto text-lg"
             align="center"
           >
             Solicita información adicional o una presentación de nuestros

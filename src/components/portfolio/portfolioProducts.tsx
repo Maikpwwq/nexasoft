@@ -36,7 +36,7 @@ export default component$(() => {
     >
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
-      <MUITypography variant="h2" align="center" className={styles.title}>
+      <MUITypography variant="h2" align="center" class={styles.title}>
         ¡Simplificamos los <span class="blueHighlight font-bold">precios</span>{" "}
         para potenciar la efectividad de tu{" "}
         <span class="blueHighlight font-bold">trabajo</span>!

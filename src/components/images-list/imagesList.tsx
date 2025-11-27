@@ -8,14 +8,14 @@ export default component$(() => {
       <div class="container">
         <div role="presentation" class="ellipsis"></div>
         <div role="presentation" class="ellipsis ellipsis-purple"></div>
-        <MUITypography variant="h2" align="center" className={styles.title}>
+        <MUITypography variant="h2" align="center" class={styles.title}>
           ¡Despierta el <span class="blueHighlight font-bold"> potencial </span>{" "}
           de tu negocio!
         </MUITypography>
-        <MUITypography className="py-6 text-xl" align="center" variant="body1">
+        <MUITypography class="py-6 text-xl" align="center" variant="body1">
           Contáctanos y descubre nuestras poderosas soluciones de software.
         </MUITypography>
-        <MUIBox className="w-100 flex justify-center">
+        <MUIBox class="w-100 flex justify-center">
           <ImagesList />
         </MUIBox>
       </div>
