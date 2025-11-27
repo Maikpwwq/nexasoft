@@ -19,8 +19,8 @@ import {
   useForm,
   formAction$,
   zodForm$,
-  reset,
-  setResponse,
+  // reset,
+  // setResponse,
   // valiForm$,
 } from "@modular-forms/qwik";
 import styles from "~/components/modular-forms/modularForm.module.css";
@@ -295,9 +295,7 @@ export default component$(() => {
               )}
             </Field>
             <Field
-              // id="form-email"
               name="email"
-            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -306,15 +304,13 @@ export default component$(() => {
                   error={field.error}
                   type="email"
                   label="Email:"
-                  placeholder="Correo electrónico"
+                  placeholder="Email"
                   required
                 />
               )}
             </Field>
             <Field
-              // id="form-phone"
               name="phone"
-            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -323,13 +319,12 @@ export default component$(() => {
                   error={field.error}
                   type="tel"
                   label="Teléfono:"
-                  placeholder="+57"
+                  placeholder="Teléfono"
                   required
                 />
               )}
             </Field>
             <Field
-              // id="form-issue"
               name="issue"
             // class={styles.inputStyle}
             >
