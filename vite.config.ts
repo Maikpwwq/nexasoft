@@ -41,10 +41,14 @@ export default defineConfig(({ command, mode }): UserConfig => {
     },
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {
-      // Put problematic deps that break bundling here, mostly those with binaries.
-      // For example ['better-sqlite3'] if you use that in server functions.
-      include: ["@mui/icons-material"],
-      exclude: [],
+      // Exclude MUI/Emotion from pre-bundling to avoid pnpm store traversal loops
+      exclude: [
+        "@mui/material",
+        "@mui/icons-material", 
+        "@mui/system",
+        "@emotion/react",
+        "@emotion/styled"
+      ],
     },
     /**
      * This is an advanced setting. It improves the bundling of your server code. To use it, make sure you understand when your consumed packages are dependencies or dev depencies. (otherwise things will break in production)
