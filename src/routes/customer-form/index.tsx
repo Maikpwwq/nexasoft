@@ -90,6 +90,8 @@ export const useFormAction = formAction$<LoginForm, ResponseData>(
       const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
       const { name, email, phone, issue, message } = values;
 
+      // const id = crypto.randomUUID(); 
+
       // Generate a unique numeric ID (Safe Integer)
       // Format: Timestamp (13 digits) + Random (3 digits)
       const numericId = Date.now() * 1000 + Math.floor(Math.random() * 1000);
