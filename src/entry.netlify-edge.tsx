@@ -18,4 +18,8 @@ declare global {
   type QwikCityPlatform = PlatformNetlify;
 }
 
-export default createQwikCity({ render, qwikCityPlan });
+console.log("[Edge] Initializing Qwik City...");
+const handler = createQwikCity({ render, qwikCityPlan });
+console.log("[Edge] Qwik City initialized successfully");
+
+export default handler;
