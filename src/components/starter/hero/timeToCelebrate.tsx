@@ -1,6 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import styles from "./timeToCelebrate.module.css";
-import { MUITypography } from "~/integrations/react/mui";
+import styles from "./hero.module.css";
 
 export default component$(() => {
   return (
@@ -21,17 +20,17 @@ export default component$(() => {
         };
 
         function loadConfetti() {
-           
+
           return new Promise<(opts: any) => void>((resolve, reject) => {
-             
+
             if ((globalThis as any).confetti) {
-               
+
               return resolve((globalThis as any).confetti as any);
             }
             const script = document.createElement("script");
             script.src =
               "https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js";
-             
+
             script.onload = () => resolve((globalThis as any).confetti as any);
             script.onerror = reject;
             document.head.appendChild(script);
@@ -62,13 +61,13 @@ export default component$(() => {
         setTimeout(shoot, 400);
       }}
     >
-      <MUITypography variant="h1" align="center" class={styles.title}>
+      <h1 class={styles.title} style="text-align: center; font-size: 3rem; font-weight: bold;">
         Soluciones de
         <br />
         <span class="highlight">desarrollo Web</span>
         <br />
         en <span class="highlight">Colombia</span>
-      </MUITypography>
+      </h1>
       <p class="text-center">
         ¡Consigue una ventaja competitiva con nosotros!.
       </p>

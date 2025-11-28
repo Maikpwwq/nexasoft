@@ -1,24 +1,18 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./secrets.module.css";
 
-import { MUITypography } from "~/integrations/react/mui";
-
 export default component$(() => {
   return (
     <secrets id="secrets-section" class={["pb-6", styles.secrets]}>
       <div class="container container-purple">
         <div class={["mt-1", styles.secretsList]}>
-          <MUITypography variant="h2" align="center" class={styles.title}>
+          <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             ¡Domina la <span class="highlight">Web</span> en un solo lugar!
             Descubre los Secretos para el{" "}
             <span class="highlight">Éxito en Línea</span>
-          </MUITypography>
-          <MUITypography
-            class="mt-6 mb-6 pt-5"
-            fontSize={"1.125rem"}
-            align="center"
-            variant="body1"
-            sx={{ display: { md: "block", sm: "none", xs: "none" } }}
+          </h2>
+          <p
+            class="mt-6 mb-6 pt-5 text-center text-lg hidden md:block"
           >
             ¡Desbloquea tu Éxito Digital con NexaSoft SAS y transforma tu
             presencia en línea.!
@@ -40,15 +34,13 @@ export default component$(() => {
             posicionamiento SEO para optimizar el reconocimiento digital de tu
             marca en Internet. Con nosotros, accede a la automatización,
             seguridad y cumplimiento que necesitas para el éxito en línea.
-          </MUITypography>
-          <MUITypography
-            class="mt-6 pb-6 pt-5"
-            variant="body1"
-            sx={{ display: { md: "none", sm: "block" } }}
+          </p>
+          <p
+            class="mt-6 pb-6 pt-5 text-lg block md:hidden"
           >
             🚀 NexaSoft SAS: Transformamos tu negocio con Diseño Web de
             vanguardia, E-commerce, SEO y más. ¡Impulsa tu éxito digital hoy!
-          </MUITypography>
+          </p>
         </div>
       </div>
     </secrets>

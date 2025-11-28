@@ -1,19 +1,18 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./blogPost.module.css";
 import { webPosts } from "~/const/blog-posts";
-import { MUITypography } from "~/integrations/react/mui";
 
 export default component$(() => {
   return (
     <>
       <blogposts id="blog-post-section" class={[styles.blogposts]}>
         <div class="container">
-          <MUITypography variant="h2" align="left" class={styles.title}>
+          <h2 class={styles.title} style="text-align: left; font-size: 2.5rem; font-weight: bold;">
             <span class="font-bold highlight">Últimos Blogs</span>
-          </MUITypography>
-          <MUITypography variant="h5" align="left">
+          </h2>
+          <h5 style="text-align: left; font-size: 1.5rem;">
             Explorar los más destacados
-          </MUITypography>
+          </h5>
           <div class={["m-0 w-full", styles.blogpostsList]}>
             <div class="w-1/2">
               <ul class="mt-6 mb-6 p-0">
@@ -29,21 +28,12 @@ export default component$(() => {
                           height={100}
                           width={100}
                         />
-                        <MUITypography
-                          variant="h5"
-                          align="left"
-                          class="pt-6 mb-2 text-black font-semibold"
-                        >
-                          {" "}
+                        <h5 class="pt-6 mb-2 text-black font-semibold text-xl">
                           {title}
-                        </MUITypography>
-                        <MUITypography
-                          variant="body1"
-                          align="left"
-                          class="mb-2"
-                        >
+                        </h5>
+                        <p class="mb-2">
                           {description}
-                        </MUITypography>
+                        </p>
                       </li>
                     </a>
                   );
@@ -57,21 +47,12 @@ export default component$(() => {
                   return (
                     <a href={route} key={index}>
                       <li class={[styles.listItem, "my-2"]}>
-                        <MUITypography
-                          variant="h5"
-                          align="left"
-                          class="mb-2 text-black font-semibold"
-                        >
-                          {" "}
+                        <h5 class="mb-2 text-black font-semibold text-xl">
                           {title}
-                        </MUITypography>
-                        <MUITypography
-                          variant="body1"
-                          align="left"
-                          class="mb-2"
-                        >
+                        </h5>
+                        <p class="mb-2">
                           {description}
-                        </MUITypography>
+                        </p>
                       </li>
                     </a>
                   );

@@ -1,53 +1,41 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./resume.module.css";
 
-import {
-  MUITypography,
-  MUIDesignServicesIcon,
-  MUIPhonelinkIcon,
-  MUILaptopMacIcon,
-  MUICastForEducationIcon,
-  MUILocalGroceryStoreIcon,
-  MUIStoreIcon,
-  MUIAppShortcutIcon,
-} from "~/integrations/react/mui";
-
 export default component$(() => {
   const webServices = [
-    // "#products-section"
     {
       name: "Diseño Web a medida",
-      icon: <MUIDesignServicesIcon fontSize="large" class="me-3" />,
+      icon: "🎨",
       route: "/web-design/",
     },
     {
       name: "Sitio Web Informativo",
-      icon: <MUILaptopMacIcon fontSize="large" class="me-3" />,
+      icon: "💻",
       route: "/web-sites/",
     },
     {
       name: "Vitrinas virtuales",
-      icon: <MUIPhonelinkIcon fontSize="large" class="me-3" />,
+      icon: "📱",
       route: "/web-stores/",
     },
     {
       name: "Tiendas Online de Comercio Electrónico",
-      icon: <MUILocalGroceryStoreIcon fontSize="large" class="me-3" />,
+      icon: "🛒",
       route: "/e-commerces/",
     },
     {
       name: "Paginas Web Corporativas",
-      icon: <MUICastForEducationIcon fontSize="large" class="me-3" />,
+      icon: "🏢",
       route: "/web-corporate/",
     },
     {
       name: "Market Places",
-      icon: <MUIStoreIcon fontSize="large" class="me-3" />,
+      icon: "🏪",
       route: "/marketplaces/",
     },
     {
       name: "Aplicativos",
-      icon: <MUIAppShortcutIcon fontSize="large" class="me-3" />,
+      icon: "📲",
       route: "/web-apps/",
     },
   ];
@@ -56,17 +44,17 @@ export default component$(() => {
     <features id="resume-section" class={[styles.resume]}>
       <div class="container container-blue">
         <div class={["mt-1", styles.resumeList]}>
-          <MUITypography variant="h2" align="center" class={styles.title}>
+          <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             Soluciones de <span class="highlight">desarrollo Web</span> en
             Colombia
-          </MUITypography>
+          </h2>
           <ul class="mt-6 mb-6">
             {webServices.map((service, index) => {
               const { name, icon, route } = service;
               return (
                 <li key={index} class={[styles.listItem, "my-2"]}>
                   <a href={route}>
-                    {icon} {name}
+                    <span class="text-3xl me-3">{icon}</span> {name}
                   </a>
                 </li>
               );

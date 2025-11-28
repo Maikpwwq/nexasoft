@@ -1,5 +1,5 @@
 /** @jsxImportSource react */
-import { ImageListItem } from "@mui/material";
+// import { ImageListItem } from "@mui/material";
 // import { useCallback } from "react";
 import AplicacionesMoviles from "../../assets/img/lista imagenes/Aplicaciones móviles.jpg";
 import Aplications from "../../assets/img/lista imagenes/aplications.jpg";
@@ -22,8 +22,8 @@ import Tecnologia from "../../assets/img/lista imagenes/Tecnología.jpg";
 
 // useCallback(() : Array<any> => (), [])
 
- 
-const itemData: Array<any> = [
+
+export const itemData: Array<any> = [
   {
     id: 0,
     img: AplicacionesMoviles,
@@ -135,30 +135,9 @@ const itemData: Array<any> = [
 function srcset(image: string, size: number, rows = 1, cols = 1) {
   return {
     src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
+    srcSet: `${image}?w=${size * cols}&h=${size * rows
+      }&fit=crop&auto=format&dpr=2 2x`,
   };
 }
 
-const ImageListItems = () => {
-  return (
-    <>
-      {itemData.length > 0 &&
-        itemData.map((item) => {
-          const { id, title, img, cols, rows } = item;
-          return (
-            <ImageListItem key={id} cols={cols || 1} rows={rows || 1}>
-              <img
-                {...srcset(img, 121, rows, cols)}
-                alt={title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          );
-        })}
-    </>
-  );
-};
-
-export default ImageListItems;
+export default itemData;

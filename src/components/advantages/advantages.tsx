@@ -1,49 +1,39 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./advantages.module.css";
 
-import {
-  MUITypography,
-  MUILanguageIcon,
-  MUIMonitorHeartIcon,
-  MUIManageHistoryIcon,
-  MUIAspectRatioIcon,
-  MUISmartButtonIcon,
-  MUILocalPoliceIcon,
-} from "~/integrations/react/mui";
-
 export default component$(() => {
   return (
     <advantages id="advantages-section" class={["", styles.advantages]}>
       <div class={["container container-blue", styles.advantagesContainer]}>
         <div class={["mt-1", styles.advantagesList]}>
-          <MUITypography variant="h2" align="center" class={styles.title}>
+          <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             <span class="highlight">Maximiza tu Éxito</span> en Línea con Todos
             los <span class="highlight">Beneficios</span> que Tenemos para Ti!
-          </MUITypography>
+          </h2>
           <ul class="mt-6 mb-6">
             <li class={[styles.listItem, "my-2"]}>
-              <MUISmartButtonIcon fontSize="large" class="me-3" /> Diseño
+              <span class="text-3xl me-3">🎨</span> Diseño
               intuitivo y atractivo para una Experiencia de Usuario excepcional.
             </li>
             <li class={[styles.listItem, "my-2"]}>
-              <MUIAspectRatioIcon fontSize="large" class="me-3" />{" "}
+              <span class="text-3xl me-3">📱</span>{" "}
               Contenidos Responsivos para una visualización perfecta en todos
               los dispositivos.
             </li>
             <li class={[styles.listItem, "my-2"]}>
-              <MUIMonitorHeartIcon fontSize="large" class="me-3" /> Entrega
+              <span class="text-3xl me-3">⚡</span> Entrega
               rápida con resultados notables.
             </li>
             <li class={[styles.listItem, "my-2"]}>
-              <MUILocalPoliceIcon fontSize="large" class="me-3" /> Seguridad
+              <span class="text-3xl me-3">🔒</span> Seguridad
               garantizada para proteger tu negocio en línea.
             </li>
             <li class={[styles.listItem, "my-2"]}>
-              <MUILanguageIcon fontSize="large" class="me-3" /> Sitios web
+              <span class="text-3xl me-3">🌐</span> Sitios web
               modernos que impulsan la interacción fluida.
             </li>
             <li class={[styles.listItem, "my-2"]}>
-              <MUIManageHistoryIcon fontSize="large" class="me-3" /> Soporte
+              <span class="text-3xl me-3">💬</span> Soporte
               experto en todo momento para tu tranquilidad.
             </li>
           </ul>

@@ -149,7 +149,7 @@ export const ImagesList = qwikify$(() => {
       </ImageList>
     </>
   );
-}, { eagerness: "load" });
+}, { eagerness: "load", "client:only": true });
 
 export const CustomersTestimonials = qwikify$(() => {
   return (

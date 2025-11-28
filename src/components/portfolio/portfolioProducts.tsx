@@ -1,12 +1,6 @@
 import { component$ } from "@builder.io/qwik";
-import { MUITypography } from "~/integrations/react/mui";
 import WebProducts from "./WebProducts.json";
 import styles from "./portfolioProducts.module.css";
-// import * as fs from "fs";
-// import path from "path";
-// import { fileURLToPath } from "node:url";
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
 
 interface Product {
   title: string;
@@ -16,19 +10,11 @@ interface Product {
   scope: string;
 }
 
-interface SoftwareProducts extends Array<Product> {}
+interface SoftwareProducts extends Array<Product> { }
 
-// const WebProducts = fs.readFileSync(
-//   path.resolve(__dirname, "./WebProducts.json"),
-//   "utf-8"
-// );
-// const jsonProducts = JSON.parse(WebProducts);
-// const dataProducts = jsonProducts.WebProducts;
-// const products: SoftwareProducts = dataProducts;
 const products: SoftwareProducts = WebProducts.WebProducts;
 
 export default component$(() => {
-  // console.log("products", dataProducts);
   return (
     <div
       id="products-section"
@@ -36,11 +22,11 @@ export default component$(() => {
     >
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
-      <MUITypography variant="h2" align="center" class={styles.title}>
+      <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
         ¡Simplificamos los <span class="blueHighlight font-bold">precios</span>{" "}
         para potenciar la efectividad de tu{" "}
         <span class="blueHighlight font-bold">trabajo</span>!
-      </MUITypography>
+      </h2>
       <p class="text-xl px-4 mt-4 text-center">
         Tu satisfacción está 100% asegurada con nuestra garantía de devolución
         de dinero.
@@ -71,7 +57,7 @@ export default component$(() => {
                       <span class="font-light text-sm">Desde</span> $ {price}
                     </p>
                     <a
-                      href="/customer-form/" // #contact-section
+                      href="/customer-form/"
                       class={["btn text-lg text-center py-2", styles.cardBtn]}
                     >
                       Escoger plan
