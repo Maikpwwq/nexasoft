@@ -7,7 +7,7 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   return (
-    <footer class="text-white">
+    <footer class="text-white" style={{ backgroundColor: "#0f0a28" }}>
       <div class="flex flex-row items-baseline justify-center p-4">
         <svg
           class="mb-2 me-4"
@@ -21,7 +21,7 @@ export default component$(() => {
         </svg>
         <h2
           class="text-3xl font-bold pl-2"
-          style={{ fontSize: "2.5rem", fontWeight: "bold" }}
+          style={{ fontSize: "2.5rem", fontWeight: "bold", fontFamily: "var(--font-heading)" }}
         >
           Datos de contacto
         </h2>
@@ -36,7 +36,7 @@ export default component$(() => {
               class="pb-4 p-2 rounded mb-4"
               alt="NexaSoft Logo"
             />
-            <p class="text-center mb-2 flex items-center justify-center text-xl">
+            <p class="text-center mb-2 flex items-center justify-center text-xl" style={{ fontFamily: "var(--font-body)" }}>
               <svg
                 class="me-1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export default component$(() => {
                 title="mail"
                 class="text-black no-underline hover:underline"
               >
-                <p class="flex flex-row justify-center items-end text-xl">
+                <p class="flex flex-row justify-center items-end text-xl" style={{ fontFamily: "var(--font-body)" }}>
                   <svg
                     class="me-1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ export default component$(() => {
               rel="noopener noreferrer"
               class="text-black no-underline hover:underline mb-4"
             >
-              <p class="flex flex-row justify-center items-end text-center text-xl">
+              <p class="flex flex-row justify-center items-end text-center text-xl" style={{ fontFamily: "var(--font-body)" }}>
                 <svg
                   class="me-1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ export default component$(() => {
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
-                  <path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.15-2.9-7.02zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.19-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.39 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.27-.16-.51-.28z" />
+                  <path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.15-2.9-7.02zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.19-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.39 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.27-.16-.51-.28z" />
                 </svg>
                 3195137182
               </p>
@@ -126,7 +126,7 @@ export default component$(() => {
                 </svg>
               </a>
             </div>
-            <p class="text-sm text-center flex items-center justify-center">
+            <p class="text-sm text-center flex items-center justify-center" style={{ fontFamily: "var(--font-body)" }}>
               <svg
                 class="me-1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -143,7 +143,13 @@ export default component$(() => {
         </div>
       </div>
       <div class="flex flex-col items-center">
-        <img src={CHCoraSoft} height={50} width={210} class="pb-4" alt="Logo Chicó corazón de software" />
+        <img
+          src={CHCoraSoft}
+          height={50}
+          width={210}
+          class="pb-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100"
+          alt="Logo Chicó corazón de software"
+        />
       </div>
     </footer>
   );

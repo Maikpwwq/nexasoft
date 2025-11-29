@@ -25,6 +25,20 @@
   --qwik-dark-purple: #713fc2;
   --qwik-purple-background: #7c2ce7;
   --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #000033;
+  --qwik-dark-background: #232397;
   --qwik-dark-text: #ffffff;
+  --primary-blue: #4285F4;
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--qwik-dark-background);
+  color: var(--qwik-dark-text);
+  font-family: var(--font-body);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
 }

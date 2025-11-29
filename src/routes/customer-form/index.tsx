@@ -240,18 +240,20 @@ export default component$(() => {
 
   return (
     <div
-      class="container container-center flex justify-center"
+      class="container container-center flex justify-center min-h-screen items-center"
+      style={{ backgroundColor: "#f8f8fa" }}
     >
       <div class="bg-white rounded-lg shadow-xl max-w-2xl mx-auto my-20 py-10 px-6 w-full">
         <div class={styles.sheetFormStyle}>
           <h2
             class="text-4xl font-bold text-center mb-4"
-            style={{ color: "var(--qwik-dark-blue)" }}
+            style={{ color: "var(--qwik-dark-blue)", fontFamily: "var(--font-heading)" }}
           >
             Formulario de contacto
           </h2>
           <p
             class="text-center text-gray-600 mt-4 mb-8 text-xl"
+            style={{ fontFamily: "var(--font-body)" }}
           >
             Solicita información adicional o una presentación de nuestros
             servicios.
@@ -273,7 +275,7 @@ export default component$(() => {
                   type="text"
                   label="Nombre:"
                   placeholder="Nombre"
-                  class="text-xl font-light text-black"
+                  class="text-xl font-light text-black focus:outline-none focus:border-[#4285F4] focus:ring-1 focus:ring-[#4285F4]"
                   required
                 />
               )}
@@ -289,7 +291,7 @@ export default component$(() => {
                   type="email"
                   label="Email:"
                   placeholder="Email"
-                  class="text-xl font-light text-black"
+                  class="text-xl font-light text-black focus:outline-none focus:border-[#4285F4] focus:ring-1 focus:ring-[#4285F4]"
                   required
                 />
               )}
@@ -305,7 +307,7 @@ export default component$(() => {
                   type="tel"
                   label="Teléfono:"
                   placeholder="Teléfono"
-                  class="text-xl font-light text-black"
+                  class="text-xl font-light text-black focus:outline-none focus:border-[#4285F4] focus:ring-1 focus:ring-[#4285F4]"
                   required
                 />
               )}
@@ -321,7 +323,7 @@ export default component$(() => {
                   type="text"
                   label="Asunto:"
                   placeholder="Asunto"
-                  class="text-xl font-light text-black"
+                  class="text-xl font-light text-black focus:outline-none focus:border-[#4285F4] focus:ring-1 focus:ring-[#4285F4]"
                   required
                 />
               )}
@@ -337,7 +339,7 @@ export default component$(() => {
                   type="text"
                   label="Mensaje:"
                   placeholder="Mensaje"
-                  class="text-xl font-light text-black"
+                  class="text-xl font-light text-black focus:outline-none focus:border-[#4285F4] focus:ring-1 focus:ring-[#4285F4]"
                   required
                 />
               )}
@@ -345,7 +347,8 @@ export default component$(() => {
             <br class="mb-4" />
             <button
               type="submit"
-              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-2xl focus:outline-none focus:shadow-outline transition-colors text-xl mt-6"
+              class="w-full text-white font-bold py-3 px-4 rounded-2xl focus:outline-none focus:shadow-outline transition-colors text-xl mt-6"
+              style={{ backgroundColor: "var(--primary-blue)" }}
             >
               Enviar
             </button>

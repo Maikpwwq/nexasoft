@@ -93,19 +93,19 @@ export default component$(() => {
           {questionsInfo.map((item) => (
             <details
               key={item.id}
-              class="group bg-black text-white rounded-lg overflow-hidden border border-gray-800"
+              class="group bg-white text-black rounded-lg overflow-hidden border-b border-gray-200"
             >
-              <summary class="flex justify-between items-center p-6 cursor-pointer list-none hover:bg-gray-900 transition-colors">
-                <h4 class="text-xl font-semibold text-[#f4c043]">
+              <summary class="flex justify-between items-center p-6 cursor-pointer list-none hover:bg-gray-50 transition-colors">
+                <h4 class="text-xl font-semibold group-open:text-[#4285F4] transition-colors">
                   {item.pregunta}
                 </h4>
-                <span class="transition-transform group-open:rotate-180">
+                <span class="transition-transform group-open:rotate-180 text-[#4285F4]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </span>
               </summary>
-              <div class="px-6 pt-2 pb-6 text-gray-300 text-base font-light">
+              <div class="px-6 pt-2 pb-6 text-gray-600 text-base font-light leading-relaxed">
                 {item.respuesta}
               </div>
             </details>
