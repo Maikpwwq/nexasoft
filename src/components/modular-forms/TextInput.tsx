@@ -41,7 +41,7 @@ export const TextInput = component$(
         <input
           {...props}
           class={clsx(
-            "h-14 w-full rounded-2xl border-2 text-white bg-white px-5 outline-none placeholder:text-slate-500 dark:bg-gray-900 md:h-16 md:text-lg lg:h-[70px] lg:px-6 lg:text-xl",
+            "h-14 w-full rounded-2xl border-2 text-gray-900 dark:text-white bg-white px-5 outline-none placeholder:text-slate-500 dark:bg-gray-900 md:h-16 md:text-lg lg:h-[70px] lg:px-6 lg:text-xl",
             error
               ? "border-red-600/50 dark:border-red-400/50"
               : "border-slate-200 hover:border-slate-300 focus:border-sky-600/50 dark:border-slate-800 dark:hover:border-slate-700 dark:focus:border-sky-400/50",

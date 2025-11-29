@@ -2,7 +2,6 @@ import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
 import type { QRL } from "@builder.io/qwik";
 import { isServer } from "@builder.io/qwik/build";
 import { createClient } from "@supabase/supabase-js";
-import clsx from "clsx";
 import {
   // server$,
   // routeAction$,
@@ -24,7 +23,6 @@ import {
   // valiForm$,
 } from "@modular-forms/qwik";
 import styles from "~/components/modular-forms/modularForm.module.css";
-import { MUITypography, MUIPaper } from "~/integrations/react/mui";
 import { TextInput } from "~/components/modular-forms/TextInput";
 
 // $(async () => {});
@@ -96,7 +94,7 @@ export default component$(() => {
   });
 
   const handleSubmit: QRL<SubmitHandler<LoginForm>> = $(
-     
+
     async (values: any, event: any) => {
       // Runs on CLIENT
       console.log("handleSubmit", values, event);
@@ -243,44 +241,29 @@ export default component$(() => {
   return (
     <div
       class="container container-center flex justify-center"
-    // style={{
-    //   paddingLeft: {sm: "0 !important" },
-    //   paddingRight: {sm: "0 !important" },
-    // }}
     >
-      <MUIPaper class={styles.cardContactForm} elevation={16}>
+      <div class="bg-white rounded-lg shadow-xl max-w-2xl mx-auto my-20 py-10 px-6 w-full">
         <div class={styles.sheetFormStyle}>
-          <MUITypography
-            variant="h4"
-            color={"var(--qwik-dark-blue)"}
-            align="center"
+          <h2
+            class="text-4xl font-bold text-center mb-4"
+            style={{ color: "var(--qwik-dark-blue)" }}
           >
             Formulario de contacto
-          </MUITypography>
-          <MUITypography
-            variant="body1"
-            class="py-6 w-80 mx-auto text-lg"
-            align="center"
+          </h2>
+          <p
+            class="text-center text-gray-600 mb-8 text-xl"
           >
             Solicita información adicional o una presentación de nuestros
             servicios.
-          </MUITypography>
+          </p>
           <Form
             data-netlify={true}
             name="customer-form"
-            // data-netlify-recaptcha="true"
-            // netlify-honeypot="bot-field"
-            // action={action}
             class={styles.formFlex}
             onSubmit$={handleSubmit}
-          // preventdefault:submit
-          // reloadDocument={true}
           >
-            {/* class={styles.labelStyle} */}
             <Field
-              // id="form-name"
               name="name"
-            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -326,7 +309,6 @@ export default component$(() => {
             </Field>
             <Field
               name="issue"
-            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -341,9 +323,7 @@ export default component$(() => {
               )}
             </Field>
             <Field
-              // id="form-message"
               name="message"
-            // class={styles.inputStyle}
             >
               {(field, props) => (
                 <TextInput
@@ -357,23 +337,16 @@ export default component$(() => {
                 />
               )}
             </Field>
-            {/* <div data-netlify-recaptcha="true"></div> */}
             <br class="mb-4" />
             <button
               type="submit"
-              // preventdefault:click
-              class={clsx("m-auto mt-6", styles.btnStyle)}
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-2xl focus:outline-none focus:shadow-outline transition-colors text-lg mt-6"
             >
               Enviar
             </button>
-
-            {/* {
-            // loginForm.submitted && loginForm.submitting === false &&
-              loginForm.response.status === "success" &&
-              successData()} */}
           </Form>
         </div>
-      </MUIPaper>
+      </div>
     </div>
   );
 });
