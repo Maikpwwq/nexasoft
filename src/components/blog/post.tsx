@@ -17,35 +17,37 @@ export default component$((props: PostProps) => {
   return (
     <>
       <blogpost id="blog-post-section" class={[styles.blogposts]}>
-        <div class="container">
-          <h1 class={[styles.title, "font-bold highlight text-4xl text-left mb-4"]}>
+        <div class="container max-w-4xl mx-auto">
+          <h1 class={[styles.title, "font-bold highlight text-5xl text-center mb-6"]}>
             {title}
           </h1>
-          <h2 class="text-xl text-left mb-4">
+          <h2 class="text-2xl text-gray-700 font-light text-center mb-12 leading-relaxed px-4">
             {description}
           </h2>
           <div class={["m-0 w-full", styles.blogpostsList]}>
-            <ul class="mt-6 mb-6 p-0">
+            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 mb-12 shadow-lg">
               <img
                 src={image}
                 alt={alt}
-                class="w-3/4 h-auto mx-auto"
+                class="w-full max-w-2xl h-auto mx-auto rounded-2xl shadow-md"
                 height={210}
                 width={210}
               />
+            </div>
+            <ul class="mt-8 mb-12 p-0 space-y-8">
               {
 
                 cycle.map((element: any, index: any) => {
                   const { stage, body } = element;
                   return (
                     <li
-                      class={[styles.listItem, "my-2 items-start"]}
+                      class="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 border-l-4 border-blue-500"
                       key={index}
                     >
-                      <h4 class="pt-6 mb-2 text-black font-semibold text-xl text-left">
+                      <h4 class="mb-4 text-gray-900 font-bold text-2xl">
                         {stage}
                       </h4>
-                      <p class="mb-2 text-left">
+                      <p class="text-gray-700 text-lg leading-relaxed">
                         {body}
                       </p>
                     </li>
@@ -54,16 +56,17 @@ export default component$((props: PostProps) => {
               }
             </ul>
           </div>
-          <a
-            href="/blog/"
-            class="text-2xl w-fit text-white button font-bold flex items-center"
-            style={{
-              color: "var(--qwik-dark-text)",
-              background: "var(--qwik-fusha)",
-            }}
-          >
-            Leer más publicaciones
-          </a>
+          <div class="text-center mt-16">
+            <a
+              href="/blog/"
+              class="inline-block text-xl px-8 py-4 text-white font-bold rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              style={{
+                background: "linear-gradient(135deg, var(--qwik-fusha) 0%, var(--qwik-light-purple) 100%)",
+              }}
+            >
+              ← Leer más publicaciones
+            </a>
+          </div>
         </div>
       </blogpost>
     </>
