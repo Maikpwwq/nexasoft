@@ -17,23 +17,24 @@ export default component$((props: PostProps) => {
   return (
     <>
       <blogpost id="blog-post-section" class={[styles.blogposts]}>
-        <div class="container max-w-4xl mx-auto">
-          <h1 class={[styles.title, "font-bold highlight text-5xl text-center mb-6"]}>
+        <div class="container max-w-6xl mx-auto">
+          <h1 class={[styles.title, "font-bold highlight text-3xl md:text-4xl text-center mb-6"]}>
             {title}
           </h1>
-          <h2 class="text-2xl text-gray-700 font-light text-center mb-12 leading-relaxed px-4">
+          <h2 class="text-lg font-normal text-center mb-10 leading-relaxed px-4" style={{ color: "#1a202c" }}>
             {description}
           </h2>
+          <div class="mb-10">
+            <img
+              src={image}
+              alt={alt}
+              class="w-full h-auto rounded-2xl shadow-lg"
+              height={210}
+              width={210}
+            />
+          </div>
           <div class={["m-0 w-full", styles.blogpostsList]}>
-            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 mb-12 shadow-lg">
-              <img
-                src={image}
-                alt={alt}
-                class="w-full max-w-2xl h-auto mx-auto rounded-2xl shadow-md"
-                height={210}
-                width={210}
-              />
-            </div>
+
             <ul class="mt-8 mb-12 p-0 space-y-8">
               {
 
@@ -59,9 +60,10 @@ export default component$((props: PostProps) => {
           <div class="text-center mt-16">
             <a
               href="/blog/"
-              class="inline-block text-xl px-8 py-4 text-white font-bold rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              class="inline-block text-lg px-8 py-4 font-bold rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
               style={{
-                background: "linear-gradient(135deg, var(--qwik-fusha) 0%, var(--qwik-light-purple) 100%)",
+                background: "var(--qwik-fusha)",
+                color: "white",
               }}
             >
               ← Leer más publicaciones
