@@ -101,12 +101,12 @@ export default component$(() => {
       <h2 class="text-4xl font-bold text-center mb-4" style={{ color: "var(--qwik-dark-blue)" }}>
         Formulario de contacto
       </h2>
-      <p class="text-center text-gray-600 mb-8 text-xl">
+      <p class="text-center text-gray-600 mt-4 mb-8 text-xl">
         Solicita información adicional o una presentación de nuestros servicios.
       </p>
       <div class={styles.formFlex}>
         <div class="mb-4">
-          <label for="form-name" class="block text-gray-700 text-sm font-bold mb-2">
+          <label for="form-name" class="block text-gray-900 font-bold mb-2 text-lg">
             Nombre: <span class="text-red-500">*</span>
           </label>
           <input
@@ -120,7 +120,7 @@ export default component$(() => {
         </div>
 
         <div class="mb-4">
-          <label for="form-email" class="block text-gray-700 text-sm font-bold mb-2">
+          <label for="form-email" class="block text-gray-900 font-bold mb-2 text-lg">
             Correo electrónico: <span class="text-red-500">*</span>
           </label>
           <input
@@ -134,7 +134,7 @@ export default component$(() => {
         </div>
 
         <div class="mb-4">
-          <label for="form-phone" class="block text-gray-700 text-sm font-bold mb-2">
+          <label for="form-phone" class="block text-gray-900 font-bold mb-2 text-lg">
             Teléfono: <span class="text-red-500">*</span>
           </label>
           <input
@@ -148,7 +148,7 @@ export default component$(() => {
         </div>
 
         <div class="mb-4">
-          <label for="form-issue" class="block text-gray-700 text-sm font-bold mb-2">
+          <label for="form-issue" class="block text-gray-900 font-bold mb-2 text-lg">
             Asunto:
           </label>
           <input
@@ -162,7 +162,7 @@ export default component$(() => {
         </div>
 
         <div class="mb-6">
-          <label for="form-message" class="block text-gray-700 text-sm font-bold mb-2">
+          <label for="form-message" class="block text-gray-900 font-bold mb-2 text-lg">
             Mensaje:
           </label>
           <textarea
@@ -176,7 +176,7 @@ export default component$(() => {
         </div>
 
         <button
-          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline transition-colors text-lg"
+          class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-extrabold py-4 px-6 rounded shadow-lg transform hover:scale-105 transition-all duration-300 text-2xl uppercase tracking-wider"
           onClick$={async () => {
             const customerRecord = {
               name: formData.name.value,

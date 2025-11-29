@@ -2,21 +2,21 @@
   "WebProducts": [
     {
       "title": "Diseño Web a medida",
-      "price": "449 900",
+      "price": "599 900",
       "description": "Potenciamos tu presencia en línea con un diseño de sitio web profesional para tu empresa.",
       "benefit": ["Diseño a medida de tu sitio web en una pagina"],
       "scope": "12 Horas de diseño"
     },
     {
       "title": "Mantenimiento Página Web",
-      "price": "499 900",
+      "price": "299 900",
       "description": "Desarrollamos actualizaciones de tu código para agregar nuevas características.",
       "benefit": ["Editamos los contenidos y gráficos de tu sitio web"],
       "scope": "8 Horas de programación"
     },
     {
       "title": "Sitio Web Informativo",
-      "price": "899 900",
+      "price": "999 900",
       "description": "Impulsamos tu negocio con una página de aterrizaje efectiva, que atraiga interesados y te ayude a alcanzar tus metas comerciales.",
       "benefit": [
         "Diseño a medida +",
@@ -31,7 +31,7 @@
     },
     {
       "title": "Vitrina virtual",
-      "price": "1 399 900",
+      "price": "1 799 900",
       "description": "Desarrollamos sitios web de ecommerce para que exhiban tus productos, operando y vendiendo en línea.     *  Sin Pasarela de pagos Online incluida",
       "benefit": [
         "Diseño a medida +",
@@ -46,7 +46,7 @@
     },
     {
       "title": "Tienda Online de Comercio Electrónico",
-      "price": "1 799 900",
+      "price": "2 299 900",
       "description": "Construimos una solución empresarial sólida para tu tienda con catálogo de productos y servicios, pasarelas de pago en línea, optimización SEO y todas las herramientas necesarias para atraer y convertir a nuevos clientes.",
       "benefit": [
         "Diseño a medida +",
@@ -64,7 +64,7 @@
     },
     {
       "title": "Pagina Web Corporativa",
-      "price": "2 599 900",
+      "price": "4 799 900",
       "description": "Creamos sitios web adaptativos que integran las últimas tecnologías para web, brindándole una presencia digital moderna y funcional a tu negocio.",
       "benefit": [
         "Diseño a medida +",

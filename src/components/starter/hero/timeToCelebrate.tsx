@@ -61,12 +61,12 @@ export default component$(() => {
         setTimeout(shoot, 400);
       }}
     >
-      <h1 class={styles.title} style="text-align: center; font-size: 3rem; font-weight: bold;">
+      <h1 class={styles.title} style="text-align: center; font-size: 6rem; font-weight: 900; line-height: 1.1; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
         Soluciones de
         <br />
-        <span class="highlight">desarrollo Web</span>
+        <span class="highlight" style="background: linear-gradient(120deg, #006ce9 0%, #ac7ff4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">desarrollo Web</span>
         <br />
-        en <span class="highlight">Colombia</span>
+        en <span class="highlight" style="background: linear-gradient(120deg, #006ce9 0%, #ac7ff4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Colombia</span>
       </h1>
       <p class="text-center pt-2">
         ¡Consigue una ventaja competitiva con nosotros!.

@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { MUITypography } from "~/integrations/react/mui";
+
 
 export default component$(() => {
   return (
@@ -10,13 +10,9 @@ export default component$(() => {
       <div class="flex flex-col justify-center items-center relative">
         <div role="presentation" class="ellipsis"></div>
         <div role="presentation" class="ellipsis ellipsis-purple"></div>
-        <MUITypography
-          variant="h3"
-          align="center"
-          class="font-bold mx-auto m-5 w-100"
-        >
+        <h3 class="text-4xl font-bold mx-auto m-5 w-full text-center">
           Paginas Web <span class="highlight">Corporativas</span>
-        </MUITypography>
+        </h3>
         <p class="text-xl px-4 mt-4 text-center">
           En NexaSoft SAS, creamos Paginas Web Corporativas que destacan con un
           diseño atractivo y funcional, integración segura de tus servicios.
