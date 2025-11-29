@@ -1,7 +1,16 @@
 "use client";
 import { component$ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
+import { useLocation, type StaticGenerateHandler } from "@builder.io/qwik-city";
 import Post from "~/components/blog/post";
+import { webPosts } from "~/const/blog-posts";
+
+export const onStaticGenerate: StaticGenerateHandler = async () => {
+  return {
+    params: webPosts.map((post) => {
+      return { postId: post.id };
+    }),
+  };
+};
 
 export default component$(() => {
   const { params } = useLocation();

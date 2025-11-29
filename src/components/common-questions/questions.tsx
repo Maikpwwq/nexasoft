@@ -105,7 +105,7 @@ export default component$(() => {
                   </svg>
                 </span>
               </summary>
-              <div class="px-6 pb-6 text-gray-300 text-base font-light">
+              <div class="px-6 pt-2 pb-6 text-gray-300 text-base font-light">
                 {item.respuesta}
               </div>
             </details>

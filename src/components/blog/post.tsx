@@ -2,7 +2,6 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import styles from "./blogPost.module.css";
 import { webPosts, voidPost } from "~/const/blog-posts";
-import { MUITypography } from "~/integrations/react/mui";
 import type { Posts } from "~/const/blog-posts";
 
 export interface PostProps {
@@ -19,12 +18,12 @@ export default component$((props: PostProps) => {
     <>
       <blogpost id="blog-post-section" class={[styles.blogposts]}>
         <div class="container">
-          <MUITypography variant="h2" align="left" class={styles.title}>
-            <span class="font-bold highlight">{title}</span>
-          </MUITypography>
-          <MUITypography variant="h5" align="left">
+          <h1 class={[styles.title, "font-bold highlight text-4xl text-left mb-4"]}>
+            {title}
+          </h1>
+          <h5 class="text-xl text-left mb-4">
             {description}
-          </MUITypography>
+          </h5>
           <div class={["m-0 w-full", styles.blogpostsList]}>
             <ul class="mt-6 mb-6 p-0">
               <img
@@ -35,7 +34,7 @@ export default component$((props: PostProps) => {
                 width={210}
               />
               {
-                 
+
                 cycle.map((element: any, index: any) => {
                   const { stage, body } = element;
                   return (
@@ -43,20 +42,12 @@ export default component$((props: PostProps) => {
                       class={[styles.listItem, "my-2 items-start"]}
                       key={index}
                     >
-                      <MUITypography
-                        variant="h5"
-                        align="left"
-                        class="pt-6 mb-2 text-black font-semibold"
-                      >
+                      <h5 class="pt-6 mb-2 text-black font-semibold text-xl text-left">
                         {stage}
-                      </MUITypography>
-                      <MUITypography
-                        variant="body1"
-                        align="left"
-                        class="mb-2"
-                      >
+                      </h5>
+                      <p class="mb-2 text-left">
                         {body}
-                      </MUITypography>
+                      </p>
                     </li>
                   );
                 })

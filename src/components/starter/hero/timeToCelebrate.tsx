@@ -68,7 +68,7 @@ export default component$(() => {
         <br />
         en <span class="highlight">Colombia</span>
       </h1>
-      <p class="text-center">
+      <p class="text-center pt-2">
         ¡Consigue una ventaja competitiva con nosotros!.
       </p>
     </div>

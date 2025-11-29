@@ -1,3 +1,7 @@
+#testimonials-section {
+  max-width: fit-content;
+}
+
 testimonials a {
   color: var(--qwik-dark-blue) !important;
 }

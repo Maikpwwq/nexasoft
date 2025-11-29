@@ -8,9 +8,9 @@ export default component$(() => {
 
   return (
     <footer class="text-white">
-      <div class="flex flex-row items-baseline justify-center mb-8">
+      <div class="flex flex-row items-baseline justify-center">
         <svg
-          class="mb-3 me-2"
+          class="mb-2 me-2"
           xmlns="http://www.w3.org/2000/svg"
           width="35"
           height="35"
@@ -26,14 +26,14 @@ export default component$(() => {
           Datos de contacto
         </h3>
       </div>
-      <div class="flex flex-wrap justify-center w-full pb-0 md:pb-[33px]">
+      <div class="flex flex-wrap justify-center w-full pb-0 md:pb-2">
         <div class="p-4 w-full bg-white text-black rounded shadow-lg max-w-md m-2">
           <div class="flex flex-col items-center">
             <img
               src={NexaSoftLogo}
               height={50}
               width={210}
-              class="pb-4 bg-black p-2 rounded mb-4"
+              class="pb-4 p-2 rounded mb-4"
             />
             <p class="text-center mb-2 flex items-center justify-center">
               <svg

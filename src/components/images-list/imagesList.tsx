@@ -15,7 +15,7 @@ export default component$(() => {
         <p class="py-6 text-xl text-center">
           Contáctanos y descubre nuestras poderosas soluciones de software.
         </p>
-        <div class="w-100 flex justify-center">
+        <div class="w-100 flex justify-center mx-auto">
           <div style="width: 500px; height: 600px;" class="grid grid-cols-4 gap-2">
             {itemData.map((item, index) => (
               <div
