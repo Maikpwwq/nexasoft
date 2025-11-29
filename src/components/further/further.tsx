@@ -38,7 +38,7 @@ export default component$(() => {
             ¡Desbloquea tu <span class="highlight">Éxito Digital</span> con
             Nuestros <span class="highlight">Servicios Adicionales!</span>
           </h2>
-          <ul class="mt-6 mb-6">
+          <ul class="mt-8 mb-8">
             {furtherItems.length > 0 &&
               furtherItems.map((item, index) => {
                 const { icon, title } = item;

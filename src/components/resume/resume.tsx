@@ -42,13 +42,13 @@ export default component$(() => {
 
   return (
     <features id="resume-section" class={[styles.resume]}>
-      <div class="container container-blue">
+      <div class="container container-blue mb-6">
         <div class={["mt-1", styles.resumeList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             Soluciones de <span class="highlight">desarrollo Web</span> en
             Colombia
           </h2>
-          <ul class="mt-6 mb-6">
+          <ul class="mt-8 mb-8">
             {webServices.map((service, index) => {
               const { name, icon, route } = service;
               return (

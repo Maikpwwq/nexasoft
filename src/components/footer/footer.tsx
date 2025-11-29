@@ -7,7 +7,7 @@ export default component$(() => {
   useStylesScoped$(styles);
 
   return (
-    <footer class="text-white" style={{ backgroundColor: "#0f0a28" }}>
+    <footer class="text-white">
       <div class="flex flex-row items-baseline justify-center p-4">
         <svg
           class="mb-2 me-4"

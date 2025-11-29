@@ -112,10 +112,10 @@ export default component$(() => {
   return (
     <div
       id="testimonials-section"
-      class={["flex flex-col container-purple px-0 py-5 w-full m-0", styles.testimonials]}
+      class={["flex flex-col container-purple px-0 py-6 w-full m-0", styles.testimonials]}
     >
       <h2
-        class="pt-6 text-center font-bold"
+        class="pt-8 text-center font-bold"
         style={{ fontSize: "2rem", color: "rgba(255, 255, 255, 1)" }}
       >
         Nuestros{" "}
@@ -128,7 +128,7 @@ export default component$(() => {
         Satisfechos.
       </h2>
       <div
-        class="flex flex-row items-center justify-center mx-auto my-6 flex-wrap gap-6"
+        class="flex flex-row items-center justify-center mx-auto my-8 flex-wrap gap-6"
       >
         {testimonials.map((testimony, index) => {
           const { message, name, alt, logo, image, webSite, technologies } = testimony;

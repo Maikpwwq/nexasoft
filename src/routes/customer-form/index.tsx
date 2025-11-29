@@ -347,8 +347,8 @@ export default component$(() => {
             <br class="mb-4" />
             <button
               type="submit"
-              class="w-full text-white font-bold py-3 px-4 rounded-2xl focus:outline-none focus:shadow-outline transition-colors text-xl mt-6"
-              style={{ backgroundColor: "var(--primary-blue)" }}
+              class="w-full font-bold py-3 px-4 rounded-2xl focus:outline-none focus:shadow-outline transition-colors text-2xl mt-6"
+              style={{ backgroundColor: "var(--primary-blue)", color: "var(--primary-white)" }}
             >
               Enviar
             </button>

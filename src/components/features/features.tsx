@@ -4,7 +4,7 @@ import styles from "./features.module.css";
 export default component$(() => {
   return (
     <features id="features-section" class={["pb-6 relative", styles.features]}>
-      <div class="container container-purple container-center relative z-10">
+      <div class="container container-purple container-center relative z-10 pb-6">
         <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold; fontFamily: var(--font-heading);">
           ¡Transforma tu
           <br />
@@ -13,7 +13,7 @@ export default component$(() => {
         </h2>
         <div class={styles.servicesBriefcase}>
           <p
-            class="mt-6 mb-6 text-lg hidden md:block"
+            class="mt-8 mb-8 text-lg hidden md:block"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <br />
@@ -94,7 +94,7 @@ export default component$(() => {
             <br />
           </p>
           <p
-            class="mt-6 mb-6 text-lg block md:hidden"
+            class="mt-8 mb-8 text-lg block md:hidden"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <br />

@@ -8,7 +8,7 @@ export default component$(() => {
   const yearTime = arregloTime[0];
 
   return (
-    <footer class={styles.bgcolor}>
+    <footer style={{ backgroundColor: "#0f0a28" }}>
       <div class="container">
         <div class="flex flex-row justify-center text-sm align-bottom">
           <span>

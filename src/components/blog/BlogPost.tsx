@@ -7,7 +7,7 @@ export default component$(() => {
     <>
       <blogposts id="blog-post-section" class={[styles.blogposts]}>
         <div class="container">
-          <h2 class={styles.title} style="text-align: left; font-size: 2.5rem; font-weight: bold;">
+          <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             <span class="font-bold highlight">Últimos Blogs</span>
           </h2>
           <h3 style="text-align: left; font-size: 1.5rem;">

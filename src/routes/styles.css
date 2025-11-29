@@ -94,7 +94,7 @@ ul {
 /* CONTAINER ------------------------------------ */
 .container {
   margin: 0 auto;
-  padding: 30px 40px;
+  padding: 36px 40px;
 }
 
 .container.container-purple {
@@ -120,16 +120,16 @@ ul {
   does nothing on mobile
 } */
 .container.container-spacing-xl {
-  padding: 50px 40px;
+  padding: 60px 40px;
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    padding: 50px 80px;
+    padding: 60px 80px;
   }
 
   .container.container-spacing-xl {
-    padding: 100px 60px;
+    padding: 120px 60px;
   }
 
   .container.container-flex {
