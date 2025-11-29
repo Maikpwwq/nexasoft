@@ -34,6 +34,7 @@ export default component$(() => {
               height={50}
               width={210}
               class="pb-4 p-2 rounded mb-4"
+              alt="NexaSoft Logo"
             />
             <p class="text-center mb-2 flex items-center justify-center text-xl">
               <svg
@@ -142,7 +143,7 @@ export default component$(() => {
         </div>
       </div>
       <div class="flex flex-col items-center">
-        <img src={CHCoraSoft} height={50} width={210} class="pb-4" />
+        <img src={CHCoraSoft} height={50} width={210} class="pb-4" alt="Logo Chicó corazón de software" />
       </div>
     </footer>
   );

@@ -10,9 +10,9 @@ export default component$(() => {
           <h2 class={styles.title} style="text-align: left; font-size: 2.5rem; font-weight: bold;">
             <span class="font-bold highlight">Últimos Blogs</span>
           </h2>
-          <h5 style="text-align: left; font-size: 1.5rem;">
+          <h3 style="text-align: left; font-size: 1.5rem;">
             Explorar los más destacados
-          </h5>
+          </h3>
           <div class={["m-0 w-full", styles.blogpostsList]}>
             <div class="w-1/2">
               <ul class="mt-6 mb-6 p-0">
@@ -28,9 +28,9 @@ export default component$(() => {
                           height={100}
                           width={100}
                         />
-                        <h5 class="pt-6 mb-2 text-black font-semibold text-xl">
+                        <h4 class="pt-6 mb-2 text-black font-semibold text-xl">
                           {title}
-                        </h5>
+                        </h4>
                         <p class="mb-2">
                           {description}
                         </p>
@@ -45,20 +45,20 @@ export default component$(() => {
                 {webPosts.map((post, index) => {
                   const { title, description, route } = post;
                   return (
-                    <a href={route} key={index}>
-                      <li class={[styles.listItem, "my-2"]}>
-                        <h5 class="mb-2 text-black font-semibold text-xl">
+                    <li class={[styles.listItem, "my-2"]} key={index}>
+                      <a href={route}>
+                        <h4 class="mb-2 text-black font-semibold text-xl">
                           {title}
-                        </h5>
+                        </h4>
                         <p class="mb-2">
                           {description}
                         </p>
-                      </li>
-                    </a>
+                      </a>
+                    </li>
                   );
                 })}
-                <>--------------------------------------</>
               </ul>
+              <div class="border-t border-gray-300 my-4"></div>
               <a
                 href="/blog/"
                 class="text-2xl w-fit text-white button font-bold flex items-center"

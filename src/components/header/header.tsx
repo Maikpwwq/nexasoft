@@ -53,7 +53,7 @@ export default component$(() => {
 
         <div class={styles.logo}>
           <Link href="/" title="NexaSoft SAS">
-            <img src={NexaSoftLogo} height={50} width={210} />
+            <img src={NexaSoftLogo} height={50} width={210} alt="NexaSoft Logo" />
           </Link>
         </div>
 

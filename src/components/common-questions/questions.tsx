@@ -96,9 +96,9 @@ export default component$(() => {
               class="group bg-black text-white rounded-lg overflow-hidden border border-gray-800"
             >
               <summary class="flex justify-between items-center p-6 cursor-pointer list-none hover:bg-gray-900 transition-colors">
-                <h5 class="text-xl font-semibold text-[#f4c043]">
+                <h4 class="text-xl font-semibold text-[#f4c043]">
                   {item.pregunta}
-                </h5>
+                </h4>
                 <span class="transition-transform group-open:rotate-180">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>

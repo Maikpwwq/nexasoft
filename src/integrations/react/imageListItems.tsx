@@ -1,24 +1,24 @@
 /** @jsxImportSource react */
 // import { ImageListItem } from "@mui/material";
 // import { useCallback } from "react";
-import AplicacionesMoviles from "../../assets/img/lista imagenes/Aplicaciones móviles.jpg";
-import Aplications from "../../assets/img/lista imagenes/aplications.jpg";
-import Automatizacion from "../../assets/img/lista imagenes/Automatización.jpg";
-import DesarrolloWeb from "../../assets/img/lista imagenes/Desarrollo web.jpg";
-import Desktop from "../../assets/img/lista imagenes/desktop.jpg";
-import Development from "../../assets/img/lista imagenes/development.jpg";
-import Devices from "../../assets/img/lista imagenes/devices.jpg";
-import Ecommerce from "../../assets/img/lista imagenes/ecommerce.jpg";
-import ExploreInternet from "../../assets/img/lista imagenes/explore internet.jpg";
-import GrowthIdeas from "../../assets/img/lista imagenes/growth ideas.jpg";
-import Innovation from "../../assets/img/lista imagenes/Innovación.jpg";
-import SystemIntegration from "../../assets/img/lista imagenes/Integración de sistemas.jpg";
-import MantenimientoPlataformas from "../../assets/img/lista imagenes/Mantenimiento de plataformas.jpg";
-import ModernizacionPlataformas from "../../assets/img/lista imagenes/Modernización de plataformas.jpg";
-import Movile from "../../assets/img/lista imagenes/móvile.jpg";
-import RemoteOffice from "../../assets/img/lista imagenes/remote office.jpg";
-import SeguridadInformatica from "../../assets/img/lista imagenes/Seguridad informática.jpg";
-import Tecnologia from "../../assets/img/lista imagenes/Tecnología.jpg";
+import AplicacionesMoviles from "../../assets/img/lista imagenes/Aplicaciones móviles.webp";
+import Aplications from "../../assets/img/lista imagenes/aplications.webp";
+import Automatizacion from "../../assets/img/lista imagenes/Automatización.webp";
+import DesarrolloWeb from "../../assets/img/lista imagenes/Desarrollo web.webp";
+import Desktop from "../../assets/img/lista imagenes/desktop.webp";
+import Development from "../../assets/img/lista imagenes/development.webp";
+import Devices from "../../assets/img/lista imagenes/devices.webp";
+import Ecommerce from "../../assets/img/lista imagenes/ecommerce.webp";
+import ExploreInternet from "../../assets/img/lista imagenes/explore internet.webp";
+import GrowthIdeas from "../../assets/img/lista imagenes/growth ideas.webp";
+import Innovation from "../../assets/img/lista imagenes/Innovación.webp";
+import SystemIntegration from "../../assets/img/lista imagenes/Integración de sistemas.webp";
+import MantenimientoPlataformas from "../../assets/img/lista imagenes/Mantenimiento de plataformas.webp";
+import ModernizacionPlataformas from "../../assets/img/lista imagenes/Modernización de plataformas.webp";
+import Movile from "../../assets/img/lista imagenes/móvile.webp";
+import RemoteOffice from "../../assets/img/lista imagenes/remote office.webp";
+import SeguridadInformatica from "../../assets/img/lista imagenes/Seguridad informática.webp";
+import Tecnologia from "../../assets/img/lista imagenes/Tecnología.webp";
 
 // useCallback(() : Array<any> => (), [])
 

@@ -21,9 +21,9 @@ export default component$((props: PostProps) => {
           <h1 class={[styles.title, "font-bold highlight text-4xl text-left mb-4"]}>
             {title}
           </h1>
-          <h5 class="text-xl text-left mb-4">
+          <h2 class="text-xl text-left mb-4">
             {description}
-          </h5>
+          </h2>
           <div class={["m-0 w-full", styles.blogpostsList]}>
             <ul class="mt-6 mb-6 p-0">
               <img
@@ -42,9 +42,9 @@ export default component$((props: PostProps) => {
                       class={[styles.listItem, "my-2 items-start"]}
                       key={index}
                     >
-                      <h5 class="pt-6 mb-2 text-black font-semibold text-xl text-left">
+                      <h4 class="pt-6 mb-2 text-black font-semibold text-xl text-left">
                         {stage}
-                      </h5>
+                      </h4>
                       <p class="mb-2 text-left">
                         {body}
                       </p>
