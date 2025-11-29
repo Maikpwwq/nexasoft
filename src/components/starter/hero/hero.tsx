@@ -4,7 +4,7 @@ import styles from "./hero.module.css";
 
 export default component$(() => {
   return (
-    <>
+    <hero id="hero" class={[styles.hero, "relative"]}>
       <div class={["container", styles.hero]} style="margin-bottom: 5rem;">
         <div role="presentation" class="ellipsis"></div>
         <div role="presentation" class="ellipsis ellipsis-purple" style="z-index: 30;"></div>
@@ -23,6 +23,6 @@ export default component$(() => {
         </div>
       </div>
       <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-purple-background)] pointer-events-none z-20"></div>
-    </>
+    </hero>
   );
 });
