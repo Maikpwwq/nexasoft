@@ -19,8 +19,8 @@ export default component$(() => {
                 {webPosts.slice(0, 1).map((post, index) => {
                   const { title, description, alt, image, route } = post;
                   return (
-                    <a href={route} key={index}>
-                      <li class={[styles.listItem, "my-2"]}>
+                    <li class={[styles.listItem, "my-2"]} key={index}>
+                      <a href={route} >
                         <img
                           src={image}
                           alt={alt}
@@ -34,8 +34,8 @@ export default component$(() => {
                         <p class="mb-2">
                           {description}
                         </p>
-                      </li>
-                    </a>
+                      </a>
+                    </li>
                   );
                 })}
               </ul>

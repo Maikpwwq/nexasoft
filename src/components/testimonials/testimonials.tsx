@@ -39,6 +39,7 @@ export default component$(() => {
       message:
         "¡Increíble experiencia trabajando con NexaSoft SAS! Modernizamos nuestra plataforma para brindar un servicio mejorado a nuestros clientes y aumentar nuestras ventas.",
       name: "WaviAeronautics",
+      alt: "Logo de Wavi Aeronautics",
       logo: WaviPixelLogo,
       image: WaviImage,
       webSite: "https://wavi-aeronautics.vercel.app/",
@@ -54,6 +55,7 @@ export default component$(() => {
       message:
         "Mejoramos la productividad de nuestros sistemas existentes, ahora confiamos en NexaSoft SAS el mantenimiento de nuestros sistemas, conociendo que estarán disponibles en todo momento y podremos cumplir con los plazos de entrega.",
       name: "Naga Regeneración de Aguas",
+      alt: "Logo Naga Regeneración de Aguas",
       logo: NagaLogo,
       image: NagaImage,
       webSite: "https://naga-regeneracion-aguas-frontend.vercel.app",
@@ -63,6 +65,7 @@ export default component$(() => {
       message:
         "¡NexaSoft SAS ha transformado nuestra experiencia! Costos reducidos, aplicación intuitiva y gran aceptación entre nuestros usuarios finales. Impresionante.",
       name: "Comunidad Dezzpo",
+      alt: "Logo Comunidad Dezzpo",
       logo: ComunidadDezzpoLogo,
       image: ComunidadDezzpoImage,
       webSite: "https://dezzpo.com/",
@@ -80,6 +83,7 @@ export default component$(() => {
       message:
         "Con plena confianza, hemos establecido una estratégica asociación con NexaSoft SAS para garantizar una trazabilidad segura de nuestro proyecto en la blockchain.",
       name: "PrimalTrace",
+      alt: "Logo PrimalTrace",
       logo: PrimalTrace,
       image: PrimalTraceImage,
       webSite: "https://primaltrace-nuxt-ssr.vercel.app/",
@@ -97,6 +101,7 @@ export default component$(() => {
       message:
         "Me encantó trabajar mi sitio web con Nexasoft SAS. Sus expertos resolvieron todas mis dudas y definieron cada etapa con total transparencia. ¡Muy recomendados!",
       name: "Constructora Colombia",
+      alt: "Logo Constructora Colombia",
       logo: ConstructoraColombia,
       image: ConstructoraColombiaImage,
       webSite: "https://constructoracolombia.co/",
@@ -126,7 +131,7 @@ export default component$(() => {
         class="flex flex-row items-center justify-center mx-auto my-6 flex-wrap gap-6"
       >
         {testimonials.map((testimony, index) => {
-          const { message, name, logo, image, webSite, technologies } = testimony;
+          const { message, name, alt, logo, image, webSite, technologies } = testimony;
           return (
             <div key={index} class="bg-white rounded-2xl shadow-lg overflow-hidden w-[300px] hover:scale-105 transition-transform duration-300">
               <div class="h-[184px] w-full overflow-hidden">
@@ -141,7 +146,7 @@ export default component$(() => {
                   >
                     <img
                       src={logo}
-                      alt={name}
+                      alt={alt}
                       height={84}
                       width={84}
                       class="mt-2 mb-4 me-2 object-contain"

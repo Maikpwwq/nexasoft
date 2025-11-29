@@ -39,14 +39,14 @@ export default component$(() => {
               <div key={index} class="flex items-stretch basis-1/5">
                 <div class={["bg-light", styles.card]}>
                   <div class={["card-body", styles.cardBody]}>
-                    <h4
+                    <h3
                       class={[
                         "card-title font-bold py-3 text-xl",
                         styles.cardTitle,
                       ]}
                     >
                       {title}
-                    </h4>
+                    </h3>
                     <p class="card-text my-3 font-light">{description}</p>
                     <p
                       class={[
