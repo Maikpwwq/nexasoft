@@ -97,11 +97,11 @@ export default component$(() => {
   };
 
   return (
-    <div class={[styles.sheetFormStyle, "py-10 px-6 bg-white rounded-lg shadow-xl max-w-2xl mx-auto my-10"]}>
-      <h2 class="text-3xl font-bold text-center mb-2" style={{ color: "var(--qwik-dark-blue)" }}>
+    <div class={[styles.sheetFormStyle, "py-10 px-6 bg-white rounded-lg shadow-xl max-w-2xl mx-auto my-20"]}>
+      <h2 class="text-4xl font-bold text-center mb-4" style={{ color: "var(--qwik-dark-blue)" }}>
         Formulario de contacto
       </h2>
-      <p class="text-center text-gray-600 mb-8 text-lg">
+      <p class="text-center text-gray-600 mb-8 text-xl">
         Solicita información adicional o una presentación de nuestros servicios.
       </p>
       <div class={styles.formFlex}>
