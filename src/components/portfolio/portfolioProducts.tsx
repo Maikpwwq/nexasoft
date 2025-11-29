@@ -41,7 +41,7 @@ export default component$(() => {
                   <div class={["card-body", styles.cardBody]}>
                     <h3
                       class={[
-                        "card-title font-bold py-3 text-xl",
+                        "card-title font-bold py-3 text-lg",
                         styles.cardTitle,
                       ]}
                     >
@@ -58,7 +58,7 @@ export default component$(() => {
                     </p>
                     <a
                       href="/customer-form/"
-                      class={["btn text-lg text-center py-2", styles.cardBtn]}
+                      class={["btn text-xl text-center py-2", styles.cardBtn]}
                     >
                       Escoger plan
                     </a>

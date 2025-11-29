@@ -251,7 +251,7 @@ export default component$(() => {
             Formulario de contacto
           </h2>
           <p
-            class="text-center text-gray-600 mb-8 text-xl"
+            class="text-center text-gray-600 mt-4 mb-8 text-xl"
           >
             Solicita información adicional o una presentación de nuestros
             servicios.
@@ -273,6 +273,7 @@ export default component$(() => {
                   type="text"
                   label="Nombre:"
                   placeholder="Nombre"
+                  class="text-xl font-light text-black"
                   required
                 />
               )}
@@ -288,6 +289,7 @@ export default component$(() => {
                   type="email"
                   label="Email:"
                   placeholder="Email"
+                  class="text-xl font-light text-black"
                   required
                 />
               )}
@@ -303,6 +305,7 @@ export default component$(() => {
                   type="tel"
                   label="Teléfono:"
                   placeholder="Teléfono"
+                  class="text-xl font-light text-black"
                   required
                 />
               )}
@@ -318,6 +321,7 @@ export default component$(() => {
                   type="text"
                   label="Asunto:"
                   placeholder="Asunto"
+                  class="text-xl font-light text-black"
                   required
                 />
               )}
@@ -333,6 +337,7 @@ export default component$(() => {
                   type="text"
                   label="Mensaje:"
                   placeholder="Mensaje"
+                  class="text-xl font-light text-black"
                   required
                 />
               )}
@@ -340,7 +345,7 @@ export default component$(() => {
             <br class="mb-4" />
             <button
               type="submit"
-              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-2xl focus:outline-none focus:shadow-outline transition-colors text-lg mt-6"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-2xl focus:outline-none focus:shadow-outline transition-colors text-xl mt-6"
             >
               Enviar
             </button>
