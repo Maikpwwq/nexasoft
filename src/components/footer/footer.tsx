@@ -19,12 +19,12 @@ export default component$(() => {
         >
           <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
         </svg>
-        <h3
-          class="text-xl font-bold"
-          style={{ fontSize: "1.25rem", fontWeight: "bold" }}
+        <h2
+          class="text-3xl font-bold"
+          style={{ fontSize: "2.5rem", fontWeight: "bold" }}
         >
           Datos de contacto
-        </h3>
+        </h2>
       </div>
       <div class="flex flex-wrap justify-center w-full pb-0 md:pb-2">
         <div class="p-4 w-full bg-white text-black rounded shadow-lg max-w-md m-2">
@@ -35,7 +35,7 @@ export default component$(() => {
               width={210}
               class="pb-4 p-2 rounded mb-4"
             />
-            <p class="text-center mb-2 flex items-center justify-center">
+            <p class="text-center mb-2 flex items-center justify-center text-xl">
               <svg
                 class="me-1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ export default component$(() => {
                 title="mail"
                 class="text-black no-underline hover:underline"
               >
-                <p class="flex flex-row justify-center items-end">
+                <p class="flex flex-row justify-center items-end text-xl">
                   <svg
                     class="me-1"
                     xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ export default component$(() => {
               rel="noopener noreferrer"
               class="text-black no-underline hover:underline mb-4"
             >
-              <p class="flex flex-row justify-center items-end text-center">
+              <p class="flex flex-row justify-center items-end text-center text-xl">
                 <svg
                   class="me-1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ export default component$(() => {
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
-                  <path d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.23.01-.58-.04-1.05-.21-.45-.17-1.22-.51-2.07-1.18-.94-.74-2.4-2.12-3.17-3.45-.48-.81-.5-1.63-.05-2.28.2-.29.47-.42.67-.44.2-.02.5-.04.77-.04.17 0 .32.05.46.13.13.09.44.54.68 1.05.24.52.28.85.17 1.05-.1.19-.27.31-.5.52-.23.22-.48.37-.63.53-.15.17-.32.37-.14.73.18.36.78 1.3 1.7 2.12.91.81 1.89 1.28 2.3 1.46.37.16.6.14.82-.1.22-.24.96-1.11 1.2-1.48.25-.37.5-.32.85-.18zM12 2C6.48 2 2 6.48 2 12c0 1.84.48 3.58 1.32 5.12l-1.32 4.88 4.88-1.32C8.42 21.52 10.16 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" />
+                  <path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.15-2.9-7.02zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.19-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.39 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.27-.16-.51-.28z" />
                 </svg>
                 3195137182
               </p>

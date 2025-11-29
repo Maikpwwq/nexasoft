@@ -8,7 +8,7 @@ import {
   // Form,
 } from "@builder.io/qwik-city";
 import styles from "./qwikForm.module.css";
-import { MUITypography } from "~/integrations/react/mui";
+// import { MUITypography } from "~/integrations/react/mui";
 
 const successful: boolean = false;
 // const successful = false;
@@ -97,79 +97,86 @@ export default component$(() => {
   };
 
   return (
-    <div class={styles.sheetFormStyle}>
-      <MUITypography variant="h6" color={"var(--qwik-dark-blue)"}>
+    <div class={[styles.sheetFormStyle, "py-10 px-6 bg-white rounded-lg shadow-xl max-w-2xl mx-auto my-10"]}>
+      <h2 class="text-3xl font-bold text-center mb-2" style={{ color: "var(--qwik-dark-blue)" }}>
         Formulario de contacto
-      </MUITypography>
-      <MUITypography variant="body1" class="pt-2 pb-4" align="center">
+      </h2>
+      <p class="text-center text-gray-600 mb-8 text-lg">
         Solicita información adicional o una presentación de nuestros servicios.
-      </MUITypography>
-      <div
-        // action={action}
-        class={styles.formFlex}
-      // reloadDocument={true}
-      // onSubmit$={async (e) => {
-      //   e.preventDefault();
-      //   const greeting = await addCustomer(formData);
-      //   // console.log("greeting", greeting.successful);
-      //   if (greeting.successful) {
-      //     alert("Gracias, su mensaje ha sido recibido.");
-      //   }
-      // }}
-      >
-        <label for="form-name" class={styles.labelStyle}>
-          Nombre:{" "}
-        </label>
-        <input
-          id="form-name"
-          name="name"
-          type="text"
-          class={styles.inputStyle}
-          bind:value={formData.name}
-        />
-        <label for="form-email" class={styles.labelStyle}>
-          Correo electrónico:{" "}
-        </label>
-        <input
-          id="form-email"
-          name="email"
-          type="email"
-          class={styles.inputStyle}
-          bind:value={formData.email}
-        />
-        <label for="form-phone" class={styles.labelStyle}>
-          Teléfono:{" "}
-        </label>
-        <input
-          id="form-phone"
-          name="phone"
-          type="phone"
-          class={styles.inputStyle}
-          bind:value={formData.phone}
-        />
-        <label for="form-issue" class={styles.labelStyle}>
-          Asunto:{" "}
-        </label>
-        <input
-          id="form-issue"
-          name="issue"
-          type="text"
-          class={styles.inputStyle}
-          bind:value={formData.issue}
-        />
-        <label for="form-message" class={styles.labelStyle}>
-          Mensaje:{" "}
-        </label>
-        <textarea
-          id="form-message"
-          rows={7}
-          name="message"
-          class={styles.inputStyle}
-          bind:value={formData.message}
-        />
+      </p>
+      <div class={styles.formFlex}>
+        <div class="mb-4">
+          <label for="form-name" class="block text-gray-700 text-sm font-bold mb-2">
+            Nombre: <span class="text-red-500">*</span>
+          </label>
+          <input
+            id="form-name"
+            name="name"
+            type="text"
+            placeholder="Tu nombre completo"
+            class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition-colors"
+            bind:value={formData.name}
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="form-email" class="block text-gray-700 text-sm font-bold mb-2">
+            Correo electrónico: <span class="text-red-500">*</span>
+          </label>
+          <input
+            id="form-email"
+            name="email"
+            type="email"
+            placeholder="tu@email.com"
+            class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition-colors"
+            bind:value={formData.email}
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="form-phone" class="block text-gray-700 text-sm font-bold mb-2">
+            Teléfono: <span class="text-red-500">*</span>
+          </label>
+          <input
+            id="form-phone"
+            name="phone"
+            type="tel"
+            placeholder="Tu número de contacto"
+            class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition-colors"
+            bind:value={formData.phone}
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="form-issue" class="block text-gray-700 text-sm font-bold mb-2">
+            Asunto:
+          </label>
+          <input
+            id="form-issue"
+            name="issue"
+            type="text"
+            placeholder="Motivo de tu mensaje"
+            class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition-colors"
+            bind:value={formData.issue}
+          />
+        </div>
+
+        <div class="mb-6">
+          <label for="form-message" class="block text-gray-700 text-sm font-bold mb-2">
+            Mensaje:
+          </label>
+          <textarea
+            id="form-message"
+            rows={5}
+            name="message"
+            placeholder="¿Cómo podemos ayudarte?"
+            class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500 transition-colors"
+            bind:value={formData.message}
+          />
+        </div>
+
         <button
-          // type="submit"
-          class={styles.btnStyle}
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline transition-colors text-lg"
           onClick$={async () => {
             const customerRecord = {
               name: formData.name.value,
@@ -178,10 +185,9 @@ export default component$(() => {
               issue: formData.issue.value,
               message: formData.message.value,
             };
-            // const resume = await connectionDB(customerRecord);
-            const resume = await addCustomer(customerRecord); // addCustomer
+            const resume = await addCustomer(customerRecord);
             console.log("greeting", resume, successful);
-            // const { value } = await action.submit(formData)
+
             const resetForm = () => {
               formData.name.value = "";
               formData.email.value = "";
@@ -189,26 +195,15 @@ export default component$(() => {
               formData.issue.value = "";
               formData.message.value = "";
             };
-            // console.log('action triggered programmatically', value)
-            // resume && successful
-            // if (successful) {
-            alert("Gracias, su mensaje ha sido recibido." + resume);
+
+            alert("Gracias, su mensaje ha sido recibido." + (resume.success ? "" : " (Error al guardar)"));
             resetForm();
-            //   // successful = false; READ only
             await nav("/");
-            // }
           }}
         >
-          Enviar
+          Enviar Mensaje
         </button>
-        {/* {action.value?.success && (
-           alert("Gracias, su mensaje ha sido recibido.");
-        )} */}
       </div>
-      {/* {successful && (
-        // When the action is done successfully, the `action.value` property will contain the return value of the action
-        <p>Gracias, su mensaje ha sido recibido.</p>
-      )} */}
     </div>
   );
 });

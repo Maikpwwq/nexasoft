@@ -107,7 +107,7 @@ export default component$(() => {
   return (
     <div
       id="testimonials-section"
-      class={["container flex flex-col container-purple container-center px-0 py-5 w-auto m-0", styles.testimonials]}
+      class={["container flex flex-row container-purple container-center px-0 py-5 w-auto m-0", styles.testimonials]}
     >
       <h2
         class="pt-6 text-center font-bold"
