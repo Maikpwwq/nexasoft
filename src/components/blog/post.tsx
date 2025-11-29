@@ -21,7 +21,7 @@ export default component$((props: PostProps) => {
           <h1 class={[styles.title, "font-bold highlight text-3xl md:text-5xl text-center mb-8"]}>
             {title}
           </h1>
-          <p class="text-lg md:text-xl font-normal text-center mb-12 leading-relaxed px-4 max-w-4xl mx-auto" style={{ color: "#1a202c" }}>
+          <p class="text-lg md:text-xl font-semibold text-center mb-12 leading-relaxed px-4 max-w-4xl mx-auto" style={{ color: "#1a202c" }}>
             {description}
           </p>
           <div class="mb-10">

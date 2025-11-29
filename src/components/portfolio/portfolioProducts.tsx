@@ -41,9 +41,10 @@ export default component$(() => {
                   <div class={["card-body", styles.cardBody]}>
                     <h3
                       class={[
-                        "card-title font-bold py-3 text-lg",
+                        "card-title font-bold py-3 text-xl leading-tight",
                         styles.cardTitle,
                       ]}
+                      style={{ fontSize: "1.25rem" }}
                     >
                       {title}
                     </h3>
