@@ -12,7 +12,7 @@ export default component$(() => {
           en línea!
         </h2>
         <div class={styles.servicesBriefcase}>
-          <p
+          <div
             class="mt-8 mb-8 text-lg hidden md:block"
             style={{ fontFamily: "var(--font-body)" }}
           >
@@ -92,8 +92,8 @@ export default component$(() => {
             , garantiza la seguridad de tus plataformas, cumpliendo con las
             normas y regulaciones aplicables. <br />
             <br />
-          </p>
-          <p
+          </div>
+          <div
             class="mt-8 mb-8 text-lg block md:hidden"
             style={{ fontFamily: "var(--font-body)" }}
           >
@@ -108,10 +108,10 @@ export default component$(() => {
               <span class="text-[#4285F4]"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></span>
               <span class="text-[#4285F4]"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></span>
             </div>
-          </p>
+          </div>
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[var(--qwik-light-blue)] pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[var(--qwik-light-blue)] pointer-events-none z-20"></div>
     </features>
   );
 });

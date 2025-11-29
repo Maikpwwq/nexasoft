@@ -3,8 +3,8 @@ import styles from "./secrets.module.css";
 
 export default component$(() => {
   return (
-    <secrets id="secrets-section" class={["pb-6", styles.secrets]}>
-      <div class="container container-purple">
+    <secrets id="secrets-section" class={["pb-6 relative", styles.secrets]}>
+      <div class="container container-purple relative z-10">
         <div class={["mt-1", styles.secretsList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             ¡Domina la <span class="highlight">Web</span> en un solo lugar!
@@ -43,6 +43,7 @@ export default component$(() => {
           </p>
         </div>
       </div>
+      <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[var(--qwik-dark-background)] pointer-events-none z-20"></div>
     </secrets>
   );
 });
