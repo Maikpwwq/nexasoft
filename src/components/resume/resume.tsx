@@ -41,8 +41,8 @@ export default component$(() => {
   ];
 
   return (
-    <features id="resume-section" class={[styles.resume]}>
-      <div class="container container-blue mb-6">
+    <features id="resume-section" class={[styles.resume, "relative"]}>
+      <div class="container container-blue" style="margin-bottom: 5rem;">
         <div class={["mt-1", styles.resumeList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             Soluciones de <span class="highlight">desarrollo Web</span> en
@@ -62,7 +62,7 @@ export default component$(() => {
           </ul>
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[var(--qwik-purple-background)] pointer-events-none z-20"></div>
+      <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-[var(--qwik-light-blue)] to-[var(--qwik-dark-background)] pointer-events-none z-20"></div>
     </features>
   );
 });

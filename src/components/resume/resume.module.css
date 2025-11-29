@@ -27,6 +27,10 @@
   color: var(--qwik-dirty-black);
 }
 
+.listItem a:hover {
+  color: var(--qwik-dark-text);
+}
+
 .title {
   padding-top: 1rem;
   color: var(--qwik-dirty-black);

@@ -115,7 +115,7 @@ export default component$(() => {
       class={["flex flex-col container-purple px-0 py-6 w-full m-0", styles.testimonials]}
     >
       <h2
-        class="pt-8 text-center font-bold"
+        class="py-8 text-center font-bold"
         style={{ fontSize: "2rem", color: "rgba(255, 255, 255, 1)" }}
       >
         Nuestros{" "}

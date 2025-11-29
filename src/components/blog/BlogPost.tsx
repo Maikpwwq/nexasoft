@@ -6,7 +6,7 @@ export default component$(() => {
   return (
     <>
       <blogposts id="blog-post-section" class={[styles.blogposts, "relative"]}>
-        <div class="container relative z-10">
+        <div class="container relative z-10" style="margin-bottom: 5rem;">
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             <span class="font-bold highlight">Últimos Blogs</span>
           </h2>
@@ -72,7 +72,7 @@ export default component$(() => {
             </div>
           </div>
         </div>
-        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[var(--qwik-light-blue)] pointer-events-none z-20"></div>
+        {/* <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-[var(--qwik-dark-text)] to-[var(--qwik-dark-background)] pointer-events-none z-20"></div> */}
       </blogposts>
     </>
   );

@@ -44,7 +44,7 @@ export default component$(() => {
                 const { icon, title } = item;
                 return (
                   <li key={index} class={[styles.listItem, "my-2"]} style={{ fontFamily: "var(--font-body)" }}>
-                    <span class="text-3xl me-3 text-[#4285F4]">{icon}</span>
+                    <span class="text-3xl me-3 text-[var(--qwik-dark-text)]">{icon}</span>
                     {title}
                   </li>
                 );
@@ -52,7 +52,6 @@ export default component$(() => {
           </ul>
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[var(--qwik-light-blue)] pointer-events-none z-20"></div>
     </further>
   );
 });

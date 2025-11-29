@@ -4,7 +4,7 @@ import styles from "./secrets.module.css";
 export default component$(() => {
   return (
     <secrets id="secrets-section" class={["pb-6 relative", styles.secrets]}>
-      <div class="container container-purple relative z-10">
+      <div class="container container-purple relative z-10" style="margin-bottom: 5rem;">
         <div class={["mt-1", styles.secretsList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             ¡Domina la <span class="highlight">Web</span> en un solo lugar!

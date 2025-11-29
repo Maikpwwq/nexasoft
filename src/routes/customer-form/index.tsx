@@ -345,13 +345,15 @@ export default component$(() => {
               )}
             </Field>
             <br class="mb-4" />
-            <button
-              type="submit"
-              class="w-full font-bold py-3 px-4 rounded-2xl focus:outline-none focus:shadow-outline transition-colors text-2xl mt-6"
-              style={{ backgroundColor: "var(--primary-blue)", color: "var(--primary-white)" }}
-            >
-              Enviar
-            </button>
+            <div class="flex justify-center px-5">
+              <button
+                type="submit"
+                class="w-full font-bold py-3 px-4 rounded-2xl focus:outline-none focus:shadow-outline transition-all duration-300 text-2xl mt-6 shadow-md hover:shadow-lg hover:scale-105"
+                style={{ backgroundColor: "var(--primary-blue)", color: "var(--primary-white)" }}
+              >
+                Enviar
+              </button>
+            </div>
           </Form>
         </div>
       </div>
