@@ -52,7 +52,7 @@ export default component$(() => {
           </ul>
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[var(--qwik-dark-background)] pointer-events-none"></div>
+
     </further>
   );
 });

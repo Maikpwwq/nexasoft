@@ -240,7 +240,7 @@ export default component$(() => {
 
   return (
     <div
-      class="container container-center flex justify-center min-h-screen items-center"
+      class="w-full flex justify-center min-h-screen items-center"
       style={{ backgroundColor: "#f8f8fa" }}
     >
       <div class="bg-white rounded-lg shadow-xl max-w-2xl mx-auto my-20 py-10 px-6 w-full">
