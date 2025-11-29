@@ -37,3 +37,26 @@
     font-size: 1.3rem;
   }
 }
+
+.hero-title {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  will-change: transform;
+  contain: layout;
+}
+
+.hero-gradient {
+  background: linear-gradient(120deg, #006ce9 0%, #ac7ff4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-title {
+    font-size: 5rem;
+  }
+}

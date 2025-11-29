@@ -37,6 +37,7 @@ h1 {
   font-size: 3.2rem;
   text-align: center;
 }
+
 h1 .highlight,
 h3 .highlight {
   color: var(--qwik-light-blue) !important;
@@ -46,6 +47,7 @@ h2 {
   font-weight: 400;
   font-size: 2.4rem;
 }
+
 h2 .highlight {
   font-weight: 700;
 }
@@ -62,9 +64,11 @@ h2 .blueHighlight {
   h1 {
     font-size: 5rem;
   }
+
   h2 {
     font-size: 3.4rem;
   }
+
   h3 {
     font-size: 3rem;
   }
@@ -92,21 +96,26 @@ ul {
   margin: 0 auto;
   padding: 30px 40px;
 }
+
 .container.container-purple {
   background: var(--qwik-purple-background);
   color: var(--qwik-dark-text);
 }
+
 .container.container-blue {
   background: var(--qwik-light-blue);
   color: var(--qwik-dark-text);
 }
+
 .container.container-dark {
   background: var(--qwik-dark-background);
   color: var(--qwik-dark-text);
 }
+
 .container.container-center {
   text-align: center;
 }
+
 /* .container.container-flex {
   does nothing on mobile
 } */
@@ -118,9 +127,11 @@ ul {
   .container {
     padding: 50px 80px;
   }
+
   .container.container-spacing-xl {
     padding: 100px 60px;
   }
+
   .container.container-flex {
     display: flex;
     justify-content: center;
@@ -152,6 +163,7 @@ button.button-small {
 }
 
 @media screen and (min-width: 768px) {
+
   a.button,
   button {
     font-size: 1rem;
@@ -159,81 +171,6 @@ button.button-small {
   }
 }
 
-/* DESIGN --------------------------------------- */
-.ellipsis {
-  position: absolute;
-  top: 100px;
-  left: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    57.58% 57.58% at 48.79% 42.42%,
-    rgba(24, 180, 244, 0.5) 0%,
-    rgba(46, 55, 114, 0) 63.22%
-  );
-  transform: rotate(5deg);
-  opacity: 0.5;
-  z-index: -1;
-}
-.ellipsis-bottom {
-  position: absolute;
-  top: 4300px;
-  left: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(
-    57.58% 57.58% at 48.79% 42.42%,
-    rgba(24, 180, 244, 0.5) 0%,
-    rgba(46, 55, 114, 0) 63.22%
-  );
-  transform: rotate(5deg);
-  opacity: 0.5;
-  z-index: -1;
-}
-.ellipsis.ellipsis-purple {
-  position: absolute;
-  top: 1350px;
-  left: -100px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(172, 127, 244, 0.5) 0%,
-    rgba(21, 25, 52, 0) 100%
-  );
-  transform: rotate(-5deg);
-}
-.ellipsis-bottom.ellipsis-purple-bottom {
-  top: 4000px;
-  left: -100px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(172, 127, 244, 0.5) 0%,
-    rgba(21, 25, 52, 0) 100%
-  );
-  transform: rotate(-5deg);
-}
-
-@media screen and (min-width: 768px) {
-  .ellipsis {
-    top: -100px;
-    left: 350px;
-    width: 1400px;
-    height: 800px;
-  }
-  .ellipsis.ellipsis-purple {
-    top: 330px;
-    left: -200px;
-  }
-  .ellipsis-bottom {
-    top: 4300px;
-    left: 350px;
-    width: 1400px;
-    height: 800px;
-  }
-  .ellipsis.ellipsis-purple-bottom {
-    top: 4000px;
-    left: -200px;
-  }
-}
 
 /* used icon pack: https://www.svgrepo.com/collection/phosphor-thin-icons */
 .icon:before {
