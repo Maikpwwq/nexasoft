@@ -18,12 +18,12 @@ export default component$((props: PostProps) => {
     <>
       <blogpost id="blog-post-section" class={[styles.blogposts]}>
         <div class="container max-w-6xl mx-auto">
-          <h1 class={[styles.title, "font-bold highlight text-3xl md:text-4xl text-center mb-6"]}>
+          <h1 class={[styles.title, "font-bold highlight text-3xl md:text-5xl text-center mb-8"]}>
             {title}
           </h1>
-          <h2 class="text-lg font-normal text-center mb-10 leading-relaxed px-4" style={{ color: "#1a202c" }}>
+          <p class="text-lg md:text-xl font-normal text-center mb-12 leading-relaxed px-4 max-w-4xl mx-auto" style={{ color: "#1a202c" }}>
             {description}
-          </h2>
+          </p>
           <div class="mb-10">
             <img
               src={image}
