@@ -9,7 +9,7 @@ import Footer from "~/components/footer/footer";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
 import ImagesList from "~/components/images-list/imagesList";
-// import MainBanner from "~/components/main-banner/mainBanner";
+import MainBanner from "~/components/main-banner/mainBanner";
 // import Starter from '~/components/starter/next-steps/next-steps';
 import Testimonials from "~/components/testimonials/testimonials";
 
@@ -37,7 +37,7 @@ export default component$(() => {
     <>
       <Hero />
       {/* <Starter /> */}
-      {/* <MainBanner /> */}
+      <MainBanner />
       <Features />
       <Resume />
       <ImagesList />
