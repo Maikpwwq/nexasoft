@@ -13,7 +13,7 @@ export default component$(() => {
         </h2>
         <div class={styles.servicesBriefcase}>
           <div
-            class="mt-8 mb-8 text-lg hidden md:block"
+            class="mt-8 mb-8 text-xl hidden md:block"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <br />

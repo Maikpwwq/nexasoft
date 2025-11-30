@@ -7,14 +7,14 @@ export default component$(() => {
     <>
       <blogposts id="blog-post-section" class={[styles.blogposts, "relative"]}>
         <div class="container relative z-10" style="margin-bottom: 5rem;">
-          <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
+          <h2 class={[styles.title, "pb-6"]} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
             <span class="font-bold highlight">Últimos Blogs</span>
           </h2>
-          <h3 style="text-align: left; font-size: 1.5rem;">
+          <h3 style="text-align: left; font-size: 1.5rem; color: var(--qwik-dirty-black);" class="text-xl ps-6">
             Explorar los más destacados
           </h3>
           <div class={["m-0 w-full", styles.blogpostsList]}>
-            <div class="w-1/2">
+            <div class="sm:w-full md:w-1/2">
               <ul class="mt-6 mb-6 p-0">
                 {webPosts.slice(0, 1).map((post, index) => {
                   const { title, description, alt, image, route } = post;
@@ -31,7 +31,7 @@ export default component$(() => {
                         <h4 class="pt-6 mb-2 text-black font-semibold text-xl">
                           {title}
                         </h4>
-                        <p class="mb-2">
+                        <p class="mb-2 text-lg">
                           {description}
                         </p>
                       </a>
@@ -40,7 +40,7 @@ export default component$(() => {
                 })}
               </ul>
             </div>
-            <div class="ps-12 w-3/4">
+            <div class="ps-12 sm:w-3/4 md:w-1/2">
               <ul class="mt-6 mb-6 p-0">
                 {webPosts.map((post, index) => {
                   const { title, description, route } = post;
@@ -50,7 +50,7 @@ export default component$(() => {
                         <h4 class="mb-2 text-black font-semibold text-xl">
                           {title}
                         </h4>
-                        <p class="mb-2">
+                        <p class="mb-2 text-lg">
                           {description}
                         </p>
                       </a>

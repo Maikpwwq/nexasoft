@@ -50,10 +50,10 @@ export default component$(() => {
                       >
                         {title}
                       </h3>
-                      <p class="card-text my-3 font-light">{description}</p>
+                      <p class="card-text my-3 font-light text-base">{description}</p>
                       <p
                         class={[
-                          "card-subtitle mb-2 text-muted font-semibold text-2xl",
+                          "card-subtitle mb-2 text-muted font-semibold text-xl",
                           styles.price,
                         ]}
                       >
@@ -72,7 +72,7 @@ export default component$(() => {
                         {benefit.length > 0 &&
                           benefit.map((beneficio, index) => {
                             return (
-                              <li key={index} class="font-extralight">
+                              <li key={index} class="font-extralight text-base">
                                 {beneficio}
                               </li>
                             );

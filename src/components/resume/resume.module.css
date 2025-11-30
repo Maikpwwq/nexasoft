@@ -25,6 +25,7 @@
   display: flex;
   align-items: center;
   color: var(--qwik-dirty-black);
+  font-size: 1.3rem;
 }
 
 .listItem a:hover {

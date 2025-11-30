@@ -154,7 +154,7 @@ export default component$(() => {
                     {name}
                   </a>
                 </div>
-                <p class="mt-4 text-gray-600 text-sm">
+                <p class="mt-4 text-gray-600 text-lg">
                   {message}
                 </p>
                 <div class="flex flex-row items-center justify-center mx-auto my-6 flex-wrap gap-1">

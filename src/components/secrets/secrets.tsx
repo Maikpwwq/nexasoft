@@ -12,7 +12,7 @@ export default component$(() => {
             <span class="highlight">Éxito en Línea</span>
           </h2>
           <p
-            class="mt-6 mb-6 pt-5 text-center text-lg hidden md:block"
+            class="mt-6 mb-6 pt-5 text-center text-xl hidden md:block"
           >
             ¡Desbloquea tu Éxito Digital con NexaSoft SAS y transforma tu
             presencia en línea.!
@@ -43,7 +43,7 @@ export default component$(() => {
           </p>
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[var(--qwik-dark-background)] pointer-events-none z-20"></div>
+      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[var(--qwik-dark-background)] pointer-events-none z-20"></div>
     </secrets>
   );
 });

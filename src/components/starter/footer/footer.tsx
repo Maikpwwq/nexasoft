@@ -10,7 +10,7 @@ export default component$(() => {
   return (
     <footer style={{ backgroundColor: "#0f0a28" }}>
       <div class="container">
-        <div class="flex flex-row justify-center text-sm align-bottom">
+        <div class="flex flex-row justify-center text-lg align-bottom">
           <span>
             Copyright © {yearTime} <span class={styles.spacer}>|</span>{" "}
           </span>
