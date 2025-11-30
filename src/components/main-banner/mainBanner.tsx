@@ -7,10 +7,10 @@ import {
 } from "@builder.io/qwik";
 import styles from "./mainBanner.css?inline";
 
-import SoftwarePersonalizado from "~/assets/img/banners/Soluciones de software personalizadas.png";
-import Negociosdigitales from "~/assets/img/banners/Crecimiento y eficiencia de negocios digitales.png";
-import ModernizarPlataformas from "~/assets/img/banners/Modernizar y optimizar tus plataformas.png";
-import SolucionesSoftware from "~/assets/img/banners/Soluciones empresariales de software.png";
+import SoftwarePersonalizado from "~/assets/img/banners/Soluciones de software personalizadas.webp";
+import Negociosdigitales from "~/assets/img/banners/Crecimiento y eficiencia de negocios digitales.webp";
+import ModernizarPlataformas from "~/assets/img/banners/Modernizar y optimizar tus plataformas.webp";
+import SolucionesSoftware from "~/assets/img/banners/Soluciones empresariales de software.webp";
 
 export default component$(() => {
   useStylesScoped$(styles);
@@ -67,7 +67,7 @@ export default component$(() => {
   return (
     <div class="relative w-full flex flex-col items-center justify-center overflow-hidden bg-gray-50 py-4">
       {/* Carousel Container */}
-      <div class="relative w-full max-w-4xl overflow-hidden rounded-lg shadow-xl">
+      <div class="relative w-full max-w-7xl overflow-hidden rounded-lg shadow-xl group">
         <div
           class="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${store.count * 100}%)` }}
@@ -78,8 +78,8 @@ export default component$(() => {
                 src={item.img}
                 alt={item.description}
                 class="w-full h-auto object-cover"
-                width={800}
-                height={400}
+                width={1200}
+                height={600}
               />
             </div>
           ))}
@@ -88,8 +88,9 @@ export default component$(() => {
         {/* Navigation Arrows */}
         <button
           onClick$={prevStep}
-          class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-colors z-10"
+          class="absolute left-4 top-1/2 -translate-y-1/2 !bg-black/30 hover:!bg-black/50 text-white p-2 rounded-full transition-colors z-10 opacity-0 group-hover:opacity-100 duration-300"
           aria-label="Previous slide"
+          type="button"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -107,8 +108,9 @@ export default component$(() => {
         </button>
         <button
           onClick$={nextStep}
-          class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-colors z-10"
+          class="absolute right-4 top-1/2 -translate-y-1/2 !bg-black/30 hover:!bg-black/50 text-white p-2 rounded-full transition-colors z-10 opacity-0 group-hover:opacity-100 duration-300"
           aria-label="Next slide"
+          type="button"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -133,12 +135,13 @@ export default component$(() => {
             key={index}
             onClick$={() => goToStep(index)}
             class={[
-              "w-3 h-3 rounded-full transition-colors duration-300",
+              "w-2 h-2 rounded-full transition-colors duration-300",
               store.count === index
                 ? "bg-[var(--qwik-dark-blue)] scale-110"
                 : "bg-gray-300 hover:bg-gray-400",
             ]}
             aria-label={`Go to slide ${index + 1}`}
+            type="button"
           ></button>
         ))}
       </div>

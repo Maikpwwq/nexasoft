@@ -10,10 +10,10 @@ import theme from "./theme";
 // import { component$ } from "@builder.io/qwik";
 // import { useStore, useBrowserVisibleTask$ } from "@builder.io/qwik";
 
-import SoftwarePersonalizado from "~/assets/img/banners/Soluciones de software personalizadas.png";
-import Negociosdigitales from "~/assets/img/banners/Crecimiento y eficiencia de negocios digitales.png";
-import ModernizarPlataformas from "~/assets/img/banners/Modernizar y optimizar tus plataformas.png";
-import SolucionesSoftware from "~/assets/img/banners/Soluciones empresariales de software.png";
+import SoftwarePersonalizado from "~/assets/img/banners/Soluciones de software personalizadas.webp";
+import Negociosdigitales from "~/assets/img/banners/Crecimiento y eficiencia de negocios digitales.webp";
+import ModernizarPlataformas from "~/assets/img/banners/Modernizar y optimizar tus plataformas.webp";
+import SolucionesSoftware from "~/assets/img/banners/Soluciones empresariales de software.webp";
 
 const CustomSwipeableViews = bindKeyboard(SwipeableViews);
 
@@ -91,7 +91,7 @@ const BannerStepper = () => {
             justifyContent: "center",
           }}
           enableMouseEvents
-          // slideRenderer={slideRenderer}
+        // slideRenderer={slideRenderer}
         >
           {/* TODO: CREAR PIEZAS VISUALES PARA EL BANNER */}
 
