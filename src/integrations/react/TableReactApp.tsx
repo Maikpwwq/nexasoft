@@ -3,7 +3,7 @@
 import {
   DataGrid,
   type GridColDef,
-  GridValueGetterParams,
+  type GridValueOptionsParams,
 } from "@mui/x-data-grid";
 
 const TableReactApp = () => {
@@ -23,7 +23,7 @@ const TableReactApp = () => {
       description: "This column has a value getter and is not sortable.",
       sortable: false,
       width: 160,
-      valueGetter: (params: GridValueGetterParams) =>
+      valueGetter: (params: GridValueOptionsParams) =>
         `${params.row.firstName || ""} ${params.row.lastName || ""}`,
     },
   ];

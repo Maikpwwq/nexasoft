@@ -3,12 +3,14 @@ import styles from "./testimonials.module.css";
 
 import ComunidadDezzpoLogo from "~/assets/img/logos/Comunidad-Dezzpo.jpg";
 import WaviPixelLogo from "~/assets/img/logos/WaviPixelLogo.png";
+import FocalisLogo from "~/assets/img/logos/Logo-FOCALIS-V1.png";
 import NagaLogo from "~/assets/img/logos/Naga-Reg-Aguas.png";
 import PrimalTrace from "~/assets/img/logos/PrimalTrace.png";
 import ConstructoraColombia from "~/assets/img/logos/ConstructoraColombiaOficial.png";
 
 import ComunidadDezzpoImage from "~/assets/img/webClientes/ComunidadDezzpoImage.png";
 import WaviImage from "~/assets/img/webClientes/WaviImage.png";
+import FocalisImage from "~/assets/img/webClientes/FocalisImage.png";
 import NagaImage from "~/assets/img/webClientes/NagaImage.png";
 import PrimalTraceImage from "~/assets/img/webClientes/PrimalTraceImage.png";
 import ConstructoraColombiaImage from "~/assets/img/webClientes/ConstructoraColombiaImage.png";
@@ -37,7 +39,7 @@ export default component$(() => {
   const testimonials = [
     {
       message:
-        "¡Increíble experiencia trabajando con NexaSoft SAS! Modernizamos nuestra plataforma para brindar un servicio mejorado a nuestros clientes y aumentar nuestras ventas.",
+        "¡Increíble experiencia trabajando con NexaSoft SAS! Modernizamos nuestra plataforma para brindar un servicio mejorado a nuestros clientes y aumentamos ventas.",
       name: "WaviAeronautics",
       alt: "Logo de Wavi Aeronautics",
       logo: WaviPixelLogo,
@@ -50,6 +52,16 @@ export default component$(() => {
         ReduxIcon,
         PiniaIcon,
       ],
+    },
+    {
+      message:
+        "Ahora contamos con una plataforma que nos acerca a potenciales clientes y a nuestra misión de asesorar proyectos verdes.",
+      name: "Focalis Stratega Group",
+      alt: "Logo Focalis Stratega Group",
+      logo: FocalisLogo,
+      image: FocalisImage,
+      webSite: "https://focalis-stratega-group.pages.dev/",
+      technologies: [AstroIcon, TailwindIcon, SupabaseIcon],
     },
     {
       message:
@@ -68,7 +80,7 @@ export default component$(() => {
       alt: "Logo Comunidad Dezzpo",
       logo: ComunidadDezzpoLogo,
       image: ComunidadDezzpoImage,
-      webSite: "https://dezzpo.com/",
+      webSite: "https://maikpwwq.github.io/Comunidad-dezzpo/",
       technologies: [
         VikeJsIcon,
         ViteIcon,
@@ -104,7 +116,7 @@ export default component$(() => {
       alt: "Logo Constructora Colombia",
       logo: ConstructoraColombia,
       image: ConstructoraColombiaImage,
-      webSite: "https://constructoracolombia.co/",
+      webSite: "https://constructora-colombia.vercel.app/",
       technologies: [AstroIcon, TailwindIcon, ViteIcon],
     },
   ];
