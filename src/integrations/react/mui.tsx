@@ -53,7 +53,7 @@ import Menu from "@mui/icons-material/Menu";
 import ImageListItems from "~/integrations/react/imageListItems";
 import FormContacto from "~/integrations/react/FormContacto";
 import BannerStepper from "~/integrations/react/BannerStepper";
-import TableReactApp from "~/integrations/react/TableReactApp";
+
 import CustomersTestimonial from "~/integrations/react/CustomersTestimonial";
 import CommonQuestions from "~/integrations/react/CommonQuestions";
 
@@ -189,10 +189,4 @@ export const BannerImgStepper = qwikify$(() => {
   );
 }, { eagerness: "load" });
 
-export const TableApp = qwikify$(() => {
-  return (
-    <>
-      <TableReactApp />
-    </>
-  );
-}, { eagerness: "load" });
+
