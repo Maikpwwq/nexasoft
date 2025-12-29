@@ -8,7 +8,8 @@ export default component$(() => {
         <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold; fontFamily: var(--font-heading);">
           ¡Transforma tu
           <br />
-          <span class="highlight">experiencia </span>
+          <span class={styles.highlight}>experiencia</span>
+          {' '}
           en línea!
         </h2>
         <div class={styles.servicesBriefcase}>
