@@ -35,8 +35,8 @@ export default component$(() => {
       <div class="container container-blue relative z-10">
         <div class={["mt-1", styles.furtherList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold; fontFamily: var(--font-heading);">
-            ¡Desbloquea tu <span class="highlight">Éxito Digital</span> con
-            Nuestros <span class="highlight">Servicios Adicionales!</span>
+            ¡Desbloquea tu <span class="highlightDark">Éxito Digital</span> con
+            Nuestros <span class="highlightDark">Servicios Adicionales!</span>
           </h2>
           <ul class="mt-8 mb-8">
             {furtherItems.length > 0 &&

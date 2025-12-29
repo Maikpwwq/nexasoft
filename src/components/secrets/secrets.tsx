@@ -7,9 +7,9 @@ export default component$(() => {
       <div class="container container-purple relative z-10" style="margin-bottom: 5rem;">
         <div class={["mt-1", styles.secretsList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
-            ¡Domina la <span class="highlight">Web</span> en un solo lugar!
+            ¡Domina la <span class="highlightClear">Web</span> en un solo lugar!
             Descubre los Secretos para el{" "}
-            <span class="highlight">Éxito en Línea</span>
+            <span class="highlightClear">Éxito en Línea</span>
           </h2>
           <p
             class="mt-6 mb-6 pt-5 text-center text-xl hidden md:block"

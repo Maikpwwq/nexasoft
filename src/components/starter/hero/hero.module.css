@@ -48,7 +48,7 @@
 }
 
 .heroGradient {
-  background: linear-gradient(240deg, var(--qwik-light-blue) 21%, var(--qwik-fusha) 95%);
+  background: linear-gradient(120deg, var(--qwik-light-blue) 48%, var(--qwik-fusha) 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

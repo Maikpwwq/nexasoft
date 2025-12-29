@@ -8,7 +8,7 @@ export default component$(() => {
       <blogposts id="blog-post-section" class={[styles.blogposts, "relative"]}>
         <div class="container relative z-10" style="margin-bottom: 5rem;">
           <h2 class={[styles.title, "pb-6"]} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
-            <span class="font-bold highlight">Últimos Blogs</span>
+            <span class="font-bold highlightBlog">Últimos Blogs</span>
           </h2>
           <h3 style="text-align: left; font-size: 1.5rem; color: var(--qwik-dirty-black);" class="text-xl ps-6">
             Explorar los más destacados

@@ -285,8 +285,9 @@ button.button-small {
   display: inline-block;
 }
 
-.highlightDark {
-  background: linear-gradient(120deg, var(--qwik-dark-purple) 0%, var(--qwik-light-blueberry) 100%);
+.highlightDark,
+.highlightBlog {
+  background: linear-gradient(120deg, var(--qwik-light-blueberry) 0%, var(--qwik-dark-purple) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

@@ -34,8 +34,8 @@ export default component$(() => {
       <div class={["container container-blue relative z-10", styles.advantagesContainer]}>
         <div class={["mt-1", styles.advantagesList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold; fontFamily: var(--font-heading);">
-            <span class="highlight">Maximiza tu Éxito</span> en Línea con Todos
-            los <span class="highlight">Beneficios</span> que Tenemos para Ti!
+            <span class="highlightDark">Maximiza tu Éxito</span> en Línea con Todos
+            los <span class="highlightDark">Beneficios</span> que Tenemos para Ti!
           </h2>
           <ul class="mt-8 mb-8">
             {advantagesItems.map((item, index) => {

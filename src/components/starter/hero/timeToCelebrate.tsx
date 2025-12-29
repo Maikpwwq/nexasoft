@@ -61,14 +61,14 @@ export default component$(() => {
         setTimeout(shoot, 400);
       }}
     >
-      <h1 class={[styles.title, styles.heroTitle]}>
+      <h1 class={[styles.heroTitle, styles.title]}>
         Soluciones de
         <br />
         <span class={["highlight", styles.heroGradient]}>desarrollo Web</span>
         <br />
         en <span class={["highlight", styles.heroGradient]}>Colombia</span>
       </h1>
-      <p class="text-center pt-2">
+      <p class="text-center pt-6">
         ¡Consigue una ventaja competitiva con nosotros!.
       </p>
     </div>

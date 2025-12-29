@@ -128,12 +128,11 @@ export default component$(() => {
     >
       <h2
         class="py-8 text-center font-bold"
-        style={{ fontSize: "2rem", color: "rgba(255, 255, 255, 1)" }}
       >
         Nuestros{" "}
         <span
-          class="highlight font-bold md:text-6xl sm:text-3xl text-2xl"
-          style={{ color: "rgba(255, 255, 255, 1)", borderColor: "#e5e7eb" }}
+          class="highlightClear font-bold md:text-6xl sm:text-3xl text-2xl"
+          style={{ borderColor: "#e5e7eb" }}
         >
           Clientes
         </span>{" "}
