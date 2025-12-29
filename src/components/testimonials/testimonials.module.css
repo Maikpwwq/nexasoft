@@ -1,9 +1,103 @@
-testimonials a {
-  color: var(--qwik-dark-blue) !important;
-}
-
+/* Testimonials Section Styles */
 .testimonials {
   background-color: var(--qwik-purple-background);
   display: flex;
   justify-content: center;
+}
+
+.testimonials a {
+  color: var(--qwik-dark-blue) !important;
+}
+
+/* === Infinite Scroll Container === */
+.scrollContainer {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%);
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%);
+}
+
+/* === Scroll Track with Animation === */
+.scrollTrack {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scroll-left 40s linear infinite;
+}
+
+/* Pause animation on hover */
+.scrollTrack:hover {
+  animation-play-state: paused;
+}
+
+/* === Scroll Keyframes === */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* === Testimonial Card Styles === */
+.testimonialCard {
+  flex-shrink: 0;
+  width: 300px;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card Hover State - Elevation Effect */
+.testimonialCard:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.15),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Card Focus State for Accessibility */
+.testimonialCard:focus-within {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.15),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* === Accessibility: Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  .scrollTrack {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .scrollContainer {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .testimonialCard:hover {
+    transform: none;
+  }
 }

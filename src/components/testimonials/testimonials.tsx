@@ -139,52 +139,64 @@ export default component$(() => {
         </span>{" "}
         Satisfechos.
       </h2>
-      <div
-        class="flex flex-row items-center justify-center mx-auto my-8 flex-wrap gap-6"
-      >
-        {testimonials.map((testimony, index) => {
-          const { message, name, alt, logo, image, webSite, technologies } = testimony;
-          return (
-            <div key={index} class="bg-white rounded-2xl shadow-lg overflow-hidden w-[300px] hover:scale-105 transition-transform duration-300">
-              <div class="h-[184px] w-full overflow-hidden">
-                <img src={image} alt={name} height={184} width={300} class="object-cover w-full h-full" />
-              </div>
-              <div class="p-4">
-                <div class="font-bold text-xl text-black">
-                  <a
-                    href={webSite}
-                    class="flex flex-col justify-center items-center hover:text-blue-600"
-                    target="_blank"
-                  >
-                    <img
-                      src={logo}
-                      alt={alt}
-                      height={84}
-                      width={84}
-                      class="mt-2 mb-4 me-2 object-contain"
-                    />
-                    {name}
-                  </a>
+      {/* Outer scroll container with overflow masking */}
+      <div class={styles.scrollContainer}>
+        {/* Scroll track with animation - cards are duplicated for seamless loop */}
+        <div class={styles.scrollTrack}>
+          {/* Render both sets using a helper function for DRY code */}
+          {[false, true].map((isDuplicate) =>
+            testimonials.map((testimony, index) => {
+              const { message, name, alt, logo, image, webSite, technologies } = testimony;
+              const keyPrefix = isDuplicate ? "second" : "first";
+
+              return (
+                <div
+                  key={`${keyPrefix}-${index}`}
+                  class={styles.testimonialCard}
+                  aria-hidden={isDuplicate ? "true" : undefined}
+                >
+                  <div class="h-[184px] w-full overflow-hidden">
+                    <img src={image} alt={name} height={184} width={300} class="object-cover w-full h-full" />
+                  </div>
+                  <div class="p-4">
+                    <div class="font-bold text-xl text-black">
+                      <a
+                        href={webSite}
+                        class="flex flex-col justify-center items-center hover:text-blue-600"
+                        target="_blank"
+                        tabIndex={isDuplicate ? -1 : undefined}
+                      >
+                        <img
+                          src={logo}
+                          alt={alt}
+                          height={84}
+                          width={84}
+                          class="mt-2 mb-4 me-2 object-contain"
+                        />
+                        {name}
+                      </a>
+                    </div>
+                    <p class="mt-4 text-gray-600 text-lg">
+                      {message}
+                    </p>
+                    <div class="flex flex-row items-center justify-center mx-auto my-6 flex-wrap gap-1">
+                      {technologies.map((icon, idx) => (
+                        <img
+                          src={icon}
+                          class="mx-1"
+                          key={idx}
+                          alt="iconTechnology"
+                          height={33}
+                          width={33}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <p class="mt-4 text-gray-600 text-lg">
-                  {message}
-                </p>
-                <div class="flex flex-row items-center justify-center mx-auto my-6 flex-wrap gap-1">
-                  {technologies.map((icon, idx) => (
-                    <img
-                      src={icon}
-                      class="mx-1"
-                      key={idx}
-                      alt="iconTechnology"
-                      height={33}
-                      width={33}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+              );
+            })
+          )}
+        </div>
       </div>
     </div>
   );
