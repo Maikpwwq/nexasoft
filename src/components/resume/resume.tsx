@@ -45,7 +45,7 @@ export default component$(() => {
       <div class="container container-blue" style="margin-bottom: 5rem;">
         <div class={["mt-1", styles.resumeList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
-            Soluciones de <span class="highlight">desarrollo Web</span> en
+            Soluciones de <span class="highlightDark">desarrollo Web</span> en
             Colombia
           </h2>
           <ul class="mt-8 mb-8">
