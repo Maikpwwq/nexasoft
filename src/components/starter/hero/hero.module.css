@@ -37,25 +37,25 @@
   }
 }
 
-.hero-title {
+.heroTitle {
   text-align: center;
   font-size: 3.5rem;
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 1.2 !important;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   will-change: transform;
   contain: layout;
 }
 
-.hero-gradient {
-  background: linear-gradient(120deg, #006ce9 0%, #ac7ff4 100%);
+.heroGradient {
+  background: linear-gradient(240deg, var(--qwik-light-blue) 21%, var(--qwik-fusha) 95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 @media screen and (min-width: 768px) {
-  .hero-title {
+  .heroTitle {
     font-size: 5rem;
   }
 }
