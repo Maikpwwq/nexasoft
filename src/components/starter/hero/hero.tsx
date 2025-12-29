@@ -10,7 +10,11 @@ export default component$(() => {
         <div role="presentation" class="ellipsis ellipsis-purple" style="z-index: 30;"></div>
         <TimeToCelebrate />
         <div class={[styles["button-group"], "relative z-30"]}>
-          <a href="/customer-form/" class="text-2xl button font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+          <a
+            href="/customer-form/"
+            class="text-2xl button font-bold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+            style={{ color: "#ffffff", backgroundColor: "#ac7ef4" }}
+          >
             Solicitar información
           </a>
           <a

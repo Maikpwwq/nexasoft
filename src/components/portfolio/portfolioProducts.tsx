@@ -1,6 +1,7 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import WebProducts from "./WebProducts.json";
 import styles from "./portfolioProducts.module.css";
+import { clsx } from "clsx";
 
 interface Product {
   title: string;
@@ -10,13 +11,32 @@ interface Product {
   scope: string;
 }
 
-interface SoftwareProducts extends Array<Product> { }
-
-const products: SoftwareProducts = WebProducts.WebProducts;
+const products: Product[] = WebProducts.WebProducts;
 
 export default component$(() => {
+  const isVisible = useSignal(false);
+  const sectionRef = useSignal<Element>();
+
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(({ cleanup }) => {
+    if (!sectionRef.value) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          isVisible.value = true;
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(sectionRef.value);
+    cleanup(() => observer.disconnect());
+  });
+
   return (
-    <portfolioProducts id="products-section" class={[styles.portfolioProducts, "relative"]}>
+    <portfolioProducts id="products-section" ref={sectionRef} class={[styles.portfolioProducts, "relative"]}>
       <div
         class="container flex flex-col justify-center items-center relative"
         style="margin-bottom: 5rem;"
@@ -39,7 +59,15 @@ export default component$(() => {
               const { title, price, description, benefit, scope } = product;
               return (
                 <div key={index} class="flex items-stretch basis-1/5">
-                  <div class={["bg-light", styles.card]}>
+                  <div
+                    class={clsx(
+                      "bg-light",
+                      styles.card,
+                      styles.cardAnimated,
+                      isVisible.value && styles.cardVisible
+                    )}
+                    style={{ transitionDelay: `${index * 100}ms` }}
+                  >
                     <div class={["card-body", styles.cardBody]}>
                       <h3
                         class={[

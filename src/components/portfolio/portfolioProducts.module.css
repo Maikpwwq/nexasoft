@@ -9,6 +9,40 @@
   text-decoration: none;
   width: 21rem;
   border: 2px solid var(--qwik-light-blueberry);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    opacity 0.6s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-color: #ac7ef4;
+  background-color: #242c3d;
+}
+
+/* Entrance Animation States */
+.cardAnimated {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.cardVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardAnimated {
+    opacity: 1;
+    transform: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
 }
 
 /* .cardTitle {} */
