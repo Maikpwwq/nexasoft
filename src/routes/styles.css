@@ -277,7 +277,7 @@ button.button-small {
 }
 
 .highlightClear {
-  background: linear-gradient(120deg, var(--qwik-light-blue) 0%, var(--qwik-light-blueberry) 80%);
+  background: linear-gradient(120deg, var(--qwik-bright-cyan) 0%, #ffffff 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -287,7 +287,6 @@ button.button-small {
 
 .highlightDark {
   background: linear-gradient(120deg, var(--qwik-dark-purple) 0%, var(--qwik-light-blueberry) 100%);
-  /* background: var(--qwik-light-blueberry); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

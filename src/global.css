@@ -30,6 +30,7 @@
   --primary-blue: #4285F4;
   --font-heading: "Manrope", sans-serif;
   --font-body: "Roboto", sans-serif;
+  --qwik-bright-cyan: #00e5ff;
 }
 
 body {
@@ -39,6 +40,11 @@ body {
   line-height: 1.7;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
