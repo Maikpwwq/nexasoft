@@ -4,7 +4,7 @@ header {
   top: 0;
   /* -110px use to hide with scroll */
   background-color: #0f0a28;
-  z-index: 25;
+  z-index: 100;
 }
 
 .wrapper {
@@ -57,7 +57,7 @@ header {
   padding: 3rem !important;
   background-color: var(--qwik-light-blue);
   /* opacity: 93%; */
-  z-index: 15;
+  z-index: 50;
   min-width: 330px;
   border-radius: 16px;
 }
@@ -90,4 +90,88 @@ header {
   .mobileMenu li a:visited {
     color: var(--qwik-dark-text);
   }
+}
+
+/* Dropdown Styles */
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownTrigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  min-width: 220px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 50;
+  padding-top: 10px;
+  /* Bridge gap */
+}
+
+.dropdownMenu.show,
+.dropdownContainer:hover .dropdownMenu,
+.dropdownTrigger:focus+.dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--qwik-dark-text) !important;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  font-size: 0.95rem;
+}
+
+.dropdownItem:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white !important;
+}
+
+/* Active & Hover States for Links */
+.navLink {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0 0;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--qwik-light-blue);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: var(--qwik-light-blue);
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  width: 100%;
 }

@@ -3,12 +3,11 @@ import styles from "~/components/modular-forms/modularForm.module.css";
 import type { DocumentHead } from "@builder.io/qwik-city";
 // import Contact from "~/components/contact/contact";
 // import Counter from "~/components/starter/counter/counter";
-import Features from "~/components/features/features";
+
 import PortfolioProducts from "~/components/portfolio/portfolioProducts";
 import Footer from "~/components/footer/footer";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
-import ImagesList from "~/components/images-list/imagesList";
 import MainBanner from "~/components/main-banner/mainBanner";
 // import Starter from '~/components/starter/next-steps/next-steps';
 import Testimonials from "~/components/testimonials/testimonials";
@@ -38,16 +37,14 @@ export default component$(() => {
       <Hero />
       {/* <Starter /> */}
       <MainBanner />
-      <Features />
+      <Questions />
       <Resume />
-      <ImagesList />
       <PortfolioProducts />
       <Further />
       <Advantages />
       <Testimonials />
       <Secrets />
       <BlogPost />
-      <Questions />
       <div id="contact-section" class="container container-flex contactBox">
         <div class={styles.contactCard}>
           <Infobox>

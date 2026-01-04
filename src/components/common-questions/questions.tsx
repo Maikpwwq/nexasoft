@@ -79,7 +79,7 @@ export default component$(() => {
   ];
 
   return (
-    <div id="questions-section" class={[styles.questions, "relative"]}>
+    <div id="questions-section" class={[styles.questions, "relative "]}>
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
       <div class={[styles.questionsContainer, "container"]}>
@@ -112,6 +112,7 @@ export default component$(() => {
           ))}
         </div>
       </div>
+      <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-light-blue)] pointer-events-none z-20"></div>
     </div>
   );
 });

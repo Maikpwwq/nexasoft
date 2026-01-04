@@ -1,34 +1,54 @@
-import { component$, $, useStore } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { component$, $, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { Link, useLocation } from "@builder.io/qwik-city";
 import styles from "./header.module.css";
 import NexaSoftLogo from "~/assets/img/Logos Nexasoft/Blue (small).png";
+import { NavDropdown, MobileNavDropdown } from "./nav-dropdown";
 
 export default component$(() => {
   const state = useStore({
     visible: false,
   });
+  const loc = useLocation();
 
   const handleClick = $(() => {
-    console.log("handleClick", state.visible);
     state.visible = !state.visible;
+  });
+
+  // Task 1: Close mobile menu on scroll
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(({ cleanup }) => {
+    const handleScroll = () => {
+      if (state.visible) {
+        state.visible = false;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    cleanup(() => window.removeEventListener("scroll", handleScroll));
   });
 
   const navItems = [
     {
-      name: "Servicios",
+      name: "Nuestros Productos",
       route: "/#products-section",
     },
+    // "Nuestros Servicios" is now handled via a custom component check
     {
-      name: "Casos de éxito",
-      route: "/#testimonials-section",
+      name: "Nuestros Servicios",
+      route: "/services", // Placeholder, won't be used directly for link
+      isDropdown: true,
+    },
+    {
+      name: "Acerca de nosotros",
+      route: "/about/", // Ensure trailing slash consistency if needed, checking existing
+    },
+    {
+      name: "Blog",
+      route: "/blog/",
     },
     {
       name: "Contacto",
       route: "/#contact-section",
-    },
-    {
-      name: "Preguntas frecuentes",
-      route: "/#questions-section",
     },
   ];
 
@@ -57,17 +77,27 @@ export default component$(() => {
           </Link>
         </div>
 
+        {/* Desktop Menu */}
         <ul class="">
           {navItems.map((item, index) => {
-            const { name, route } = item;
+            if (item.isDropdown) {
+              return (
+                <li key={index}>
+                  <NavDropdown />
+                </li>
+              );
+            }
             return (
               <li key={index}>
-                <Link href={route}>
-                  <span
-                    class=""
-                    style={{ fontSize: "1.125rem", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}
-                  >
-                    {name}
+                <Link
+                  href={item.route}
+                  class={{
+                    [styles.navLink]: true,
+                    [styles.active]: loc.url.pathname === item.route || loc.url.pathname === item.route + '/', // Simple active check
+                  }}
+                >
+                  <span style={{ fontSize: "1.125rem", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}>
+                    {item.name}
                   </span>
                 </Link>
               </li>
@@ -75,19 +105,30 @@ export default component$(() => {
           })}
         </ul>
 
+        {/* Mobile Menu */}
         {state.visible && (
           <div class={styles.mobileMenu}>
             <ul class="">
               {navItems.map((item, index) => {
-                const { name, route } = item;
+                // For mobile, maybe we want to expand services or just show links?
+                // Request said "Map services... as sub-items".
+                // Let's implement a simple expansion for mobile using the same data.
+                if (item.isDropdown) {
+                  return (
+                    <li key={index}>
+                      <MobileNavDropdown />
+                    </li>
+                  )
+                }
+
                 return (
                   <li key={index}>
-                    <Link href={route}>
+                    <Link href={item.route} class="py-2 block">
                       <span
                         class=""
                         style={{ fontSize: "1rem", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}
                       >
-                        {name}
+                        {item.name}
                       </span>
                     </Link>
                   </li>
