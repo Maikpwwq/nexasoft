@@ -1,8 +1,10 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 import styles from "./imagesList.module.css";
 import { itemData } from "~/integrations/react/imageListItems";
 
 export default component$(() => {
+  const loadedCount = useSignal(0);
+
   return (
     <imageslist class="relative">
       <div class="container">
@@ -23,12 +25,19 @@ export default component$(() => {
                 class="overflow-hidden rounded"
                 style={`grid-column: span ${item.cols}; grid-row: span ${item.rows};`}
               >
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  loading="lazy"
-                  class="w-full h-full object-cover"
-                />
+                {index <= loadedCount.value && (
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    loading="lazy"
+                    class="w-full h-full object-cover"
+                    onLoad$={() => {
+                      if (loadedCount.value === index) {
+                        loadedCount.value++;
+                      }
+                    }}
+                  />
+                )}
               </div>
             ))}
           </div>

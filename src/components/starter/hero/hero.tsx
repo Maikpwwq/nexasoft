@@ -26,7 +26,7 @@ export default component$(() => {
           </a>
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-purple-background)] pointer-events-none z-20"></div>
+      {/* <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-purple-background)] pointer-events-none z-20"></div> */}
     </hero>
   );
 });

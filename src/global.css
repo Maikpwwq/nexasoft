@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+@import "./styles/fonts.css";
 /**
  * Tailwind CSS imports
  * View the full documentation at https://tailwindcss.com
