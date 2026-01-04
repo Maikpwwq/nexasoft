@@ -16,7 +16,6 @@ import Testimonials from "~/components/testimonials/testimonials";
 import Resume from "~/components/resume/resume";
 import Further from "~/components/further/further";
 import Advantages from "~/components/advantages/advantages";
-import BlogPost from "~/components/blog/BlogPost";
 import Secrets from "~/components/secrets/secrets";
 import Questions from "~/components/common-questions/questions";
 
@@ -44,7 +43,6 @@ export default component$(() => {
       <Advantages />
       <Testimonials />
       <Secrets />
-      <BlogPost />
       <div id="contact-section" class="container container-flex contactBox">
         <div class={styles.contactCard}>
           <Infobox>
