@@ -31,7 +31,7 @@ exports["default"] = qwik_1.component$(function () {
                                 "NexaSoft SAS"))),
                     React.createElement(mui_1.MUITypography, { variant: "body2" },
                         React.createElement(mui_1.MUIWhatsAppIcon, { fontSize: "small" }),
-                        " 3195137182"),
+                        " 3204842897"),
                     React.createElement(mui_1.MUIBox, { className: "flex flex-row justify-center" },
                         React.createElement("a", { href: "https://www.instagram.com/nexa_soft/", target: "_blank", title: "Instagram" },
                             React.createElement(mui_1.MUIInstagramIcon, null)),
