@@ -70,6 +70,10 @@ export default component$(() => {
         )}
         <base href="/" />
         <meta
+          name="google-site-verification"
+          content="KpS8LL7e_KoKtoxjodlUBgmF6IQ-377lyPsn21yFVzY"
+        />
+        <meta
           name="facebook-domain-verification"
           content="8r9sxxnm9fxblri4lae8azis4v45id"
         />
