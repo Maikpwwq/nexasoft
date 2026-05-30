@@ -8,7 +8,7 @@ import { partytownSnippet } from "@qwik.dev/partytown/integration";
  *
  * @public
  */
-export interface PartytownProps extends PartytownConfig {}
+export type PartytownProps = PartytownConfig;
 
 /**
  * @public

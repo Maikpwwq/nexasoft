@@ -11,7 +11,8 @@ export default component$(() => {
       class="container container-center flex justify-center"
       style={{}}
     >
-      <MUIPaper class={styles.cardContactForm} elevation={16}>
+      {/* eslint-disable-next-line qwik/no-react-props */}
+      <MUIPaper className={styles.cardContactForm} elevation={16}>
         {/* <FormularioContacto /> */}
         <QwikForm />
       </MUIPaper>

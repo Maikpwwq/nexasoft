@@ -9,6 +9,7 @@ import {
   Typography,
   Paper,
   ImageList,
+  ImageListItem,
   Card,
   CardContent,
   CardMedia,
@@ -22,7 +23,7 @@ import PhoneIphone from "@mui/icons-material/PhoneIphone";
 import Web from "@mui/icons-material/Web";
 import Place from "@mui/icons-material/Place";
 import ContactPage from "@mui/icons-material/ContactPage";
-import MailOutline from "@mui/icons-material/MailOutline";
+import MailOutlined from "@mui/icons-material/MailOutlined";
 import InsertDriveFile from "@mui/icons-material/InsertDriveFile";
 import WhatsApp from "@mui/icons-material/WhatsApp";
 import Instagram from "@mui/icons-material/Instagram";
@@ -50,7 +51,7 @@ import SmartButton from "@mui/icons-material/SmartButton";
 import LocalPolice from "@mui/icons-material/LocalPolice";
 import Menu from "@mui/icons-material/Menu";
 
-import ImageListItems from "~/integrations/react/imageListItems";
+import ImageListItems, { srcset } from "~/integrations/react/imageListItems";
 import FormContacto from "~/integrations/react/FormContacto";
 import BannerStepper from "~/integrations/react/BannerStepper";
 
@@ -74,7 +75,7 @@ export const MUIWebIcon = qwikify$(Web);
 export const MUIPlaceIcon = qwikify$(Place);
 export const MUIContactPageIcon = qwikify$(ContactPage);
 // export const MUIAlternateEmailIcon = qwikify$(AlternateEmail);
-export const MUIMailOutlineIcon = qwikify$(MailOutline);
+export const MUIMailOutlineIcon = qwikify$(MailOutlined);
 export const MUIInsertDriveFileIcon = qwikify$(InsertDriveFile);
 export const MUIWhatsAppIcon = qwikify$(WhatsApp);
 export const MUIInstagramIcon = qwikify$(Instagram);
@@ -145,11 +146,20 @@ export const ImagesList = qwikify$(() => {
         cols={4}
         rowHeight={121}
       >
-        <ImageListItems />
+        {ImageListItems.map((item: any) => (
+          <ImageListItem key={item.id} cols={item.cols || 1} rows={item.rows || 1}>
+            <img
+              {...srcset(item.img, 121, item.rows, item.cols)}
+              alt={item.title}
+              loading="lazy"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </ImageListItem>
+        ))}
       </ImageList>
     </>
   );
-}, { eagerness: "load", "client:only": true });
+}, { eagerness: "load" });
 
 export const CustomersTestimonials = qwikify$(() => {
   return (

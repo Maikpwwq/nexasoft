@@ -51,20 +51,15 @@ const BannerStepper = () => {
   // const store = useStore({ count: 0 });
 
   useEffect(() => {
-    // useBrowserVisibleTask$(() => {
-    // const timer =
-    setInterval(() => {
-      maxSteps >= store.count
-        ? setStore({ count: store.count++ })
-        : setStore({ count: 0 });
-      //   store.count++
-      // : (store.count = 0);
+    const timer = setInterval(() => {
+      setStore((prev) => ({
+        count: maxSteps >= prev.count ? prev.count + 1 : 0
+      }));
     }, changeTime);
-    // return () => {
-    //   clearInterval(timer);
-    // };
-  });
-  // , [store.count]
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
   return (
     <Box sx={{ width: "100%", flexGrow: 1 }}>
@@ -136,8 +131,7 @@ const BannerStepper = () => {
           <Button
             size="large"
             onClick={
-              () => setStore({ count: store.count++ })
-              // (store.count = 0)
+              () => setStore((prev) => ({ count: prev.count + 1 }))
             }
             className="arrow-next"
             disabled={store.count === maxSteps + 1}
@@ -153,8 +147,7 @@ const BannerStepper = () => {
           <Button
             size="large"
             onClick={
-              () => setStore({ count: store.count-- })
-              // store.count--
+              () => setStore((prev) => ({ count: prev.count - 1 }))
             }
             className="arrow-back"
             disabled={store.count === 0}

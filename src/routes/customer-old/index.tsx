@@ -168,7 +168,8 @@ export default component$(() => {
 
   return (
     <div class="container container-center flex justify-center" style={{}}>
-      <MUIPaper class={styles.cardContactForm} elevation={16}>
+      {/* eslint-disable-next-line qwik/no-react-props */}
+      <MUIPaper className={styles.cardContactForm} elevation={16}>
         <div class={styles.sheetFormStyle}>
           <MUITypography
             variant="h6"
@@ -177,7 +178,8 @@ export default component$(() => {
           >
             Formulario de contacto
           </MUITypography>
-          <MUITypography variant="body1" class="pt-2 pb-4" align="center">
+          {/* eslint-disable-next-line qwik/no-react-props */}
+          <MUITypography variant="body1" className="pt-2 pb-4" align="center">
             Solicita información adicional o una presentación de nuestros
             servicios.
           </MUITypography>
