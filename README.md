@@ -1,201 +1,134 @@
-# Qwik City App ⚡️
+# NexaSoft SAS ⚡️
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+**NexaSoft professional solutions** — el futuro en soluciones de software.
+
+A progressive web application built with Qwik, Qwik City, and Material UI, deployed via Netlify Edge Functions with static site generation (SSG).
 
 ---
 
+## Tech Stack
+
+| Category         | Technology                  | Version   |
+| ---------------- | --------------------------- | --------- |
+| **Framework**    | Qwik / Qwik City            | 1.20.0    |
+| **Build Tool**   | Vite                        | 8.0.14    |
+| **Language**     | TypeScript                  | 6.0.3     |
+| **UI Library**   | Material UI (MUI)           | 9.0.1     |
+| **Styling**      | Tailwind CSS                | 4.3.0     |
+| **React Bridge** | @builder.io/qwik-react      | 0.5.8     |
+| **React**        | React / React DOM           | 19.2.6    |
+| **Database**     | MongoDB / Mongoose          | 7.2 / 9.6 |
+| **Backend**      | Supabase                    | 2.106.2   |
+| **Linting**      | ESLint                      | 10.4.1    |
+| **Formatting**   | Prettier                    | 3.8.3     |
+| **Deployment**   | Netlify CLI / Edge Functions | 26.0.2    |
+| **Runtime**      | Node.js                     | ≥ 24.0.0  |
+| **Pkg Manager**  | pnpm                        | 9.13.0    |
+
 ## Project Structure
 
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
-Inside your project, you'll see the following directory structure:
-
 ```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+├── public/              # Static assets (images, fonts, etc.)
+├── src/
+│   ├── assets/          # Image assets (banners, icons, etc.)
+│   ├── components/      # Qwik components (header, footer, contact, etc.)
+│   ├── const/           # Constants and configuration
+│   ├── integrations/
+│   │   └── react/       # React ↔ Qwik bridge (MUI wrappers, theme, forms)
+│   ├── routes/          # Directory-based routing (pages)
+│   ├── services/        # Business logic and API services
+│   ├── styles/          # Global and module CSS styles
+│   ├── utilities/       # Shared utility functions
+│   ├── global.css       # Global stylesheet
+│   └── root.tsx         # Application root
+├── adapters/            # Deployment adapters (static, Netlify)
+├── server/              # Server-side build output
+├── netlify/             # Netlify-specific configuration
+├── netlify.toml         # Netlify deployment config
+├── vite.config.ts       # Vite configuration
+├── tsconfig.json        # TypeScript configuration
+├── eslint.config.js     # ESLint flat config
+└── package.json         # Dependencies and scripts
 ```
 
-- `src/routes`: Provides the directory based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
+## Getting Started
 
-- `src/components`: Recommended directory for components.
+### Prerequisites
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+- **Node.js** ≥ 24.0.0
+- **pnpm** 9.x
 
-## Add Integrations and deployment
-
-Use the `pnpm qwik add` command to add additional integrations. Some examples of integrations include: Cloudflare, Netlify or Express server, and the [Static Site Generator (SSG)](https://qwik.builder.io/qwikcity/guides/static-site-generation/).
+### Install Dependencies
 
 ```shell
-pnpm qwik add # or `pnpm qwik add`
+pnpm install
 ```
 
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). During development, the `dev` command will server-side render (SSR) the output.
+### Development
 
 ```shell
-npm start # or `pnpm start`
+pnpm dev       # Start dev server with SSR
+pnpm start     # Start dev server and open browser
 ```
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
+> During dev mode, Vite may request many `.js` files. This does not represent the production build.
 
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to locally preview a production build, and it should not be used as a production server.
+### Production Build
 
 ```shell
-pnpm preview # or `pnpm preview`
+pnpm build           # Full client + server build with SSG
+pnpm build.client    # Client build only
+pnpm build.server    # Server/SSG build only
+pnpm build.types     # Type checking only (tsc --noEmit)
 ```
 
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. Additionally, the build command will use Typescript to run a type check on the source code.
+### Preview
 
 ```shell
-pnpm build # or `pnpm build`
+pnpm preview    # Preview production build locally
 ```
 
-## Static Site Generator (Node.js)
+## Linting & Formatting
 
-```
-pnpm build.server
-```
-
-## Netlify
-
-This starter site is configured to deploy to [Netlify Edge Functions](https://docs.netlify.com/edge-functions/overview/), which means it will be rendered at an edge location near to your users.
-
-### Local development
-
-The [Netlify CLI](https://docs.netlify.com/cli/get-started/) can be used to preview a production build locally. To do so: First build your site, then to start a local server, run:
-
-1. Install Netlify CLI globally `npm i -g netlify-cli`.
-2. Build your site with both ssr and static `pnpm build`.
-3. Start a local server with `pnpm serve`.
-   In this project, `pnpm serve` uses the `netlify dev` command to spin up a server that can handle Netlify's Edge Functions locally.
-4. Visit [http://localhost:8888/](http://localhost:8888/) to check out your site.
-
-### Edge Functions Declarations
-
-[Netlify Edge Functions declarations](https://docs.netlify.com/edge-functions/declarations/)
-can be configured to run on specific URL patterns. Each edge function declaration associates
-one site path pattern with one function to execute on requests that match the path. A single request can execute a chain of edge functions from a series of declarations. A single edge function can be associated with multiple paths across various declarations.
-
-This is useful to determine if a page response should be Server-Side Rendered (SSR) or
-if the response should use a static-site generated (SSG) `index.html` file instead.
-
-By default, the Netlify Edge adaptor will generate a `.netlify/edge-middleware/manifest.json` file, which is used by the Netlify deployment to determine which paths should, and should not, use edge functions.
-
-To override the generated manifest, you can [add a declaration](https://docs.netlify.com/edge-functions/declarations/#add-a-declaration) to the `netlify.toml` using the `[[edge_functions]]` config. For example:
-
-```toml
-[[edge_functions]]
-  path = "/admin"
-  function = "auth"
+```shell
+pnpm lint         # Run ESLint on src/**/*.ts*
+pnpm fmt          # Format all files with Prettier
+pnpm fmt.check    # Check formatting without writing
 ```
 
-### Addition Adapter Options
+## Deployment (Netlify)
 
-Netlify-specific option fields that can be passed to the adapter options:
+This site is configured to deploy to [Netlify Edge Functions](https://docs.netlify.com/edge-functions/overview/), rendering at edge locations near users.
 
-- `excludedPath` this option accepts a `string` glob pattern that represents which path pattern should not go through the generated Edge Functions.
+### Deploy via Git
 
-### Deployments
-
-You can [deploy your site to Netlify](https://docs.netlify.com/site-deploys/create-deploys/) either via a Git provider integration or through the Netlify CLI. This starter site includes a `netlify.toml` file to configure your build for deployment.
-
-#### Deploying via Git
-
-Once your site has been pushed to your Git provider, you can either link it [in the Netlify UI](https://app.netlify.com/start) or use the CLI. To link your site to a Git provider from the Netlify CLI, run the command:
+Push to the linked Git repo for [continuous deployment](https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git):
 
 ```shell
 netlify link
 ```
 
-This sets up [continuous deployment](https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git) for your site's repo. Whenever you push new commits to your repo, Netlify starts the build process..
-
-#### Deploying manually via the CLI
-
-If you wish to deploy from the CLI rather than using Git, you can use the command:
+### Deploy manually via CLI
 
 ```shell
-netlify deploy --build
+netlify deploy --build          # Preview deploy
+netlify deploy --build --prod   # Production deploy
 ```
 
-You must use the `--build` flag whenever you deploy. This ensures that the Edge Functions that this starter site relies on are generated and available when you deploy your site.
+### Local Netlify preview
 
-Add `--prod` flag to deploy to production.
+1. Build the site: `pnpm build`
+2. Start local server: `netlify dev`
+3. Visit [http://localhost:8888/](http://localhost:8888/)
 
-## Netlify
+## Key Integrations
 
-This starter site is configured to deploy to [Netlify Edge Functions](https://docs.netlify.com/edge-functions/overview/), which means it will be rendered at an edge location near to your users.
+- **Qwik ↔ React Bridge**: MUI components are wrapped with `qwikify$()` in `src/integrations/react/mui.tsx`, allowing Material UI to be used inside Qwik components.
+- **MUI Theme**: Custom theme defined in `src/integrations/react/theme.js` with Work Sans / Roboto Condensed typography.
+- **Supabase**: Used for customer contact form submissions.
+- **MongoDB / Mongoose**: Database layer for server-side data.
+- **Partytown**: Third-party script offloading via `@qwik.dev/partytown`.
 
-### Local development
+## Last Updated
 
-The [Netlify CLI](https://docs.netlify.com/cli/get-started/) can be used to preview a production build locally. To do so: First build your site, then to start a local server, run:
-
-1. Install Netlify CLI globally `npm i -g netlify-cli`.
-2. Build your site with both ssr and static `pnpm build`.
-3. Start a local server with `pnpm serve`.
-   In this project, `pnpm serve` uses the `netlify dev` command to spin up a server that can handle Netlify's Edge Functions locally.
-4. Visit [http://localhost:8888/](http://localhost:8888/) to check out your site.
-
-### Edge Functions Declarations
-
-[Netlify Edge Functions declarations](https://docs.netlify.com/edge-functions/declarations/)
-can be configured to run on specific URL patterns. Each edge function declaration associates
-one site path pattern with one function to execute on requests that match the path. A single request can execute a chain of edge functions from a series of declarations. A single edge function can be associated with multiple paths across various declarations.
-
-This is useful to determine if a page response should be Server-Side Rendered (SSR) or
-if the response should use a static-site generated (SSG) `index.html` file instead.
-
-By default, the Netlify Edge adaptor will generate a `.netlify/edge-middleware/manifest.json` file, which is used by the Netlify deployment to determine which paths should, and should not, use edge functions.
-
-To override the generated manifest, you can [add a declaration](https://docs.netlify.com/edge-functions/declarations/#add-a-declaration) to the `netlify.toml` using the `[[edge_functions]]` config. For example:
-
-```toml
-[[edge_functions]]
-  path = "/admin"
-  function = "auth"
-```
-
-### Addition Adapter Options
-
-Netlify-specific option fields that can be passed to the adapter options:
-
-- `excludedPath` this option accepts a `string` glob pattern that represents which path pattern should not go through the generated Edge Functions.
-
-### Deployments
-
-You can [deploy your site to Netlify](https://docs.netlify.com/site-deploys/create-deploys/) either via a Git provider integration or through the Netlify CLI. This starter site includes a `netlify.toml` file to configure your build for deployment.
-
-#### Deploying via Git
-
-Once your site has been pushed to your Git provider, you can either link it [in the Netlify UI](https://app.netlify.com/start) or use the CLI. To link your site to a Git provider from the Netlify CLI, run the command:
-
-```shell
-netlify link
-```
-
-This sets up [continuous deployment](https://docs.netlify.com/site-deploys/create-deploys/#deploy-with-git) for your site's repo. Whenever you push new commits to your repo, Netlify starts the build process..
-
-#### Deploying manually via the CLI
-
-If you wish to deploy from the CLI rather than using Git, you can use the command:
-
-```shell
-netlify deploy --build
-```
-
-You must use the `--build` flag whenever you deploy. This ensures that the Edge Functions that this starter site relies on are generated and available when you deploy your site.
-
-Add `--prod` flag to deploy to production.
+**2026-05-30** — Progressive dependency update to state-of-the-art versions across all packages (React 19.2.6, MUI 9, Vite 8, TypeScript 6, ESLint 10).
