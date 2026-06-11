@@ -1,6 +1,6 @@
 "use client";
 import { component$ } from "@builder.io/qwik";
-import { useLocation, type StaticGenerateHandler } from "@builder.io/qwik-city";
+import { useLocation, type StaticGenerateHandler, type DocumentHead } from "@builder.io/qwik-city";
 import Post from "~/components/blog/post";
 import { webPosts } from "~/const/blog-posts";
 
@@ -9,6 +9,31 @@ export const onStaticGenerate: StaticGenerateHandler = async () => {
     params: webPosts.map((post) => {
       return { postId: post.id };
     }),
+  };
+};
+
+export const head: DocumentHead = ({ params }) => {
+  const post = webPosts.find((p) => p.id === params.postId);
+  return {
+    title: post ? `${post.title} | NexaSoft SAS` : "Blog | NexaSoft SAS",
+    meta: [
+      {
+        name: "description",
+        content: post ? post.description : "Artículos técnicos, desarrollo de software y consultoría tecnológica por NexaSoft SAS.",
+      },
+      {
+        property: "og:title",
+        content: post ? post.title : "Blog | NexaSoft SAS",
+      },
+      {
+        property: "og:description",
+        content: post ? post.description : "Artículos técnicos, desarrollo de software y consultoría tecnológica.",
+      },
+      {
+        property: "og:type",
+        content: "article",
+      },
+    ],
   };
 };
 
