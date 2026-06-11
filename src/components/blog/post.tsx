@@ -33,11 +33,27 @@ export default component$((props: PostProps) => {
               width={210}
             />
           </div>
-          <div class={["m-0 w-full", styles.blogpostsList]}>
 
+          {/* AdSense Slot - Top of Content */}
+          <div class="w-full max-w-4xl mx-auto my-6 p-4 rounded-xl border border-dashed border-gray-300 bg-gray-50 flex flex-col items-center justify-center text-center">
+            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Publicidad</span>
+            {/* Google AdSense tag placeholder */}
+            <div id="adsense-top-slot" class="w-full min-h-[90px] flex items-center justify-center text-gray-500 text-sm">
+              [Espacio para Google AdSense — Descomentar para producción]
+              {/*
+              <ins class="adsbygoogle"
+                   style={{ display: "block", textAlign: "center" }}
+                   data-ad-layout="in-article"
+                   data-ad-format="fluid"
+                   data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                   data-ad-slot="XXXXXXXXXX"></ins>
+              */}
+            </div>
+          </div>
+
+          <div class={["m-0 w-full", styles.blogpostsList]}>
             <ul class="mt-8 mb-12 p-0 space-y-8">
               {
-
                 cycle.map((element: any, index: any) => {
                   const { stage, body } = element;
                   return (
@@ -48,7 +64,7 @@ export default component$((props: PostProps) => {
                       <h4 class="mb-4 text-gray-900 font-bold text-2xl">
                         {stage}
                       </h4>
-                      <p class="text-gray-700 text-lg leading-relaxed">
+                      <p class="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
                         {body}
                       </p>
                     </li>
@@ -57,6 +73,44 @@ export default component$((props: PostProps) => {
               }
             </ul>
           </div>
+
+          {/* AdSense Slot - Bottom of Content */}
+          <div class="w-full max-w-4xl mx-auto my-6 p-4 rounded-xl border border-dashed border-gray-300 bg-gray-50 flex flex-col items-center justify-center text-center">
+            <span class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Publicidad</span>
+            <div id="adsense-bottom-slot" class="w-full min-h-[90px] flex items-center justify-center text-gray-500 text-sm">
+              [Espacio para Google AdSense — Descomentar para producción]
+              {/*
+              <ins class="adsbygoogle"
+                   style={{ display: "block" }}
+                   data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                   data-ad-slot="YYYYYYYYYY"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+              */}
+            </div>
+          </div>
+
+          {/* Captación Directa: Banner propio de conversión */}
+          <div class="my-12 p-8 rounded-3xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white shadow-2xl border border-indigo-700/40 max-w-4xl mx-auto text-center relative overflow-hidden">
+            <div class="relative z-10">
+              <span class="px-4 py-1.5 rounded-full bg-indigo-500/20 text-indigo-300 font-semibold text-xs uppercase tracking-widest border border-indigo-500/30">
+                Consultoría Estratégica
+              </span>
+              <h3 class="text-3xl font-extrabold mt-4 mb-4 text-white">
+                ¿Necesitas ayuda con esta integración o proyecto?
+              </h3>
+              <p class="text-indigo-200 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+                Como Especialistas en Gestión de Proyectos de Ingeniería y Desarrollo de Software, estructuramos tu solución con cronogramas claros, mitigación de riesgos y acuerdos de soporte garantizados.
+              </p>
+              <a
+                href="/customer-form/"
+                class="inline-block px-8 py-4 bg-white text-indigo-950 font-bold text-lg rounded-xl hover:bg-indigo-50 hover:scale-105 transition-all duration-300 shadow-md"
+              >
+                Cotizar Proyecto con NexaSoft SAS
+              </a>
+            </div>
+          </div>
+
           <div class="text-center mt-16">
             <a
               href="/blog/"

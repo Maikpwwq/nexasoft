@@ -1,84 +1,88 @@
 {
   "WebProducts": [
     {
-      "title": "Diseño Web a medida",
-      "price": "599 900",
-      "description": "Potenciamos tu presencia en línea con un diseño de sitio web profesional para tu empresa.",
-      "benefit": ["Diseño a medida de tu sitio web en una pagina"],
-      "scope": "12 Horas de diseño"
-    },
-    {
-      "title": "Mantenimiento Página Web",
-      "price": "299 900",
-      "description": "Desarrollamos actualizaciones de tu código para agregar nuevas características.",
-      "benefit": ["Editamos los contenidos y gráficos de tu sitio web"],
-      "scope": "8 Horas de programación"
-    },
-    {
       "title": "Sitio Web Informativo",
-      "price": "999 900",
-      "description": "Impulsamos tu negocio con una página de aterrizaje efectiva, que atraiga interesados y te ayude a alcanzar tus metas comerciales.",
+      "price": "3 500 000",
+      "description": "Landing page profesional con formulario de contacto, optimización SEO y certificado SSL. Diseño responsivo que posiciona tu negocio en internet.",
       "benefit": [
-        "Diseño a medida +",
-        "Pagina de aterrizaje +",
-        "Formulario contacto +",
-        "Link redes sociales +",
-        "1 año Hosting +",
-        "1 año Dominio +",
+        "Diseño profesional a medida",
+        "Hasta 3 secciones",
+        "Formulario de contacto",
+        "Link redes sociales",
+        "Optimización SEO básica",
+        "1 año Hosting",
+        "1 año Dominio",
         "1 año Certificado SSL"
       ],
-      "scope": "16 Horas de programación"
+      "scope": "Entrega en 2-3 semanas"
     },
     {
-      "title": "Vitrina virtual",
-      "price": "1 799 900",
-      "description": "Desarrollamos sitios web de ecommerce para que exhiban tus productos, operando y vendiendo en línea.     *  Sin Pasarela de pagos Online incluida",
+      "title": "Sitio Web Empresarial",
+      "price": "5 500 000",
+      "description": "Presencia digital completa para tu empresa con múltiples secciones, blog integrado y gestión de contenidos. Ideal para posicionar tu marca.",
       "benefit": [
-        "Diseño a medida +",
-        "Tienda Virtual Online +",
-        "Hasta cinco secciones +",
-        "Subida Catalogo hasta 30 productos +",
-        "1 año Hosting +",
-        "1 año Dominio +",
+        "Diseño a medida",
+        "Hasta 6 secciones",
+        "Blog integrado",
+        "Formulario de contacto avanzado",
+        "SEO On-Page completo",
+        "Google Analytics",
+        "1 año Hosting",
+        "1 año Dominio",
+        "5 Correos corporativos",
         "1 año Certificado SSL"
       ],
-      "scope": "24 Horas de programación"
+      "scope": "Entrega en 3-4 semanas"
     },
     {
-      "title": "Tienda Online de Comercio Electrónico",
-      "price": "2 299 900",
-      "description": "Construimos una solución empresarial sólida para tu tienda con catálogo de productos y servicios, pasarelas de pago en línea, optimización SEO y todas las herramientas necesarias para atraer y convertir a nuevos clientes.",
+      "title": "Vitrina Virtual",
+      "price": "7 500 000",
+      "description": "Exhibe tu catálogo de productos en línea con un diseño atractivo. Incluye WhatsApp Business integrado para recibir pedidos directos.",
       "benefit": [
-        "Diseño a medida +",
-        "Tienda Virtual Online +",
-        "Subida Catalogo hasta 50 productos +",
-        "Pasarela Pagos +",
-        "Optimización SEO+",
-        "del perfil en google +",
-        "1año Hosting +",
-        "1año Dominio +",
-        "10 Correos +",
+        "Diseño e-commerce a medida",
+        "Catálogo hasta 30 productos",
+        "Carrito + WhatsApp checkout",
+        "Panel de administración",
+        "SEO para productos",
+        "1 año Hosting",
+        "1 año Dominio",
         "1 año Certificado SSL"
       ],
-      "scope": "40 Horas de programación"
+      "scope": "Entrega en 4-5 semanas"
     },
     {
-      "title": "Pagina Web Corporativa",
-      "price": "4 799 900",
-      "description": "Creamos sitios web adaptativos que integran las últimas tecnologías para web, brindándole una presencia digital moderna y funcional a tu negocio.",
+      "title": "Tienda Online con Pagos",
+      "price": "12 000 000",
+      "description": "E-commerce completo con pasarela de pagos en línea, gestión de inventario y panel de administración. Tu tienda operando 24/7.",
       "benefit": [
-        "Diseño a medida +",
-        "Hasta diez modulos +",
-        "Formulario de contacto +",
-        "Blog +",
-        "Optimización SEO",
-        "del perfil en google +",
-        "1año Hosting +",
-        "1año Dominio +",
-        "10 Correos +",
+        "Diseño e-commerce premium",
+        "Catálogo hasta 100 productos",
+        "Pasarela de pagos online",
+        "Gestión de inventario",
+        "Panel administrativo",
+        "SEO avanzado",
+        "Google Analytics + Tag Manager",
+        "1 año Hosting",
+        "1 año Dominio",
+        "10 Correos corporativos",
         "1 año Certificado SSL"
       ],
-      "scope": "90 Horas de programación"
+      "scope": "Entrega en 6-8 semanas"
+    },
+    {
+      "title": "Mantenimiento Web Mensual",
+      "price": "750 000",
+      "description": "Mantén tu plataforma actualizada, segura y optimizada. Incluye actualizaciones de contenido, soporte técnico y monitoreo de disponibilidad.",
+      "benefit": [
+        "Actualizaciones de contenido",
+        "Soporte técnico prioritario",
+        "Monitoreo de disponibilidad",
+        "Backups semanales",
+        "Reportes mensuales de tráfico",
+        "Correcciones de errores",
+        "Optimización de velocidad"
+      ],
+      "scope": "Contrato mínimo 6 meses"
     }
   ]
 }

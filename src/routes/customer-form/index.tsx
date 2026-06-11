@@ -1,7 +1,6 @@
 import { component$, $, useTask$ } from "@builder.io/qwik"; // , useSignal
 import type { QRL } from "@builder.io/qwik";
 import { isServer } from "@builder.io/qwik/build";
-import { createClient } from "@supabase/supabase-js";
 import {
   // server$,
   // routeAction$,
@@ -25,10 +24,9 @@ import {
 import styles from "~/components/modular-forms/modularForm.module.css";
 import { TextInput } from "~/components/modular-forms/TextInput";
 
-// $(async () => {});
-
-const SUPABASE_URL = `${import.meta.env.VITE_SUPABASE_URL}`;
-const SUPABASE_KEY = `${import.meta.env.VITE_SUPABASE_KEY}`;
+// Serverless lead capture — Google Sheets via Apps Script (no server dependency)
+const GOOGLE_SHEETS_URL =
+  "https://script.google.com/macros/s/AKfycbxCywVeaWN50nX8LGbf_UYDC3C0JmZMxoK5d2Fp5PMpAfGTjD8LX_WG68SkCPrnQdRZ/exec";
 
 type LoginForm = {
   name: string;
@@ -94,101 +92,43 @@ export default component$(() => {
   });
 
   const handleSubmit: QRL<SubmitHandler<LoginForm>> = $(
-
-    async (values: any, event: any) => {
-      // Runs on CLIENT
-      console.log("handleSubmit", values, event);
-      // try {
-      //   // const resume = await connectionDB(values);
-
-      //   await mongoose.connect(MONGO_HOST, options).catch((error) => {
-      //     console.log("mongoose connection error", error);
-      //   });
-      //   // console.log('mongoose.connection', mongoose.connection.mongo.DB)
-      //   const userModel = mongoose.model(MONGODB_COLLECTION, messageSchema);
-      //   const res = await userModel.create(values);
-      //   const _id = res._id;
-      //   const customerId = JSON.stringify(_id);
-
-      //   if (customerId) {
-      //     // const record = JSON.parse(resume);
-      //     console.log("Promise message", customerId); //, record
-      //     // setResponse(loginForm, response); // , options
-      //     return {
-      //       status: "success",
-      //       message: "Gracias, su mensaje ha sido recibido.",
-      //       data: { customerId: "record" },
-      //     };
-      //   }
-      // } catch (error) {
-      //   console.log(error);
-      //   return {
-      //     status: "error",
-      //     message: "No se ha podido enviar su mensaje.",
-      //     data: { customerId: "" },
-      //   };
-      // }
-
-      // This does not work in form action above
+    async (values: LoginForm) => {
+      // Runs on CLIENT — sends lead to Google Sheets via Apps Script
       try {
-        // Create a single supabase client for interacting with your database
-        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-        const { name, email, phone, issue, message } = values;
-        // const recordID: string = uuidv4();
-        // const hexNumber: string = '0x' + (recordID.replace(/-/g, ''));
-        // const decimalNumber : bigint = BigInt(hexNumber)
-        // const decimalNumber : number = parseInt(recordID.replace(/-/g, ''))
-        // console.log(decimalNumber, recordID)
-        const { data: customer_form, error } = await supabase
-          .from("customer_form")
-          .insert([
-            {
-              // id: decimalNumber, // Automatic set an id
-              created_at: new Date(),
-              name,
-              email,
-              phone,
-              issue,
-              message,
-            },
-          ])
-          .select("*");
+        const payload = {
+          contacto_nombre: values.name,
+          contacto_email: values.email,
+          telefono: values.phone,
+          asunto: values.issue,
+          mensaje: values.message,
+          empresa: "",
+          sector: "General",
+          fuente_trafico: window.location.pathname,
+        };
 
-        console.log("supabase contact form", customer_form, error);
-        if (customer_form) {
-          console.log(
-            "Success your supabase contact form ID",
-            customer_form[0].id,
-          );
-          setResponse(loginForm, {
-            status: "success",
-            message: `Gracias ${name} su mensaje ha sido recibido, nos pondremos en contacto pronto.`,
-            data: { customerId: customer_form[0].id },
-          });
-          console.log(
-            "Success form information",
-            loginForm.submitted,
-            loginForm.submitting,
-            loginForm.response.status,
-          );
-        }
+        // Google Apps Script Web App handles CORS via redirect,
+        // so we use no-cors mode — the request is sent and processed
+        // even though we can't read the response body
+        await fetch(GOOGLE_SHEETS_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
 
-        if (error) {
-          console.log("Error supabase contact form", error);
-        }
+        setResponse(loginForm, {
+          status: "success",
+          message: `Gracias ${values.name}, recibimos tu solicitud. Te contactaremos en las próximas 24 horas.`,
+          data: { customerId: "sheets" },
+        });
       } catch (error) {
-        console.error(error);
+        console.error("Error enviando formulario:", error);
         setResponse(loginForm, {
           status: "error",
-          message: `No se ha podido enviar su mensaje. ${error}`,
+          message:
+            "Error al enviar. Por favor intenta de nuevo o escríbenos al WhatsApp +57 3204842897.",
           data: { customerId: "" },
         });
-        console.error(
-          "Error form information",
-          loginForm.submitted,
-          loginForm.submitting,
-          loginForm.response.status,
-        );
       }
     },
   );
