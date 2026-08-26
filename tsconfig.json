@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "target": "ES2020",
-    "module": "ES2022",
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable"],
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
@@ -10,6 +10,7 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "moduleResolution": "Bundler",
+    "moduleDetection": "force",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "incremental": true,

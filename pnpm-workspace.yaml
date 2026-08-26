@@ -1,14 +1,22 @@
 allowBuilds:
-  esbuild: false
-  netlify-cli: false
-  sharp: false
-  unix-dgram: false
+  esbuild: true
+  netlify-cli: true
+  sharp: true
+  unix-dgram: true
 minimumReleaseAgeExclude:
   - '@qwik.dev/partytown@0.14.3'
   - mongoose@9.9.4
 overrides:
   "react": "19.2.6"
   "react-dom": "19.2.6"
+  "vite": "^5.4.11"
 packages: []
 autoInstallPeers: true
 strictPeerDependencies: false
+peerDependencyRules:
+  ignoreMissing:
+    - "@types/react"
+    - "@types/react-dom"
+    - "eslint"
+    - "@opentelemetry/api"
+    

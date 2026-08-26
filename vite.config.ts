@@ -6,12 +6,10 @@ import { defineConfig, type UserConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import { qwikReact } from "@builder.io/qwik-react/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
-import pkg from "./package.json";
 import { partytownVite } from "@qwik.dev/partytown/utils";
-import { join } from "path";
-import path from 'path';
+import path from 'node:path';
 import tailwindcss from "@tailwindcss/vite";
+import pkg from "./package.json" with { type: "json" };
 type PkgDep = Record<string, string>;
 const { dependencies = {}, devDependencies = {} } = pkg as any as {
   dependencies: PkgDep;
@@ -28,16 +26,17 @@ export default defineConfig(({ command, mode }): UserConfig => {
     plugins: [
       qwikCity(),
       qwikVite(),
-      tsconfigPaths({ root: "." }),
       qwikReact(),
-      partytownVite({ dest: join(__dirname, "dist", "~partytown") }),
+      partytownVite({ dest: path.join(import.meta.dirname, "dist", "~partytown") }),
       tailwindcss(),
     ],
     resolve: {
       alias: {
+        "~": path.resolve(import.meta.dirname, "./src"),
         // "@mui/icons-material": "@mui/icons-material/esm",
-        'node:async_hooks': path.resolve(__dirname, 'empty-async-hooks.js')
+        'node:async_hooks': path.resolve(import.meta.dirname, 'empty-async-hooks.js')
       },
+      tsconfigPaths: true,
     },
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {
@@ -100,6 +99,11 @@ export default defineConfig(({ command, mode }): UserConfig => {
     build: {
       chunkSizeWarningLimit: 500,
       rollupOptions: {
+        output: {
+          // Forzar a Rolldown a aplanar y limpiar cualquier ruta relativa o absoluta en el nombre del chunk
+          sanitizeFileName: (name) => name.replace(/^(\.\.\/)+/, "").replace(/[^a-zA-Z0-9_-]/g, "_"),
+          chunkFileNames: "build/[hash]-[name].js",
+        },
         onwarn(warning, warn) {
           if (
             warning.code === "MODULE_LEVEL_DIRECTIVES" ||
@@ -110,13 +114,6 @@ export default defineConfig(({ command, mode }): UserConfig => {
           }
           warn(warning);
         },
-        //       output:{
-        //           manualChunks(id) {
-        //               if (id.includes('node_modules')) {
-        //                   return id.toString().split('node_modules/')[1].split('/')[0].toString();
-        //               }
-        //           }
-        //       }
       },
     },
   };
