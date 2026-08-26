@@ -36,7 +36,7 @@ export default defineConfig(({ command, mode }): UserConfig => {
         // "@mui/icons-material": "@mui/icons-material/esm",
         'node:async_hooks': path.resolve(import.meta.dirname, 'empty-async-hooks.js')
       },
-      tsconfigPaths: true,
+      // tsconfigPaths: true, V6 to 8
     },
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {
@@ -87,14 +87,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
     build: {
       chunkSizeWarningLimit: 500,
       rollupOptions: {
-        output: {
-          // sanitizeFileName: (name) => name.replace(/^(\.\.\/)+/, "").replace(/[^a-zA-Z0-9_-]/g, "_"),
-          // vite.config.ts (inside build.rollupOptions.output)
-          chunkFileNames: (chunkInfo) => {
-            const safeName = path.basename(chunkInfo.name).replace(/[^a-zA-Z0-9_-]/g, "_");
-            return `build/${safeName}-[hash].js`;
-          },
-        },
+        // DO NOT override chunkFileNames or entryFileNames here.
+        // Qwik's optimizer requires native chunk naming to resolve QRL symbols.
         onwarn(warning, warn) {
           if (
             warning.code === "MODULE_LEVEL_DIRECTIVES" &&
