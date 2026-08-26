@@ -80,7 +80,7 @@ export default component$(() => {
       alt: "Logo Comunidad Dezzpo",
       logo: ComunidadDezzpoLogo,
       image: ComunidadDezzpoImage,
-      webSite: "https://maikpwwq.github.io/Comunidad-dezzpo/",
+      webSite: "https://dezzpo.com/",
       technologies: [
         VikeJsIcon,
         ViteIcon,
