@@ -88,9 +88,12 @@ export default defineConfig(({ command, mode }): UserConfig => {
       chunkSizeWarningLimit: 500,
       rollupOptions: {
         output: {
-          // Forzar a Rolldown a aplanar y limpiar cualquier ruta relativa o absoluta en el nombre del chunk
           sanitizeFileName: (name) => name.replace(/^(\.\.\/)+/, "").replace(/[^a-zA-Z0-9_-]/g, "_"),
-          chunkFileNames: "build/[hash]-[name].js",
+          // Intercept chunk names to purge pnpm symlink path traversal
+          chunkFileNames: (chunkInfo) => {
+            const safeName = path.basename(chunkInfo.name).replace(/[^a-zA-Z0-9_-]/g, "_");
+            return `build/${safeName}-[hash].js`;
+          },
         },
         onwarn(warning, warn) {
           if (
