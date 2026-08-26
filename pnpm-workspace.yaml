@@ -1,0 +1,14 @@
+allowBuilds:
+  esbuild: false
+  netlify-cli: false
+  sharp: false
+  unix-dgram: false
+minimumReleaseAgeExclude:
+  - '@qwik.dev/partytown@0.14.3'
+  - mongoose@9.9.4
+overrides:
+  "react": "19.2.6"
+  "react-dom": "19.2.6"
+packages: []
+autoInstallPeers: true
+strictPeerDependencies: false
