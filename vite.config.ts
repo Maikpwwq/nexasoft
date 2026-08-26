@@ -88,8 +88,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
       chunkSizeWarningLimit: 500,
       rollupOptions: {
         output: {
-          sanitizeFileName: (name) => name.replace(/^(\.\.\/)+/, "").replace(/[^a-zA-Z0-9_-]/g, "_"),
-          // Intercept chunk names to purge pnpm symlink path traversal
+          // sanitizeFileName: (name) => name.replace(/^(\.\.\/)+/, "").replace(/[^a-zA-Z0-9_-]/g, "_"),
+          // vite.config.ts (inside build.rollupOptions.output)
           chunkFileNames: (chunkInfo) => {
             const safeName = path.basename(chunkInfo.name).replace(/[^a-zA-Z0-9_-]/g, "_");
             return `build/${safeName}-[hash].js`;
