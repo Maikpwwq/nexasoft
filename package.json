@@ -19,7 +19,7 @@
     "sharp"
   ],
   "trustedDependencies-annotation": "Needed for bun to allow running install scripts",
-  "packageManager": "pnpm@11.24.0",
+  "packageManager": "pnpm@10.2.0",
   "private": true,
   "scripts": {
     "build": "pnpm run build.client && pnpm run build.server",
