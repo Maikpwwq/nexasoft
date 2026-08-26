@@ -3,11 +3,6 @@ publish = "dist"
 command = "pnpm run build"
 
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
-
-[[redirects]]
 from = "/signed"
 to = "https://dvjcuwsdfkdjuotqaqbu.supabase.co"
 status = 200

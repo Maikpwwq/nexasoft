@@ -11,9 +11,13 @@ export default defineConfig((env) => {
 
   // 2. Fusionamos de manera limpia sin sobreescribir entradas ni forzar ssr manualmente
   return mergeConfig(resolvedBaseConfig as UserConfig, {
+    build: {
+      outDir: 'dist',
+    },
     plugins: [
       staticAdapter({
         origin: 'https://nexasoft.netlify.app',
+        include: ['/*'],
       }),
     ],
   });
