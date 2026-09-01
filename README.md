@@ -6,7 +6,7 @@ A progressive web application built with Qwik, Qwik City, and Tailwind CSS, depl
 
 **Propuesta de valor**
 
-"Modernizamos tu sitio web: rápido, profesional, optimizado para Google y con soporte incluido por contrato."
+"Modernizamos tu sitio web: rápido, profesional, visible en Google y con contrato de soporte para cuando lo necesites."
 
 ---
 

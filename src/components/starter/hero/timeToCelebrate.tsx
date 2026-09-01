@@ -67,7 +67,7 @@ export default component$(() => {
         <span class={["highlight", styles.heroGradient]}>sitio web</span>:
       </h1>
       <p class="text-center pt-6">
-        rápido, profesional, optimizado para Google y con soporte incluido por contrato.
+        rápido, profesional, visible en Google y con contrato de soporte para cuando lo necesites.
       </p>
     </div>
   );
