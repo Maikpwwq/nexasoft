@@ -58,7 +58,7 @@ export default component$(() => {
             products.map((product, index) => {
               const { title, price, description, benefit, scope } = product;
               return (
-                <div key={index} class="flex items-stretch basis-1/5">
+                <div key={index} class="flex items-stretch justify-center">
                   <div
                     class={clsx(
                       "bg-light",

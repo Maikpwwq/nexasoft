@@ -1,24 +1,28 @@
 # NexaSoft SAS ⚡️
 
-**NexaSoft professional solutions** — el futuro en soluciones de software.
+**NexaSoft professional solutions** — desarrollo web y soporte en Colombia.
 
 A progressive web application built with Qwik, Qwik City, and Tailwind CSS, deployed via Netlify Edge Functions with static site generation (SSG).
+
+**Propuesta de valor**
+
+"Modernizamos tu sitio web: rápido, profesional, optimizado para Google y con soporte incluido por contrato."
 
 ---
 
 ## Tech Stack
 
-| Category         | Technology                           | Version   | Status |
-| ---------------- | ------------------------------------ | --------- | ------ |
-| **Framework**    | Qwik / Qwik City                     | 1.20.0    | Activo |
-| **Build Tool**   | Vite                                 | 8.0.16    | Activo |
-| **Language**     | TypeScript                           | 6.0.3     | Activo |
-| **UI Library**   | Material UI (MUI)                    | 9.1.0     | Activo (Legacy React Bridge) |
-| **Styling**      | Tailwind CSS                         | 4.3.0     | Activo |
-| **Lead Capture** | Google Sheets & Apps Script          | Serverless| Activo (Producción) |
-| **Database**     | MongoDB / Mongoose                   | 7.3 / 9.7 | Deprecado / Solo Desarrollo |
-| **Backend**      | Supabase                             | 2.108.1   | Deprecado / Inactivo |
-| **Pkg Manager**  | pnpm                                 | 9.13.0    | Activo |
+| Category         | Technology                  | Version    | Status                       |
+| ---------------- | --------------------------- | ---------- | ---------------------------- |
+| **Framework**    | Qwik / Qwik City            | 1.20.0     | Activo                       |
+| **Build Tool**   | Vite                        | 8.0.16     | Activo                       |
+| **Language**     | TypeScript                  | 6.0.3      | Activo                       |
+| **UI Library**   | Material UI (MUI)           | 9.1.0      | Activo (Legacy React Bridge) |
+| **Styling**      | Tailwind CSS                | 4.3.0      | Activo                       |
+| **Lead Capture** | Google Sheets & Apps Script | Serverless | Activo (Producción)          |
+| **Database**     | MongoDB / Mongoose          | 7.3 / 9.7  | Deprecado / Solo Desarrollo  |
+| **Backend**      | Supabase                    | 2.108.1    | Deprecado / Inactivo         |
+| **Pkg Manager**  | pnpm                        | 9.13.0     | Activo                       |
 
 ---
 

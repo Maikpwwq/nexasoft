@@ -1,6 +1,36 @@
 {
   "WebProducts": [
     {
+      "title": "Modernización, Rendimiento & Soporte",
+      "price": "550 000",
+      "description": "Diagnóstico técnico profesional para acelerar la velocidad de carga, modernizar módulos clave y potenciar el SEO de tu plataforma actual con respaldo y contrato legal.",
+      "benefit": [
+        "Auditoría técnica y diagnóstico integral",
+        "Optimización de velocidad y Core Web Vitals",
+        "3 Mejoras o actualizaciones de impacto inmediato",
+        "Acciones clave de posicionamiento SEO en Google",
+        "Informe ejecutivo de desempeño y métricas",
+        "Hoja de ruta estratégica para escalar tu web",
+        "Soporte técnico continuo y asesoría experta"
+      ],
+      "scope": "Entrega en 3 días hábiles"
+    },
+    {
+      "title": "Mantenimiento Web Mensual",
+      "price": "800 000",
+      "description": "Mantén tu plataforma actualizada, segura y optimizada. Incluye actualizaciones de contenido, soporte técnico y monitoreo de disponibilidad.",
+      "benefit": [
+        "Actualizaciones de contenido",
+        "Soporte técnico prioritario",
+        "Monitoreo de disponibilidad",
+        "Backups semanales",
+        "Reportes mensuales de tráfico",
+        "Correcciones de errores",
+        "Optimización de velocidad"
+      ],
+      "scope": "Contrato mínimo 6 meses"
+    },
+    {
       "title": "Sitio Web Informativo",
       "price": "3 500 000",
       "description": "Landing page profesional con formulario de contacto, optimización SEO y certificado SSL. Diseño responsivo que posiciona tu negocio en internet.",
@@ -14,7 +44,7 @@
         "1 año Dominio",
         "1 año Certificado SSL"
       ],
-      "scope": "Entrega en 2-3 semanas"
+      "scope": "Entrega en 1-2 semanas"
     },
     {
       "title": "Sitio Web Empresarial",
@@ -48,7 +78,7 @@
         "1 año Dominio",
         "1 año Certificado SSL"
       ],
-      "scope": "Entrega en 4-5 semanas"
+      "scope": "Entrega en 3-4 semanas"
     },
     {
       "title": "Tienda Online con Pagos",
@@ -67,22 +97,7 @@
         "10 Correos corporativos",
         "1 año Certificado SSL"
       ],
-      "scope": "Entrega en 6-8 semanas"
-    },
-    {
-      "title": "Mantenimiento Web Mensual",
-      "price": "750 000",
-      "description": "Mantén tu plataforma actualizada, segura y optimizada. Incluye actualizaciones de contenido, soporte técnico y monitoreo de disponibilidad.",
-      "benefit": [
-        "Actualizaciones de contenido",
-        "Soporte técnico prioritario",
-        "Monitoreo de disponibilidad",
-        "Backups semanales",
-        "Reportes mensuales de tráfico",
-        "Correcciones de errores",
-        "Optimización de velocidad"
-      ],
-      "scope": "Contrato mínimo 6 meses"
+      "scope": "Entrega en 4-8 semanas"
     }
   ]
 }

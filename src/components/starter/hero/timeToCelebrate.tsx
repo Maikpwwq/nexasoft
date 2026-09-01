@@ -62,14 +62,14 @@ export default component$(() => {
       }}
     >
       <h1 class={[styles.heroTitle, styles.title]}>
-        Soluciones de
+        Modernizamos tu
         <br />
-        <span class={["highlight", styles.heroGradient]}>desarrollo Web</span>
+        <span class={["highlight", styles.heroGradient]}>sitio web</span>
         <br />
-        en <span class={["highlight", styles.heroGradient]}>Colombia</span>
+        :
       </h1>
       <p class="text-center pt-6">
-        ¡Consigue una ventaja competitiva con nosotros!.
+        rápido, profesional, optimizado para Google y con soporte incluido por contrato.
       </p>
     </div>
   );
