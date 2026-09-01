@@ -20,7 +20,7 @@ export default component$(() => {
           transacciones sin problemas. Diseñamos experiencias de compra
           atractivas y funcionales que convierten visitantes en clientes leales.
           Desde la gestión de inventario hasta la seguridad de datos, nuestra
-          atención al detalle garantiza un rendimiento excepcional. ¡Expande tu
+          atención al detalle impulsa un rendimiento sólido y medible. ¡Expande tu
           presencia en línea con nuestras Tiendas Online de Comercio
           Electrónico!
         </p>

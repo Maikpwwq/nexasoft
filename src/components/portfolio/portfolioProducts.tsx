@@ -50,8 +50,8 @@ export default component$(() => {
           <span class="blueHighlight font-bold">trabajo</span>!
         </h2>
         <p class="text-xl px-4 mt-4 text-center">
-          Tu satisfacción está 100% asegurada con nuestra garantía de devolución
-          de dinero.
+          Empresa legalmente constituida. Todos nuestros proyectos incluyen
+          contrato de servicios y soporte formal.
         </p>
         <div class="flex flex-col sm:flex-row flex-wrap my-10 justify-center">
           {products.length > 0 &&

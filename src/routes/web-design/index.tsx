@@ -16,8 +16,9 @@ export default component$(() => {
         <p class="text-xl px-4 mt-4 text-center">
           En NexaSoft SAS, convierte visitantes en clientes leales con nuestro
           Diseño Web a medida. Creamos presencias en línea únicas y poderosas
-          que reflejan tu marca y se adaptan a tus necesidades. Garantizamos
-          calidad, creatividad y usabilidad para una experiencia excepcional.
+          que reflejan tu marca y se adaptan a tus necesidades. Priorizamos
+          calidad, creatividad y usabilidad en cada proyecto, con respaldo
+          formal de contrato de servicios.
           ¡Destaca en el mundo digital con nosotros!
         </p>
       </div>

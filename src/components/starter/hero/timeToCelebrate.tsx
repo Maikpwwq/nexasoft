@@ -64,9 +64,7 @@ export default component$(() => {
       <h1 class={[styles.heroTitle, styles.title]}>
         Modernizamos tu
         <br />
-        <span class={["highlight", styles.heroGradient]}>sitio web</span>
-        <br />
-        :
+        <span class={["highlight", styles.heroGradient]}>sitio web</span>:
       </h1>
       <p class="text-center pt-6">
         rápido, profesional, optimizado para Google y con soporte incluido por contrato.

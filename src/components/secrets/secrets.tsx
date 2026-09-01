@@ -19,14 +19,14 @@ export default component$(() => {
             <br />
             <br />
             <br />
-            NexaSoft SAS líderes en Diseño Web a medida, Sitios Web
+            NexaSoft SAS, especialistas en Diseño Web a medida, Sitios Web
             Informativos, Vitrinas virtuales y Tiendas Online de Comercio
             Electrónico en Colombia, te ofrecemos soluciones empresariales de
             software que impulsarán tu negocio. Nuestros expertos en
             modernización de plataformas te permitirán migrar tus sistemas
-            existentes a las últimas tecnologías, aumentando el rendimiento de
-            tu sitio web hasta en un 100%. Además, con nuestros servicios de
-            mantenimiento de plataformas digitales, garantizamos la
+            existentes a tecnologías actuales y optimizadas, mejorando métricas de velocidad y
+            Core Web Vitals. Además, con nuestros servicios de
+            mantenimiento de plataformas digitales, trabajamos para maximizar la
             disponibilidad, seguridad y productividad de tus sistemas. También
             ofrecemos desarrollo de aplicaciones móviles para iOS y Android,
             creación de Sitios Web, Landing pages y Stores adaptativas de

@@ -18,9 +18,9 @@ export default component$(() => {
           cautivar a tu audiencia. Nuestras páginas informativas están diseñadas
           para transmitir tu mensaje de manera clara y atractiva. Desde capturar
           clientes potenciales hasta promocionar productos, nuestro enfoque en
-          el diseño a medida garantiza resultados impresionantes. Convierte
-          visitantes en clientes comprometidos y aumenta tu conversión con
-          nuestras Sitios Web Informativos de alta calidad. ¡Potencia tu
+          el diseño a medida está orientado a maximizar conversión y
+          visibilidad. Aumenta tu conversión con
+          nuestros Sitios Web Informativos de alta calidad. ¡Potencia tu
           presencia en línea hoy!
         </p>
       </div>

@@ -100,7 +100,7 @@ export default component$((props: PostProps) => {
                 ¿Necesitas ayuda con esta integración o proyecto?
               </h3>
               <p class="text-indigo-200 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-                Como Especialistas en Gestión de Proyectos de Ingeniería y Desarrollo de Software, estructuramos tu solución con cronogramas claros, mitigación de riesgos y acuerdos de soporte garantizados.
+                Como Especialistas en Gestión de Proyectos de Ingeniería y Desarrollo de Software, estructuramos tu solución con cronogramas claros, mitigación de riesgos y acuerdos de soporte formalizados por contrato.
               </p>
               <a
                 href="/customer-form/"

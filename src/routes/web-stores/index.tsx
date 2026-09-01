@@ -19,7 +19,7 @@ export default component$(() => {
           cautivadores. Resaltamos la singularidad de tus ofertas, brindando una
           experiencia de compra inmersiva y atractiva. Desde exhibir tu catálogo
           hasta facilitar la conversión, nuestras Vitrinas Virtuales optimizadas
-          garantizan resultados excepcionales. ¡Eleva tu negocio en línea al
+          están diseñadas para maximizar visibilidad y conversión. ¡Eleva tu negocio en línea al
           siguiente nivel y destaca entre la competencia con nosotros!
         </p>
       </div>

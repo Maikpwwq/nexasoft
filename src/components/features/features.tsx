@@ -27,8 +27,8 @@ export default component$(() => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
               </span>{" "}
             </strong>
-            , podrás migrar tus sistemas existentes a las últimas tecnologías,
-            aumentando el rendimiento de tu sitio web hasta en un 100%. Además,
+            , podrás migrar tus sistemas a tecnologías actuales y optimizadas,
+            mejorando métricas de velocidad y Core Web Vitals. Además,
             con nuestros servicios de{" "}
             <strong class={styles.hint}>
               mantenimiento de plataformas digitales{" "}
@@ -90,7 +90,7 @@ export default component$(() => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
               </span>
             </strong>
-            , garantiza la seguridad de tus plataformas, cumpliendo con las
+            , fortalece la seguridad de tus plataformas, cumpliendo con las
             normas y regulaciones aplicables. <br />
             <br />
           </div>
@@ -100,9 +100,9 @@ export default component$(() => {
           >
             <br />
             <strong class={styles.hint}>🚀 NexaSoft SAS.</strong> Transformamos
-            tu negocio con tecnología de vanguardia. Modernizamos tu plataforma
-            para un rendimiento +100%. Apps móviles, web, SEO, automatización y
-            seguridad. ¡Impulsa tu éxito digital hoy!
+            tu negocio con tecnología profesional. Modernizamos tu plataforma
+            para un rendimiento medible y optimizado. Apps móviles, web, SEO, automatización y
+            seguridad, con respaldo y contrato legal.
             <br />
             <div class="flex justify-center gap-4 mt-4">
               <span class="text-[#4285F4]"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></span>
