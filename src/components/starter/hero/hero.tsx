@@ -1,8 +1,10 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import TimeToCelebrate from "./timeToCelebrate";
 import styles from "./hero.module.css";
+import heroCss from "./hero.module.css?inline";
 
 export default component$(() => {
+  useStyles$(heroCss);
   return (
     <hero id="hero" class={[styles.hero, "relative"]}>
       <div class={["container", styles.hero]} style="margin-bottom: 5rem;">

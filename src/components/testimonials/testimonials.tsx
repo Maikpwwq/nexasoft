@@ -1,5 +1,6 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import styles from "./testimonials.module.css";
+import testimonialsCss from "./testimonials.module.css?inline";
 
 import ComunidadDezzpoLogo from "~/assets/img/logos/Comunidad-Dezzpo.jpg";
 import WaviPixelLogo from "~/assets/img/logos/WaviPixelLogo.png";
@@ -36,6 +37,7 @@ import VuexIcon from "~/assets/img/technologies/Vuex.png";
 import web3AuthIcon from "~/assets/img/technologies/web3-auth.png";
 
 export default component$(() => {
+  useStyles$(testimonialsCss);
   const testimonials = [
     {
       message:
@@ -124,7 +126,7 @@ export default component$(() => {
   return (
     <div
       id="testimonials-section"
-      class={["flex flex-col container-purple px-0 py-6 w-full m-0", styles.testimonials]}
+      class={["flex flex-col container-purple px-0 py-6 w-full m-0 relative", styles.testimonials]}
     >
       <h2
         class="py-8 text-center font-bold"
@@ -139,9 +141,9 @@ export default component$(() => {
         Satisfechos.
       </h2>
       {/* Outer scroll container with overflow masking */}
-      <div class={styles.scrollContainer}>
+      <div class={[styles.scrollContainer, "overflow-hidden w-full"]}>
         {/* Scroll track with animation - cards are duplicated for seamless loop */}
-        <div class={styles.scrollTrack}>
+        <div class={[styles.scrollTrack, "flex flex-row gap-6 w-max"]}>
           {/* Render both sets using a helper function for DRY code */}
           {[false, true].map((isDuplicate) =>
             testimonials.map((testimony, index) => {
@@ -151,7 +153,10 @@ export default component$(() => {
               return (
                 <div
                   key={`${keyPrefix}-${index}`}
-                  class={styles.testimonialCard}
+                  class={[
+                    styles.testimonialCard,
+                    "shrink-0 w-[300px] bg-white rounded-2xl overflow-hidden shadow-md transition-all duration-300",
+                  ]}
                   aria-hidden={isDuplicate ? "true" : undefined}
                 >
                   <div class="h-[184px] w-full overflow-hidden">

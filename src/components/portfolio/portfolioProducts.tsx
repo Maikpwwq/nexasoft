@@ -79,14 +79,14 @@ export default component$(() => {
                         {title}
                       </h3>
                       <p class="card-text my-3 font-light text-base">{description}</p>
-                      <p
+                      {/* <p
                         class={[
                           "card-subtitle mb-2 text-muted font-semibold text-xl",
                           styles.price,
                         ]}
                       >
                         <span class="font-light text-sm">Desde</span> $ {price}
-                      </p>
+                      </p> */}
                       <a
                         href="/customer-form/"
                         class={["btn text-xl text-center py-2 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300", styles.cardBtn]}
@@ -113,7 +113,8 @@ export default component$(() => {
             })}
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-light-blue)] pointer-events-none z-20"></div>
+      {/* Degradado de transición hacia Further */}
+      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-light-blue)] pointer-events-none z-20"></div>
     </portfolioProducts>
   );
 });

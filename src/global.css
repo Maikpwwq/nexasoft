@@ -25,14 +25,18 @@
   --qwik-light-indigo: #6366f1;
   --qwik-fusha: #fe4ff2;
   --qwik-dark-purple: #713fc2;
-  --qwik-purple-background: #7c2ce7;
+  --qwik-purple-background: #3b1578;
   --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #232397;
+  --qwik-dark-background: #0f1035;
   --qwik-dark-text: #ffffff;
   --primary-blue: #4285F4;
   --font-heading: "Manrope", sans-serif;
   --font-body: "Roboto", sans-serif;
   --qwik-bright-cyan: #00e5ff;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 body {

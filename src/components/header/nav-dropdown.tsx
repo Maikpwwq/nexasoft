@@ -1,6 +1,7 @@
-import { component$, useSignal, $ } from "@builder.io/qwik";
+import { component$, useSignal, $, useStyles$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import styles from "./header.module.css";
+import headerCss from "./header.module.css?inline";
 
 export interface ServiceItem {
     name: string;
@@ -19,6 +20,7 @@ export const services: ServiceItem[] = [
 ];
 
 export const NavDropdown = component$(() => {
+    useStyles$(headerCss);
     const isOpen = useSignal(false);
 
     const toggleOpen = $(() => {

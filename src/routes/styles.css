@@ -171,6 +171,155 @@ button.button-small {
   }
 }
 
+/* ═══════════════════════════════════════════════
+   NEON FOG — Section Transition Effect
+   "La noche sudando neón"
+   ═══════════════════════════════════════════════ */
+
+.neon-fog {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 14rem;
+  z-index: 15;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* — Capa 1: Cyan que deriva lentamente — */
+.neon-fog::before {
+  content: '';
+  position: absolute;
+  inset: -30% -20%;
+  background: radial-gradient(
+    ellipse 60% 80% at 25% 50%,
+    rgba(24, 182, 246, 0.45) 0%,
+    rgba(24, 182, 246, 0.1) 40%,
+    transparent 70%
+  );
+  filter: blur(45px);
+  mix-blend-mode: screen;
+  animation: fog-drift-cyan 12s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+/* — Capa 2: Fucsia que respira en la dirección opuesta — */
+.neon-fog::after {
+  content: '';
+  position: absolute;
+  inset: -20% -30%;
+  background: radial-gradient(
+    ellipse 55% 75% at 75% 45%,
+    rgba(254, 79, 242, 0.38) 0%,
+    rgba(254, 79, 242, 0.08) 45%,
+    transparent 70%
+  );
+  filter: blur(50px);
+  mix-blend-mode: screen;
+  animation: fog-drift-fuchsia 14s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+/* — Capa 3: Púrpura profunda que se pliega sobre sí misma — */
+.neon-fog-core {
+  position: absolute;
+  inset: -15%;
+  background:
+    radial-gradient(
+      ellipse 45% 65% at 50% 55%,
+      rgba(172, 127, 244, 0.35) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 35% 50% at 35% 40%,
+      rgba(99, 102, 241, 0.2) 0%,
+      transparent 55%
+    );
+  filter: blur(40px);
+  mix-blend-mode: screen;
+  animation: fog-breathe 9s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* — Variante para secciones claras (cyan bg) — */
+.neon-fog-light::before {
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+}
+.neon-fog-light::after {
+  mix-blend-mode: multiply;
+  opacity: 0.3;
+}
+.neon-fog-light .neon-fog-core {
+  mix-blend-mode: multiply;
+  opacity: 0.3;
+}
+
+/* ─── Keyframes: Cada capa se mueve a su propio ritmo ─── */
+
+@keyframes fog-drift-cyan {
+  0% {
+    transform: translateX(-8%) scale(1.05) rotate(-1deg);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translateX(3%) scale(1.2) rotate(0.5deg);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translateX(8%) scale(1.1) rotate(-0.5deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(-4%) scale(1.15) rotate(1deg);
+    opacity: 0.35;
+  }
+}
+
+@keyframes fog-drift-fuchsia {
+  0% {
+    transform: translateX(10%) scale(1.0) rotate(1deg);
+    opacity: 0.25;
+  }
+  33% {
+    transform: translateX(-6%) scale(1.15) rotate(-0.5deg);
+    opacity: 0.45;
+  }
+  66% {
+    transform: translateX(-3%) scale(1.25) rotate(0.5deg);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateX(7%) scale(1.05) rotate(-1deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes fog-breathe {
+  0%, 100% {
+    transform: scale(1.0) translateY(0) rotate(0deg);
+    opacity: 0.25;
+  }
+  30% {
+    transform: scale(1.12) translateY(-4%) rotate(0.5deg);
+    opacity: 0.45;
+  }
+  70% {
+    transform: scale(1.08) translateY(3%) rotate(-0.3deg);
+    opacity: 0.35;
+  }
+}
+
+/* ─── Accesibilidad: respetar preferencia de reducción de movimiento ─── */
+@media (prefers-reduced-motion: reduce) {
+  .neon-fog::before,
+  .neon-fog::after,
+  .neon-fog-core {
+    animation: none !important;
+    opacity: 0.25;
+  }
+}
+
 /* DESIGN - Background Lighting Effects */
 .ellipsis {
   position: absolute;

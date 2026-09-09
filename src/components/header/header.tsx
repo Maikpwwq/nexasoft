@@ -1,10 +1,12 @@
-import { component$, $, useStore, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, $, useStore, useVisibleTask$, useStyles$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import styles from "./header.module.css";
+import headerCss from "./header.module.css?inline";
 import NexaSoftLogo from "~/assets/img/Logos Nexasoft/Blue (small).png";
 import { NavDropdown, MobileNavDropdown } from "./nav-dropdown";
 
 export default component$(() => {
+  useStyles$(headerCss);
   const state = useStore({
     visible: false,
   });

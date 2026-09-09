@@ -1,7 +1,9 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import styles from "./resume.module.css";
+import resumeCss from "./resume.module.css?inline";
 
 export default component$(() => {
+  useStyles$(resumeCss);
   const webServices = [
     {
       name: "Diseño Web a medida",
@@ -41,7 +43,13 @@ export default component$(() => {
   ];
 
   return (
-    <features id="resume-section" class={[styles.resume, "relative"]}>
+    <features
+      id="resume-section"
+      class={[
+        "relative w-full flex justify-center bg-[var(--qwik-light-blue)]",
+        styles.resume,
+      ]}
+    >
       <div class="container container-blue" style="margin-bottom: 5rem;">
         <div class={["mt-1", styles.resumeList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
@@ -61,7 +69,8 @@ export default component$(() => {
           </ul>
         </div>
       </div>
-      <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-[var(--qwik-light-blue)] to-[var(--qwik-dark-background)] pointer-events-none z-20"></div>
+      {/* Degradado de transición hacia Portfolio */}
+      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-[var(--qwik-light-blue)] to-[var(--qwik-dark-background)] pointer-events-none z-20"></div>
     </features>
   );
 });

@@ -12,7 +12,7 @@ export default extendConfig(baseConfig, () => {
     },
     plugins: [
       staticAdapter({
-        origin: 'https://nexasoft.netlify.app', // https://wavi-aeronautics.vercel.app/
+        origin: 'https://nexasoft.com.co', // 'https://nexasoft.netlify.app', // https://wavi-aeronautics.vercel.app/
       }),
     ],
   };

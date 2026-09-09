@@ -1,6 +1,7 @@
 
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import styles from "./further.module.css";
+import furtherCss from "./further.module.css?inline";
 
 const furtherItems = [
   {
@@ -30,8 +31,16 @@ const furtherItems = [
 ];
 
 export default component$(() => {
+  useStyles$(furtherCss);
+
   return (
-    <further id="further-section" class={[styles.further, "relative"]}>
+    <further
+      id="further-section"
+      class={[
+        "relative w-full flex justify-center bg-[var(--qwik-light-blue)]",
+        styles.further,
+      ]}
+    >
       <div class="container container-blue relative z-10">
         <div class={["mt-1", styles.furtherList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold; fontFamily: var(--font-heading);">

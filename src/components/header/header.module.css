@@ -5,6 +5,7 @@ header {
   /* -110px use to hide with scroll */
   background-color: #0f0a28;
   z-index: 100;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
 }
 
 .wrapper {

@@ -1,5 +1,6 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import styles from "./advantages.module.css";
+import advantagesCss from "./advantages.module.css?inline";
 
 const advantagesItems = [
   {
@@ -29,8 +30,16 @@ const advantagesItems = [
 ];
 
 export default component$(() => {
+  useStyles$(advantagesCss);
+
   return (
-    <advantages id="advantages-section" class={["relative pb-8", styles.advantages]}>
+    <advantages
+      id="advantages-section"
+      class={[
+        "relative pb-8 w-full flex justify-center bg-[var(--qwik-light-blue)]",
+        styles.advantages,
+      ]}
+    >
       <div class={["container container-blue relative z-10", styles.advantagesContainer]}>
         <div class={["mt-1", styles.advantagesList]}>
           <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold; fontFamily: var(--font-heading);">
@@ -50,6 +59,7 @@ export default component$(() => {
           </ul>
         </div>
       </div>
+      {/* Degradado de transición hacia Testimonials */}
       <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[var(--qwik-purple-background)] pointer-events-none z-20"></div>
     </advantages>
   );

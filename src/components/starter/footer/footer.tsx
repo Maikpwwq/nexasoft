@@ -14,8 +14,8 @@ export default component$(() => {
           <span>
             Copyright © {yearTime} <span class={styles.spacer}>|</span>{" "}
           </span>
-          <span> Hecho con ♡ por </span>
-          <a href="https://www.nexasoft.dev/" class={styles.anchor}>
+          <span> Hecho con ♡ por</span>
+          <a href="https://www.nexasoft.com.co/" class={[styles.anchor, "ms-2"]}>
             NexaSoft SAS <span class="lightning">⚡️</span> Soluciones Web
           </a>
         </div>

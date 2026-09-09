@@ -23,6 +23,7 @@ import {
 } from "@modular-forms/qwik";
 import styles from "~/components/modular-forms/modularForm.module.css";
 import { TextInput } from "~/components/modular-forms/TextInput";
+import { CONTACT_INFO } from "~/const/contact";
 
 // Serverless lead capture — Google Sheets via Apps Script (no server dependency)
 const GOOGLE_SHEETS_URL =
@@ -126,7 +127,7 @@ export default component$(() => {
         setResponse(loginForm, {
           status: "error",
           message:
-            "Error al enviar. Por favor intenta de nuevo o escríbenos al WhatsApp +57 3204842897.",
+            `Error al enviar. Por favor intenta de nuevo o escríbenos al WhatsApp ${CONTACT_INFO.whatsapp.displayNumber}.`,
           data: { customerId: "" },
         });
       }

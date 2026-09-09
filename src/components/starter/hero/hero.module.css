@@ -60,3 +60,29 @@
     font-size: 5rem;
   }
 }
+
+@keyframes typewriterCursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriterCursor {
+  display: inline-block;
+  color: #ac7ff4;
+  font-weight: 300;
+  margin-left: 2px;
+  animation: typewriterCursor 0.85s infinite;
+  vertical-align: baseline;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriterCursor {
+    display: none !important;
+    animation: none !important;
+  }
+}

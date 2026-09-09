@@ -1,12 +1,24 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useStyles$ } from "@builder.io/qwik";
 import styles from "./secrets.module.css";
+import secretsCss from "./secrets.module.css?inline";
 
 export default component$(() => {
+  useStyles$(secretsCss);
+
   return (
-    <secrets id="secrets-section" class={["pb-6 relative", styles.secrets]}>
+    <secrets
+      id="secrets-section"
+      class={[
+        "pb-6 relative w-full flex justify-center bg-[var(--qwik-purple-background)]",
+        styles.secrets,
+      ]}
+    >
       <div class="container container-purple relative z-10" style="margin-bottom: 5rem;">
         <div class={["mt-1", styles.secretsList]}>
-          <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
+          <h2
+            class={[styles.title, "text-center font-bold"]}
+            style="font-family: var(--font-heading);"
+          >
             ¡Domina la <span class="highlightClear">Web</span> en un solo lugar!
             Descubre los Secretos para el{" "}
             <span class="highlightClear">Éxito en Línea</span>
@@ -43,6 +55,7 @@ export default component$(() => {
           </p>
         </div>
       </div>
+      {/* Degradado de transición hacia Contact */}
       <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[var(--qwik-dark-background)] pointer-events-none z-20"></div>
     </secrets>
   );

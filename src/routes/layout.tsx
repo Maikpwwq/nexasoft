@@ -3,10 +3,13 @@ import { routeLoader$ } from "@builder.io/qwik-city";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
 import Header from "~/components/header/header";
+import TopContactBar from "~/components/header/top-contact-bar";
 import Footer from "~/components/starter/footer/footer";
 import Support from "~/components/support/support";
+import WhatsAppFab from "~/components/whatsapp-fab/whatsapp-fab";
 
 import styles from "./styles.css?inline";
+import whatsappFabCss from "~/components/whatsapp-fab/whatsapp-fab.css?inline";
 
 export const useServerTimeLoader = routeLoader$(() => {
   return {
@@ -27,14 +30,17 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   useStyles$(styles);
+  useStyles$(whatsappFabCss);
   return (
     <>
+      <TopContactBar />
       <Header />
       <main class="flex justify-center flex-col">
         <Slot />
       </main>
       <Support />
       <Footer />
+      <WhatsAppFab />
     </>
   );
 });
