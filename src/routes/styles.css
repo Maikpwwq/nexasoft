@@ -29,13 +29,7 @@ body {
 h1,
 h2,
 h3 {
-  color: white;
-  margin: 0;
-}
-
-h1 {
-  font-size: 3.2rem;
-  text-align: center;
+  color: inherit;
 }
 
 h1 .highlight,
@@ -43,41 +37,18 @@ h3 .highlight {
   color: var(--qwik-light-blue) !important;
 }
 
-h2 {
-  font-weight: 400;
-  font-size: 2.4rem;
-}
-
 h2 .highlight {
   font-weight: 700;
-}
-
-h3 {
-  font-size: 2rem;
 }
 
 h2 .blueHighlight {
   color: var(--qwik-light-blue) !important;
 }
 
-@media screen and (min-width: 768px) {
-  h1 {
-    font-size: 5rem;
-  }
-
-  h2 {
-    font-size: 3.4rem;
-  }
-
-  h3 {
-    font-size: 3rem;
-  }
-}
-
 /* TAGS ----------------------------------------- */
 a {
   text-decoration: none;
-  color: var(--qwik-light-blue);
+  color: inherit;
 }
 
 code {
@@ -333,6 +304,7 @@ button.button-small {
   transform: rotate(5deg);
   opacity: 0.5;
   z-index: -1;
+  pointer-events: none;
 }
 
 .ellipsis-bottom {
@@ -347,6 +319,7 @@ button.button-small {
   transform: rotate(5deg);
   opacity: 0.5;
   z-index: -1;
+  pointer-events: none;
 }
 
 .ellipsis.ellipsis-purple {
