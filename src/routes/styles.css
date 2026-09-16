@@ -41,6 +41,23 @@ h2 .highlight {
   font-weight: 700;
 }
 
+/* SVG rendering guard against FOUC before external Tailwind styles compute */
+svg {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+aside[aria-label="Información de contacto rápida"] {
+  min-height: 2.25rem;
+}
+
+aside[aria-label="Información de contacto rápida"] svg {
+  width: 1rem !important;
+  height: 1rem !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+  flex-shrink: 0;
+}
 
 /* TAGS ----------------------------------------- */
 a {

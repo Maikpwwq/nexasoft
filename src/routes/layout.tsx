@@ -4,6 +4,7 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 
 import Header from "~/components/header/header";
 import TopContactBar from "~/components/header/top-contact-bar";
+import GlobalLoader from "~/components/loader/global-loader";
 import Footer from "~/components/starter/footer/footer";
 import Support from "~/components/support/support";
 import WhatsAppFab from "~/components/whatsapp-fab/whatsapp-fab";
@@ -33,6 +34,7 @@ export default component$(() => {
   useStyles$(whatsappFabCss);
   return (
     <>
+      <GlobalLoader />
       <TopContactBar />
       <Header />
       <main class="flex justify-center flex-col">
