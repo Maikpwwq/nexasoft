@@ -21,24 +21,3 @@
   margin: 0 auto;
   font-size: 1rem;
 }
-
-.title {
-  font-size: 2rem !important;
-  padding-top: 1.5rem;
-  margin: 1.5rem 0;
-}
-
-@media screen and (min-width: 768px) {
-  .title {
-    font-size: 3.5rem !important;
-  }
-}
-
-.highlight {
-  background: linear-gradient(120deg, #00c6ff 0%, #ffffff 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 800;
-  display: inline-block;
-}

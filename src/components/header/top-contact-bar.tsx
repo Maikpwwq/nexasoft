@@ -5,7 +5,7 @@ export const TopContactBar = component$(() => {
   return (
     <aside
       aria-label="Información de contacto rápida"
-      class="w-full h-8 sm:h-9 bg-white text-gray-900 border-b border-gray-200/80 text-xs font-medium z-30 relative select-none"
+      class="w-full h-9 sm:h-10 bg-white text-gray-900 border-b border-gray-200/80 text-sm font-medium z-30 relative select-none"
     >
       <div class="w-full max-w-6xl mx-auto px-3 sm:px-6 h-full flex items-center justify-between">
         {/* Redes sociales */}
@@ -20,10 +20,10 @@ export const TopContactBar = component$(() => {
             rel="noopener noreferrer"
             title={CONTACT_INFO.social.instagram.name}
             aria-label={CONTACT_INFO.social.instagram.ariaLabel}
-            class="inline-flex items-center justify-center w-7 h-7 text-gray-900 hover:text-blue-600 transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            class="inline-flex items-center justify-center w-8 h-8 text-gray-900 hover:text-blue-600 transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
           >
             <svg
-              class="w-3.5 h-3.5 fill-current"
+              class="w-4 h-4 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -39,10 +39,10 @@ export const TopContactBar = component$(() => {
             rel="noopener noreferrer"
             title={CONTACT_INFO.social.facebook.name}
             aria-label={CONTACT_INFO.social.facebook.ariaLabel}
-            class="inline-flex items-center justify-center w-7 h-7 text-gray-900 hover:text-blue-600 transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            class="inline-flex items-center justify-center w-8 h-8 text-gray-900 hover:text-blue-600 transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
           >
             <svg
-              class="w-3.5 h-3.5 fill-current"
+              class="w-4 h-4 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -66,7 +66,7 @@ export const TopContactBar = component$(() => {
             class="inline-flex items-center gap-1.5 h-full px-1.5 text-gray-900 hover:text-blue-600 transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
           >
             <svg
-              class="w-3.5 h-3.5 text-gray-900 shrink-0 fill-current"
+              class="w-4 h-4 text-gray-900 shrink-0 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -93,7 +93,7 @@ export const TopContactBar = component$(() => {
             class="inline-flex items-center gap-1.5 h-full px-1.5 text-gray-900 hover:text-blue-600 transition-colors duration-150 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
           >
             <svg
-              class="w-3.5 h-3.5 text-gray-900 shrink-0 fill-current"
+              class="w-4 h-4 text-gray-900 shrink-0 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               aria-hidden="true"

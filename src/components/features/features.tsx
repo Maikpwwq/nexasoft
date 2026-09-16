@@ -3,14 +3,12 @@ import styles from "./features.module.css";
 
 export default component$(() => {
   return (
-    <features id="features-section" class={["pb-6 relative", styles.features]}>
+    <section id="features-section" class={["pb-6 relative", styles.features]}>
       <div class="container container-purple container-center relative z-10 pb-6" style="margin-bottom: 5rem;">
-        <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold; fontFamily: var(--font-heading);">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight leading-tight mb-8">
           ¡Transforma tu
           <br />
-          <span class={styles.highlight}>experiencia</span>
-          {' '}
-          en línea!
+          <span class="heroGradient">experiencia</span> en línea!
         </h2>
         <div class={styles.servicesBriefcase}>
           <div
@@ -113,6 +111,6 @@ export default component$(() => {
         </div>
       </div>
       <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-[var(--qwik-purple-background)] to-[var(--qwik-dark-background)] pointer-events-none z-20"></div>
-    </features>
+    </section>
   );
 });

@@ -41,9 +41,6 @@ h2 .highlight {
   font-weight: 700;
 }
 
-h2 .blueHighlight {
-  color: var(--qwik-light-blue) !important;
-}
 
 /* TAGS ----------------------------------------- */
 a {
