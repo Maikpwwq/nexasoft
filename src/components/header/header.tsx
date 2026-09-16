@@ -2,7 +2,7 @@ import { component$, $, useStore, useVisibleTask$, useStyles$ } from "@builder.i
 import { Link, useLocation } from "@builder.io/qwik-city";
 import styles from "./header.module.css";
 import headerCss from "./header.module.css?inline";
-import NexaSoftLogo from "~/assets/img/Logos Nexasoft/Blue (small).png";
+import NexaSoftLogo from "~/assets/img/Logos Nexasoft/Logo-Header-Fushia.png";
 import { NavDropdown, MobileNavDropdown } from "./nav-dropdown";
 
 export default component$(() => {
@@ -71,7 +71,13 @@ export default component$(() => {
 
         <div class={styles.logo}>
           <Link href="/" title="NexaSoft SAS">
-            <img src={NexaSoftLogo} height={50} width={210} alt="NexaSoft SAS Logo" />
+            <img
+              src={NexaSoftLogo}
+              height={50}
+              width={209}
+              alt="NexaSoft SAS Logo"
+              class="h-10 sm:h-12 w-auto object-contain block select-none"
+            />
           </Link>
         </div>
 
