@@ -1,27 +1,47 @@
 import { component$ } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { SERVICES_CATALOG } from "~/const/services";
+import { ServiceDetailCard } from "~/components/services/service-detail-card";
 
+export const head: DocumentHead = {
+  title: "Desarrollo de MarketPlaces | NexaSoft SAS",
+  meta: [
+    {
+      name: "description",
+      content: "Desarrollo de plataformas MarketPlace y ecosistemas digitales multi-comercio para conectar compradores y vendedores en Colombia.",
+    },
+  ],
+};
 
 export default component$(() => {
+  const service = SERVICES_CATALOG.find((s) => s.id === "marketplaces")!;
+
   return (
-    <div
-      class="container container-center flex justify-center"
-      style={{ height: "80vh" }}
-    >
-      <div class="flex flex-col justify-center items-center relative">
-        <div role="presentation" class="ellipsis"></div>
-        <div role="presentation" class="ellipsis ellipsis-purple"></div>
-        <h3 class="text-4xl font-bold mx-auto m-5 w-full text-center">
-          Market<span class="highlight">Places</span>
-        </h3>
-        <p class="text-xl px-4 mt-4 text-center">
+    <div class="container container-center flex flex-col justify-center items-center py-16 px-4 relative min-h-[85vh]">
+      <div role="presentation" class="ellipsis"></div>
+      <div role="presentation" class="ellipsis ellipsis-purple"></div>
+
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-6">
+          Plataformas <span class="highlight">MarketPlaces</span>
+        </h1>
+        <p class="text-xl text-gray-300 leading-relaxed font-light">
           En NexaSoft SAS, creamos MarketPlaces innovadores, conectando a
           múltiples comerciantes y anunciantes en una plataforma atractiva y
           funcional. Facilitamos contacto, gestionamos interacciones y
-          aseguramos la seguridad de las transacciones. Potencia tu sitio web
-          como un próspero centro de negocios en línea con nuestros
-          MarketPlaces.
+          aseguramos la seguridad de las transacciones con liquidación automatizada y
+          soporte técnico de ingeniería.
         </p>
       </div>
+
+      {service.richSolution && (
+        <div class="w-full flex flex-col items-center mt-2">
+          <h2 class="text-2xl font-bold text-white mb-6 text-center">
+            Solución y alcance <span class="text-[#ac7ff4]">incluido</span>
+          </h2>
+          <ServiceDetailCard solution={service.richSolution} />
+        </div>
+      )}
     </div>
   );
 });

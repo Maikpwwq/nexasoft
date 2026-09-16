@@ -4,17 +4,17 @@ import { SERVICES_CATALOG } from "~/const/services";
 import { ServiceDetailCard } from "~/components/services/service-detail-card";
 
 export const head: DocumentHead = {
-  title: "Vitrinas Virtuales | NexaSoft SAS",
+  title: "Modernización y Rendimiento Web | NexaSoft SAS",
   meta: [
     {
       name: "description",
-      content: "Vitrinas virtuales optimizadas para exhibir tu catálogo con WhatsApp checkout integrado, panel de administración y diseño a medida.",
+      content: "Modernización de plataformas web existentes: auditoría técnica, optimización de Core Web Vitals, refactorización de código y nuevas funcionalidades.",
     },
   ],
 };
 
 export default component$(() => {
-  const service = SERVICES_CATALOG.find((s) => s.id === "web-stores")!;
+  const service = SERVICES_CATALOG.find((s) => s.id === "web-modernization")!;
 
   return (
     <div class="container container-center flex flex-col justify-center items-center py-16 px-4 relative min-h-[85vh]">
@@ -23,15 +23,14 @@ export default component$(() => {
 
       <div class="max-w-4xl mx-auto text-center mb-12">
         <h1 class="text-4xl sm:text-5xl font-bold mb-6">
-          Vitrinas <span class="highlight">Virtuales</span>
+          Modernización y <span class="highlight">Rendimiento Web</span>
         </h1>
         <p class="text-xl text-gray-300 leading-relaxed font-light">
-          En NexaSoft SAS, creamos Vitrinas Virtuales para llevar tus productos
-          y servicios al mundo digital con diseños personalizados y
-          cautivadores. Resaltamos la singularidad de tus ofertas, brindando una
-          experiencia de compra inmersiva y atractiva. Desde exhibir tu catálogo
-          hasta facilitar la conversión directa con WhatsApp checkout integrado,
-          optimizadas para maximizar ventas con soporte formal.
+          En NexaSoft SAS, implementamos nuevas capacidades tecnológicas en tu plataforma
+          actual. Si tu sitio o sistema existente sufre de lentitud, código obsoleto
+          o mala experiencia de usuario, nuestro equipo de ingeniería realiza auditorías
+          técnicas a fondo, optimización de velocidad (Core Web Vitals) y modernización
+          modular para potenciar el posicionamiento y la efectividad operativa de tu empresa.
         </p>
       </div>
 
