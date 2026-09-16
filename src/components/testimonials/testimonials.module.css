@@ -6,7 +6,20 @@
 }
 
 .testimonials a {
-  color: var(--qwik-dark-blue) !important;
+  text-decoration: none;
+}
+
+.testimonialTitle {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+/* Ensure heroGradient fills transparently across browsers */
+:global(.heroGradient) {
+  -webkit-text-fill-color: transparent !important;
 }
 
 /* === Infinite Scroll Container === */
@@ -56,13 +69,14 @@
   width: 300px;
   background-color: white;
   border-radius: 1rem;
-  overflow: hidden;
   box-shadow:
     0 4px 6px -1px rgb(0 0 0 / 0.1),
     0 2px 4px -2px rgb(0 0 0 / 0.1);
   transition:
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Card Hover State - Elevation Effect */
@@ -83,6 +97,81 @@
     0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
+/* === Technology Icons & Tooltips === */
+.techItem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.techItem:hover,
+.techItem:focus-within {
+  background-color: #f3f4f6;
+}
+
+.techIcon {
+  filter: grayscale(100%);
+  opacity: 0.65;
+  transition: filter 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: filter, transform;
+}
+
+.techItem:hover .techIcon,
+.techItem:focus-within .techIcon {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.18) translateY(-2px);
+}
+
+.techTooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 0.25rem 0.55rem;
+  background-color: #0f1035;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.2s;
+  z-index: 50;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Tooltip pointer arrow */
+.techTooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0f1035 transparent transparent transparent;
+}
+
+.techItem:hover .techTooltip,
+.techItem:focus-within .techTooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
 /* === Accessibility: Reduced Motion === */
 @media (prefers-reduced-motion: reduce) {
   .scrollTrack {
@@ -99,5 +188,13 @@
 
   .testimonialCard:hover {
     transform: none;
+  }
+
+  .techIcon {
+    transition: none !important;
+  }
+
+  .techTooltip {
+    transition: none !important;
   }
 }
