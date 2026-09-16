@@ -5,13 +5,13 @@ import { ServiceHeader } from "~/components/services/service-header";
 
 export default component$(() => {
   return (
-    <section id="products-section" class="relative w-full py-16 overflow-hidden">
+    <section id="products-section" class="relative w-full py-16">
       {/* Alias anchor for any legacy links */}
       <div id="services-section" class="absolute -top-24"></div>
       <div id="resume-section" class="absolute -top-24"></div>
 
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
+      <div role="presentation" class="ellipsis pointer-events-none"></div>
+      <div role="presentation" class="ellipsis ellipsis-purple pointer-events-none"></div>
 
       <div class="container mx-auto px-4 relative z-10">
         <ServiceHeader
@@ -29,8 +29,8 @@ export default component$(() => {
         </div>
       </div>
 
-      {/* Degradado de transición hacia Further (fondo cian) */}
-      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-light-blue)] pointer-events-none z-20"></div>
+      {/* Degradado de transición hacia Further (fondo claro/blanco) */}
+      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-white pointer-events-none z-20"></div>
     </section>
   );
 });

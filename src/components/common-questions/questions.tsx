@@ -79,15 +79,17 @@ export default component$(() => {
   ];
 
   return (
-    <div id="questions-section" class={[styles.questions, "relative pb-16"]}>
-      <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
-      <div class={[styles.questionsContainer, "container"]}>
-        <h3 class={styles.title} style={{ color: "white", textAlign: "center", fontSize: "3rem", fontWeight: "bold", marginBottom: "2rem" }}>
-          ¡Aclara tus Dudas sobre el{" "}
-          <span class="highlight">Éxito Digital</span> de la mano de{" "}
-          <span class="highlight">NexaSoft SAS!</span>
-        </h3>
+    <section id="questions-section" class={[styles.questions, "relative pb-16"]}>
+      <div role="presentation" class="ellipsis pointer-events-none"></div>
+      <div role="presentation" class="ellipsis ellipsis-purple pointer-events-none"></div>
+      <div class={[styles.questionsContainer, "container mx-auto px-4 relative z-10"]}>
+        <div class="max-w-4xl mx-auto mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight leading-tight">
+            ¡Aclara tus Dudas sobre el{" "}
+            <span class="heroGradient">Éxito Digital</span> de la mano de{" "}
+            <span class="heroGradient">NexaSoft SAS!</span>
+          </h2>
+        </div>
 
         <div class="flex flex-col gap-4 max-w-4xl mx-auto">
           {questionsInfo.map((item) => (
@@ -96,7 +98,7 @@ export default component$(() => {
               class="group bg-white text-black rounded-lg overflow-hidden border-b border-gray-200"
             >
               <summary class="flex justify-between items-center p-6 cursor-pointer list-none hover:bg-gray-50 transition-colors">
-                <h4 class="text-xl font-semibold group-open:text-[#4285F4] transition-colors">
+                <h4 class="text-xl font-semibold text-gray-900 group-open:text-[#4285F4] transition-colors">
                   {item.pregunta}
                 </h4>
                 <span class="transition-transform group-open:rotate-180 text-[#4285F4]">
@@ -105,13 +107,13 @@ export default component$(() => {
                   </svg>
                 </span>
               </summary>
-              <div class="px-6 pt-2 pb-6 text-gray-600 text-xl text-base font-light leading-relaxed">
+              <div class="px-6 pt-2 pb-6 text-gray-600 text-base font-light leading-relaxed">
                 {item.respuesta}
               </div>
             </details>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 });
