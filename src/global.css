@@ -56,3 +56,12 @@ h5,
 h6 {
   font-family: var(--font-heading);
 }
+
+.heroGradient,
+._heroGradient {
+  background: linear-gradient(120deg, var(--qwik-light-blue) 48%, var(--qwik-fusha) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}

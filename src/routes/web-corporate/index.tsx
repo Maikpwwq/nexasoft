@@ -23,7 +23,7 @@ export default component$(() => {
 
       <div class="max-w-4xl mx-auto text-center mb-12">
         <h1 class="text-4xl sm:text-5xl font-bold mb-6">
-          Páginas Web <span class="highlight">Corporativas</span>
+          Páginas Web <span class="heroGradient">Corporativas</span>
         </h1>
         <p class="text-xl text-gray-300 leading-relaxed font-light">
           En NexaSoft SAS, desarrollamos plataformas web corporativas para empresas

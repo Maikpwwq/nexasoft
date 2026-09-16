@@ -23,7 +23,7 @@ export default component$(() => {
 
       <div class="max-w-4xl mx-auto text-center mb-12">
         <h1 class="text-4xl sm:text-5xl font-bold mb-6">
-          Mantenimiento y <span class="highlight">Soporte Continuo</span>
+          Mantenimiento y <span class="heroGradient">Soporte Continuo</span>
         </h1>
         <p class="text-xl text-gray-300 leading-relaxed font-light">
           En NexaSoft SAS, sostenemos y garantizamos la salud de las plataformas que ya operan

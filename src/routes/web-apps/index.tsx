@@ -23,7 +23,7 @@ export default component$(() => {
 
       <div class="max-w-4xl mx-auto text-center mb-12">
         <h1 class="text-4xl sm:text-5xl font-bold mb-6">
-          Aplicativos <span class="highlight">Web Progresivos</span>
+          Aplicativos <span class="heroGradient">Web Progresivos</span>
         </h1>
         <p class="text-xl text-gray-300 leading-relaxed font-light">
           En NexaSoft SAS, potenciamos tu productividad con Aplicativos Web
