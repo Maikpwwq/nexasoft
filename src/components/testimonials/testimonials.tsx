@@ -154,7 +154,7 @@ export default component$(() => {
   return (
     <section
       id="testimonials-section"
-      class={["flex flex-col container-purple px-0 pt-8 pb-12 w-full m-0 relative", styles.testimonials]}
+      class={["flex flex-col container-purple px-0 pt-16 pb-12 w-full m-0 relative", styles.testimonials]}
     >
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight leading-tight mb-10 px-4">
         <span>Nuestros </span>

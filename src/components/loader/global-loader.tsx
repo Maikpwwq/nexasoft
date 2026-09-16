@@ -60,25 +60,25 @@ export const GlobalLoader = component$(() => {
         tabIndex={-1}
       >
         <div class="global-loader__content">
-          <div class="global-loader__logo-wrapper">
-            {/* Logo 1: Base de referencia visual (Fucsia) */}
+          <div class="global-loader__brand-composition">
+            {/* Logo 1: Símbolo base de referencia visual (Fucsia) a la izquierda */}
             <img
               src={LogoFushia}
-              alt="NexaSoft SAS"
-              width={210}
-              height={210}
-              class="global-loader__logo-base"
+              alt="NexaSoft SAS - Símbolo"
+              width={105}
+              height={105}
+              class="global-loader__logo-symbol"
               loading="eager"
               decoding="sync"
             />
 
-            {/* Logo 2: Logo principal con revelado suave y sombra tecnológica */}
+            {/* Logo 2: Texto de la marca escalado proporcionalmente a la derecha */}
             <img
               src={LogoNexasoft}
-              alt="NexaSoft SAS"
-              width={210}
-              height={210}
-              class="global-loader__logo-overlay"
+              alt="NexaSoft SAS - Soluciones Web"
+              width={183}
+              height={183}
+              class="global-loader__logo-text"
               loading="eager"
               decoding="sync"
             />
