@@ -5,15 +5,15 @@
 ## Orden de secciones
 
 ```
-Hero → Questions → Resume → PortfolioProducts → Further → Advantages → Testimonials → Secrets → Contact/Footer
+Hero → Questions → PortfolioProducts (Unificado) → Further → Advantages → Testimonials → Secrets → Contact/Footer
 ```
 
 ## Variables de color de fondo
 
 | Variable CSS | Color | Uso |
 |---|---|---|
-| `--qwik-dark-background` | Azul oscuro/negro | Hero, PortfolioProducts, Contact |
-| `--qwik-light-blue` | Cian claro | Resume, Further, Advantages |
+| `--qwik-dark-background` | Azul oscuro/negro | Hero, Questions, PortfolioProducts, Contact |
+| `--qwik-light-blue` | Cian claro | Further, Advantages |
 | `--qwik-purple-background` | Púrpura oscuro | Testimonials, Secrets |
 
 ## Mapa de degradados
@@ -23,8 +23,7 @@ Cada degradado usa `h-32` (8rem), `position: absolute`, `pointer-events-none`, y
 ```mermaid
 graph TD
     A["Hero<br/>(oscuro)"] -->|sin degradado| B["Questions<br/>(oscuro)"]
-    B -->|"Bottom: transparent → cian"| C["Resume<br/>(cian)"]
-    C -->|"Bottom: cian → oscuro"| D["PortfolioProducts<br/>(oscuro)"]
+    B -->|sin degradado| D["PortfolioProducts (Unificado)<br/>(oscuro con luces)"]
     D -->|"Bottom: oscuro → cian"| E["Further<br/>(cian)"]
     E -->|sin degradado| F["Advantages<br/>(cian)"]
     F -->|"Bottom: transparent → purple"| G["Testimonials<br/>(purple)"]
@@ -33,7 +32,6 @@ graph TD
 
     style A fill:#0b0e1a,color:#fff
     style B fill:#0b0e1a,color:#fff
-    style C fill:#00bcd4,color:#000
     style D fill:#0b0e1a,color:#fff
     style E fill:#00bcd4,color:#000
     style F fill:#00bcd4,color:#000
@@ -47,14 +45,13 @@ graph TD
 | # | Sección | Archivo | Fondo | Degradado | Posición | Clases Tailwind |
 |---|---------|---------|-------|-----------|----------|-----------------|
 | 1 | Hero | `starter/hero/hero.tsx` | oscuro | — | — | — |
-| 2 | Questions | `common-questions/questions.tsx` | oscuro | `transparent → cian` | **bottom** | `bg-gradient-to-b from-transparent to-[var(--qwik-light-blue)]` |
-| 3 | Resume | `resume/resume.tsx` | cian | `cian → oscuro` | **bottom** | `bg-gradient-to-b from-[var(--qwik-light-blue)] to-[var(--qwik-dark-background)]` |
-| 4 | PortfolioProducts | `portfolio/portfolioProducts.tsx` | oscuro | `oscuro → cian` | **bottom** | `bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-light-blue)]` |
-| 5 | Further | `further/further.tsx` | cian | — | — | — |
-| 6 | Advantages | `advantages/advantages.tsx` | cian | `transparent → purple` | **bottom** | `bg-gradient-to-b from-transparent to-[var(--qwik-purple-background)]` |
-| 7 | Testimonials | `testimonials/testimonials.tsx` | purple | — | — | — |
-| 8 | Secrets | `secrets/secrets.tsx` | purple | `transparent → oscuro` | **bottom** | `bg-gradient-to-b from-transparent to-[var(--qwik-dark-background)]` |
-| 9 | Contact/Footer | `routes/index.tsx` | oscuro | — | — | — |
+| 2 | Questions | `common-questions/questions.tsx` | oscuro | — | — | — |
+| 3 | PortfolioProducts (Unificado) | `portfolio/portfolioProducts.tsx` | oscuro con luces | `oscuro → cian` | **bottom** | `bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-light-blue)]` |
+| 4 | Further | `further/further.tsx` | cian | — | — | — |
+| 5 | Advantages | `advantages/advantages.tsx` | cian | `transparent → purple` | **bottom** | `bg-gradient-to-b from-transparent to-[var(--qwik-purple-background)]` |
+| 6 | Testimonials | `testimonials/testimonials.tsx` | purple | — | — | — |
+| 7 | Secrets | `secrets/secrets.tsx` | purple | `transparent → oscuro` | **bottom** | `bg-gradient-to-b from-transparent to-[var(--qwik-dark-background)]` |
+| 8 | Contact/Footer | `routes/index.tsx` | oscuro | — | — | — |
 
 ## Reglas de diseño
 

@@ -13,20 +13,10 @@ import Infobox from "~/components/starter/infobox/infobox";
 import Testimonials from "~/components/testimonials/testimonials";
 
 
-import Resume from "~/components/resume/resume";
 import Further from "~/components/further/further";
 import Advantages from "~/components/advantages/advantages";
 import Secrets from "~/components/secrets/secrets";
 import Questions from "~/components/common-questions/questions";
-
-// const styles = () => ({
-//   contactCard: {
-//     borderRadius: "33px",
-//     border: "1px solid #ac7ff4",
-//     backgroundColor: "var(--qwik-dirty-black)",
-//     margin: "0 10px",
-//   },
-// });
 
 export default component$(() => {
   useStyles$(modularFormCss);
@@ -36,7 +26,6 @@ export default component$(() => {
       <Hero />
       {/* <Starter /> */}
       <Questions />
-      <Resume />
       <PortfolioProducts />
       <Further />
       <Advantages />

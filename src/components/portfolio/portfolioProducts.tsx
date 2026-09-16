@@ -1,120 +1,38 @@
-import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
-import WebProducts from "./WebProducts.json";
-import styles from "./portfolioProducts.module.css";
-import { clsx } from "clsx";
-
-interface Product {
-  title: string;
-  price: string;
-  description: string;
-  benefit: string[];
-  scope: string;
-}
-
-const products: Product[] = WebProducts.WebProducts;
+import { component$ } from "@builder.io/qwik";
+import { SERVICES_CATALOG } from "~/const/services";
+import { ServiceCardSimple } from "~/components/services/service-card-simple";
 
 export default component$(() => {
-  const isVisible = useSignal(false);
-  const sectionRef = useSignal<Element>();
-
-  // eslint-disable-next-line qwik/no-use-visible-task
-  useVisibleTask$(({ cleanup }) => {
-    if (!sectionRef.value) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          isVisible.value = true;
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(sectionRef.value);
-    cleanup(() => observer.disconnect());
-  });
-
   return (
-    <portfolioProducts id="products-section" ref={sectionRef} class={[styles.portfolioProducts, "relative"]}>
-      <div
-        class="container flex flex-col justify-center items-center relative"
-        style="margin-bottom: 5rem;"
-      >
+    <section id="products-section" class="relative w-full py-16 overflow-hidden">
+      {/* Alias anchor for any legacy links */}
+      <div id="services-section" class="absolute -top-24"></div>
+      <div id="resume-section" class="absolute -top-24"></div>
 
-        <div role="presentation" class="ellipsis"></div>
-        <div role="presentation" class="ellipsis ellipsis-purple"></div>
-        <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
-          Soluciones digitales y <span class="blueHighlight font-bold">soporte especializado</span>{" "}
-          para potenciar la efectividad de tu{" "}
-          <span class="blueHighlight font-bold">empresa</span>
-        </h2>
-        <p class="text-xl px-4 mt-4 text-center">
-          Empresa legalmente constituida. Todos nuestros proyectos incluyen
-          contrato de servicios y soporte formal.
-        </p>
-        <div class="flex flex-col sm:flex-row flex-wrap my-10 justify-center">
-          {products.length > 0 &&
-            products.map((product, index) => {
-              const { title, description, benefit, scope } = product;
-              return (
-                <div key={index} class="flex items-stretch justify-center">
-                  <div
-                    class={clsx(
-                      "bg-light",
-                      styles.card,
-                      styles.cardAnimated,
-                      isVisible.value && styles.cardVisible
-                    )}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <div class={["card-body", styles.cardBody]}>
-                      <h3
-                        class={[
-                          "card-title font-bold py-3 text-xl leading-tight",
-                          styles.cardTitle,
-                        ]}
-                        style={{ fontSize: "1.25rem" }}
-                      >
-                        {title}
-                      </h3>
-                      <p class="card-text my-3 font-light text-base">{description}</p>
-                      {/* <p
-                        class={[
-                          "card-subtitle mb-2 text-muted font-semibold text-xl",
-                          styles.price,
-                        ]}
-                      >
-                        <span class="font-light text-sm">Desde</span> $ {price}
-                      </p> */}
-                      <a
-                        href="/customer-form/"
-                        class={["btn text-xl text-center py-2 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300", styles.cardBtn]}
-                      >
-                        Cotizar solución
-                      </a>
-                      <p class="card-text mt-3 font-light text-sm text-center">
-                        {scope}
-                      </p>
-                      <ul class="py-3">
-                        {benefit.length > 0 &&
-                          benefit.map((beneficio, index) => {
-                            return (
-                              <li key={index} class="font-extralight text-base">
-                                {beneficio}
-                              </li>
-                            );
-                          })}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+      <div role="presentation" class="ellipsis"></div>
+      <div role="presentation" class="ellipsis ellipsis-purple"></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 tracking-tight text-white">
+            Desarrollo web <span class="highlight">y soporte especializado</span> en Colombia
+          </h2>
+          <p class="text-lg sm:text-xl text-gray-300 font-light leading-relaxed max-w-3xl mx-auto">
+            Empresa legalmente constituida. Soluciones digitales y plataformas adaptadas a
+            corporativos y empresas que necesitan soporte formal de ingeniería, contratos de servicio
+            y alta disponibilidad operativa.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
+          {SERVICES_CATALOG.map((service) => (
+            <ServiceCardSimple key={service.id} service={service} />
+          ))}
         </div>
       </div>
-      {/* Degradado de transición hacia Further */}
+
+      {/* Degradado de transición hacia Further (fondo cian) */}
       <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-[var(--qwik-dark-background)] to-[var(--qwik-light-blue)] pointer-events-none z-20"></div>
-    </portfolioProducts>
+    </section>
   );
 });

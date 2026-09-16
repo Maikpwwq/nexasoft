@@ -31,7 +31,7 @@ export default component$(() => {
 
   const navItems = [
     {
-      name: "Nuestros Productos",
+      name: "Nuestras Soluciones",
       route: "/#products-section",
     },
     // "Nuestros Servicios" is now handled via a custom component check

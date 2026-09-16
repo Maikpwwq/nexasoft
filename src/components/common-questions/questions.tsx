@@ -79,7 +79,7 @@ export default component$(() => {
   ];
 
   return (
-    <div id="questions-section" class={[styles.questions, "relative pb-36"]}>
+    <div id="questions-section" class={[styles.questions, "relative pb-16"]}>
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
       <div class={[styles.questionsContainer, "container"]}>
@@ -112,8 +112,6 @@ export default component$(() => {
           ))}
         </div>
       </div>
-      {/* Degradado de transición hacia Resume */}
-      <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[var(--qwik-light-blue)] pointer-events-none z-20"></div>
     </div>
   );
 });
