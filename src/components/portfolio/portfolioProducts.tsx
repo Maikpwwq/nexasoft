@@ -45,9 +45,9 @@ export default component$(() => {
         <div role="presentation" class="ellipsis"></div>
         <div role="presentation" class="ellipsis ellipsis-purple"></div>
         <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold;">
-          ¡Simplificamos los <span class="blueHighlight font-bold">precios</span>{" "}
+          Soluciones digitales y <span class="blueHighlight font-bold">soporte especializado</span>{" "}
           para potenciar la efectividad de tu{" "}
-          <span class="blueHighlight font-bold">trabajo</span>!
+          <span class="blueHighlight font-bold">empresa</span>
         </h2>
         <p class="text-xl px-4 mt-4 text-center">
           Empresa legalmente constituida. Todos nuestros proyectos incluyen
@@ -56,7 +56,7 @@ export default component$(() => {
         <div class="flex flex-col sm:flex-row flex-wrap my-10 justify-center">
           {products.length > 0 &&
             products.map((product, index) => {
-              const { title, price, description, benefit, scope } = product;
+              const { title, description, benefit, scope } = product;
               return (
                 <div key={index} class="flex items-stretch justify-center">
                   <div
@@ -91,7 +91,7 @@ export default component$(() => {
                         href="/customer-form/"
                         class={["btn text-xl text-center py-2 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300", styles.cardBtn]}
                       >
-                        Escoger plan
+                        Cotizar solución
                       </a>
                       <p class="card-text mt-3 font-light text-sm text-center">
                         {scope}

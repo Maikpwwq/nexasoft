@@ -24,7 +24,7 @@ export default component$(() => {
             class="text-2xl text-white button font-bold flex items-center shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
             style={{ color: "var(--qwik-dark-text)" }}
           >
-            Planes
+            Soluciones
           </a>
         </div>
       </div>
