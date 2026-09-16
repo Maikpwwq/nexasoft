@@ -8,8 +8,8 @@ export default component$(() => {
   return (
     <hero id="hero" class={[styles.hero, "relative"]}>
       <div class={["container", styles.hero]} style="margin-bottom: 5rem;">
-        <div role="presentation" class="ellipsis"></div>
-        <div role="presentation" class="ellipsis ellipsis-purple" style="z-index: 30;"></div>
+        <div role="presentation" class="ellipsis pointer-events-none"></div>
+        <div role="presentation" class="ellipsis ellipsis-purple pointer-events-none" style="z-index: 0;"></div>
         <TimeToCelebrate />
         <div class={[styles["button-group"], "relative z-30"]}>
           <a

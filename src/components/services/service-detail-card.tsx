@@ -50,7 +50,8 @@ export const ServiceDetailCard = component$<ServiceDetailCardProps>(({ solution 
       <div class="pt-4 border-t border-white/10">
         <a
           href={solution.ctaUrl}
-          class="block w-full py-3.5 px-6 rounded-xl font-bold text-center text-lg bg-[#ac7ef4] text-white hover:bg-[#9b6ce0] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(172,127,244,0.4)]"
+          class="block w-full py-3.5 px-6 rounded-xl font-bold text-center text-lg bg-[#1fc6c7] !text-white hover:bg-[#e7268d] hover:scale-105 transition-all duration-300 shadow-lg shadow-emerald-950/40 hover:shadow-[0_0_25px_rgba(219,39,119,0.5)] cursor-pointer"
+          style={{ color: "#ffffff" }}
         >
           {solution.ctaText}
         </a>

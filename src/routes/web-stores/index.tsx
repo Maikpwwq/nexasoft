@@ -29,8 +29,8 @@ export default component$(() => {
       />
 
       {service.richSolution && (
-        <div class="w-full flex flex-col items-center mt-12">
-          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
+        <div class="w-full flex flex-col items-center gap-10 mt-16 mb-20">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-12 text-center">
             Solución y soporte <span class="text-[#ac7ff4]">incluido</span>
           </h2>
           <ServiceDetailCard solution={service.richSolution} />

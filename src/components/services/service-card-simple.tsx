@@ -13,12 +13,14 @@ export const ServiceCardSimple = component$<ServiceCardSimpleProps>(({ service }
       aria-label={`Ver solución de ${service.name}`}
     >
       <div>
-        <div class="w-14 h-14 mb-4 rounded-xl bg-[#ac7ff4]/10 border border-[#ac7ff4]/20 flex items-center justify-center text-[#ac7ff4] group-hover:bg-[#ac7ff4]/20 group-hover:scale-110 transition-all duration-300">
-          {service.iconSvg}
+        <div class="flex items-center gap-3.5 mb-1">
+          <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-[#ac7ff4]/10 border border-[#ac7ff4]/20 flex items-center justify-center text-[#ac7ff4] group-hover:bg-[#ac7ff4]/20 group-hover:scale-110 transition-all duration-300">
+            {service.iconSvg}
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-[#ac7ff4] transition-colors leading-snug">
+            {service.name}
+          </h3>
         </div>
-        <h3 class="text-xl font-bold text-white group-hover:text-[#ac7ff4] transition-colors leading-snug mb-3">
-          {service.name}
-        </h3>
       </div>
 
       <div class="mt-4 pt-4 border-t border-white/10 flex flex-col gap-3">
@@ -32,11 +34,11 @@ export const ServiceCardSimple = component$<ServiceCardSimpleProps>(({ service }
             </span>
           ))}
         </div>
-        <div class="flex items-center text-xs font-semibold text-[#ac7ff4] group-hover:translate-x-1 transition-transform mt-1">
+        <div class="flex items-center text-sm font-semibold text-[#ac7ff4] group-hover:text-white group-hover:translate-x-1 transition-all duration-200 mt-4 pt-2">
           <span>Explorar solución</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="w-4 h-4 ml-1"
+            class="w-4 h-4 ml-1.5"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

@@ -30,14 +30,10 @@ export default component$(() => {
   });
 
   const navItems = [
+    // "Nuestras Soluciones" is now handled via a custom component check
     {
       name: "Nuestras Soluciones",
-      route: "/#products-section",
-    },
-    // "Nuestros Servicios" is now handled via a custom component check
-    {
-      name: "Nuestros Servicios",
-      route: "/services", // Placeholder, won't be used directly for link
+      route: "/#products-section", // Placeholder, won't be used directly for link
       isDropdown: true,
     },
     {
@@ -75,7 +71,7 @@ export default component$(() => {
 
         <div class={styles.logo}>
           <Link href="/" title="NexaSoft SAS">
-            <img src={NexaSoftLogo} height={50} width={210} alt="NexaSoft Logo" />
+            <img src={NexaSoftLogo} height={50} width={210} alt="NexaSoft SAS Logo" />
           </Link>
         </div>
 

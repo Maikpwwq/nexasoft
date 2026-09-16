@@ -35,7 +35,7 @@ export const NavDropdown = component$(() => {
                 aria-expanded={isOpen.value}
             >
                 <span style={{ fontSize: "1.125rem", fontFamily: "Roboto, Helvetica, Arial, sans-serif" }}>
-                    Nuestros Servicios
+                    Nuestras Soluciones
                 </span>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ export const MobileNavDropdown = component$(() => {
             // Other items use fontSize: 1rem in header.tsx
             >
                 <span style={{ fontSize: "1rem", fontFamily: "Roboto, Helvetica, Arial, sans-serif", color: "var(--qwik-dark-text)" }}>
-                    Nuestros Servicios
+                    Nuestras Soluciones
                 </span>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
