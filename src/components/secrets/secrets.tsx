@@ -6,7 +6,7 @@ export default component$(() => {
   useStyles$(secretsCss);
 
   return (
-    <secrets
+    <section
       id="secrets-section"
       class={[
         "pb-6 relative w-full flex justify-center bg-[var(--qwik-purple-background)]",
@@ -15,48 +15,29 @@ export default component$(() => {
     >
       <div class="container container-purple relative z-10" style="margin-bottom: 5rem;">
         <div class={["mt-1", styles.secretsList]}>
-          <h2
-            class={[styles.title, "text-center font-bold"]}
-            style="font-family: var(--font-heading);"
-          >
-            ¡Domina la <span class="highlightClear">Web</span> en un solo lugar!
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight leading-tight mb-8">
+            ¡Domina la <span class="heroGradient">Web</span> en un solo lugar!
+            <br />
             Descubre los Secretos para el{" "}
-            <span class="highlightClear">Éxito en Línea</span>
+            <span class="heroGradient">Éxito en Línea</span>
           </h2>
-          <p
-            class="mt-6 mb-6 pt-5 text-center text-xl hidden md:block"
-          >
-            ¡Desbloquea tu Éxito Digital con NexaSoft SAS y transforma tu
-            presencia en línea.!
-            <br />
-            <br />
-            <br />
-            NexaSoft SAS, especialistas en Diseño Web a medida, Sitios Web
-            Informativos, Vitrinas virtuales y Tiendas Online de Comercio
-            Electrónico en Colombia, te ofrecemos soluciones empresariales de
-            software que impulsarán tu negocio. Nuestros expertos en
-            modernización de plataformas te permitirán migrar tus sistemas
-            existentes a tecnologías actuales y optimizadas, mejorando métricas de velocidad y
-            Core Web Vitals. Además, con nuestros servicios de
-            mantenimiento de plataformas digitales, trabajamos para maximizar la
-            disponibilidad, seguridad y productividad de tus sistemas. También
-            ofrecemos desarrollo de aplicaciones móviles para iOS y Android,
-            creación de Sitios Web, Landing pages y Stores adaptativas de
-            e-commerce, integración de pasarelas de pagos online, y mejoramos tu
-            posicionamiento SEO para optimizar el reconocimiento digital de tu
-            marca en Internet. Con nosotros, accede a la automatización,
-            seguridad y cumplimiento que necesitas para el éxito en línea.
-          </p>
-          <p
-            class="mt-6 pb-6 pt-5 text-lg block md:hidden"
-          >
-            🚀 NexaSoft SAS: Transformamos tu negocio con Diseño Web de
-            vanguardia, E-commerce, SEO y más. ¡Impulsa tu éxito digital hoy!
-          </p>
+          <div class="max-w-3xl mx-auto px-4 space-y-6 text-center mt-6">
+            <p class="text-lg sm:text-xl text-gray-200 leading-relaxed font-normal">
+              En <strong class="text-white font-semibold">NexaSoft SAS</strong> desarrollamos soluciones empresariales de software y plataformas web a medida en Colombia, diseñadas para impulsar el crecimiento comercial y la efectividad operativa de tu negocio.
+            </p>
+
+            <p class="text-base sm:text-lg text-gray-300 leading-relaxed font-light">
+              Cubrimos todo tu ecosistema digital: desde <span class="text-white font-normal">Sitios Web Informativos</span>, <span class="text-white font-normal">Vitrinas Virtuales</span> y <span class="text-white font-normal">Tiendas Online (E-commerce)</span> con pasarelas de pago seguras, hasta <span class="text-white font-normal">Landing Pages</span> de alta conversión y desarrollo de <span class="text-white font-normal">Aplicaciones Móviles para iOS y Android</span>.
+            </p>
+
+            <p class="text-base sm:text-lg text-gray-300 leading-relaxed font-light">
+              Modernizamos y migramos tus sistemas existentes a tecnologías de vanguardia para maximizar la velocidad y optimizar los <span class="text-white font-normal">Core Web Vitals</span>. Además, brindamos <span class="text-white font-normal">mantenimiento continuo</span>, <span class="text-white font-normal">posicionamiento SEO</span> estratégico, automatización y seguridad con respaldo formal para consolidar tu éxito en línea.
+            </p>
+          </div>
         </div>
       </div>
       {/* Degradado de transición hacia Contact */}
       <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[var(--qwik-dark-background)] pointer-events-none z-20"></div>
-    </secrets>
+    </section>
   );
 });

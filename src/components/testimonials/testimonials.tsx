@@ -124,21 +124,13 @@ export default component$(() => {
   ];
 
   return (
-    <div
+    <section
       id="testimonials-section"
-      class={["flex flex-col container-purple px-0 py-6 w-full m-0 relative", styles.testimonials]}
+      class={["flex flex-col container-purple px-0 pt-8 pb-12 w-full m-0 relative", styles.testimonials]}
     >
-      <h2
-        class="py-8 text-center font-bold"
-      >
-        Nuestros{" "}
-        <span
-          class="highlightClear font-bold md:text-6xl sm:text-3xl text-2xl"
-          style={{ borderColor: "#e5e7eb" }}
-        >
-          Clientes
-        </span>{" "}
-        Satisfechos.
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight leading-tight mb-10 px-4">
+        <span>Nuestros </span>
+        <span class="heroGradient">Clientes Satisfechos</span>
       </h2>
       {/* Outer scroll container with overflow masking */}
       <div class={[styles.scrollContainer, "overflow-hidden w-full"]}>
@@ -202,6 +194,6 @@ export default component$(() => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 });
