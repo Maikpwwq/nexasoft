@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { SERVICES_CATALOG } from "~/const/services";
 import { ServiceDetailCard } from "~/components/services/service-detail-card";
+import { ServiceHeader } from "~/components/services/service-header";
 
 export const head: DocumentHead = {
   title: "Modernización y Rendimiento Web | NexaSoft SAS",
@@ -21,22 +22,15 @@ export default component$(() => {
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
 
-      <div class="max-w-4xl mx-auto text-center mb-12">
-        <h1 class="text-4xl sm:text-5xl font-bold mb-6">
-          Modernización y <span class="heroGradient">Rendimiento Web</span>
-        </h1>
-        <p class="text-xl text-gray-300 leading-relaxed font-light">
-          En NexaSoft SAS, implementamos nuevas capacidades tecnológicas en tu plataforma
-          actual. Si tu sitio o sistema existente sufre de lentitud, código obsoleto
-          o mala experiencia de usuario, nuestro equipo de ingeniería realiza auditorías
-          técnicas a fondo, optimización de velocidad (Core Web Vitals) y modernización
-          modular para potenciar el posicionamiento y la efectividad operativa de tu empresa.
-        </p>
-      </div>
+      <ServiceHeader
+        titlePrefix="Modernización y"
+        highlightText="Rendimiento Web"
+        description="En NexaSoft SAS, implementamos nuevas capacidades tecnológicas en tu plataforma actual. Si tu sitio o sistema existente sufre de lentitud, código obsoleto o mala experiencia de usuario, nuestro equipo de ingeniería realiza auditorías técnicas a fondo, optimización de velocidad (Core Web Vitals) y modernización modular para potenciar el posicionamiento y la efectividad operativa de tu empresa."
+      />
 
       {service.richSolution && (
-        <div class="w-full flex flex-col items-center mt-2">
-          <h2 class="text-2xl font-bold text-white mb-6 text-center">
+        <div class="w-full flex flex-col items-center mt-12">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-8 text-center">
             Solución y soporte <span class="text-[#ac7ff4]">incluido</span>
           </h2>
           <ServiceDetailCard solution={service.richSolution} />
