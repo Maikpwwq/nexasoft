@@ -1,6 +1,4 @@
-
 import { component$, useStyles$ } from "@builder.io/qwik";
-import styles from "./further.module.css";
 import furtherCss from "./further.module.css?inline";
 
 const furtherItems = [
@@ -34,33 +32,41 @@ export default component$(() => {
   useStyles$(furtherCss);
 
   return (
-    <further
+    <section
       id="further-section"
-      class={[
-        "relative w-full flex justify-center bg-[var(--qwik-light-blue)]",
-        styles.further,
-      ]}
+      class="relative w-full flex justify-center bg-white text-gray-900 py-16"
     >
-      <div class="container container-blue relative z-10">
-        <div class={["mt-1", styles.furtherList]}>
-          <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold; fontFamily: var(--font-heading);">
-            ¡Desbloquea tu <span class="highlightDark">Éxito Digital</span> con
-            Nuestros <span class="highlightDark">Servicios Adicionales!</span>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center tracking-tight leading-tight mb-8"
+            style={{ color: "#111827" }}
+          >
+            <span>¡Desbloquea tu </span>
+            <span class="heroGradient">Éxito Digital</span>
+            <span> con Nuestros </span>
+            <span class="heroGradient">Servicios Adicionales!</span>
           </h2>
-          <ul class="mt-8 mb-8">
+          <ul class="mt-8 mb-8 space-y-4 max-w-2xl mx-auto">
             {furtherItems.length > 0 &&
               furtherItems.map((item, index) => {
                 const { icon, title } = item;
                 return (
-                  <li key={index} class={[styles.listItem, "my-2"]} style={{ fontFamily: "var(--font-body)" }}>
-                    <span class="text-3xl me-3 text-[var(--qwik-dark-text)]">{icon}</span>
-                    {title}
+                  <li
+                    key={index}
+                    class="flex items-center text-lg sm:text-xl text-gray-800 font-normal leading-relaxed"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    <span class="text-3xl me-4 text-[var(--qwik-light-blue)] flex-shrink-0">
+                      {icon}
+                    </span>
+                    <span>{title}</span>
                   </li>
                 );
               })}
           </ul>
         </div>
       </div>
-    </further>
+    </section>
   );
 });

@@ -1,5 +1,4 @@
 import { component$, useStyles$ } from "@builder.io/qwik";
-import styles from "./advantages.module.css";
 import advantagesCss from "./advantages.module.css?inline";
 
 const advantagesItems = [
@@ -33,26 +32,34 @@ export default component$(() => {
   useStyles$(advantagesCss);
 
   return (
-    <advantages
+    <section
       id="advantages-section"
-      class={[
-        "relative pb-8 w-full flex justify-center bg-[var(--qwik-light-blue)]",
-        styles.advantages,
-      ]}
+      class="relative pt-16 pb-36 sm:pb-44 w-full flex justify-center bg-gray-50 text-gray-900 border-t border-gray-100"
     >
-      <div class={["container container-blue relative z-10", styles.advantagesContainer]}>
-        <div class={["mt-1", styles.advantagesList]}>
-          <h2 class={styles.title} style="text-align: center; font-size: 2.5rem; font-weight: bold; fontFamily: var(--font-heading);">
-            <span class="highlightDark">Maximiza tu Éxito</span> en Línea con Todos
-            los <span class="highlightDark">Beneficios</span> que Tenemos para Ti!
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <h2
+            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center tracking-tight leading-tight mb-8"
+            style={{ color: "#111827" }}
+          >
+            <span class="heroGradient">Maximiza tu Éxito</span>
+            <span> en Línea con Todos los </span>
+            <span class="heroGradient">Beneficios</span>
+            <span> que Tenemos para Ti!</span>
           </h2>
-          <ul class="mt-8 mb-8">
+          <ul class="mt-8 mb-8 space-y-4 max-w-2xl mx-auto">
             {advantagesItems.map((item, index) => {
               const { icon, title } = item;
               return (
-                <li key={index} class={[styles.listItem, "my-2"]} style={{ fontFamily: "var(--font-body)" }}>
-                  <span class="text-3xl me-3 text-[var(--qwik-dark-text)]">{icon}</span>
-                  {title}
+                <li
+                  key={index}
+                  class="flex items-center text-lg sm:text-xl text-gray-800 font-normal leading-relaxed"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  <span class="text-3xl me-4 text-[var(--qwik-light-blue)] flex-shrink-0">
+                    {icon}
+                  </span>
+                  <span>{title}</span>
                 </li>
               );
             })}
@@ -61,6 +68,6 @@ export default component$(() => {
       </div>
       {/* Degradado de transición hacia Testimonials */}
       <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[var(--qwik-purple-background)] pointer-events-none z-20"></div>
-    </advantages>
+    </section>
   );
 });
