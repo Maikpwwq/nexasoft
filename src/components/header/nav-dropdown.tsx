@@ -3,21 +3,17 @@ import { Link } from "@builder.io/qwik-city";
 import styles from "./header.module.css";
 import headerCss from "./header.module.css?inline";
 
+import { SERVICES_CATALOG } from "~/const/services";
+
 export interface ServiceItem {
     name: string;
     route: string;
-    // Icons are optional in the dropdown for cleaner look, or can be passed if needed
 }
 
-export const services: ServiceItem[] = [
-    { name: "Diseño Web a medida", route: "/web-design/" },
-    { name: "Sitio Web Informativo", route: "/web-sites/" },
-    { name: "Vitrinas virtuales", route: "/web-stores/" },
-    { name: "Tiendas Online", route: "/e-commerces/" },
-    { name: "Paginas Web Corporativas", route: "/web-corporate/" },
-    { name: "Market Places", route: "/marketplaces/" },
-    { name: "Aplicativos", route: "/web-apps/" },
-];
+export const services: ServiceItem[] = SERVICES_CATALOG.map((s) => ({
+    name: s.name,
+    route: s.route,
+}));
 
 export const NavDropdown = component$(() => {
     useStyles$(headerCss);
