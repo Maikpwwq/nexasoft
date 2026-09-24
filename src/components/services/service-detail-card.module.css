@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Cyberpunk Halogen Light Detail Card
+   ========================================================================== */
+
+.detailCard {
+  --neon-color: #ac7ff4;
+  --neon-rgb: 172, 127, 244;
+
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(175deg, rgba(16, 12, 38, 0.92) 0%, rgba(10, 8, 25, 0.97) 100%);
+  border: 1px solid rgba(var(--neon-rgb), 0.35);
+  border-radius: 1.75rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    0 10px 40px -10px rgba(0, 0, 0, 0.7),
+    0 0 24px rgba(var(--neon-rgb), 0.16),
+    inset 0 0 20px rgba(var(--neon-rgb), 0.05);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.detailCard:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(var(--neon-rgb), 0.85);
+  box-shadow:
+    0 16px 48px -10px rgba(0, 0, 0, 0.8),
+    0 0 36px rgba(var(--neon-rgb), 0.45),
+    0 0 70px rgba(var(--neon-rgb), 0.2),
+    inset 0 0 25px rgba(var(--neon-rgb), 0.12);
+}
+
+/* === Halogen Tube / Physical Filament === */
+.halogenTube {
+  position: absolute;
+  top: 0;
+  left: 14%;
+  right: 14%;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(var(--neon-rgb), 0.45) 20%,
+    #ffffff 50%,
+    rgba(var(--neon-rgb), 0.45) 80%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 10px var(--neon-color),
+    0 0 20px rgba(var(--neon-rgb), 0.65);
+  opacity: 0.8;
+  transition:
+    left 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    right 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.detailCard:hover .halogenTube {
+  left: 6%;
+  right: 6%;
+  height: 2.5px;
+  opacity: 1;
+  box-shadow:
+    0 0 14px var(--neon-color),
+    0 0 28px var(--neon-color),
+    0 0 4px #ffffff;
+}
+
+/* === Halogen Light Wash / Dispersion Cone === */
+.halogenWash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  border-radius: 1.75rem 1.75rem 0 0;
+  background: radial-gradient(75% 100% at 50% 0%, rgba(var(--neon-rgb), 0.16) 0%, transparent 100%);
+  opacity: 0.75;
+  pointer-events: none;
+  transition:
+    opacity 0.35s ease,
+    background 0.35s ease;
+  z-index: 1;
+}
+
+.detailCard:hover .halogenWash {
+  opacity: 1;
+  background: radial-gradient(80% 120% at 50% 0%, rgba(var(--neon-rgb), 0.32) 0%, transparent 100%);
+}
+
+/* === Scope Badge === */
+.scopeBadge {
+  background-color: rgba(var(--neon-rgb), 0.12);
+  border: 1px solid rgba(var(--neon-rgb), 0.35);
+  color: var(--neon-color);
+  box-shadow: 0 0 12px rgba(var(--neon-rgb), 0.18);
+  transition: all 0.3s ease;
+}
+
+.detailCard:hover .scopeBadge {
+  background-color: rgba(var(--neon-rgb), 0.22);
+  border-color: var(--neon-color);
+  box-shadow: 0 0 18px rgba(var(--neon-rgb), 0.45);
+}
+
+/* === Title === */
+.cardTitle {
+  color: #ffffff;
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
+}
+
+.detailCard:hover .cardTitle {
+  text-shadow: 0 0 16px rgba(var(--neon-rgb), 0.5);
+}
+
+/* === Benefit Checkmark === */
+.benefitIcon {
+  color: var(--neon-color);
+  filter: drop-shadow(0 0 5px rgba(var(--neon-rgb), 0.7));
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+}
+
+.detailCard:hover .benefitIcon {
+  filter: drop-shadow(0 0 8px var(--neon-color));
+}
+
+/* === Cyberpunk Halogen CTA Button === */
+.ctaButton {
+  position: relative;
+  overflow: hidden;
+  background: rgba(var(--neon-rgb), 0.16);
+  border: 1.5px solid var(--neon-color);
+  color: #ffffff !important;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(var(--neon-rgb), 0.35),
+    inset 0 0 12px rgba(var(--neon-rgb), 0.12);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px) scale(1.02);
+  background-color: rgba(var(--neon-rgb), 0.28);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(var(--neon-rgb), 0.7),
+    0 0 60px rgba(var(--neon-rgb), 0.35),
+    inset 0 0 18px rgba(var(--neon-rgb), 0.25);
+  filter: brightness(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detailCard,
+  .halogenTube,
+  .halogenWash,
+  .scopeBadge,
+  .cardTitle,
+  .benefitIcon,
+  .ctaButton {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
