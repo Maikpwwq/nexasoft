@@ -80,10 +80,17 @@
   user-select: none;
 }
 
+.subtitleHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
 @keyframes subtitleFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(6px);
   }
   100% {
     opacity: 1;
@@ -92,7 +99,8 @@
 }
 
 .subtitleFadeIn {
-  animation: subtitleFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+  visibility: visible;
+  animation: subtitleFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
   will-change: opacity, transform;
 }
 
@@ -102,9 +110,16 @@
     animation: none !important;
   }
 
+  .subtitleHidden {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
   .subtitleFadeIn {
     animation: none !important;
     opacity: 1 !important;
+    visibility: visible !important;
     transform: none !important;
   }
 }
