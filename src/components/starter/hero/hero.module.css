@@ -80,9 +80,31 @@
   user-select: none;
 }
 
+@keyframes subtitleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitleFadeIn {
+  animation: subtitleFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+  will-change: opacity, transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .typewriterCursor {
     display: none !important;
     animation: none !important;
+  }
+
+  .subtitleFadeIn {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

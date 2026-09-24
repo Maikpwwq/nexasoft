@@ -205,10 +205,27 @@ export default component$(() => {
         </noscript>
       </h1>
 
-      {/* Subtítulo estático de la propuesta de valor */}
-      <p class="text-center relative select-none" style={{ top: "-5vh" }}>
+      {/* Subtítulo accesible para SEO y lectores de pantalla */}
+      <span class="sr-only">
         rápido, profesional, visible en Google y con contrato de soporte.
-      </p>
+      </span>
+
+      {/* Subtítulo visual: se renderiza justo después de que haya ocurrido la animación superior */}
+      {state.phase === "done" && (
+        <p
+          class={["text-center relative select-none", styles.subtitleFadeIn]}
+          style={{ top: "-5vh" }}
+        >
+          rápido, profesional, visible en Google y con contrato de soporte.
+        </p>
+      )}
+
+      {/* Fallback no-JS */}
+      <noscript>
+        <p class="text-center relative select-none" style={{ top: "-5vh" }}>
+          rápido, profesional, visible en Google y con contrato de soporte.
+        </p>
+      </noscript>
     </div>
   );
 });
