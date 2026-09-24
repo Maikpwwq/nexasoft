@@ -9,6 +9,12 @@ export interface RichSolution {
   ctaUrl: string;
 }
 
+export interface CyberpunkTheme {
+  name: string;
+  color: string;
+  rgb: string;
+}
+
 export interface ServiceItem {
   id: string;
   name: string;
@@ -17,6 +23,7 @@ export interface ServiceItem {
   keywords: [string, string, string];
   iconSvg: JSXOutput;
   richSolution?: RichSolution;
+  cyberpunkTheme?: CyberpunkTheme;
 }
 
 export const SERVICES_CATALOG: ServiceItem[] = [
@@ -25,6 +32,11 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     name: "Diseño Web a medida",
     route: "/web-design/",
     keywords: ["Diseño UI/UX exclusivo", "Prototipado interactivo", "Identidad visual de marca"],
+    cyberpunkTheme: {
+      name: "Neon Magenta",
+      color: "#ff007f",
+      rgb: "255, 0, 127",
+    },
     iconSvg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -63,6 +75,11 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     name: "Sitio Web Informativo",
     route: "/web-sites/",
     keywords: ["Presencia digital", "Optimización SEO", "Hosting y SSL incluidos"],
+    cyberpunkTheme: {
+      name: "Electric Cyan",
+      color: "#00f0ff",
+      rgb: "0, 240, 255",
+    },
     iconSvg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -103,6 +120,11 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     name: "Vitrinas virtuales",
     route: "/web-stores/",
     keywords: ["Catálogo de productos", "WhatsApp Checkout", "Panel administrativo"],
+    cyberpunkTheme: {
+      name: "Toxic Lime",
+      color: "#00ff66",
+      rgb: "0, 255, 102",
+    },
     iconSvg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -143,6 +165,11 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     shortName: "Tiendas Online",
     route: "/e-commerces/",
     keywords: ["Pasarela de pagos", "Control de inventario", "Operación 24/7"],
+    cyberpunkTheme: {
+      name: "Cyber Yellow",
+      color: "#ffe600",
+      rgb: "255, 230, 0",
+    },
     iconSvg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -186,6 +213,11 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     name: "Paginas Web Corporativas",
     route: "/web-corporate/",
     keywords: ["Procesos de industria", "Gestión avanzada", "SLA & Soporte formal"],
+    cyberpunkTheme: {
+      name: "Ultra Violet",
+      color: "#a855f7",
+      rgb: "168, 85, 247",
+    },
     iconSvg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -233,6 +265,11 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     name: "Modernización y Rendimiento",
     route: "/web-modernization/",
     keywords: ["Core Web Vitals", "Auditoría de código", "Arquitectura moderna"],
+    cyberpunkTheme: {
+      name: "Halogen Amber",
+      color: "#ff7700",
+      rgb: "255, 119, 0",
+    },
     iconSvg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -269,6 +306,11 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     name: "Mantenimiento y Soporte Continuo",
     route: "/web-maintenance/",
     keywords: ["Monitoreo de uptime", "Backups y seguridad", "SLA prioritario"],
+    cyberpunkTheme: {
+      name: "Laser Mint",
+      color: "#00f5d4",
+      rgb: "0, 245, 212",
+    },
     iconSvg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -306,6 +348,11 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     name: "Market Places",
     route: "/marketplaces/",
     keywords: ["Múltiples comercios", "Transacciones seguras", "Gestión centralizada"],
+    cyberpunkTheme: {
+      name: "Cyber Crimson",
+      color: "#ff2a5f",
+      rgb: "255, 42, 95",
+    },
     iconSvg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -343,6 +390,11 @@ export const SERVICES_CATALOG: ServiceItem[] = [
     shortName: "Aplicativos",
     route: "/web-apps/",
     keywords: ["Procesos internos", "Automatización de tareas", "Tecnología moderna"],
+    cyberpunkTheme: {
+      name: "Electric Cobalt",
+      color: "#4d7cff",
+      rgb: "77, 124, 255",
+    },
     iconSvg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
