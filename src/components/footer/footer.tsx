@@ -38,6 +38,9 @@ export default component$(() => {
               alt="NexaSoft Logo"
             />
             <p class="text-center mb-2 flex items-center justify-center text-xl" style={{ fontFamily: "var(--font-body)" }}>
+              {CONTACT_INFO.nit.display}
+            </p>
+            <p class="text-center mb-2 flex items-center justify-center text-xl" style={{ fontFamily: "var(--font-body)" }}>
               <svg
                 class="me-1"
                 xmlns="http://www.w3.org/2000/svg"

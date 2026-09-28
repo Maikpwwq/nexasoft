@@ -12,6 +12,10 @@ export interface ContactInfo {
     readonly mailtoUrl: string;
     readonly ariaLabel: string;
   };
+  readonly nit: {
+    readonly number: string;
+    readonly display: string;
+  };
   readonly phone: {
     readonly raw: string;
     readonly countryCode: string;
@@ -47,6 +51,10 @@ export const CONTACT_INFO: ContactInfo = {
     secondary: "hola@nexasoft.com.co",
     mailtoUrl: "mailto:nexasoftprofessionalsolutions@gmail.com",
     ariaLabel: "Enviar correo a NexaSoft",
+  },
+  nit: {
+    number: "9017156046",
+    display: "NIT: 901715604-6",
   },
   phone: {
     raw: "+573204842897",
