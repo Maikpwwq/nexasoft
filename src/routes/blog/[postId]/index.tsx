@@ -42,12 +42,10 @@ export default component$(() => {
   const detail = params.postId;
   return (
     <div
-      class="container container-center flex justify-center"
-      style={{ background: "white" }}
+      class="w-full flex justify-center flex-col"
+      style={{ padding: "0" }}
     >
-      <div class="flex flex-col justify-center items-center relative">
-        <div role="presentation" class="ellipsis"></div>
-        <div role="presentation" class="ellipsis ellipsis-purple"></div>
+      <div class="flex flex-col justify-center items-center relative w-full">
         <Post detail={detail} />
       </div>
     </div>

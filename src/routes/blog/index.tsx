@@ -23,7 +23,7 @@ export const head: DocumentHead = {
 
 export default component$(() => {
   return (
-    <div class="container container-center flex justify-center flex-col">
+    <div class="container container-center flex justify-center flex-col" style={{ padding: "0" }}>
       <BlogPost />
       <MainBanner />
     </div>
