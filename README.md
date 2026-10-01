@@ -12,17 +12,17 @@ A progressive web application built with Qwik, Qwik City, and Tailwind CSS, depl
 
 ## Tech Stack
 
-| Category         | Technology                  | Version    | Status                       |
-| ---------------- | --------------------------- | ---------- | ---------------------------- |
-| **Framework**    | Qwik / Qwik City            | 1.20.0     | Activo                       |
-| **Build Tool**   | Vite                        | 8.0.16     | Activo                       |
-| **Language**     | TypeScript                  | 6.0.3      | Activo                       |
-| **UI Library**   | Material UI (MUI)           | 9.1.0      | Activo (Legacy React Bridge) |
-| **Styling**      | Tailwind CSS                | 4.3.0      | Activo                       |
-| **Lead Capture** | Google Sheets & Apps Script | Serverless | Activo (Producción)          |
-| **Database**     | MongoDB / Mongoose          | 7.3 / 9.7  | Deprecado / Solo Desarrollo  |
-| **Backend**      | Supabase                    | 2.108.1    | Deprecado / Inactivo         |
-| **Pkg Manager**  | pnpm                        | 9.13.0     | Activo                       |
+| Category         | Technology                  | Version            | Status                       |
+| ---------------- | --------------------------- | ------------------ | ---------------------------- |
+| **Framework**    | Qwik / Qwik City            | 1.20.0             | Activo                       |
+| **Build Tool**   | Vite                        | 5.4.14 (Pinned)    | Activo (Rollup engine)       |
+| **Language**     | TypeScript                  | 6.0.3              | Activo                       |
+| **UI Library**   | Material UI (MUI)           | 9.3.1              | Activo (Legacy React Bridge) |
+| **Styling**      | Tailwind CSS                | 4.3.3              | Activo                       |
+| **Lead Capture** | Google Sheets & Apps Script | Serverless         | Activo (Producción)          |
+| **Database**     | MongoDB / Mongoose          | 7.6 / 9.9          | Deprecado / Solo Desarrollo  |
+| **Backend**      | Supabase                    | 2.112.4            | Deprecado / Inactivo         |
+| **Pkg Manager**  | pnpm                        | 9.x / 11.x         | Activo                       |
 
 ---
 
@@ -109,15 +109,21 @@ pnpm deploy       # Execute netlify deploy --build
 
 ---
 
-## Key Integrations & Business Logic
-
+## Key Integrations & Architecture Highlights
+ 
 - **Serverless Lead Capture**: Sincroniza formularios cliente directamente con un webhook de Google Apps Script y Google Sheets, con alertas automáticas vía email y protección anti-spam. Cero dependencia de servidores externos de base de datos pausables.
-- **Qwik ↔ React Bridge**: Componentes de MUI integrados con `qwikify$()` en `src/integrations/react/mui.tsx` para el renderizado híbrido.
+- **Qwik ↔ React Bridge**: Componentes de MUI integrados con `qwikify$()` en `src/integrations/react/mui.tsx` para renderizado híbrido progresivo.
+- **Editorial Blog Engine (SSG)**: Sistema de publicación tipo revista digital con renderizado estático (`onStaticGenerate`) pre-compilando 23 páginas estáticas en milisegundos.
+- **Image Lightbox Modal**: Visor modal interactivo en pantalla completa para imágenes de cabecera con soporte para teclado (`Escape`), clic fuera de foco (backdrop dismiss) y carga optimizada anti layout-shift.
+- **Banner de Conversión Full-Width**: Banner comercial responsivo (`#blog-cta-banner`) con degradado oscuro de borde a borde (`w-full`) que actúa como divisor de alto impacto entre las secciones de fondo blanco del blog y de aliados comerciales (`SupportLogos`).
 - **Google AdSense Slots**: El blog incorpora contenedores estructurados listos para inyectar bloques publicitarios de Google AdSense una vez habilitado el dominio propio.
-- **Captación Directa (NexaSoft SAS)**: Banners dinámicos en los artículos del blog diseñados estratégicamente para convertir tráfico orgánico en leads comerciales calificados, destacando el perfil de gestión de proyectos de ingeniería.
+- **SEO & Metadatos Dinámicos**: Etiquetas Open Graph y metadatos específicos por artículo para optimización en motores de búsqueda y redes sociales.
+- **Hover Styling Resiliente**: Estilos hover en botones estructurados mediante CSS puro (`:hover` con especificidad forzada), evitando desincronizaciones de eventos lazy de Qwik (`onMouseOver$/onMouseOut$`).
 
 ---
 
-## Last Updated
+## Project Status & Milestones
 
-**Junio 2026** — Migración del sistema de leads a Google Sheets (Serverless) y reestructuración de la base del blog.
+**Octubre 2026** — Rediseño editorial completo del Blog, visor Lightbox modal para imágenes, reestructuración a ancho completo (`w-full`) del banner de captación comercial como separador de secciones, corrección de saltos tipográficos responsivos, estabilización de compilación SSG con Vite 5 y resolución de herencia global de estilos CSS en botones.
+
+**Junio 2026** — Migración del sistema de leads a Google Sheets (Serverless) y reestructuración inicial del catálogo de publicaciones.

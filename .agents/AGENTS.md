@@ -88,3 +88,27 @@ export default component$(() => {
 * **Problem:** Type errors like `Object literal may only specify known properties, and 'tsconfigPaths' does not exist in type 'ResolveOptions'`.
 * **Root Cause:** Native `resolve.tsconfigPaths: true` is a feature of Vite 6+, while Vite 5 strictly type-checks `ResolveOptions` and does not support this key natively.
 * **Resolution:** Explicitly declare path aliases (e.g., `"~": path.resolve(import.meta.dirname, "./src")`) inside `resolve.alias` when on Vite 5, avoiding version-mismatched options.
+
+#### 4. Qwik Lazy-Loaded JS Hover Event Crash (`target is null`)
+
+* **Problem:** Using `onMouseOver$` and `onMouseOut$` event handlers for hover effects crashes at runtime in Qwik with `TypeError: can't access property "style", target is null`.
+* **Root Cause:** Qwik optimizes performance by lazily loading event handlers. When an event fires, the serialized chunk is fetched asynchronously. By the time the handler executes, `e.currentTarget` has already transitioned or been cleared by the browser event loop.
+* **Resolution:** Never use JavaScript event handlers (`onMouseOver$`, `onMouseOut$`) for styling or hover states in Qwik. Always use CSS `:hover` pseudo-classes, Tailwind's `hover:` variant, or a scoped `<style>` block.
+
+#### 5. Global Anchor Selector Inheritance Conflict (`a { color: inherit }`)
+
+* **Problem:** Tailwind utility text color classes (such as `text-white` or `text-gray-900`) on `<a>` tags are overridden, causing unreadable contrast (white-on-white or dark-on-dark).
+* **Root Cause:** `src/routes/styles.css` defines an un-scoped element rule `a { color: inherit; }` (lines 63-66), causing anchors to inherit parent text colors regardless of standard utility classes.
+* **Resolution:** For interactive buttons and CTAs that require explicit background and text colors, assign an ID (e.g. `#cta-cotizar-btn`) and apply scoped rules with `!important` inside `<style dangerouslySetInnerHTML>` or a module stylesheet.
+
+#### 6. Full-Width Layout Breakout in Nested Qwik City Routes
+
+* **Problem:** Full-width sections (`w-full`) rendered inside route components display dark side margins and fail to span the full viewport width.
+* **Root Cause:** Route index files (e.g., `src/routes/blog/[postId]/index.tsx`) wrapping the component with `.container` classes (`container container-center`), which sets fixed max-widths (`1280px` / `1536px`) and centered margins.
+* **Resolution:** Replace `.container` on route wrappers with `w-full flex justify-center flex-col`, allowing sections like conversion banners to span 100% of the screen width while delegating inner width constraints (`max-w-5xl mx-auto`) to child containers.
+
+#### 7. Responsive Headline Wrap & Orphan Word Prevention
+
+* **Problem:** Marketing and editorial headlines drop single orphan words onto subsequent lines (e.g. `"¿Listo para estructurar o escalar tu solución"` / `"web?"`).
+* **Root Cause:** Combining restrictive max-width parent containers (e.g. `max-w-4xl`) with aggressive font steps (e.g. `md:text-4xl`) forces line breaks on 1024px laptop displays.
+* **Resolution:** Expand the headline container to `max-w-6xl`, apply granular breakpoint scaling (`text-2xl sm:text-[1.75rem] md:text-3xl lg:text-[2.1rem] xl:text-[2.35rem]`), add `tracking-tight`, and bind the final words with a non-breaking space `&nbsp;` (`solución&nbsp;web?`).
