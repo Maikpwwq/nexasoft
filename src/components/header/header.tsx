@@ -46,7 +46,7 @@ export default component$(() => {
     },
     {
       name: "Contacto",
-      route: "/#contact-section",
+      route: "/nexo/",
     },
   ];
 

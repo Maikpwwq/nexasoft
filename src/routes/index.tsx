@@ -1,14 +1,11 @@
 import { component$, useStyles$ } from "@builder.io/qwik"; // , useSignal
-import styles from "~/components/modular-forms/modularForm.module.css";
 import modularFormCss from "~/components/modular-forms/modularForm.module.css?inline";
 import type { DocumentHead } from "@builder.io/qwik-city";
 // import Contact from "~/components/contact/contact";
 // import Counter from "~/components/starter/counter/counter";
 
 import PortfolioProducts from "~/components/portfolio/portfolioProducts";
-import Footer from "~/components/footer/footer";
 import Hero from "~/components/starter/hero/hero";
-import Infobox from "~/components/starter/infobox/infobox";
 // import Starter from '~/components/starter/next-steps/next-steps';
 import Testimonials from "~/components/testimonials/testimonials";
 
@@ -31,20 +28,6 @@ export default component$(() => {
       <Advantages />
       <Testimonials />
       <Secrets />
-      <div id="contact-section" class="container container-flex contactBox w-full flex justify-center py-8">
-        <div
-          class={[
-            styles.contactCard,
-            "rounded-[33px] border border-[#ac7ff4] bg-[#0f0a28] my-4 mx-2 sm:mx-auto max-w-lg w-full shadow-2xl p-2 sm:p-4",
-          ]}
-        >
-          <Infobox>
-            <>
-              <Footer />
-            </>
-          </Infobox>
-        </div>
-      </div>
     </>
   );
 });
@@ -55,7 +38,7 @@ export const head: DocumentHead = {
     {
       name: "description",
       content:
-        "💥¡Vende en linea como un profesional!. Creamos tu sitio web o tienda digital a la medida de tu negocio.",
+        "Modernizamos tu sitio web: rápido, profesional, visible en Google, con contrato de servicios y soporte formal.",
     },
   ],
 };

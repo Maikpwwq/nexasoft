@@ -1,4 +1,4 @@
-header {
+.header {
   /* border-bottom: 3px solid var(--qwik-dark-purple); */
   position: sticky;
   top: 0;

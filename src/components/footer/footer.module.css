@@ -1,0 +1,61 @@
+/* ==========================================================================
+   NexaSoft SAS - Modern Footer Styles
+   ========================================================================== */
+
+.footer {
+  background: linear-gradient(180deg, #09061a 0%, #060412 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ambientGlowTop {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(172, 127, 244, 0.4) 30%,
+    rgba(0, 240, 255, 0.5) 50%,
+    rgba(255, 0, 127, 0.4) 70%,
+    transparent 100%
+  );
+  box-shadow: 0 0 20px rgba(172, 127, 244, 0.35);
+  pointer-events: none;
+}
+
+.contactItem {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contactItem:hover {
+  transform: translateX(2px);
+}
+
+.socialBtn {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.socialBtn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+
+.linkItem {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+}
+
+.linkItem:hover {
+  transform: translateX(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contactItem,
+  .socialBtn,
+  .linkItem {
+    transition: none !important;
+    transform: none !important;
+  }
+}

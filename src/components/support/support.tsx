@@ -36,7 +36,7 @@ export default component$(() => {
   ];
 
   return (
-    <support id="support-section" class={[styles.support, "bg-white w-full flex text-[#1d2033] py-6 my-0"]}>
+    <support id="support-section" class={[styles.support, "bg-white w-full flex text-[#1d2033] py-0 my-0"]}>
       <div class="container mx-auto px-4">
         <ul class={[styles.supportList, "flex flex-row justify-center items-center flex-wrap gap-4 md:gap-8 max-w-[1200px] mx-auto py-2"]}>
           {/* <MUITypography variant="h4" align="center" className={styles.title}>
